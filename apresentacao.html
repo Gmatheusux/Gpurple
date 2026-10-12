@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação Executiva | GPurple</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --primary: #8b5cf6;
+            --accent: #d9f956;
+            --text: #ffffff;
+            --text-muted: #a3a3a3;
+            --glass-bg: rgba(255, 255, 255, 0.02);
+            --glass-border: rgba(255, 255, 255, 0.05);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; 
+        }
+
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+
+        #deck {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem;
+            position: relative;
+            transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+
+        .glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: rgba(139, 92, 246, 0.1);
+            filter: blur(150px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        .glow.top-left { top: -20%; left: -10%; }
+        .glow.bottom-right { bottom: -20%; right: -10%; }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3.5rem;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff, #a3a3a3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .title-huge { font-size: 4.5rem; line-height: 1.1; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+        .title-large { font-size: 3.5rem; font-weight: 700; margin-bottom: 3rem; letter-spacing: -0.02em; }
+        .subtitle { font-size: 1.35rem; color: var(--text-muted); font-weight: 300; max-width: 900px; line-height: 1.6; margin: 0 auto; }
+        
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; width: 100%; max-width: 1400px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; width: 100%; max-width: 1300px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; width: 100%; max-width: 1300px; }
+
+        .controls {
+            position: fixed;
+            bottom: 2.5rem;
+            right: 2.5rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+        .btn-nav {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        .btn-nav:hover { background: rgba(255,255,255,0.1); border-color: var(--primary); transform: scale(1.05); }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: var(--primary);
+            transition: width 0.4s ease;
+            z-index: 100;
+        }
+
+        .stat-number { font-size: 5.5rem; font-weight: 900; line-height: 1; margin-bottom: 1rem; letter-spacing: -0.03em; }
+        .bullet-point { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+        .bullet-icon { min-width: 24px; height: 24px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; margin-top: 4px; }
+        .bullet-icon.accent { background: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <div class="glow top-left"></div>
+    <div class="glow bottom-right"></div>
+    <div class="progress-bar" id="progress"></div>
+
+    <div id="deck">
+        
+        <!-- Slide 1: Capa -->
+        <div class="slide">
+            <div style="text-align: center;">
+                <div style="font-family: 'Poppins'; font-size: 1.25rem; font-weight: 700; margin-bottom: 2rem; color: var(--text-muted); letter-spacing: 0.2em; text-transform: uppercase;">
+                    <span style="color: var(--primary);">G</span>purple Studio
+                </div>
+                <h1 class="title-huge text-gradient">Engenharia de<br>Conversão Digital.</h1>
+                <p class="subtitle">A metodologia utilizada por marcas premium para reter tráfego,<br>aniquilar a fricção de uso e maximizar a captação de clientes através do web design.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: O Problema do Mercado -->
+        <div class="slide">
+            <div style="width: 100%; max-width: 1300px; margin: 0 auto;">
+                <h2 class="title-large text-center text-gradient">O gargalo invisível das vendas.</h2>
+                <div class="grid-2" style="align-items: center;">
+                    <div class="glass" style="border-color: rgba(239, 68, 68, 0.2); background: rgba(239, 68, 68, 0.02); padding: 4rem;">
+                        <p style="font-size: 1.5rem; color: var(--text); font-weight: 400; line-height: 1.6; margin-bottom: 2rem;">
+                            As empresas gastam fortunas com tráfego pago para enviar clientes a sites genéricos, lentos e difíceis de usar. 
+                        </p>
+                        <p style="font-size: 1.25rem; color: var(--text-muted); line-height: 1.6;">
+                            O problema não é o marketing, é o destino. Tráfego não salva uma interface amadora; ele apenas expõe as falhas da sua marca para mais pessoas. Para fechar negócios de alto valor, sua presença digital precisa ser blindada.
+                        </p>
+                    </div>
+                    <div style="border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); height: 100%; max-height: 450px;">
+                        <img src="assets/gpurple_data_flow_1790275394824.jpg" alt="Data Flow" style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: A Tríade -->
+        <div class="slide">
+            <div style="width: 100%; max-width: 1300px; margin: 0 auto;">
+                <h2 class="title-large text-center">Nossa Solução: <span style="color: var(--primary);">A Tríade GPurple</span></h2>
+                <div class="grid-3">
+                    <div class="glass">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">01. Design UI/UX</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">Estética premium com arquitetura de informação focada no comportamento humano.</p>
+                        <ul style="list-style: none; color: var(--text-muted); font-size: 0.95rem;">
+                            <li style="margin-bottom: 0.5rem;">• Percepção imediata de valor</li>
+                            <li style="margin-bottom: 0.5rem;">• Gatilhos visuais de autoridade</li>
+                            <li>• Retenção de atenção do usuário</li>
+                        </ul>
+                    </div>
+                    <div class="glass">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent);">02. Performance</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">Desenvolvimento focado em renderização sub-segundo e otimização extrema.</p>
+                        <ul style="list-style: none; color: var(--text-muted); font-size: 0.95rem;">
+                            <li style="margin-bottom: 0.5rem;">• Core Web Vitals no limite máximo</li>
+                            <li style="margin-bottom: 0.5rem;">• Queda drástica na taxa de rejeição</li>
+                            <li>• Aumento no ROI do tráfego pago</li>
+                        </ul>
+                    </div>
+                    <div class="glass">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: white;">03. Acessibilidade</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">Engenharia técnica que garante inclusão e alavanca o posicionamento no Google.</p>
+                        <ul style="list-style: none; color: var(--text-muted); font-size: 0.95rem;">
+                            <li style="margin-bottom: 0.5rem;">• Adequação às normas globais WCAG</li>
+                            <li style="margin-bottom: 0.5rem;">• Pontuação máxima no Lighthouse</li>
+                            <li>• Aumento do mercado endereçável</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Dados de Design -->
+        <div class="slide">
+            <div style="width: 100%; max-width: 1400px; margin: 0 auto;">
+                <h2 class="title-large text-center">Por que investir em <span style="color: var(--primary);">Design Visual?</span></h2>
+                <div class="grid-3" style="align-items: stretch; max-width: 1400px;">
+                    <div class="glass">
+                        <div class="stat-number">75%</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Da credibilidade é visual</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">A Universidade de Stanford comprovou que os consumidores julgam a confiabilidade de uma empresa baseados na qualidade do design. Um visual premium não é vaidade, é a fundação da confiança do cliente.</p>
+                    </div>
+                    <div style="border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); height: 100%; min-height: 350px;">
+                        <img src="assets/gpurple_ui_1790273119475.jpg" alt="Abstract UI" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: center;">
+                    </div>
+                    <div class="glass" style="border-color: rgba(139, 92, 246, 0.3); background: rgba(139, 92, 246, 0.05);">
+                        <div class="stat-number" style="color: var(--primary);">0.05s</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">A primeira impressão</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">Tempo exato que um cérebro leva para formar uma opinião. A interface comunica autoridade antes de qualquer texto ser lido. Você só tem 50 milissegundos para ganhar o lead.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Dados de Performance -->
+        <div class="slide">
+            <div style="width: 100%; max-width: 1300px; margin: 0 auto;">
+                <h2 class="title-large text-center">A matemática da <span style="color: var(--accent);">Performance</span></h2>
+                <div class="grid-2">
+                    <div class="glass" style="border-color: rgba(217, 249, 86, 0.2); background: rgba(217, 249, 86, 0.02);">
+                        <div class="stat-number" style="color: var(--accent);">53%</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Taxa de Abandono Crítica</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">Metade dos usuários mobile abandonam um site se ele demorar mais de 3 segundos para carregar. Se a sua página é lenta, você está perdendo 5 a cada 10 leads que você pagou caro para adquirir no Ads.</p>
+                    </div>
+                    <div class="glass">
+                        <div class="stat-number">+20%</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">De conversão por segundo</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">Estudos corporativos mostram que a cada 1 segundo reduzido no tempo de carregamento, a taxa de conversão aumenta até 20%. Performance extrema significa diminuir severamente o seu Custo de Aquisição (CAC).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Acessibilidade -->
+        <div class="slide">
+            <div style="width: 100%; max-width: 1100px; margin: 0 auto;">
+                <h2 class="title-large text-center">O Diferencial Invisível: <span class="text-gradient">Acessibilidade</span></h2>
+                <div class="glass">
+                    <div style="display: flex; gap: 4rem; align-items: center;">
+                        <div style="flex: 1;">
+                            <div class="bullet-point">
+                                <div class="bullet-icon"></div>
+                                <div>
+                                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Exigência do Algoritmo SEO</h4>
+                                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.5;">O algoritmo do Google penaliza sites inacessíveis. Estruturar o site com a semântica correta (WCAG) eleva o seu SEO organicamente sem a necessidade de maior investimento financeiro.</p>
+                                </div>
+                            </div>
+                            <div class="bullet-point">
+                                <div class="bullet-icon accent"></div>
+                                <div>
+                                    <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">Ampliação de Mercado</h4>
+                                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.5;">Criar um site plenamente navegável por leitores de tela e com o contraste ideal garante que você não deixe nenhum cliente portador de deficiência fora do seu funil de conversão.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Metodologia -->
+        <div class="slide">
+            <div style="width: 100%; max-width: 1400px; margin: 0 auto;">
+                <h2 class="title-large text-center">O Processo GPurple</h2>
+                <div class="grid-2" style="align-items: center; max-width: 1400px; gap: 3rem;">
+                    <div style="border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); height: 100%; min-height: 400px;">
+                        <img src="assets/gpurple_process_1790273129185.jpg" alt="GPurple Methodology Blueprint" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="glass" style="padding: 2.5rem 2rem;">
+                            <h4 style="color: var(--text-muted); font-weight: 700; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 0.1em;">FASE 1</h4>
+                            <h3 style="font-size: 1.35rem; color: white; margin-bottom: 1rem;">Descoberta</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">Pesquisa, análise da concorrência direta e alinhamento de metas de negócios.</p>
+                        </div>
+                        <div class="glass" style="padding: 2.5rem 2rem;">
+                            <h4 style="color: var(--text-muted); font-weight: 700; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 0.1em;">FASE 2</h4>
+                            <h3 style="font-size: 1.35rem; color: white; margin-bottom: 1rem;">Estratégia UX</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">Wireframing, arquitetura de informação e mapeamento da jornada do usuário.</p>
+                        </div>
+                        <div class="glass" style="padding: 2.5rem 2rem; border-color: rgba(139, 92, 246, 0.3); background: rgba(139, 92, 246, 0.05);">
+                            <h4 style="color: var(--primary); font-weight: 700; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 0.1em;">FASE 3</h4>
+                            <h3 style="font-size: 1.35rem; color: white; margin-bottom: 1rem;">Design de UI</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">Criação visual premium. Seu projeto ganha forma, estética luxuosa e autoridade.</p>
+                        </div>
+                        <div class="glass" style="padding: 2.5rem 2rem;">
+                            <h4 style="color: var(--text-muted); font-weight: 700; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 0.1em;">FASE 4</h4>
+                            <h3 style="font-size: 1.35rem; color: white; margin-bottom: 1rem;">Engenharia</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">Desenvolvimento limpo, otimizado para velocidade sub-segundo e testes rigorosos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Encerramento -->
+        <div class="slide">
+            <div style="width: 100%; max-width: 1200px; margin: 0 auto; text-align: center;">
+                <h2 class="title-large mb-6" style="font-size: 5rem;">Eleve o seu padrão.</h2>
+                <p class="subtitle">O design do seu negócio precisa ser tão premium quanto o produto que você vende.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Controles -->
+    <div class="controls">
+        <button class="btn-nav" id="prev" onclick="move(-1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="btn-nav" id="next" onclick="move(1)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+
+        function updateDeck() {
+            slides.forEach((slide) => {
+                slide.style.transform = `translateX(-${currentSlide * 100}vw)`;
+            });
+            progress.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+        }
+
+        function move(dir) {
+            currentSlide = Math.max(0, Math.min(currentSlide + dir, slides.length - 1));
+            updateDeck();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') { e.preventDefault(); move(1); }
+            if (e.key === 'ArrowLeft') { e.preventDefault(); move(-1); }
+        });
+
+        updateDeck();
+    </script>
+</body>
+</html>

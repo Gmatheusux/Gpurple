@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCorp Branding - GPurple Case Study</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        gpurple: {
+                            dark: 'var(--color-surface-dark)',
+                            card: 'var(--color-surface-card)',
+                            deep: 'var(--color-surface-deep)',
+                            primary: 'var(--color-brand-primary)',
+                            accent: 'var(--color-brand-accent)',
+                            danger: 'var(--color-feedback-danger)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gpurple-dark text-white font-sans antialiased overflow-x-hidden">
+    
+    <main class="relative w-full flex flex-col items-center">
+        
+        <!-- Header Simplificado (Voltar) -->
+        <header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] md:w-[95%] max-w-5xl glass rounded-full px-4 py-3 md:px-6 md:py-4 flex items-center justify-between  shadow-2xl backdrop-blur-xl bg-black/30">
+            <a href="index.html" class="flex items-center gap-2 font-sans font-medium text-sm text-gray-300 hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Voltar
+            </a>
+            <a href="index.html" class="flex items-center gap-0.5 font-sans font-bold text-xl md:text-2xl tracking-tighter text-white absolute left-1/2 -translate-x-1/2">
+                <span class="font-heading text-gpurple-primary text-3xl md:text-4xl font-bold leading-none drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]">G</span>
+                <span class="lowercase">purple<span class="text-gpurple-accent">.</span></span>
+            </a>
+            <a href="index.html#contato" class="bg-gpurple-accent text-gpurple-dark px-5 py-2.5 rounded-full text-sm font-bold hover:scale-105 hover:bg-[#c4fc38] transition-all duration-300 shadow-[0_0_15px_rgba(217,249,86,0.3)] hidden md:block">
+                Quero esse nível
+            </a>
+        </header>
+
+        <!-- Hero do Projeto -->
+        <section class="relative w-full h-[80vh] md:h-screen min-h-[600px] flex items-end pb-20 md:pb-32 px-4 md:px-8 overflow-hidden pt-32">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-[url('./assets/bg_orquidario.jpg')] bg-cover bg-center opacity-60"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-gpurple-dark via-gpurple-dark/80 to-transparent"></div>
+            </div>
+
+            <div class="w-full max-w-[1200px] mx-auto relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-10">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-2 text-[10px] text-gpurple-primary font-bold uppercase tracking-[0.2em]">
+                        <span class="w-1.5 h-1.5 bg-gpurple-primary shadow-[0_0_8px_#8b5cf6]"></span> Orquidário Cantareira
+                    </div>
+                    <h1 class="text-4xl md:text-7xl lg:text-[6rem] font-sans font-light tracking-tighter text-white leading-none">
+                        Renascimento Digital.
+                    </h1>
+                    <p class="text-zinc-400 text-lg md:text-xl max-w-2xl font-light mt-4">
+                        Digitalização e reestruturação da marca para um dos orquidários mais tradicionais da região. Foco em estética natural, e-commerce e retenção de colecionadores.
+                    </p>
+                </div>
+                
+                <!-- KPI -->
+                <div class="bg-white/[0.03] backdrop-blur-xl rounded-3xl p-6 md:p-8 min-w-[300px] relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-gpurple-primary text-black text-[10px] font-bold uppercase px-3 py-1 rounded-bl-lg">W.I.P</div>
+                    <p class="text-gpurple-primary text-xs uppercase tracking-widest font-bold mb-2">Status do Projeto</p>
+                    <p class="text-4xl md:text-5xl text-white font-light tracking-tighter">Em Andamento</p>
+                    <p class="text-zinc-500 text-sm mt-2">Lançamento Previsto em Breve</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- O Diagnóstico & Solução -->
+        <section class="w-full py-24 bg-gpurple-dark relative z-10">
+            <div class="max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-20">
+                
+                <div class="flex flex-col gap-6">
+                    <h2 class="text-3xl font-light text-white">O Desafio de um Legado</h2>
+                    <p class="text-zinc-400 leading-relaxed font-light">O Orquidário Cantareira carrega uma história rica e de muito prestígio entre os colecionadores de orquídeas. No entanto, sua presença digital não refletia a magnitude dessa tradição.</p>
+                    <p class="text-zinc-400 leading-relaxed font-light">O desafio da GPurple é traduzir anos de cultivo e excelência botânica para uma plataforma online robusta, capaz de operar como um e-commerce moderno sem perder a alma artesanal da marca.</p>
+                </div>
+
+                <div class="flex flex-col gap-6">
+                    <h2 class="text-3xl font-light text-white">A Intervenção Estratégica</h2>
+                    <ul class="flex flex-col gap-8 mt-4">
+                        <li class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-white/5  flex items-center justify-center shrink-0 text-white">1</div>
+                            <div>
+                                <h4 class="text-white text-lg font-medium mb-1">Rebranding e Identidade</h4>
+                                <p class="text-zinc-500 text-sm leading-relaxed">Modernização do logo e da paleta de cores, trazendo um tom mais sofisticado e adequado ao mercado premium de paisagismo e botânica.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-gpurple-primary/10 border border-gpurple-primary/30 flex items-center justify-center shrink-0 text-gpurple-primary">2</div>
+                            <div>
+                                <h4 class="text-white text-lg font-medium mb-1">E-commerce Fluido</h4>
+                                <p class="text-zinc-500 text-sm leading-relaxed">Construção de uma experiência de compra sem fricção, onde colecionadores podem visualizar detalhes microscópicos das orquídeas antes da aquisição.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria / Mockups -->
+        <section class="w-full py-24 bg-zinc-950 relative z-10 border-t border-white/5">
+            <div class="max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-10">
+                <!-- Imagem Maior (Mockup Flutuante) -->
+                <div class="w-full h-[400px] md:h-[700px] bg-zinc-950 rounded-[2rem] overflow-hidden  relative group flex items-center justify-center p-6 md:p-8 md:p-16">
+                    <!-- Fundo desfocado colorido -->
+                    <div class="absolute inset-0 bg-[url('./assets/mockup_orquidario.png')] bg-cover bg-center opacity-30 blur-2xl group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000"></div>
+                    <div class="absolute inset-0 bg-zinc-950/40"></div>
+                    
+                    <!-- Mockup em si -->
+                    <img src="./assets/mockup_orquidario.png" alt="Mockup Orquidário Cantareira" class="relative z-10 w-full h-auto max-w-5xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]  group-hover:scale-[1.02] transition-transform duration-700">
+                </div>
+                <!-- Imagens Lado a Lado -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="w-full h-[400px] bg-zinc-900 rounded-[2rem] overflow-hidden  relative group">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1610444585324-42b781121d5a?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-60 mix-blend-screen group-hover:scale-105 group-hover:opacity-80 transition-all duration-700"></div>
+                    </div>
+                    <div class="w-full h-[400px] bg-zinc-900 rounded-[2rem] overflow-hidden  relative group">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582292850935-96101c69c6fa?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-60 mix-blend-screen group-hover:scale-105 group-hover:opacity-80 transition-all duration-700"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="w-full py-32 bg-gpurple-deep flex flex-col items-center justify-center relative z-10 overflow-hidden">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gpurple-primary/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+            
+            <div class="relative z-10 text-center flex flex-col items-center max-w-2xl px-4 md:px-8">
+                <h2 class="text-4xl md:text-6xl font-light text-white tracking-tighter leading-tight mb-8">
+                    Sua marca também precisa deste nível de engenharia?
+                </h2>
+                <a href="index.html#contato" class="bg-gpurple-accent text-gpurple-dark px-10 py-5 rounded-full text-base font-bold hover:scale-105 hover:bg-[#c4fc38] transition-all duration-300 shadow-[0_0_15px_rgba(217,249,86,0.3)]">
+                    Agendar Análise Gratuita
+                </a>
+            </div>
+        </section>
+        
+    </main>
+</body>
+</html>
+

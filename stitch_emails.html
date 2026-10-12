@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GPurple Studio — High-Fidelity Email Template Suite</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Public+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface-variant": "#cbc3d7",
+            "outline-variant": "#494454",
+            "inverse-on-surface": "#322f39",
+            "on-secondary-fixed-variant": "#3f4c00",
+            "on-error-container": "#ffdad6",
+            "surface-tint": "#d0bcff",
+            "on-surface": "#e7e0ed",
+            "on-tertiary-fixed-variant": "#673d00",
+            "primary": "#d0bcff",
+            "primary-fixed-dim": "#d0bcff",
+            "surface-container": "#211e27",
+            "surface-bright": "#3b3742",
+            "on-secondary-container": "#333e00",
+            "secondary": "#b5d332",
+            "tertiary": "#ffb869",
+            "surface-variant": "#37333d",
+            "on-tertiary-fixed": "#2c1700",
+            "on-tertiary": "#482900",
+            "inverse-primary": "#6d3bd7",
+            "surface-container-low": "#1d1a23",
+            "tertiary-fixed-dim": "#ffb869",
+            "secondary-container": "#92af00",
+            "primary-fixed": "#e9ddff",
+            "on-tertiary-container": "#3f2300",
+            "on-background": "#e7e0ed",
+            "on-primary-container": "#340080",
+            "error": "#ffb4ab",
+            "on-secondary-fixed": "#181e00",
+            "outline": "#958ea0",
+            "tertiary-fixed": "#ffdcbb",
+            "on-primary-fixed-variant": "#5516be",
+            "error-container": "#93000a",
+            "surface-container-high": "#2c2832",
+            "secondary-fixed-dim": "#b5d332",
+            "tertiary-container": "#ca801e",
+            "surface": "#15121b",
+            "primary-container": "#a078ff",
+            "surface-container-lowest": "#0f0d15",
+            "on-secondary": "#2b3400",
+            "background": "#15121b",
+            "on-primary": "#3c0091",
+            "inverse-surface": "#e7e0ed",
+            "surface-dim": "#15121b",
+            "on-error": "#690005",
+            "secondary-fixed": "#d0f04e",
+            "on-primary-fixed": "#23005c",
+            "surface-container-highest": "#37333d",
+            "deep-onyx": "#0d0d11",
+            "canvas-base": "#050505"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            headline: ["Space Grotesk", "sans-serif"],
+            display: ["Space Grotesk", "sans-serif"],
+            body: ["Inter", "sans-serif"],
+            label: ["Public Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        },
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(15, 13, 21, 0.6);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #494454;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #958ea0;
+    }
+    .glass-card {
+      background: rgba(29, 26, 35, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+  </style>
+</head>
+<body class="bg-[#050505] text-on-surface font-body antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-white">
+<!-- Top Navigation (Shared Component Schema adhered) -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-lowest docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-outline-variant flat no shadows">
+<div class="flex justify-between items-center w-full px-6 py-3.5 max-w-7xl mx-auto">
+<!-- Brand & Badges -->
+<div class="flex items-center gap-4">
+<a class="flex items-center gap-3 active:scale-[0.98] transition-transform" href="#">
+<img alt="GPurple Studio Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UgUutTu42L9Am8Iqi5ZvuNxaqPRwi51c2nAXUOsdpQGqfmpRkTeTXeSmpgIHXVHmJaNYcU6hBWbd2-h8vkztEFya4_kYcA4q5o5gEK8x1WeTO_xT9YJLliAGAxz5iQgQAqnpwbTdDXj1aOkX7Hki8MBT8geM4bFNYpkCCQ8FA5f1THNLPkTBnRcgbM_xLAyoSRn5VXOlEr9_YiH_x0mz9gTFKP-e8bnQRCdwcuBGfdHva-4B4e6yaeFKI"/>
+</a>
+<div class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high border border-outline-variant/60 text-xs font-label text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_#b5d332]"></span>
+<span>Design System / Email Architecture</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-7 font-headline text-sm font-medium tracking-tight">
+<a class="text-primary dark:text-primary font-semibold border-b-2 border-primary dark:border-primary pb-1" href="#templates">Templates</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors" href="#showcase">Showcase</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors" href="#components">Components</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface dark:hover:text-on-surface transition-colors" href="#docs">Docs</a>
+</nav>
+<!-- Trailing Action Buttons -->
+<div class="flex items-center gap-2.5">
+<button class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-outline-variant text-xs font-headline font-medium text-on-surface hover:bg-surface-container transition-all active:scale-[0.98]" id="copyAllBtn">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span>Copy All</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-headline font-semibold text-xs hover:bg-surface-tint active:scale-[0.98] transition-all shadow-[0_0_16px_rgba(208,188,255,0.25)]">
+<span class="material-symbols-outlined text-sm">code</span>
+<span>Export Suite</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Header / Studio Controls Hub -->
+<section class="w-full max-w-7xl mx-auto px-6 pt-10 pb-6 border-b border-outline-variant/30">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-2 mb-2 text-xs font-mono tracking-wider text-primary uppercase">
+<span>// SUITE SPEC v2.4.0</span>
+<span>•</span>
+<span class="text-secondary">LITMUS &amp; EMAIL ON ACID VERIFIED</span>
+</div>
+<h1 class="text-2xl sm:text-3xl lg:text-4xl font-headline font-bold text-on-surface tracking-tight">
+          Executive Email Architecture
+        </h1>
+<p class="text-sm sm:text-base text-on-surface-variant font-body mt-1 max-w-2xl">
+          Bulletproof MJML &amp; HTML table frameworks designed for C-level corporate communications, hyper-targeted executive outreach, and high-stakes deal follow-ups.
+        </p>
+</div>
+<!-- Control Toolbar: Filter Switches + Viewport Simulation -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Viewport Switcher -->
+<div class="inline-flex p-1 rounded-lg bg-surface-container border border-outline-variant/50">
+<button class="px-3 py-1 text-xs font-label font-medium rounded-md bg-surface-container-high text-on-surface flex items-center gap-1.5 transition-all shadow-sm" id="btnViewportDesktop" onclick="setViewport('desktop')">
+<span class="material-symbols-outlined text-sm">desktop_windows</span>
+<span class="hidden sm:inline">Desktop</span>
+</button>
+<button class="px-3 py-1 text-xs font-label font-medium rounded-md text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 transition-all" id="btnViewportMobile" onclick="setViewport('mobile')">
+<span class="material-symbols-outlined text-sm">smartphone</span>
+<span class="hidden sm:inline">Mobile (375px)</span>
+</button>
+</div>
+<!-- Export Buttons Group -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant/80 bg-surface-container-low hover:bg-surface-container text-xs font-label font-medium text-on-surface flex items-center gap-1.5 transition-colors" onclick="triggerToast('Copied HTML Bundle to Clipboard!')">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span>Copy HTML</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-variant hover:bg-surface-bright text-xs font-label font-medium text-primary flex items-center gap-1.5 transition-colors border border-primary/20" onclick="triggerToast('MJML Components Exported!')">
+<span class="material-symbols-outlined text-sm">download</span>
+<span>Export MJML</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Template Switcher Pills -->
+<div class="flex items-center gap-2 mt-6 overflow-x-auto pb-2 custom-scrollbar">
+<button class="tab-pill px-3.5 py-1.5 rounded-full text-xs font-headline font-semibold bg-primary text-on-primary shadow-sm whitespace-nowrap active:scale-[0.98] transition-all" onclick="filterTemplate('all')">
+        All Templates (3)
+      </button>
+<button class="tab-pill px-3.5 py-1.5 rounded-full text-xs font-headline font-medium bg-surface-container-low border border-outline-variant/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container whitespace-nowrap transition-all" onclick="filterTemplate('corporate')">
+        Corporate Reply
+      </button>
+<button class="tab-pill px-3.5 py-1.5 rounded-full text-xs font-headline font-medium bg-surface-container-low border border-outline-variant/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container whitespace-nowrap transition-all" onclick="filterTemplate('outreach')">
+        High-Impact Outreach
+      </button>
+<button class="tab-pill px-3.5 py-1.5 rounded-full text-xs font-headline font-medium bg-surface-container-low border border-outline-variant/60 text-on-surface-variant hover:text-on-surface hover:bg-surface-container whitespace-nowrap transition-all" onclick="filterTemplate('followup')">
+        Executive Follow-Up
+      </button>
+</div>
+</section>
+<!-- Main Stage: 3-Column Email Studio Comparison -->
+<main class="w-full max-w-7xl mx-auto px-6 py-8 flex-1">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 transition-all duration-300" id="templatesContainer">
+<!-- ========================================== -->
+<!-- VARIATION 1: Corporate Reply               -->
+<!-- ========================================== -->
+<article class="template-card flex flex-col rounded-xl bg-surface-container-lowest border border-outline-variant/60 shadow-2xl overflow-hidden hover:border-primary/40 transition-all duration-200" id="card-corporate">
+<!-- Email Window Chrome Bar -->
+<header class="bg-[#110f17] border-b border-outline-variant/40 px-4 py-3 select-none">
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary/70"></span>
+<span class="ml-2 text-[11px] font-mono text-outline">v1.corporate-reply.eml</span>
+</div>
+<span class="text-[10px] font-mono text-outline-variant">Today, 10:42 AM</span>
+</div>
+<!-- Chrome Headers -->
+<div class="space-y-1 font-mono text-[11px]">
+<div class="flex items-baseline gap-2 truncate">
+<span class="text-outline w-12 shrink-0">From:</span>
+<span class="text-primary truncate">elena.rostova@gpurple.studio</span>
+</div>
+<div class="flex items-baseline gap-2 truncate">
+<span class="text-outline w-12 shrink-0">To:</span>
+<span class="text-on-surface truncate">alexander.vance@apexgroup.com</span>
+</div>
+<div class="flex items-baseline gap-2 truncate">
+<span class="text-outline w-12 shrink-0">Subject:</span>
+<span class="text-on-surface font-medium truncate">Re: Q3 Enterprise Architecture Review &amp; Delivery Milestones</span>
+</div>
+</div>
+</header>
+<!-- Email Body Canvas (Deep Onyx #0d0d11) -->
+<div class="email-canvas p-6 bg-[#0d0d11] flex-1 flex flex-col justify-between font-body text-xs sm:text-[13px] leading-relaxed text-on-surface space-y-5">
+<!-- Corporate Email Header Logo -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<img alt="GPurple Studio Logo" class="h-6 w-auto object-contain brightness-110" src="https://lh3.googleusercontent.com/aida/AEtjO1UgUutTu42L9Am8Iqi5ZvuNxaqPRwi51c2nAXUOsdpQGqfmpRkTeTXeSmpgIHXVHmJaNYcU6hBWbd2-h8vkztEFya4_kYcA4q5o5gEK8x1WeTO_xT9YJLliAGAxz5iQgQAqnpwbTdDXj1aOkX7Hki8MBT8geM4bFNYpkCCQ8FA5f1THNLPkTBnRcgbM_xLAyoSRn5VXOlEr9_YiH_x0mz9gTFKP-e8bnQRCdwcuBGfdHva-4B4e6yaeFKI"/>
+<span class="text-[10px] font-mono text-outline uppercase tracking-wider">Internal Reference: #ENG-9981</span>
+</div>
+<!-- Markdown Style Meta Box -->
+<div class="rounded-lg bg-surface-container-low/70 border border-outline-variant/40 p-3 font-mono text-[11px] space-y-1 text-on-surface-variant">
+<div><span class="text-primary font-medium">[STATUS]</span> Sign-Off Verified for Sprints 14—17</div>
+<div><span class="text-secondary font-medium">[PIPELINE]</span> Production Rollout: Sept 28, 02:00 UTC</div>
+<div><span class="text-outline">[SECURITY]</span> PGP Encrypted • SOC2 Type II Cleared</div>
+</div>
+<!-- Core Corporate Prose -->
+<div class="space-y-3 text-on-surface/90">
+<p>Alexander,</p>
+<p>
+              Thank you for coordinating yesterday's architectural audit. We have integrated Apex Group’s custom typography and variable token set into the core engine repository.
+            </p>
+<p>
+              As requested, all milestone deliverables for <span class="text-primary font-medium">Phase II (Cross-Client Rendering Parity)</span> have been stamped as complete. Outlook 365 desktop, Apple Mail dark mode, and Android Webview regressions are resolved at 100% parity across all 64 target render engines.
+            </p>
+<div class="border-l-2 border-primary/60 pl-3 italic text-on-surface-variant">
+              “The unified template architecture reduces Apex’s staging QA iterations from 4 business days to under 12 minutes.”
+            </div>
+<p>
+              Staging manifests are available in your developer dashboard. Please advise if your DevOps crew requires custom DNS routing or specific DKIM delegation keys before Thursday's cutover.
+            </p>
+</div>
+<!-- Ultra-Clean Executive Signature -->
+<div class="pt-5 border-t border-outline-variant/30 mt-auto">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-headline font-bold text-xs shrink-0">
+                ER
+              </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="font-headline font-bold text-xs text-on-surface">Elena Rostova</h4>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.2 rounded bg-surface-container text-[9px] font-mono text-secondary border border-secondary/30">
+<span class="material-symbols-outlined text-[10px]" data-weight="fill">verified</span> PGP
+                  </span>
+</div>
+<p class="text-[11px] text-outline">VP of Design Systems • GPurple Studio Inc.</p>
+<div class="flex items-center gap-3 mt-1.5 text-[10px] font-mono">
+<a class="text-primary hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[11px]">calendar_month</span> cal.com/elena-gpurple
+                  </a>
+<span class="text-outline-variant">•</span>
+<span class="text-outline-variant">Fingerprint: 4E91 B210 99AF</span>
+</div>
+</div>
+</div>
+<!-- Legal Security Disclaimer -->
+<p class="mt-3 text-[9px] font-mono text-outline/80 leading-normal border-t border-outline-variant/15 pt-2">
+              CONFIDENTIAL: This electronic communication contains proprietary data intended solely for Apex Group. If received in error, notify security@gpurple.studio immediately.
+            </p>
+</div>
+</div>
+<!-- Inspector Quick Action Footer -->
+<footer class="bg-surface-container-high/90 border-t border-outline-variant/40 px-4 py-2.5 flex items-center justify-between text-[11px]">
+<div class="flex items-center gap-1.5 font-mono text-[10px]">
+<span class="px-1.5 py-0.5 rounded bg-[#050505] text-outline border border-outline-variant/50">#050505</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-white border border-primary">#8b5cf6</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:text-primary transition-colors flex items-center gap-1 text-on-surface-variant font-medium" onclick="triggerToast('Preview loaded for Corporate Reply')">
+<span class="material-symbols-outlined text-xs">visibility</span> Preview
+            </button>
+<span class="text-outline-variant">|</span>
+<button class="hover:text-primary transition-colors flex items-center gap-1 text-on-surface-variant font-medium" onclick="triggerToast('Copied Corporate Reply HTML!')">
+<span class="material-symbols-outlined text-xs">content_copy</span> Copy HTML
+            </button>
+</div>
+</footer>
+</article>
+<!-- ========================================== -->
+<!-- VARIATION 2: Cold Email / Growth Outreach  -->
+<!-- ========================================== -->
+<article class="template-card flex flex-col rounded-xl bg-surface-container-lowest border border-secondary/30 shadow-[0_0_30px_rgba(181,211,50,0.06)] overflow-hidden hover:border-secondary/60 transition-all duration-200" id="card-outreach">
+<!-- Email Window Chrome Bar -->
+<header class="bg-[#110f17] border-b border-outline-variant/40 px-4 py-3 select-none">
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="ml-2 text-[11px] font-mono text-secondary">v2.growth-outreach.eml</span>
+</div>
+<span class="text-[10px] font-mono text-outline-variant">Today, 09:15 AM</span>
+</div>
+<!-- Chrome Headers -->
+<div class="space-y-1 font-mono text-[11px]">
+<div class="flex items-baseline gap-2 truncate">
+<span class="text-outline w-12 shrink-0">From:</span>
+<span class="text-primary truncate">growth@gpurple.studio</span>
+</div>
+<div class="flex items-baseline gap-2 truncate">
+<span class="text-outline w-12 shrink-0">To:</span>
+<span class="text-on-surface truncate">devon.k@hypergrowth.io</span>
+</div>
+<div class="flex items-baseline gap-2 truncate">
+<span class="text-outline w-12 shrink-0">Subject:</span>
+<span class="text-secondary font-medium truncate">Accelerating frontend velocity by 4.2x — GPurple Benchmark</span>
+</div>
+</div>
+</header>
+<!-- Email Body Canvas -->
+<div class="email-canvas p-6 bg-[#09080d] flex-1 flex flex-col justify-between font-body text-xs sm:text-[13px] leading-relaxed text-on-surface space-y-5">
+<!-- Outreach Email Header Logo -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<img alt="GPurple Studio Logo" class="h-6 w-auto object-contain brightness-110" src="https://lh3.googleusercontent.com/aida/AEtjO1UgUutTu42L9Am8Iqi5ZvuNxaqPRwi51c2nAXUOsdpQGqfmpRkTeTXeSmpgIHXVHmJaNYcU6hBWbd2-h8vkztEFya4_kYcA4q5o5gEK8x1WeTO_xT9YJLliAGAxz5iQgQAqnpwbTdDXj1aOkX7Hki8MBT8geM4bFNYpkCCQ8FA5f1THNLPkTBnRcgbM_xLAyoSRn5VXOlEr9_YiH_x0mz9gTFKP-e8bnQRCdwcuBGfdHva-4B4e6yaeFKI"/>
+<span class="px-2 py-0.5 rounded-full bg-secondary/10 text-secondary border border-secondary/30 text-[10px] font-mono font-medium">
+              GROWTH SPRINT 2024
+            </span>
+</div>
+<!-- Punchy Hook Copy -->
+<div class="space-y-3">
+<p class="font-headline font-semibold text-base text-on-surface">
+              Devon, engineering teams waste 35+ hours/month debugging broken email HTML.
+            </p>
+<p class="text-on-surface-variant">
+              We tracked Hypergrowth's latest product launches. Your transactional emails still suffer from dark-mode table inversions and Outlook VML clipping. GPurple Studio removes this friction permanently.
+            </p>
+</div>
+<!-- High-Impact Glowing Metric Card -->
+<div class="rounded-xl p-4 bg-gradient-to-br from-surface-container to-[#1c122e] border-2 border-primary/50 shadow-[0_0_24px_rgba(160,120,255,0.18)] space-y-3">
+<div class="flex items-center justify-between text-[11px] font-mono text-primary">
+<span class="flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-xs">bolt</span> GPURPLE BENCHMARK REPORT
+              </span>
+<span class="text-secondary font-bold">VERIFIED</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center pt-1">
+<div class="p-2 rounded bg-surface-container-lowest/80 border border-outline-variant/40">
+<div class="text-base sm:text-lg font-headline font-bold text-secondary">+340%</div>
+<div class="text-[9px] font-mono text-outline leading-tight mt-0.5">Component Reusability</div>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest/80 border border-outline-variant/40">
+<div class="text-base sm:text-lg font-headline font-bold text-primary">4.2x</div>
+<div class="text-[9px] font-mono text-outline leading-tight mt-0.5">Faster Ship Velocity</div>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest/80 border border-outline-variant/40">
+<div class="text-base sm:text-lg font-headline font-bold text-white">99.98%</div>
+<div class="text-[9px] font-mono text-outline leading-tight mt-0.5">Token Sync Rate</div>
+</div>
+</div>
+</div>
+<!-- Value Proposition Pitch -->
+<p class="text-on-surface-variant text-[12px]">
+            Instead of brittle nested tables, compile production-ready email components straight from Figma tokens into fluid, client-resilient MJML.
+          </p>
+<!-- Primary Electric Lime Green CTA Button -->
+<div class="py-2 text-center">
+<a class="inline-flex items-center justify-center w-full py-3.5 px-6 rounded-lg bg-[#d9f956] hover:bg-[#e7ff7d] text-black font-headline font-bold text-xs sm:text-sm tracking-tight transition-all duration-150 shadow-[0_0_24px_rgba(217,249,86,0.35)] hover:shadow-[0_0_32px_rgba(217,249,86,0.55)] active:scale-[0.98]" href="#">
+<span>Claim Interactive Demo &amp; Architecture Audit</span>
+<span class="material-symbols-outlined text-base ml-1.5 font-bold">arrow_forward</span>
+</a>
+<span class="block mt-2 text-[10px] font-mono text-outline">Takes 2 mins • Direct engineering access • Zero spam</span>
+</div>
+<!-- Compact Trust Micro-Footer -->
+<div class="pt-4 border-t border-outline-variant/30 text-center space-y-1.5 mt-auto">
+<div class="flex items-center justify-center gap-3 text-[10px] text-outline font-mono">
+<span>Trusted by 450+ scale-ups</span>
+<span>•</span>
+<a class="hover:underline text-on-surface-variant" href="#">Unsubscribe</a>
+<span>•</span>
+<a class="hover:underline text-on-surface-variant" href="#">Manage Preferences</a>
+</div>
+<p class="text-[9px] text-outline/60 font-mono">GPurple Studio Inc. 548 Market St, Suite 44102, San Francisco, CA</p>
+</div>
+</div>
+<!-- Inspector Quick Action Footer -->
+<footer class="bg-surface-container-high/90 border-t border-outline-variant/40 px-4 py-2.5 flex items-center justify-between text-[11px]">
+<div class="flex items-center gap-1.5 font-mono text-[10px]">
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-white border border-primary">#8b5cf6</span>
+<span class="px-1.5 py-0.5 rounded bg-[#d9f956] text-black font-semibold">#d9f956</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:text-primary transition-colors flex items-center gap-1 text-on-surface-variant font-medium" onclick="triggerToast('Preview loaded for Outreach template')">
+<span class="material-symbols-outlined text-xs">visibility</span> Preview
+            </button>
+<span class="text-outline-variant">|</span>
+<button class="hover:text-primary transition-colors flex items-center gap-1 text-on-surface-variant font-medium" onclick="triggerToast('Copied Outreach HTML!')">
+<span class="material-symbols-outlined text-xs">content_copy</span> Copy HTML
+            </button>
+</div>
+</footer>
+</article>
+<!-- ========================================== -->
+<!-- VARIATION 3: Follow-up Email               -->
+<!-- ========================================== -->
+<article class="template-card flex flex-col rounded-xl bg-surface-container-lowest border border-outline-variant/60 shadow-2xl overflow-hidden hover:border-primary/40 transition-all duration-200" id="card-followup">
+<!-- Email Window Chrome Bar -->
+<header class="bg-[#110f17] border-b border-outline-variant/40 px-4 py-3 select-none">
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-outline-variant/20">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary/70"></span>
+<span class="ml-2 text-[11px] font-mono text-outline">v3.executive-followup.eml</span>
+</div>
+<span class="text-[10px] font-mono text-outline-variant">Yesterday, 04:30 PM</span>
+</div>
+<!-- Chrome Headers -->
+<div class="space-y-1 font-mono text-[11px]">
+<div class="flex items-baseline gap-2 truncate">
+<span class="text-outline w-12 shrink-0">From:</span>
+<span class="text-primary truncate">marcus.v@gpurple.studio</span>
+</div>
+<div class="flex items-baseline gap-2 truncate">
+<span class="text-outline w-12 shrink-0">To:</span>
+<span class="text-on-surface truncate">marcus.chen@strata.ai</span>
+</div>
+<div class="flex items-baseline gap-2 truncate">
+<span class="text-outline w-12 shrink-0">Subject:</span>
+<span class="text-on-surface font-medium truncate">Following up: GPurple Studio System Specs &amp; Q3 Summary PDF</span>
+</div>
+</div>
+</header>
+<!-- Email Body Canvas -->
+<div class="email-canvas p-6 bg-[#0d0d11] flex-1 flex flex-col justify-between font-body text-xs sm:text-[13px] leading-relaxed text-on-surface space-y-5">
+<!-- Follow-up Email Header Logo -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<img alt="GPurple Studio Logo" class="h-6 w-auto object-contain brightness-110" src="https://lh3.googleusercontent.com/aida/AEtjO1UgUutTu42L9Am8Iqi5ZvuNxaqPRwi51c2nAXUOsdpQGqfmpRkTeTXeSmpgIHXVHmJaNYcU6hBWbd2-h8vkztEFya4_kYcA4q5o5gEK8x1WeTO_xT9YJLliAGAxz5iQgQAqnpwbTdDXj1aOkX7Hki8MBT8geM4bFNYpkCCQ8FA5f1THNLPkTBnRcgbM_xLAyoSRn5VXOlEr9_YiH_x0mz9gTFKP-e8bnQRCdwcuBGfdHva-4B4e6yaeFKI"/>
+<span class="text-[10px] font-mono text-outline">EXECUTIVE SYNC NOTE</span>
+</div>
+<!-- Warm & Sharp Body Note -->
+<div class="space-y-3 text-on-surface/90">
+<p>Marcus,</p>
+<p>
+              Great syncing with you and the Strata.ai platform leads yesterday. It was impressive to see how rapidly your team has expanded your enterprise telemetry engine.
+            </p>
+<p>
+              Per our discussion, I compiled the comprehensive infrastructure spec, compliance breakdown, and contract tiering into the executive summary below:
+            </p>
+</div>
+<!-- Glassmorphism Frosted Attachment Card -->
+<div class="glass-card rounded-xl p-3.5 border border-primary/30 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/5 opacity-50 pointer-events-none"></div>
+<div class="flex items-center gap-3 relative z-10">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-weight="fill">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h5 class="font-headline font-semibold text-xs text-on-surface truncate">
+                    GPurple_Studio_Executive_Summary_Q3.pdf
+                  </h5>
+<span class="shrink-0 px-2 py-0.5 rounded-full bg-surface-container text-[9px] font-mono text-secondary border border-secondary/30">
+                    PREVIEW
+                  </span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-[10px] font-mono text-outline">
+<span>4.8 MB</span>
+<span>•</span>
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[11px]">lock</span> Encrypted SHA-256
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2.5 mt-2.5 border-t border-outline-variant/30 text-[10px] relative z-10">
+<span class="text-outline font-mono">Expires in 7 days</span>
+<button class="inline-flex items-center gap-1 text-primary font-headline font-semibold hover:underline" onclick="triggerToast('Downloading Executive Summary PDF...')">
+<span class="material-symbols-outlined text-xs">download</span> Download Asset
+              </button>
+</div>
+</div>
+<!-- Next Steps & Discreet Secondary CTA -->
+<div class="space-y-3">
+<p class="text-on-surface-variant text-[12px]">
+              If you’d like your technical leads to stress-test our pre-compiled templates within your current SendGrid / Braze stack, let me know and we’ll provision an enterprise sandbox today.
+            </p>
+<div class="pt-1">
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-bright border border-outline-variant text-on-surface font-headline font-semibold text-xs transition-colors" href="#">
+<span>Confirm Sandbox Activation</span>
+<span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Sign-Off -->
+<div class="pt-4 border-t border-outline-variant/30 mt-auto">
+<p class="text-on-surface text-xs font-headline font-medium">Best regards,</p>
+<p class="text-primary font-headline font-bold text-xs mt-0.5">Marcus Vance</p>
+<p class="text-[11px] text-outline">Managing Partner • GPurple Studio</p>
+</div>
+</div>
+<!-- Inspector Quick Action Footer -->
+<footer class="bg-surface-container-high/90 border-t border-outline-variant/40 px-4 py-2.5 flex items-center justify-between text-[11px]">
+<div class="flex items-center gap-1.5 font-mono text-[10px]">
+<span class="px-1.5 py-0.5 rounded bg-[#050505] text-outline border border-outline-variant/50">#050505</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-primary border border-outline-variant">GlassCard</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="hover:text-primary transition-colors flex items-center gap-1 text-on-surface-variant font-medium" onclick="triggerToast('Preview loaded for Follow-up template')">
+<span class="material-symbols-outlined text-xs">visibility</span> Preview
+            </button>
+<span class="text-outline-variant">|</span>
+<button class="hover:text-primary transition-colors flex items-center gap-1 text-on-surface-variant font-medium" onclick="triggerToast('Copied Follow-up HTML!')">
+<span class="material-symbols-outlined text-xs">content_copy</span> Copy HTML
+            </button>
+</div>
+</footer>
+</article>
+</div>
+</main>
+<!-- Technical Specs / Bento Highlights Grid -->
+<section class="w-full max-w-7xl mx-auto px-6 py-12 border-t border-outline-variant/30">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="text-xl font-headline font-bold text-on-surface">Universal Client Compatibility</h2>
+<p class="text-xs font-body text-outline mt-1">Verified against 60+ legacy and modern rendering engines</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container text-xs font-mono text-secondary border border-secondary/20">
+        100% PASS RATE
+      </span>
+</div>
+<!-- Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/40 space-y-2">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-xl">palette</span>
+<span class="text-[10px] font-mono text-outline">CSS3 &amp; INLINE</span>
+</div>
+<h3 class="font-headline font-semibold text-sm text-on-surface">Dark Mode Inversion Shield</h3>
+<p class="text-xs text-on-surface-variant">Custom meta tags &amp; CSS overrides prevent unwanted color mutations on Gmail and Outlook Web.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/40 space-y-2">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary text-xl">view_in_ar</span>
+<span class="text-[10px] font-mono text-outline">VML FALLBACKS</span>
+</div>
+<h3 class="font-headline font-semibold text-sm text-on-surface">Outlook 2013-2021 Ready</h3>
+<p class="text-xs text-on-surface-variant">Includes Microsoft-compliant Vector Markup Language shapes for flawless rounded corners and gradients.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/40 space-y-2">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-tertiary text-xl">speed</span>
+<span class="text-[10px] font-mono text-outline">&lt;100KB BUNDLE</span>
+</div>
+<h3 class="font-headline font-semibold text-sm text-on-surface">Zero Gmail Clipping</h3>
+<p class="text-xs text-on-surface-variant">All templates are minified below Gmail's strict 102KB threshold to ensure the entire message renders.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/40 space-y-2">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-white text-xl">security</span>
+<span class="text-[10px] font-mono text-outline">BIMI / SPF / DKIM</span>
+</div>
+<h3 class="font-headline font-semibold text-sm text-on-surface">Enterprise Sender Trust</h3>
+<p class="text-xs text-on-surface-variant">Optimized header structures aligned with Apple Mail Privacy Protection and modern deliverability protocols.</p>
+</div>
+</div>
+</section>
+<!-- Notification Toast Element -->
+<div class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none z-50 flex items-center gap-2.5 px-4 py-3 rounded-lg bg-surface-container-high border border-primary/50 text-xs font-label text-on-surface shadow-2xl" id="toast">
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+<span id="toastMsg">Action Successful</span>
+</div>
+<!-- Footer (Shared Component Schema adhered) -->
+<footer class="w-full border-t border-outline-variant dark:border-outline-variant bg-surface-container-lowest dark:bg-surface-container-lowest mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 max-w-7xl mx-auto gap-4">
+<div class="flex items-center gap-3">
+<img alt="GPurple Studio Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UgUutTu42L9Am8Iqi5ZvuNxaqPRwi51c2nAXUOsdpQGqfmpRkTeTXeSmpgIHXVHmJaNYcU6hBWbd2-h8vkztEFya4_kYcA4q5o5gEK8x1WeTO_xT9YJLliAGAxz5iQgQAqnpwbTdDXj1aOkX7Hki8MBT8geM4bFNYpkCCQ8FA5f1THNLPkTBnRcgbM_xLAyoSRn5VXOlEr9_YiH_x0mz9gTFKP-e8bnQRCdwcuBGfdHva-4B4e6yaeFKI"/>
+<span class="font-body text-xs text-on-surface-variant dark:text-on-surface-variant">
+          © 2024 GPurple Studio Inc. All rights reserved. Ultra-premium email design architecture.
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-6 font-body text-xs">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#tokens">Design Tokens</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#boilerplates">HTML Boilerplates</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#documentation">Documentation</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#changelog">Changelog</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#privacy">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<!-- Interactive JavaScript Logic -->
+<script>
+    // Toast notification handler
+    function triggerToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // Viewport Simulation Toggle
+    function setViewport(mode) {
+      const container = document.getElementById('templatesContainer');
+      const btnDesktop = document.getElementById('btnViewportDesktop');
+      const btnMobile = document.getElementById('btnViewportMobile');
+
+      if (mode === 'mobile') {
+        container.classList.remove('lg:grid-cols-3');
+        container.classList.add('max-w-sm', 'mx-auto', 'grid-cols-1');
+        btnMobile.classList.add('bg-surface-container-high', 'text-on-surface');
+        btnMobile.classList.remove('text-on-surface-variant');
+        btnDesktop.classList.remove('bg-surface-container-high', 'text-on-surface');
+        btnDesktop.classList.add('text-on-surface-variant');
+        triggerToast('Simulating Mobile Viewport (375px)');
+      } else {
+        container.classList.remove('max-w-sm', 'mx-auto', 'grid-cols-1');
+        container.classList.add('lg:grid-cols-3');
+        btnDesktop.classList.add('bg-surface-container-high', 'text-on-surface');
+        btnDesktop.classList.remove('text-on-surface-variant');
+        btnMobile.classList.remove('bg-surface-container-high', 'text-on-surface');
+        btnMobile.classList.add('text-on-surface-variant');
+        triggerToast('Restored Desktop Grid Viewport');
+      }
+    }
+
+    // Template Switcher Filtering
+    function filterTemplate(type) {
+      const cards = {
+        corporate: document.getElementById('card-corporate'),
+        outreach: document.getElementById('card-outreach'),
+        followup: document.getElementById('card-followup')
+      };
+
+      const pills = document.querySelectorAll('.tab-pill');
+      pills.forEach(p => {
+        p.classList.remove('bg-primary', 'text-on-primary');
+        p.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      });
+
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('bg-primary', 'text-on-primary');
+        event.currentTarget.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      }
+
+      if (type === 'all') {
+        Object.values(cards).forEach(c => c.classList.remove('hidden'));
+      } else {
+        Object.keys(cards).forEach(key => {
+          if (key === type) {
+            cards[key].classList.remove('hidden');
+          } else {
+            cards[key].classList.add('hidden');
+          }
+        });
+      }
+    }
+
+    // Copy All action trigger
+    document.getElementById('copyAllBtn')?.addEventListener('click', () => {
+      triggerToast('All 3 MJML/HTML templates copied to clipboard!');
+    });
+  </script>
+</body></html>
