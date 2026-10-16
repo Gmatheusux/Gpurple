@@ -3,240 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPurple | Agência de Design e Conversão</title>
-    
-    <!-- Tipografia: Inter e Poppins (identificadas na sua referência do Framer) -->
+    <title>GPurple Studio | Design e desenvolvimento de sites que convertem</title>
+    <meta name="description" content="Estúdio boutique de design e tecnologia. Criamos sites, lojas e landing pages com direção de arte, performance e foco em gerar clientes. Peça um diagnóstico gratuito.">
+    <meta name="theme-color" content="#0B0A14">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- Open Graph (prévia ao compartilhar no WhatsApp, LinkedIn etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="GPurple Studio | Sites que fazem sua marca parecer tão boa quanto ela é">
+    <meta property="og:description" content="Design, desenvolvimento e estratégia no mesmo time. Peça um diagnóstico gratuito do seu site.">
+    <meta property="og:image" content="assets/img/marca/g-3d.jpg">
+
+    <!-- Tipografia: Inter (texto) e Poppins (títulos), conforme o manual da marca -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS (via CDN para prototipagem rápida e visualização no LocalWP) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configuração base do Tailwind -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
-                    },
-                    colors: {
-                        gpurple: {
-                            dark: 'var(--color-surface-dark)',
-                            card: 'var(--color-surface-card)',
-                            deep: 'var(--color-surface-deep)',
-                            primary: 'var(--color-brand-primary)',
-                            accent: 'var(--color-brand-accent)',
-                            danger: 'var(--color-feedback-danger)'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
 
-    <!-- Estilos customizados e animações -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-gpurple-dark text-white font-sans antialiased overflow-x-hidden">
-    
+
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-gpurple-accent focus:text-gpurple-dark focus:px-4 focus:py-2 focus:rounded-full">Pular para o conteúdo</a>
+
     <main id="app" class="relative w-full flex flex-col items-center">
-        
-        <!-- Header / Navbar (Framer Style Floating Capsule) -->
-        <header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] md:w-[95%] max-w-5xl glass rounded-full px-4 py-3 md:px-6 md:py-4 flex items-center justify-between  shadow-2xl backdrop-blur-xl">
-            <!-- Logo GPurple com G 3D Icon -->
-            <a href="#" class="flex items-center gap-0.5 font-sans font-bold text-xl md:text-2xl tracking-tighter text-white">
+
+        <!-- Header (cápsula flutuante) -->
+        <header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] md:w-[95%] max-w-5xl glass rounded-full px-4 py-3 md:px-6 md:py-4 flex items-center justify-between shadow-2xl backdrop-blur-xl">
+            <a href="#" aria-label="GPurple Studio, voltar ao início" class="flex items-center gap-0.5 font-sans font-bold text-xl md:text-2xl tracking-tighter text-white">
                 <span class="font-heading text-gpurple-primary text-3xl md:text-4xl font-bold leading-none drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]">G</span>
                 <span class="lowercase">purple<span class="text-gpurple-accent">.</span></span>
             </a>
-            
-            <!-- Navegação -->
-            <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gray-300">
-                <a href="#problema" class="hover:text-white transition-colors">O Problema</a>
-                <a href="#ecossistema" class="hover:text-white transition-colors">Ecossistema</a>
-                <a href="#portfolio" class="hover:text-white transition-colors">Portfólio</a>
-                <a href="#feedbacks" class="hover:text-white transition-colors">Feedbacks</a>
-                <a href="#pacotes" class="hover:text-white transition-colors">Pacotes</a>
+
+            <nav aria-label="Principal" class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gray-300">
+                <a href="#servicos" class="hover:text-white transition-colors">Serviços</a>
+                <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
+                <a href="#processo" class="hover:text-white transition-colors">Processo</a>
+                <a href="#formatos" class="hover:text-white transition-colors">Formatos</a>
+                <a href="#estudio" class="hover:text-white transition-colors">Estúdio</a>
             </nav>
-            
-            <!-- CTA -->
+
             <a href="#contato" class="bg-gpurple-accent text-gpurple-dark px-5 py-2.5 rounded-full text-sm font-bold hover:scale-105 hover:bg-[#c4fc38] transition-all duration-300 shadow-[0_0_15px_rgba(217,249,86,0.3)]">
-                Análise Gratuita
+                Diagnóstico grátis
             </a>
         </header>
 
-        <!-- 1. Hero Section -->
-        <section id="hero" class="relative w-full h-screen bg-gpurple-deep overflow-hidden bg-grid">
-            
-            <!-- Fundo Olho/Elipse -->
+        <!-- 1. Hero -->
+        <section id="hero" class="relative w-full h-screen min-h-[640px] bg-gpurple-deep overflow-hidden bg-grid">
             <div class="bg-ellipse"></div>
-
-            <!-- Brilho Roxo Inferior -->
             <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gpurple-primary/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
-            <!-- Centro: 3D G (Com Máscara Radial para esconder o fundo duro) - Z-20 -->
+            <!-- G 3D com máscara radial -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] z-20 pointer-events-none mix-blend-screen" style="-webkit-mask-image: radial-gradient(circle, black 40%, transparent 68%); mask-image: radial-gradient(circle, black 40%, transparent 68%);">
-                
                 <div class="relative w-[320px] sm:w-[400px] md:w-[650px] animate-levitate-g">
-                    <!-- O G -->
-                    <img src="./assets/3d_g.jpg" alt="3D G" class="w-full h-full opacity-90">
-                    
-                    <!-- Máscara do Reflexo (Mix Blend Overlay garante que a luz só pegue no G e não no fundo preto) -->
+                    <img src="./assets/img/marca/g-3d.jpg" alt="" class="w-full h-full opacity-90">
                     <div class="absolute inset-0 mix-blend-overlay overflow-hidden">
                         <div class="animate-glass-sweep"></div>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Filtro de Opacidade (Requerido: 15% Preto entre G e Tipografia) - Z-25 -->
             <div class="absolute inset-0 bg-black/15 z-[25] pointer-events-none"></div>
 
-            <!-- Conteúdo Principal - Textos Z-30 -->
+            <!-- Wordmark -->
             <div class="relative w-full max-w-[1200px] mx-auto h-full flex items-center justify-between px-4 md:px-8">
-                
-                <!-- Bloco Esquerdo: GPurple -->
                 <div class="relative z-30 flex flex-col mt-[-10%]">
-                    <div class="flex items-center gap-2 text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em] mb-2 ml-1">
-                        <span class="w-1.5 h-1.5 bg-gpurple-primary shadow-[0_0_8px_#8b5cf6]"></span> Nossos Serviços
+                    <div class="flex items-center gap-2 text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-2 ml-1 whitespace-nowrap">
+                        <span class="w-1.5 h-1.5 bg-gpurple-primary shadow-[0_0_8px_#8b5cf6]"></span> Estúdio de design e tecnologia
                     </div>
-                    <!-- Adicionado neon-text-white -->
                     <h1 class="text-5xl sm:text-6xl md:text-[7.5rem] lg:text-[9rem] font-sans font-light tracking-tight text-white leading-none neon-text-white">
-                        GPurple
+                        GPurple <span class="sr-only">Studio: design e desenvolvimento de sites que convertem</span>
                     </h1>
                 </div>
 
-                <!-- Bloco Direito Central: Studio + Copyright (Agrupados para nunca sobrepor) -->
                 <div class="relative z-30 flex items-center mt-[15%]">
-                    <!-- Adicionado neon-text-purple -->
-                    <h2 class="text-5xl sm:text-6xl md:text-[7.5rem] lg:text-[9rem] font-sans font-light tracking-tight text-gpurple-primary leading-none whitespace-nowrap neon-text-purple">
+                    <p aria-hidden="true" class="text-5xl sm:text-6xl md:text-[7.5rem] lg:text-[9rem] font-sans font-light tracking-tight text-gpurple-primary leading-none whitespace-nowrap neon-text-purple">
                         Studio
-                    </h2>
-                    
-                    <!-- Textos Inferiores Direita (Ancorados ao Studio) -->
-                    <div class="hidden lg:flex flex-col ml-8 lg:ml-12 mt-8">
-                        <p class="text-gpurple-primary text-sm font-medium tracking-wide mb-3">© 2026</p>
-                        <p class="text-gray-400 text-[10px] max-w-[120px] leading-relaxed">
-                            Somos uma agência Digital que te ajuda a conquistar o mundo!
-                        </p>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Proposta de valor + CTAs -->
+            <div class="absolute bottom-10 md:bottom-14 left-0 right-0 z-30">
+                <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <p class="text-gray-300 text-base md:text-lg leading-relaxed max-w-md">
+                        Sites que fazem sua marca parecer tão boa quanto ela é, e que transformam visitas em clientes.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#contato" class="bg-gpurple-accent text-gpurple-dark px-6 py-3 rounded-full text-sm font-bold hover:bg-[#c4fc38] transition-colors">Pedir diagnóstico grátis</a>
+                        <a href="#projetos" class="glass text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/10 transition-colors">Ver projetos</a>
                     </div>
                 </div>
-
             </div>
-
-            <!-- Linha Inferior com Dot -->
-            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center z-10">
-                <div class="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_15px_#fff]"></div>
-                <div class="w-[1px] h-32 bg-gradient-to-t from-transparent to-white/30 mt-2"></div>
-            </div>
-
         </section>
 
-        <!-- 2. O Problema (Diagnóstico e Agitação da Dor) -->
+        <div id="conteudo"></div>
+
+        <!-- 2. O problema -->
         <section id="problema" class="relative w-full py-32 bg-zinc-950 flex flex-col items-center z-10 overflow-hidden">
-            <!-- Luz Volumétrica (Atmosphere) -->
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/[0.02] blur-[120px] rounded-full pointer-events-none z-0"></div>
 
             <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-16 relative z-10">
-                
-                <!-- Section Header -->
                 <div class="flex flex-col gap-4 max-w-2xl">
                     <div class="flex items-center gap-2 text-[10px] text-zinc-500 font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-red-500 shadow-[0_0_12px_#ef4444]"></span> Diagnóstico Sistêmico
+                        <span class="w-1.5 h-1.5 bg-red-500 shadow-[0_0_12px_#ef4444]"></span> Onde os sites perdem clientes
                     </div>
                     <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none mb-2">
-                        Você não precisa de mais tráfego.<br>
-                        <span class="text-zinc-600">Você precisa estancar a perda.</span>
+                        O problema raramente é falta de visitas.<br>
+                        <span class="text-zinc-500">É o que acontece depois do clique.</span>
                     </h2>
                 </div>
 
-                <!-- Bento Box Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    
-                    <!-- Card 1: Google Ads (Span 2) -->
-                    <div class="md:col-span-2 group relative p-6 md:p-10 rounded-3xl bg-white/[0.02]  overflow-hidden transition-all duration-500 hover:bg-white/[0.04] hover:border-white/10 flex flex-col justify-between">
+
+                    <!-- Card 1 -->
+                    <div class="md:col-span-2 group relative p-6 md:p-10 rounded-3xl bg-white/[0.02] overflow-hidden transition-all duration-500 hover:bg-white/[0.04] flex flex-col justify-between">
                         <div class="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="relative z-10 mb-8">
-                            <h3 class="text-2xl font-light text-white mb-4">Tráfego como Financiamento</h3>
+                            <h3 class="text-2xl font-light text-white mb-4">Anúncio bom, página fraca</h3>
                             <p class="text-zinc-400 text-sm leading-relaxed max-w-md">
-                                Tráfego sem direcionamento é apenas financiamento para o Google. Direcionar cliques caros para páginas genéricas dilui a sua autoridade e destrói o ROI. O problema não é o tráfego, é o destino.
+                                Pagar por clique e levar a pessoa para uma página genérica é dinheiro indo embora. Se a página não entrega o que o anúncio prometeu, o visitante sai e o custo de cada cliente sobe.
                             </p>
                         </div>
-                        
-                        <!-- UI Widget Literal: Desperdício de Ads -->
-                        <div class="relative z-10 w-full flex flex-col sm:flex-row gap-4 mt-auto">
-                            <div class="flex-1 bg-black/40 rounded-2xl  p-6 flex flex-col justify-center">
-                                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-2">Gasto Mensal (Ads)</span>
-                                <span class="text-3xl text-white font-light tracking-tighter">R$ 24.500</span>
+
+                        <div class="relative z-10 w-full flex flex-col sm:flex-row gap-4 mt-auto" aria-label="Cenário ilustrativo">
+                            <div class="flex-1 bg-black/40 rounded-2xl p-6 flex flex-col justify-center">
+                                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-2">Investimento em anúncios</span>
+                                <span class="text-3xl text-white font-light tracking-tighter">R$ 24.500/mês</span>
                             </div>
                             <div class="flex-1 bg-red-500/10 rounded-2xl border border-red-500/20 p-6 flex flex-col justify-center relative overflow-hidden group-hover:bg-red-500/20 transition-colors duration-500">
                                 <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-red-500 shadow-[0_0_15px_#ef4444]"></div>
-                                <span class="text-[10px] text-red-400 uppercase tracking-widest font-bold mb-2">Conversão Real (Lead)</span>
-                                <span class="text-3xl text-red-500 font-light tracking-tighter">0.8%</span>
+                                <span class="text-[10px] text-red-400 uppercase tracking-widest font-bold mb-2">Visitas que viram contato</span>
+                                <span class="text-3xl text-red-500 font-light tracking-tighter">0,8%</span>
                             </div>
                         </div>
+                        <p class="relative z-10 text-[10px] text-zinc-600 uppercase tracking-widest mt-4">Cenário ilustrativo</p>
                     </div>
 
-                    <!-- Card 2: Lentidão (Span 1) -->
-                    <div class="md:col-span-1 group relative p-6 md:p-10 rounded-3xl bg-white/[0.02]  overflow-hidden transition-all duration-500 hover:bg-white/[0.04] hover:border-white/10 flex flex-col gap-8">
+                    <!-- Card 2 -->
+                    <div class="md:col-span-1 group relative p-6 md:p-10 rounded-3xl bg-white/[0.02] overflow-hidden transition-all duration-500 hover:bg-white/[0.04] flex flex-col gap-8">
                         <div class="absolute inset-0 bg-gradient-to-b from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="relative z-10">
-                            <h3 class="text-2xl font-light text-white mb-4">Performance é Percepção</h3>
+                            <h3 class="text-2xl font-light text-white mb-4">Lentidão passa descuido</h3>
                             <p class="text-zinc-400 text-sm leading-relaxed">
-                                Cada milissegundo de atraso comunica amadorismo. O seu código atual está desvalorizando a sua marca antes da primeira rolagem da página.
+                                Um site que demora a abrir dá a impressão de descuido antes de qualquer palavra ser lida. No celular, cada segundo a mais é gente desistindo.
                             </p>
                         </div>
-                        
-                        <!-- UI Widget Literal: Barra de Carregamento Crítica -->
+
                         <div class="relative z-10 w-full mt-auto bg-black/40 rounded-2xl border border-red-500/20 p-6 flex flex-col gap-4 group-hover:border-red-500/40 transition-colors">
                             <div class="flex justify-between items-center">
-                                <span class="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">Tempo de Resposta</span>
-                                <span class="text-[10px] text-red-500 font-bold uppercase tracking-widest bg-red-500/10 px-2 py-1 rounded">Crítico</span>
+                                <span class="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">Tempo para abrir</span>
+                                <span class="text-[10px] text-red-500 font-bold uppercase tracking-widest bg-red-500/10 px-2 py-1 rounded">Lento</span>
                             </div>
                             <div class="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
                                 <div class="w-[85%] h-full bg-red-500 shadow-[0_0_10px_#ef4444] animate-pulse"></div>
                             </div>
                             <div class="flex justify-between items-end mt-2">
-                                <span class="text-2xl text-white font-light tracking-tighter">4.2s</span>
-                                <span class="text-[10px] text-red-400">32% de abandono</span>
+                                <span class="text-2xl text-white font-light tracking-tighter">4,2s</span>
+                                <span class="text-[10px] text-red-400 text-right">Acima de 3s, a<br>desistência dispara</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 3: Perda de Vendas (Span 3) -->
-                    <div class="md:col-span-3 group relative p-6 md:p-12 rounded-3xl bg-white/[0.02]  overflow-hidden transition-all duration-500 hover:bg-white/[0.04] hover:border-white/10 flex flex-col md:flex-row items-center gap-12">
+                    <!-- Card 3 -->
+                    <div class="md:col-span-3 group relative p-6 md:p-12 rounded-3xl bg-white/[0.02] overflow-hidden transition-all duration-500 hover:bg-white/[0.04] flex flex-col md:flex-row items-center gap-12">
                         <div class="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="relative z-10 flex-1">
-                            <h3 class="text-2xl font-light text-white mb-4">A Fricção Invisível</h3>
+                            <h3 class="text-2xl font-light text-white mb-4">O atrito que ninguém vê</h3>
                             <p class="text-zinc-400 text-sm leading-relaxed max-w-xl">
-                                O design atual do seu site cria uma fricção imperceptível para você, mas óbvia para o usuário. Clientes de alto padrão não perdoam falhas de usabilidade e abandonam a compra silenciosamente. Cada elemento desalinhado está corroendo a sua taxa de conversão.
+                                Formulário confuso, botão escondido, pagamento que trava. São detalhes que passam despercebidos para quem fez o site, mas não para quem está tentando comprar. E quem desiste raramente avisa.
                             </p>
                         </div>
-                        
-                        <!-- UI Widget Literal: Notificações de Abandono -->
-                        <div class="w-full md:w-[40%] flex flex-col justify-center relative z-10 space-y-3 perspective-1000">
-                            <!-- Alerta de Fundo -->
-                            <div class="w-full bg-black/40 rounded-xl  p-4 flex items-center gap-4 transform translate-y-2 scale-95 opacity-50">
+
+                        <div class="w-full md:w-[40%] flex flex-col justify-center relative z-10 space-y-3" aria-hidden="true">
+                            <div class="w-full bg-black/40 rounded-xl p-4 flex items-center gap-4 transform translate-y-2 scale-95 opacity-50">
                                 <div class="w-2 h-2 rounded-full bg-zinc-600"></div>
                                 <div class="flex flex-col">
-                                    <span class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">Sessão #892</span>
-                                    <span class="text-sm text-zinc-400 font-light">Abandono de formulário</span>
+                                    <span class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">Visita #892</span>
+                                    <span class="text-sm text-zinc-400 font-light">Desistiu no formulário</span>
                                 </div>
                             </div>
-                            <!-- Alerta Principal (Foco) -->
                             <div class="w-full bg-black/80 backdrop-blur-xl rounded-xl border border-red-500/30 p-5 flex items-center justify-between gap-4 relative shadow-2xl shadow-red-500/5 group-hover:scale-105 group-hover:border-red-500/50 transition-all duration-500">
                                 <div class="flex items-center gap-4">
                                     <div class="w-2.5 h-2.5 rounded-full bg-red-500 shadow-[0_0_12px_#ef4444] animate-ping opacity-75 absolute"></div>
                                     <div class="w-2.5 h-2.5 rounded-full bg-red-500 relative"></div>
                                     <div class="flex flex-col">
-                                        <span class="text-[10px] text-red-400 font-bold uppercase tracking-widest">Erro de UX - Checkout</span>
+                                        <span class="text-[10px] text-red-400 font-bold uppercase tracking-widest">Erro no checkout</span>
                                         <span class="text-base text-white font-light">Cliente travou no pagamento</span>
                                     </div>
                                 </div>
-                                <span class="text-lg text-white font-light tracking-tighter">- R$ 4.800</span>
+                                <span class="text-lg text-white font-light tracking-tighter whitespace-nowrap">− R$ 4.800</span>
                             </div>
                         </div>
                     </div>
@@ -245,425 +202,300 @@
             </div>
         </section>
 
-        <!-- 3. O Ecossistema GPurple (A Solução) -->
-        <section id="solucao" class="relative w-full py-32 bg-neutral-950 flex flex-col items-center z-10 overflow-hidden">
-            <!-- Luz Volumétrica Roxa -->
-        <!-- 3. Ecossistema (A Solução) -->
-    <section id="ecossistema" class="relative w-full py-32 bg-neutral-950 flex flex-col items-center z-10 border-t border-white/5 overflow-hidden">
-        <!-- Luz Volumétrica -->
-        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gpurple-primary/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
-        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
+        <!-- 3. Serviços -->
+        <section id="servicos" class="relative w-full py-32 bg-neutral-950 flex flex-col items-center z-10 border-t border-white/5 overflow-hidden">
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gpurple-primary/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
-        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-20 relative z-10">
-            <!-- Header -->
-            <div class="flex flex-col gap-6 max-w-3xl">
-                <div class="flex items-center gap-2 text-[10px] text-gpurple-primary font-bold uppercase tracking-[0.2em]">
-                    <span class="w-1.5 h-1.5 bg-gpurple-primary shadow-[0_0_12px_#8b5cf6]"></span> A Anatomia da Conversão
+            <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-20 relative z-10">
+                <div class="flex flex-col gap-6 max-w-3xl">
+                    <div class="flex items-center gap-2 text-[10px] text-gpurple-primary font-bold uppercase tracking-[0.2em]">
+                        <span class="w-1.5 h-1.5 bg-gpurple-primary shadow-[0_0_12px_#8b5cf6]"></span> O que fazemos
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-sans font-light tracking-tighter text-white leading-[1.1]">
+                        Design, tecnologia e estratégia<br>
+                        <span class="text-neutral-500 font-normal">no mesmo time.</span>
+                    </h2>
+                    <p class="text-neutral-400 text-base md:text-lg max-w-xl leading-relaxed">
+                        Cuidamos do projeto de ponta a ponta, da primeira tela ao último detalhe de código. Você fala direto com quem desenha e com quem programa, sem intermediários.
+                    </p>
                 </div>
-                <h2 class="text-4xl md:text-6xl font-sans font-light tracking-tighter text-white leading-[1.1]">
-                    Nós não fazemos "sites".<br>
-                    Nós construímos <span class="text-neutral-500 font-normal">Máquinas de Aquisição.</span>
-                </h2>
-                <p class="text-neutral-400 text-base md:text-lg max-w-xl leading-relaxed">
-                    Um ecossistema GPurple ataca as 3 frentes de um negócio high-ticket: percepção de valor, retenção de tráfego e escala automatizada. Veja exatamente o que colocamos na mesa:
-                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Pilar 1 -->
+                    <div class="group p-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-[2rem] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
+                        <div class="w-full h-full p-6 md:p-10 rounded-[2rem] bg-zinc-950 flex flex-col gap-6">
+                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white font-light text-xl">01</div>
+                            <div>
+                                <h3 class="text-2xl font-light text-white mb-3">Design e experiência</h3>
+                                <p class="text-neutral-400 text-sm leading-relaxed mb-8">
+                                    Interfaces com direção de arte, hierarquia clara e textos que explicam o seu valor em segundos. O objetivo é que o visitante entenda, confie e queira dar o próximo passo.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-6 border-t border-white/5">
+                                <span class="text-[10px] text-white uppercase tracking-widest font-bold mb-4 block">O que entra</span>
+                                <ul class="flex flex-col gap-3">
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Direção de arte e interface sob medida</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>UX e arquitetura de informação</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Copywriting e UX writing</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Design system da sua marca</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pilar 2 -->
+                    <div class="group p-[1px] bg-gradient-to-b from-gpurple-primary/40 to-transparent rounded-[2rem] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
+                        <div class="w-full h-full p-6 md:p-10 rounded-[2rem] bg-zinc-950 flex flex-col gap-6 relative overflow-hidden">
+                            <div class="absolute -top-20 -right-20 w-40 h-40 bg-gpurple-primary/20 blur-[50px] rounded-full pointer-events-none"></div>
+                            <div class="w-12 h-12 rounded-full bg-gpurple-primary/10 border border-gpurple-primary/30 flex items-center justify-center text-gpurple-primary font-light text-xl relative z-10">02</div>
+                            <div class="relative z-10">
+                                <h3 class="text-2xl font-light text-white mb-3">Desenvolvimento e performance</h3>
+                                <p class="text-neutral-400 text-sm leading-relaxed mb-8">
+                                    Sites rápidos, acessíveis e prontos para receber tráfego. A tecnologia é escolhida pelo que o projeto pede: código próprio, WordPress, Webflow, Framer ou Shopify.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-6 border-t border-white/5 relative z-10">
+                                <span class="text-[10px] text-white uppercase tracking-widest font-bold mb-4 block">O que entra</span>
+                                <ul class="flex flex-col gap-3">
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Carregamento rápido (Core Web Vitals)</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Acessibilidade (WCAG) e SEO técnico</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Medição de conversões (GA4 e pixels)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pilar 3 -->
+                    <div class="group p-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-[2rem] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
+                        <div class="w-full h-full p-6 md:p-10 rounded-[2rem] bg-zinc-950 flex flex-col gap-6">
+                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white font-light text-xl">03</div>
+                            <div>
+                                <h3 class="text-2xl font-light text-white mb-3">Automação e crescimento</h3>
+                                <p class="text-neutral-400 text-sm leading-relaxed mb-8">
+                                    O lançamento é o começo. Conectamos o site ao seu CRM, automatizamos o primeiro atendimento e acompanhamos os números para melhorar o que realmente importa.
+                                </p>
+                            </div>
+                            <div class="mt-auto pt-6 border-t border-white/5">
+                                <span class="text-[10px] text-white uppercase tracking-widest font-bold mb-4 block">O que entra</span>
+                                <ul class="flex flex-col gap-3">
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Integração com CRM e automações</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Atendimento com IA para qualificar contatos</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Painéis de resultado e melhoria contínua</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- Pipeline Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Pilar 1 -->
-                <div class="group p-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-[2rem] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
-                    <div class="w-full h-full p-6 md:p-8 md:p-10 rounded-[2rem] bg-zinc-950 flex flex-col gap-6">
-                        <div class="w-12 h-12 rounded-full bg-white/5  flex items-center justify-center text-white font-light text-xl">01</div>
-                        <div>
-                            <h3 class="text-2xl font-light text-white mb-3">Arquitetura Visual</h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed mb-8">
-                                O design não serve apenas para ser bonito, ele serve para subjugar a concorrência e ancorar o seu preço lá no alto antes de qualquer reunião de vendas.
-                            </p>
-                        </div>
-                        
-                        <div class="mt-auto pt-6 border-t border-white/5">
-                            <span class="text-[10px] text-white uppercase tracking-widest font-bold mb-4 block">O Que Você Recebe:</span>
-                            <ul class="flex flex-col gap-3">
-                                <li class="flex items-center gap-3 text-sm text-neutral-300">
-                                    <svg class="w-4 h-4 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Design System High-Ticket
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-neutral-300">
-                                    <svg class="w-4 h-4 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Micro-interações Cinemáticas
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-neutral-300">
-                                    <svg class="w-4 h-4 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Copywriting Persuasivo (Neuromarketing)
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pilar 2 -->
-                <div class="group p-[1px] bg-gradient-to-b from-gpurple-primary/40 to-transparent rounded-[2rem] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
-                    <div class="w-full h-full p-6 md:p-8 md:p-10 rounded-[2rem] bg-zinc-950 flex flex-col gap-6 relative overflow-hidden">
-                        <!-- Glow highlight -->
-                        <div class="absolute -top-20 -right-20 w-40 h-40 bg-gpurple-primary/20 blur-[50px] rounded-full pointer-events-none"></div>
-
-                        <div class="w-12 h-12 rounded-full bg-gpurple-primary/10 border border-gpurple-primary/30 flex items-center justify-center text-gpurple-primary font-light text-xl relative z-10">02</div>
-                        <div class="relative z-10">
-                            <h3 class="text-2xl font-light text-white mb-3">Motor de Tráfego</h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed mb-8">
-                                Se o tráfego é combustível, a infraestrutura tem que ser um motor de alta performance. Nós preparamos o terreno para receber volume sem quebrar a sua taxa de conversão.
-                            </p>
-                        </div>
-                        
-                        <div class="mt-auto pt-6 border-t border-white/5 relative z-10">
-                            <span class="text-[10px] text-white uppercase tracking-widest font-bold mb-4 block">O Que Você Recebe:</span>
-                            <ul class="flex flex-col gap-3">
-                                <li class="flex items-center gap-3 text-sm text-neutral-300">
-                                    <svg class="w-4 h-4 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Carregamento Sub-segundo (Performance)
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-neutral-300">
-                                    <svg class="w-4 h-4 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Tagueamento e Pixel Server-Side
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-neutral-300">
-                                    <svg class="w-4 h-4 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Otimização para Core Web Vitals
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pilar 3 -->
-                <div class="group p-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-[2rem] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
-                    <div class="w-full h-full p-6 md:p-8 md:p-10 rounded-[2rem] bg-zinc-950 flex flex-col gap-6">
-                        <div class="w-12 h-12 rounded-full bg-white/5  flex items-center justify-center text-white font-light text-xl">03</div>
-                        <div>
-                            <h3 class="text-2xl font-light text-white mb-3">Inteligência & Automação</h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed mb-8">
-                                Enquanto sua equipe dorme, nossos sistemas filtram, qualificam e nutrem seus leads. Escala verdadeira exige se livrar do operacional manual de vendas.
-                            </p>
-                        </div>
-                        
-                        <div class="mt-auto pt-6 border-t border-white/5">
-                            <span class="text-[10px] text-white uppercase tracking-widest font-bold mb-4 block">O Que Você Recebe:</span>
-                            <ul class="flex flex-col gap-3">
-                                <li class="flex items-center gap-3 text-sm text-neutral-300">
-                                    <svg class="w-4 h-4 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Agentes de IA Qualificadores (Chat)
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-neutral-300">
-                                    <svg class="w-4 h-4 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Esteiras e Automações de CRM
-                                </li>
-                                <li class="flex items-center gap-3 text-sm text-neutral-300">
-                                    <svg class="w-4 h-4 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Dashboards Financeiros e de Tráfego
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-        <!-- 4. Portfólio Premium (Provas de Conceito) -->
-        <section id="portfolio" class="relative w-full py-32 bg-zinc-950 flex flex-col items-center z-10 overflow-hidden">
-            <!-- Luz Volumétrica Fundo -->
+        <!-- 4. Projetos -->
+        <section id="projetos" class="relative w-full py-32 bg-zinc-950 flex flex-col items-center z-10 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/[0.02] blur-[150px] rounded-full pointer-events-none z-0"></div>
 
-            <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-16 mb-16 relative z-10">
+            <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 relative z-10">
                 <div class="flex flex-col gap-4 max-w-2xl">
                     <div class="flex items-center gap-2 text-[10px] text-white font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-white shadow-[0_0_12px_#ffffff]"></span> Provas de Conceito
+                        <span class="w-1.5 h-1.5 bg-white shadow-[0_0_12px_#ffffff]"></span> Projetos
                     </div>
                     <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none mb-2">
-                        Onde o rigor técnico encontra a estética.<br>
-                        <span class="text-zinc-600">Resultados para marcas que exigem o topo.</span>
+                        Trabalho recente.<br>
+                        <span class="text-zinc-500">Todo projeto começa pelo negócio, não pelo layout.</span>
                     </h2>
                 </div>
+                <p class="text-zinc-500 text-xs uppercase tracking-widest font-bold hidden md:block">Arraste para ver mais →</p>
             </div>
-            
-            <!-- Horizontal Scroll Container -->
-            <div id="portfolio-slider" class="w-full pl-4 md:pl-[calc(50vw-600px+2rem)] flex gap-10 overflow-x-auto snap-x snap-mandatory pb-12 hide-scrollbar cursor-grab active:cursor-grabbing relative z-10">
-                
-                <!-- Estudo de Caso 3: Orquidário (WIP) - AGORA EM PRIMEIRO -->
-                <a href="case-orquidario.html" class="min-w-[85vw] md:min-w-[1050px] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem]  overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer relative">
-                    
-                    <!-- Selo de Work In Progress -->
-                    <div class="absolute top-6 right-6 z-20 bg-gpurple-primary text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(139,92,246,0.3)]">
-                        Work in Progress
-                    </div>
 
-                    <!-- Lado Esquerdo: Imagem Premium -->
-                    <div class="w-full md:w-[55%] h-[300px] md:h-[600px] bg-zinc-950 relative overflow-hidden flex items-center justify-center p-6 md:p-8 md:p-12">
-                        <!-- Fundo desfocado colorido baseado na própria imagem -->
-                        <div class="absolute inset-0 bg-[url('./assets/mockup_orquidario.png')] bg-cover bg-center opacity-30 blur-2xl group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000"></div>
+            <div id="portfolio-slider" class="w-full pl-4 md:pl-[calc(50vw-600px+2rem)] pr-4 flex gap-10 overflow-x-auto snap-x snap-mandatory pb-12 hide-scrollbar cursor-grab active:cursor-grabbing relative z-10">
+
+                <!-- Orquidário Cantareira (cliente, em andamento) -->
+                <a href="projetos/orquidario-cantareira.html" class="min-w-[85vw] md:min-w-[1050px] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer relative">
+                    <div class="absolute top-6 right-6 z-20 bg-gpurple-primary text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(139,92,246,0.3)]">
+                        Em andamento
+                    </div>
+                    <div class="w-full md:w-[55%] h-[300px] md:h-[600px] bg-zinc-950 relative overflow-hidden flex items-center justify-center p-6 md:p-12">
+                        <div class="absolute inset-0  bg-cover bg-center opacity-30 blur-2xl group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000" style="background-image: url('./assets/img/projetos/orquidario-mockup.png')"></div>
                         <div class="absolute inset-0 bg-zinc-950/40"></div>
-                        
-                        <!-- Imagem flutuante inteira (sem cortes bizarros) -->
-                        <img src="./assets/mockup_orquidario.png" alt="Orquidário Cantareira Mockup" class="relative z-10 w-full h-auto rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-700 ">
+                        <img src="./assets/img/projetos/orquidario-mockup.png" alt="Página inicial do novo site do Orquidário Cantareira" class="relative z-10 w-full h-auto rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-700">
                     </div>
                     <div class="w-full md:w-[45%] p-6 md:p-16 flex flex-col justify-center gap-10 relative">
                         <div>
                             <p class="text-gpurple-primary text-sm font-bold tracking-widest uppercase mb-4">Orquidário Cantareira</p>
-                            <h3 class="text-4xl md:text-5xl font-light text-white tracking-tighter">Renascimento Digital</h3>
+                            <h3 class="text-4xl md:text-5xl font-light text-white tracking-tighter">Da estufa para o digital</h3>
                         </div>
-                        <p class="text-zinc-400 text-base md:text-lg leading-relaxed font-light">Digitalização e reestruturação da marca para um dos orquidários mais tradicionais da região. Foco em estética natural, e-commerce e retenção de colecionadores.</p>
+                        <p class="text-zinc-400 text-base md:text-lg leading-relaxed font-light">Nova identidade e loja virtual para um orquidário tradicional, pensadas para colecionadores que querem ver cada detalhe da planta antes de comprar.</p>
                         <div class="border-t border-white/10 pt-10 mt-auto flex items-end justify-between">
                             <div>
-                                <p class="text-6xl md:text-7xl font-light text-gpurple-primary/50 mb-3 tracking-tighter">Em breve</p>
-                                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Lançamento Previsto</p>
+                                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold mb-3">Escopo</p>
+                                <p class="text-white text-base font-light">Identidade visual · E-commerce · UX</p>
                             </div>
                             <div class="w-12 h-12 rounded-full border border-gpurple-primary/30 flex items-center justify-center text-gpurple-primary group-hover:bg-gpurple-primary group-hover:text-white transition-all duration-500">
-                                <svg class="w-5 h-5 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                <svg aria-hidden="true" class="w-5 h-5 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </div>
                     </div>
                 </a>
 
-                <!-- Estudo de Caso 1 -->
-                <a href="case-techcorp.html" class="min-w-[85vw] md:min-w-[1050px] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem]  overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer">
-                    <div class="w-full md:w-[55%] h-[300px] md:h-[600px] bg-zinc-900 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center grayscale contrast-125 group-hover:grayscale-[40%] group-hover:scale-105 transition-all duration-[1500ms] ease-out"></div>
-                        <div class="absolute inset-0 bg-zinc-950/40 group-hover:bg-zinc-950/10 transition-colors duration-[1500ms]"></div>
+                <!-- Templates de e-mail (projeto autoral) -->
+                <a href="materiais/templates-email.html" class="min-w-[85vw] md:min-w-[1050px] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer relative">
+                    <div class="absolute top-6 right-6 z-20 bg-white/10 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                        Projeto autoral
+                    </div>
+                    <div class="w-full md:w-[55%] h-[300px] md:h-[600px] bg-zinc-950 relative overflow-hidden flex items-center justify-center p-6 md:p-12">
+                        <div class="absolute inset-0  bg-cover bg-center opacity-20 blur-2xl group-hover:opacity-30 transition-all duration-1000" style="background-image: url('./assets/img/projetos/templates-email.png')"></div>
+                        <img src="./assets/img/projetos/templates-email.png" alt="Biblioteca de templates de e-mail corporativo da GPurple" class="relative z-10 h-full w-auto max-w-full object-contain rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="w-full md:w-[45%] p-6 md:p-16 flex flex-col justify-center gap-10">
                         <div>
-                            <p class="text-gpurple-primary text-sm font-bold tracking-widest uppercase mb-4">TechCorp Branding</p>
-                            <h3 class="text-4xl md:text-5xl font-light text-white tracking-tighter">Captação Institucional</h3>
+                            <p class="text-gpurple-primary text-sm font-bold tracking-widest uppercase mb-4">GPurple Lab</p>
+                            <h3 class="text-4xl md:text-5xl font-light text-white tracking-tighter">E-mails que abrem bem em qualquer lugar</h3>
                         </div>
-                        <p class="text-zinc-400 text-base md:text-lg leading-relaxed font-light">Reposicionamento digital focado em captação de clientes premium e redução drástica do custo de aquisição (CAC).</p>
+                        <p class="text-zinc-400 text-base md:text-lg leading-relaxed font-light">Biblioteca de templates de e-mail corporativo com visual de marca, testada para Gmail, Outlook e Apple Mail, no desktop e no celular.</p>
                         <div class="border-t border-white/10 pt-10 mt-auto flex items-end justify-between">
                             <div>
-                                <p class="text-6xl md:text-7xl font-light text-white mb-3 tracking-tighter">+312%</p>
-                                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Taxa de Conversão em 60 dias</p>
+                                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold mb-3">Escopo</p>
+                                <p class="text-white text-base font-light">Design system · HTML de e-mail</p>
                             </div>
-                            <div class="w-12 h-12 rounded-full  flex items-center justify-center text-white/50 group-hover:bg-gpurple-primary group-hover:text-white group-hover:border-gpurple-primary transition-all duration-500">
-                                <svg class="w-5 h-5 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 group-hover:bg-gpurple-primary group-hover:text-white group-hover:border-gpurple-primary transition-all duration-500">
+                                <svg aria-hidden="true" class="w-5 h-5 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </div>
                     </div>
                 </a>
 
-                <!-- Estudo de Caso 2 -->
-                <a href="case-elite.html" class="min-w-[85vw] md:min-w-[1050px] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem]  overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer">
-                    <div class="w-full md:w-[55%] h-[300px] md:h-[600px] bg-zinc-900 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center grayscale contrast-125 group-hover:grayscale-[40%] group-hover:scale-105 transition-all duration-[1500ms] ease-out"></div>
-                        <div class="absolute inset-0 bg-zinc-950/40 group-hover:bg-zinc-950/10 transition-colors duration-[1500ms]"></div>
+                <!-- Convite: próximo projeto -->
+                <a href="#contato" class="min-w-[85vw] md:min-w-[600px] flex flex-col justify-between bg-gradient-to-br from-gpurple-primary/20 to-white/[0.02] rounded-[2.5rem] overflow-hidden snap-center group p-8 md:p-16 transition-all duration-700 hover:scale-[1.02] cursor-pointer">
+                    <p class="text-gpurple-accent text-sm font-bold tracking-widest uppercase">Agenda aberta</p>
+                    <div class="flex flex-col gap-6 my-16">
+                        <h3 class="text-4xl md:text-5xl font-light text-white tracking-tighter">O próximo projeto pode ser o seu.</h3>
+                        <p class="text-zinc-300 text-base md:text-lg leading-relaxed font-light">Estamos aceitando novos projetos. Conte o que você precisa e respondemos com um diagnóstico do seu site atual.</p>
                     </div>
-                    <div class="w-full md:w-[45%] p-6 md:p-16 flex flex-col justify-center gap-10">
-                        <div>
-                            <p class="text-gpurple-primary text-sm font-bold tracking-widest uppercase mb-4">Elite Studio</p>
-                            <h3 class="text-4xl md:text-5xl font-light text-white tracking-tighter">Performance Extrema</h3>
-                        </div>
-                        <p class="text-zinc-400 text-base md:text-lg leading-relaxed font-light">Arquitetura de sistema web de altíssima performance para estúdio de arquitetura internacional, garantindo indexação instantânea.</p>
-                        <div class="border-t border-white/10 pt-10 mt-auto flex items-end justify-between">
-                            <div>
-                                <p class="text-6xl md:text-7xl font-light text-white mb-3 tracking-tighter">0.8s</p>
-                                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Tempo de Carregamento Total</p>
-                            </div>
-                            <div class="w-12 h-12 rounded-full  flex items-center justify-center text-white/50 group-hover:bg-gpurple-primary group-hover:text-white group-hover:border-gpurple-primary transition-all duration-500">
-                                <svg class="w-5 h-5 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </div>
-                        </div>
-                    </div>
+                    <span class="inline-flex items-center gap-3 text-white font-bold text-sm uppercase tracking-widest">
+                        Começar uma conversa
+                        <svg aria-hidden="true" class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
                 </a>
             </div>
         </section>
 
-        <!-- 4.5. Validação de Mercado (Feedbacks) -->
-        <section id="feedbacks" class="relative w-full py-32 bg-gpurple-deep flex flex-col items-center z-10 border-t border-white/5 overflow-hidden">
-            <!-- Luz Volumétrica -->
+        <!-- 5. Processo -->
+        <section id="processo" class="relative w-full py-32 bg-gpurple-deep flex flex-col items-center z-10 border-t border-white/5 overflow-hidden">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-gpurple-primary/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
             <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-16 relative z-10">
                 <div class="flex flex-col gap-4 max-w-2xl">
                     <div class="flex items-center gap-2 text-[10px] text-white font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-white shadow-[0_0_12px_#ffffff]"></span> Validação de Mercado
+                        <span class="w-1.5 h-1.5 bg-white shadow-[0_0_12px_#ffffff]"></span> Como trabalhamos
                     </div>
                     <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none mb-2">
-                        Não confie em promessas.<br>
-                        <span class="text-neutral-600">Confie em faturamento.</span>
+                        Um processo curto e transparente.<br>
+                        <span class="text-neutral-500">Você sabe o que acontece em cada etapa.</span>
                     </h2>
                 </div>
 
-                <!-- Grid de Feedbacks -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    
-                    <!-- Feedback 1 -->
-                    <div class="p-6 md:p-10 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl  flex flex-col gap-8 hover:bg-zinc-900/60 transition-colors duration-500">
-                        <div class="flex gap-1 text-gpurple-primary">
-                            <!-- 5 Estrelas -->
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        </div>
-                        <p class="text-neutral-300 text-sm md:text-base leading-relaxed font-light flex-1">"A GPurple não nos entregou apenas um site, entregou um ativo financeiro. Nosso Custo de Aquisição (CAC) caiu 42% na primeira semana de operação com a nova infraestrutura."</p>
-                        <div class="flex items-center gap-4 pt-6 border-t border-white/10 mt-auto">
-                            <div class="w-10 h-10 rounded-full bg-zinc-800  flex items-center justify-center overflow-hidden">
-                                <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop')] bg-cover bg-center grayscale"></div>
-                            </div>
-                            <div>
-                                <p class="text-white text-xs font-bold uppercase tracking-widest">C-Level</p>
-                                <p class="text-neutral-500 text-[10px] uppercase tracking-widest mt-1">E-commerce Premium</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Feedback 2 -->
-                    <div class="p-6 md:p-10 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl  flex flex-col gap-8 hover:bg-zinc-900/60 transition-colors duration-500">
-                        <div class="flex gap-1 text-gpurple-primary">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        </div>
-                        <p class="text-neutral-300 text-sm md:text-base leading-relaxed font-light flex-1">"A velocidade de carregamento absurda e o design cirúrgico redefiniram nossa autoridade no mercado. O projeto se pagou no primeiro contrato enterprise que fechamos."</p>
-                        <div class="flex items-center gap-4 pt-6 border-t border-white/10 mt-auto">
-                            <div class="w-10 h-10 rounded-full bg-zinc-800  flex items-center justify-center overflow-hidden">
-                                <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop')] bg-cover bg-center grayscale"></div>
-                            </div>
-                            <div>
-                                <p class="text-white text-xs font-bold uppercase tracking-widest">Founder & CEO</p>
-                                <p class="text-neutral-500 text-[10px] uppercase tracking-widest mt-1">SaaS B2B</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Feedback 3 -->
-                    <div class="p-6 md:p-10 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl  flex flex-col gap-8 hover:bg-zinc-900/60 transition-colors duration-500">
-                        <div class="flex gap-1 text-gpurple-primary">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        </div>
-                        <p class="text-neutral-300 text-sm md:text-base leading-relaxed font-light flex-1">"A GPurple entende a psicologia do cliente de alto padrão. A taxa de conversão das nossas campanhas dobrou simplesmente porque o site agora exala autoridade e confiança absoluta."</p>
-                        <div class="flex items-center gap-4 pt-6 border-t border-white/10 mt-auto">
-                            <div class="w-10 h-10 rounded-full bg-zinc-800  flex items-center justify-center overflow-hidden">
-                                <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop')] bg-cover bg-center grayscale"></div>
-                            </div>
-                            <div>
-                                <p class="text-white text-xs font-bold uppercase tracking-widest">Head de Growth</p>
-                                <p class="text-neutral-500 text-[10px] uppercase tracking-widest mt-1">Assessoria Financeira</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                <ol class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <li class="p-6 md:p-8 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col gap-6">
+                        <span class="text-gpurple-primary text-[10px] font-bold uppercase tracking-widest">Etapa 01</span>
+                        <h3 class="text-2xl font-light text-white">Diagnóstico</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Analisamos o seu site, os concorrentes e os seus objetivos. Você recebe um retrato claro do que está travando os resultados.</p>
+                    </li>
+                    <li class="p-6 md:p-8 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col gap-6">
+                        <span class="text-gpurple-primary text-[10px] font-bold uppercase tracking-widest">Etapa 02</span>
+                        <h3 class="text-2xl font-light text-white">Estratégia</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Definimos a estrutura das páginas, a jornada do visitante e a mensagem principal antes de desenhar qualquer tela.</p>
+                    </li>
+                    <li class="p-6 md:p-8 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col gap-6">
+                        <span class="text-gpurple-primary text-[10px] font-bold uppercase tracking-widest">Etapa 03</span>
+                        <h3 class="text-2xl font-light text-white">Design</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">O projeto ganha forma visual. Você acompanha, comenta e aprova as telas antes de qualquer linha de código.</p>
+                    </li>
+                    <li class="p-6 md:p-8 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col gap-6">
+                        <span class="text-gpurple-primary text-[10px] font-bold uppercase tracking-widest">Etapa 04</span>
+                        <h3 class="text-2xl font-light text-white">Desenvolvimento e lançamento</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Construímos, testamos em vários aparelhos e colocamos no ar. Depois, seguimos medindo e ajustando com você.</p>
+                    </li>
+                </ol>
             </div>
         </section>
 
-        <!-- 5. Pacotes (Modelos de Engajamento) -->
-        <section id="pacotes" class="relative w-full py-32 bg-neutral-950 flex flex-col items-center z-10 overflow-hidden">
-            <!-- Luz Volumétrica (Sutil no fundo) -->
+        <!-- 6. Formatos -->
+        <section id="formatos" class="relative w-full py-32 bg-neutral-950 flex flex-col items-center z-10 overflow-hidden">
             <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.01] blur-[100px] rounded-full pointer-events-none z-0"></div>
 
             <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-16 relative z-10">
                 <div class="flex flex-col gap-4 max-w-2xl mx-auto text-center items-center">
                     <div class="flex items-center gap-2 text-[10px] text-neutral-500 font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-neutral-500"></span> Modelos de Engajamento
+                        <span class="w-1.5 h-1.5 bg-neutral-500"></span> Formatos de projeto
                     </div>
                     <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none mb-2">
-                        Nenhuma linha de código é escrita<br>
-                        <span class="text-neutral-600">sem um propósito financeiro claro.</span>
+                        Escolha o ponto de partida.<br>
+                        <span class="text-neutral-500">O escopo final sai do diagnóstico.</span>
                     </h2>
-
-                    <!-- Gatilho de Escassez (Tech/Terminal Style) -->
-                    <div class="mt-6 inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-red-500/[0.03] border border-red-500/20 backdrop-blur-md transition-all hover:bg-red-500/[0.05] hover:border-red-500/40 cursor-default">
-                        <!-- Pulso vermelho animado -->
-                        <div class="relative flex h-2 w-2">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500 shadow-[0_0_8px_#ef4444]"></span>
-                        </div>
-                        <p class="text-[10px] md:text-xs text-red-100/60 font-mono tracking-widest uppercase">
-                            <strong class="text-red-400 font-bold">Status do Sistema:</strong> Operando a 90% da capacidade. <span class="text-white border-b border-red-500/50">Apenas 2 vagas</span>.
-                        </p>
-                    </div>
                 </div>
 
                 <div class="flex flex-col gap-6 max-w-4xl mx-auto w-full relative">
-                    <!-- Glow volumétrico atrás do card principal -->
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-32 bg-gpurple-primary/10 blur-[80px] pointer-events-none z-0"></div>
 
-                    <!-- Tier 1 -->
-                    <div class="w-full p-6 md:p-8 md:p-10 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl  flex flex-col md:flex-row md:items-center justify-between gap-8 hover:border-white/20 transition-colors relative z-10">
+                    <div class="w-full p-6 md:p-10 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
                         <div class="flex-1">
-                            <h3 class="text-2xl font-light text-white mb-2 tracking-tighter">Essencial <span class="text-[10px] text-gpurple-primary uppercase tracking-widest ml-4 font-bold">Fundações</span></h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed max-w-md">Arquitetura visual e técnica para operações em estágio de tração inicial.</p>
+                            <h3 class="text-2xl font-light text-white mb-2 tracking-tighter">Essencial <span class="text-[10px] text-gpurple-primary uppercase tracking-widest ml-4 font-bold">Para começar bem</span></h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed max-w-md">Site institucional ou landing page com design sob medida, textos estratégicos e performance de verdade.</p>
                         </div>
-                        <div class="text-left md:text-right">
-                            <p class="text-xs text-neutral-500 mb-1 uppercase tracking-widest font-bold">A partir de</p>
-                            <p class="text-3xl font-light text-white tracking-tighter">$2.500</p>
-                        </div>
+                        <p class="text-sm text-neutral-300 md:text-right max-w-[220px]">Ideal para quem está lançando ou renovando a presença digital.</p>
                     </div>
-                    <!-- Tier 2 -->
-                    <div class="w-full p-6 md:p-8 md:p-10 rounded-[2rem] bg-zinc-900/60 backdrop-blur-2xl border border-gpurple-primary/30 flex flex-col md:flex-row md:items-center justify-between gap-8 relative overflow-hidden transition-colors hover:bg-zinc-900/80 z-10">
+
+                    <div class="w-full p-6 md:p-10 rounded-[2rem] bg-zinc-900/60 backdrop-blur-2xl border border-gpurple-primary/30 flex flex-col md:flex-row md:items-center justify-between gap-8 relative overflow-hidden transition-colors hover:bg-zinc-900/80 z-10">
                         <div class="absolute top-0 left-0 w-1.5 h-full bg-gpurple-primary"></div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-light text-white mb-2 tracking-tighter">Growth <span class="text-[10px] text-gpurple-primary uppercase tracking-widest ml-4 font-bold">Infraestrutura Completa</span></h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed max-w-md">Ecossistema web completo com automações, CRM integrado e foco em conversão agressiva.</p>
+                            <h3 class="text-2xl font-light text-white mb-2 tracking-tighter">Growth <span class="text-[10px] text-gpurple-primary uppercase tracking-widest ml-4 font-bold">Recomendado</span></h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed max-w-md">Site completo, integrado ao seu CRM, com automações e medição de conversões desde o primeiro dia.</p>
                         </div>
-                        <div class="text-left md:text-right">
-                            <p class="text-xs text-gpurple-primary mb-1 uppercase tracking-widest font-bold">A partir de</p>
-                            <p class="text-3xl font-light text-white tracking-tighter">$6.000</p>
-                        </div>
+                        <p class="text-sm text-neutral-300 md:text-right max-w-[220px]">Ideal para quem já investe em anúncios e quer converter mais.</p>
                     </div>
-                    <!-- Tier 3 -->
-                    <div class="w-full p-6 md:p-8 md:p-10 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl  flex flex-col md:flex-row md:items-center justify-between gap-8 hover:border-white/20 transition-colors relative z-10">
+
+                    <div class="w-full p-6 md:p-10 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
                         <div class="flex-1">
-                            <h3 class="text-2xl font-light text-white mb-2 tracking-tighter">Enterprise <span class="text-[10px] text-neutral-500 uppercase tracking-widest ml-4 font-bold">Líderes de Mercado</span></h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed max-w-md">Parceria estratégica. Design de ponta a ponta, desenvolvimento customizado e IA aplicada.</p>
+                            <h3 class="text-2xl font-light text-white mb-2 tracking-tighter">Parceria <span class="text-[10px] text-neutral-500 uppercase tracking-widest ml-4 font-bold">Evolução contínua</span></h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed max-w-md">Design, desenvolvimento e melhoria contínua com acompanhamento mensal de resultados.</p>
                         </div>
-                        <div class="text-left md:text-right">
-                            <p class="text-3xl font-light text-white tracking-tighter">Sob Consulta</p>
-                        </div>
+                        <p class="text-sm text-neutral-300 md:text-right max-w-[220px]">Ideal para quem quer um time digital sem montar um internamente.</p>
                     </div>
+
+                    <p class="text-center text-neutral-500 text-sm relative z-10">Cada proposta é apresentada ao vivo, depois do diagnóstico, com escopo e prazo definidos.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 6. A Diretoria (Quem Somos) -->
-        <section id="sobre" class="relative w-full py-32 bg-zinc-950 flex flex-col items-center z-10 overflow-hidden">
+        <!-- 7. Estúdio -->
+        <section id="estudio" class="relative w-full py-32 bg-zinc-950 flex flex-col items-center z-10 overflow-hidden">
             <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-16 relative z-10">
                 <div class="flex flex-col gap-4 max-w-2xl mx-auto text-center items-center">
                     <div class="flex items-center gap-2 text-[10px] text-neutral-500 font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-neutral-500"></span> Inteligência Executiva
+                        <span class="w-1.5 h-1.5 bg-neutral-500"></span> Quem faz
                     </div>
                     <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none mb-2">
-                        A fusão exata entre direção de arte<br>
-                        <span class="text-neutral-600">e engenharia de software.</span>
+                        Um estúdio enxuto e sênior.<br>
+                        <span class="text-neutral-500">Você fala direto com quem faz.</span>
                     </h2>
                 </div>
-                
+
+                <!-- TODO: trocar o monograma pelas fotos reais dos sócios (assets/img/equipe/) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                    <!-- Gabriel -->
-                    <div class="relative h-[450px] md:h-[600px] rounded-[2.5rem] overflow-hidden group cursor-pointer bg-black/50 ">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center grayscale contrast-125 group-hover:grayscale-[40%] group-hover:scale-105 transition-all duration-[1500ms] ease-out"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-[1500ms]"></div>
+                    <div class="relative h-[420px] md:h-[520px] rounded-[2.5rem] overflow-hidden group bg-gradient-to-br from-gpurple-primary/25 via-zinc-900 to-zinc-950">
+                        <span aria-hidden="true" class="absolute -top-6 right-6 font-heading font-bold text-[16rem] leading-none text-white/[0.04] group-hover:text-gpurple-primary/10 transition-colors duration-700">G</span>
                         <div class="absolute bottom-0 p-6 md:p-10 w-full z-10">
                             <p class="text-gpurple-primary text-[10px] font-bold tracking-widest uppercase mb-2">Gabriel</p>
-                            <h3 class="text-3xl font-light text-white mb-4">Direção de Design & UX</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed max-w-sm">Arquiteta as interfaces que dominam a atenção e ditam o comportamento do usuário. O visual não é apenas estética, é engenharia de percepção.</p>
+                            <h3 class="text-3xl font-light text-white mb-4">Design e UX</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed max-w-sm">Cuida da direção de arte, das interfaces e da experiência de uso. Para ele, bom design é o que faz o cliente entender o seu valor sem esforço.</p>
                         </div>
                     </div>
-                    <!-- Gabe -->
-                    <div class="relative h-[450px] md:h-[600px] rounded-[2.5rem] overflow-hidden group cursor-pointer bg-black/50 ">
-                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center grayscale contrast-125 group-hover:grayscale-[40%] group-hover:scale-105 transition-all duration-[1500ms] ease-out"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-[1500ms]"></div>
+                    <div class="relative h-[420px] md:h-[520px] rounded-[2.5rem] overflow-hidden group bg-gradient-to-br from-gpurple-accent/10 via-zinc-900 to-zinc-950">
+                        <span aria-hidden="true" class="absolute -top-6 right-6 font-heading font-bold text-[16rem] leading-none text-white/[0.04] group-hover:text-gpurple-accent/10 transition-colors duration-700">G</span>
                         <div class="absolute bottom-0 p-6 md:p-10 w-full z-10">
                             <p class="text-gpurple-primary text-[10px] font-bold tracking-widest uppercase mb-2">Gabe</p>
-                            <h3 class="text-3xl font-light text-white mb-4">Engenharia & Tráfego</h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed max-w-sm">Constrói as esteiras e sistemas que sustentam o volume de acesso. O tráfego só tem valor quando a infraestrutura consegue convertê-lo.</p>
+                            <h3 class="text-3xl font-light text-white mb-4">Engenharia e tráfego</h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed max-w-sm">Cuida do código, da performance e das integrações. Garante que o site aguente o volume de acesso e transforme visita em contato.</p>
                         </div>
                     </div>
                 </div>
@@ -671,43 +503,39 @@
         </section>
     </main>
 
-    <!-- 7. CTA Final & Footer -->
+    <!-- 8. Contato e rodapé -->
     <footer id="contato" class="relative w-full pt-40 pb-12 bg-neutral-950 flex flex-col items-center z-10 overflow-hidden">
-        <!-- Luz Volumétrica (Atmosphere) -->
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-white/[0.01] blur-[150px] pointer-events-none z-0"></div>
-        
-        <!-- Noise Texture -->
         <div class="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
-        
-        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col items-center gap-12 relative z-10 text-center mb-40">
-            <h2 class="text-4xl sm:text-4xl md:text-7xl lg:text-[7rem] font-sans font-light tracking-tighter text-white leading-[0.9]">
-                A sua infraestrutura atual<br>
-                <span class="text-neutral-600">suporta a sua ambição?</span>
+
+        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col items-center gap-10 relative z-10 text-center mb-40">
+            <h2 class="text-4xl md:text-7xl lg:text-[7rem] font-sans font-light tracking-tighter text-white leading-[0.95]">
+                Vamos olhar o<br>
+                <span class="text-neutral-500">seu site juntos?</span>
             </h2>
             <p class="text-neutral-400 max-w-xl text-sm md:text-base leading-relaxed tracking-wide">
-                Vagas limitadas para novos parceiros no trimestre atual. Submeta seu cenário para uma análise de viabilidade técnica e estratégica.
+                Mande o endereço do seu site e o que você gostaria de melhorar. Respondemos com um diagnóstico gratuito, sem compromisso, mostrando o que mais pesa nos seus resultados.
             </p>
-            <a href="#" class="mt-4 bg-white text-neutral-950 px-12 py-5 text-sm font-bold uppercase tracking-widest transition-all duration-[600ms] ease-out hover:bg-gpurple-primary hover:text-white hover:scale-105 hover:shadow-[0_0_40px_rgba(139,92,246,0.3)]">
-                Iniciar Diagnóstico Confidencial
+            <a href="mailto:contato@gpurple.com.br?subject=Diagn%C3%B3stico%20gratuito&body=Ol%C3%A1%2C%20GPurple!%0A%0ASite%3A%20%0AO%20que%20eu%20gostaria%20de%20melhorar%3A%20%0A" class="mt-2 bg-white text-neutral-950 px-12 py-5 text-sm font-bold uppercase tracking-widest rounded-full transition-all duration-[600ms] ease-out hover:bg-gpurple-primary hover:text-white hover:scale-105 hover:shadow-[0_0_40px_rgba(139,92,246,0.3)]">
+                Pedir diagnóstico grátis
             </a>
+            <p class="text-neutral-500 text-sm">ou escreva para <a href="mailto:contato@gpurple.com.br" class="text-white underline decoration-gpurple-primary underline-offset-4 hover:text-gpurple-accent">contato@gpurple.com.br</a></p>
         </div>
-        
-        <!-- Base Footer -->
-        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col md:flex-row items-center justify-between border-t border-white/5 pt-8 relative z-10">
-            <div class="flex items-center gap-0.5 font-sans font-bold text-xl tracking-tighter text-white opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
+
+        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/5 pt-8 relative z-10">
+            <a href="#" aria-label="Voltar ao início" class="flex items-center gap-0.5 font-sans font-bold text-xl tracking-tighter text-white opacity-80 hover:opacity-100 transition-opacity">
                 <span class="font-heading text-gpurple-primary text-2xl font-bold leading-none drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]">G</span>
                 <span class="lowercase">purple<span class="text-gpurple-accent">.</span></span>
-            </div>
-            <p class="text-neutral-600 text-[10px] uppercase tracking-widest mt-4 md:mt-0">© 2026 GPurple Studio. Todos os direitos reservados.</p>
-            <div class="flex gap-6 mt-4 md:mt-0">
+            </a>
+            <p class="text-neutral-600 text-[10px] uppercase tracking-widest">© 2026 GPurple Studio. Todos os direitos reservados.</p>
+            <!-- Redes sociais: preencha os links reais e remova o "hidden" -->
+            <div class="hidden gap-6">
                 <a href="#" class="text-neutral-500 hover:text-white text-[10px] uppercase tracking-widest transition-colors duration-300">Instagram</a>
                 <a href="#" class="text-neutral-500 hover:text-white text-[10px] uppercase tracking-widest transition-colors duration-300">LinkedIn</a>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts de Interação (GSAP futuramente para animações premium) -->
-    <script src="main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-

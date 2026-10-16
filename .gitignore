@@ -1,11 +1,14 @@
-# Ignorar instalacao local do WordPress (Local by Flywheel / Nginx / PHP / MySQL)
+# Instalação local do WordPress (Local by Flywheel / Nginx / PHP / MySQL)
 gpurple/
 
-# Scripts utilitarios e temporarios Python
+# Scripts utilitários e temporários
 *.py
 
-# Arquivos de sistema e documentos nao web
+# Documentos internos (manuais e relatórios ficam fora do repositório público)
 *.pdf
+
+# Arquivos de sistema
 .DS_Store
 Thumbs.db
 desktop.ini
+node_modules/
