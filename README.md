@@ -71,10 +71,29 @@ Em **Settings → Pages**, a fonte é *Deploy from a branch*, branch `main`, pas
 O tom segue o Manual de Identidade Visual da GPurple (documento interno): autoridade técnica sem pedantismo, frases curtas e foco no resultado do cliente.
 
 - **Fale com o cliente, não sobre você.** "Você fala direto com quem faz" em vez de "Nós possuímos uma equipe sênior".
-- **Verbo de ação nos botões.** "Pedir diagnóstico grátis", "Ver projetos". Nunca "Clique aqui" ou "Enviar".
+- **Verbo de ação nos botões, sem falar de preço.** "Iniciar um projeto", "Ver o case do Orquidário", "Contar sobre o projeto". Nunca "Clique aqui", "Enviar" nem "grátis" no botão: a análise sem custo é mencionada uma vez, em texto, na área de contato e no FAQ.
 - **Prova real ou nenhuma.** Só publique números, depoimentos e logos de clientes com autorização e dados verificáveis. Números ilustrativos levam o rótulo "Cenário ilustrativo".
 - **Nada de escassez falsa.** Não use "apenas 2 vagas" se não for verdade.
 - **Português do dia a dia.** Prefira "medir conversões" a "tagueamento server-side" no texto para o cliente; o termo técnico pode vir entre parênteses.
+
+## Guia visual
+
+Segue o Manual de Identidade Visual, com um ajuste aprovado em 16/10/2026: o **Volt Lime** saiu dos botões porque brigava com o roxo.
+
+| Token (`assets/css/styles.css`) | Cor | Uso |
+| --- | --- | --- |
+| `--color-brand-primary` | `#8B5CF6` Electric Purple | "G" do logo, fundos e ícones. Não usar em texto pequeno. |
+| `--color-brand-primary-soft` | `#C4B5FD` | Etiquetas e texto roxo pequeno (contraste AA). |
+| `--color-brand-accent` | `#E8CFA0` Champanhe | Botões principais, frases-chave dos títulos, links de ação. |
+| `--color-brand-volt` | `#D9F956` Volt Lime | Só o ponto final do logo (`gpurple.`). |
+| `--color-surface-dark` / `--color-surface-card` | `#0B0A14` / `#141124` | Fundos das seções, alternados. |
+| `--color-surface-light` | `#F4F2F8` | Seção clara (Projetos). |
+| `--color-text-secondary` | `#B4BCCB` | Texto de leitura sobre fundo escuro. |
+
+- **Títulos** em Poppins 600/700 (classe `section-title`), texto em Inter 16 px ou mais. Nada abaixo de 12 px.
+- **Uma frase-chave por tela** em Champanhe, no máximo.
+- **Brilho e animação** só no G 3D da abertura. Sem manchas desfocadas nem sombras neon nas seções.
+- No Tailwind, as cores da marca são variáveis CSS: use `bg-gpurple-accent`, mas não `bg-gpurple-accent/10` (o modificador de opacidade não funciona com variáveis). Para transparência, use um valor `rgba(...)` entre colchetes.
 
 ## Pendências antes de prospectar
 
@@ -90,4 +109,4 @@ O tom segue o Manual de Identidade Visual da GPurple (documento interno): autori
 
 1. Copie `projetos/orquidario-cantareira.html` para `projetos/nome-do-cliente.html` e troque textos e imagens.
 2. Coloque as imagens em `assets/img/projetos/` com nomes em minúsculas e hífens (`cliente-capa.jpg`). Exporte em JPG ou WebP com até ~300 KB.
-3. No `index.html`, duplique um card dentro de `#portfolio-slider` e aponte o `href` para a nova página.
+3. No `index.html`, duplique um card dentro de `.projetos-grid` (seção `#projetos`) e aponte o `href` para a nova página. O case mais forte fica no bloco grande acima da grade.
