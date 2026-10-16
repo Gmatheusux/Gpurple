@@ -187,3 +187,33 @@
     animation: glass-sweep 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
 }
+
+/* ----------------------------------
+   Navegação e acessibilidade
+   ---------------------------------- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem; /* evita que o header fixo cubra o título da seção ao clicar no menu */
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--color-brand-accent);
+    outline-offset: 3px;
+}
+
+/* FAQ: esconde o marcador padrão e gira o ícone ao abrir */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-icon { transform: rotate(45deg); }
+
+/* Respeita quem pediu menos movimento no sistema */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

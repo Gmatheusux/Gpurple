@@ -29,30 +29,33 @@
 
     <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-gpurple-accent focus:text-gpurple-dark focus:px-4 focus:py-2 focus:rounded-full">Pular para o conteúdo</a>
 
+    <!-- Header (cápsula flutuante) -->
+    <header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] md:w-[95%] max-w-5xl glass rounded-full px-4 py-3 md:px-6 md:py-4 flex items-center justify-between shadow-2xl backdrop-blur-xl">
+        <a href="#" aria-label="GPurple Studio, voltar ao início" class="flex items-center gap-0.5 font-sans font-bold text-xl md:text-2xl tracking-tighter text-white">
+            <span class="font-heading text-gpurple-primary text-3xl md:text-4xl font-bold leading-none drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]">G</span>
+            <span class="lowercase">purple<span class="text-gpurple-accent">.</span></span>
+        </a>
+
+        <nav aria-label="Principal" class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gray-300">
+            <a href="#servicos" class="hover:text-white transition-colors">Serviços</a>
+            <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
+            <a href="#processo" class="hover:text-white transition-colors">Processo</a>
+            <a href="#formatos" class="hover:text-white transition-colors">Formatos</a>
+            <a href="#estudio" class="hover:text-white transition-colors">Estúdio</a>
+            <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        </nav>
+
+        <a href="#contato" class="bg-gpurple-accent text-gpurple-dark px-5 py-2.5 rounded-full text-sm font-bold hover:scale-105 hover:bg-[#c4fc38] transition-all duration-300 shadow-[0_0_15px_rgba(217,249,86,0.3)]">
+            Diagnóstico grátis
+        </a>
+    </header>
+
     <main id="app" class="relative w-full flex flex-col items-center">
 
-        <!-- Header (cápsula flutuante) -->
-        <header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] md:w-[95%] max-w-5xl glass rounded-full px-4 py-3 md:px-6 md:py-4 flex items-center justify-between shadow-2xl backdrop-blur-xl">
-            <a href="#" aria-label="GPurple Studio, voltar ao início" class="flex items-center gap-0.5 font-sans font-bold text-xl md:text-2xl tracking-tighter text-white">
-                <span class="font-heading text-gpurple-primary text-3xl md:text-4xl font-bold leading-none drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]">G</span>
-                <span class="lowercase">purple<span class="text-gpurple-accent">.</span></span>
-            </a>
 
-            <nav aria-label="Principal" class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gray-300">
-                <a href="#servicos" class="hover:text-white transition-colors">Serviços</a>
-                <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
-                <a href="#processo" class="hover:text-white transition-colors">Processo</a>
-                <a href="#formatos" class="hover:text-white transition-colors">Formatos</a>
-                <a href="#estudio" class="hover:text-white transition-colors">Estúdio</a>
-            </nav>
-
-            <a href="#contato" class="bg-gpurple-accent text-gpurple-dark px-5 py-2.5 rounded-full text-sm font-bold hover:scale-105 hover:bg-[#c4fc38] transition-all duration-300 shadow-[0_0_15px_rgba(217,249,86,0.3)]">
-                Diagnóstico grátis
-            </a>
-        </header>
 
         <!-- 1. Hero -->
-        <section id="hero" class="relative w-full h-screen min-h-[640px] bg-gpurple-deep overflow-hidden bg-grid">
+        <section id="hero" class="relative w-full h-[100svh] min-h-[640px] bg-gpurple-deep overflow-hidden bg-grid">
             <div class="bg-ellipse"></div>
             <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gpurple-primary/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
@@ -90,7 +93,7 @@
             <div class="absolute bottom-10 md:bottom-14 left-0 right-0 z-30">
                 <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <p class="text-gray-300 text-base md:text-lg leading-relaxed max-w-md">
-                        Sites que fazem sua marca parecer tão boa quanto ela é, e que transformam visitas em clientes.
+                        Sites e lojas virtuais para negócios de alto padrão. Bonitos para gerar desejo, rápidos e claros para gerar clientes.
                     </p>
                     <div class="flex flex-wrap gap-3">
                         <a href="#contato" class="bg-gpurple-accent text-gpurple-dark px-6 py-3 rounded-full text-sm font-bold hover:bg-[#c4fc38] transition-colors">Pedir diagnóstico grátis</a>
@@ -262,7 +265,7 @@
                                 <ul class="flex flex-col gap-3">
                                     <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Carregamento rápido (Core Web Vitals)</li>
                                     <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Acessibilidade (WCAG) e SEO técnico</li>
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Medição de conversões (GA4 e pixels)</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>A tecnologia certa para cada projeto</li>
                                 </ul>
                             </div>
                         </div>
@@ -273,17 +276,17 @@
                         <div class="w-full h-full p-6 md:p-10 rounded-[2rem] bg-zinc-950 flex flex-col gap-6">
                             <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white font-light text-xl">03</div>
                             <div>
-                                <h3 class="text-2xl font-light text-white mb-3">Automação e crescimento</h3>
+                                <h3 class="text-2xl font-light text-white mb-3">Lançamento e evolução</h3>
                                 <p class="text-neutral-400 text-sm leading-relaxed mb-8">
-                                    O lançamento é o começo. Conectamos o site ao seu CRM, automatizamos o primeiro atendimento e acompanhamos os números para melhorar o que realmente importa.
+                                    O lançamento é o começo. Medimos o que acontece no site, levamos os contatos direto para o seu CRM e seguimos melhorando o que traz resultado.
                                 </p>
                             </div>
                             <div class="mt-auto pt-6 border-t border-white/5">
                                 <span class="text-[10px] text-white uppercase tracking-widest font-bold mb-4 block">O que entra</span>
                                 <ul class="flex flex-col gap-3">
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Integração com CRM e automações</li>
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Atendimento com IA para qualificar contatos</li>
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Painéis de resultado e melhoria contínua</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Medição de conversões e relatórios</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Formulários integrados ao seu CRM</li>
+                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Plano mensal de manutenção e melhorias</li>
                                 </ul>
                             </div>
                         </div>
@@ -306,13 +309,13 @@
                         <span class="text-zinc-500">Todo projeto começa pelo negócio, não pelo layout.</span>
                     </h2>
                 </div>
-                <p class="text-zinc-500 text-xs uppercase tracking-widest font-bold hidden md:block">Arraste para ver mais →</p>
+                <p class="text-zinc-400 text-xs uppercase tracking-widest font-bold hidden md:block">Arraste para ver mais →</p>
             </div>
 
-            <div id="portfolio-slider" class="w-full pl-4 md:pl-[calc(50vw-600px+2rem)] pr-4 flex gap-10 overflow-x-auto snap-x snap-mandatory pb-12 hide-scrollbar cursor-grab active:cursor-grabbing relative z-10">
+            <div id="portfolio-slider" class="w-full pl-4 md:pl-[max(2rem,calc(50vw-600px+2rem))] pr-4 flex gap-10 overflow-x-auto snap-x snap-mandatory pb-12 hide-scrollbar cursor-grab active:cursor-grabbing relative z-10">
 
                 <!-- Orquidário Cantareira (cliente, em andamento) -->
-                <a href="projetos/orquidario-cantareira.html" class="min-w-[85vw] md:min-w-[1050px] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer relative">
+                <a href="projetos/orquidario-cantareira.html" class="min-w-[85vw] md:min-w-[min(1050px,88vw)] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer relative">
                     <div class="absolute top-6 right-6 z-20 bg-gpurple-primary text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(139,92,246,0.3)]">
                         Em andamento
                     </div>
@@ -329,7 +332,7 @@
                         <p class="text-zinc-400 text-base md:text-lg leading-relaxed font-light">Nova identidade e loja virtual para um orquidário tradicional, pensadas para colecionadores que querem ver cada detalhe da planta antes de comprar.</p>
                         <div class="border-t border-white/10 pt-10 mt-auto flex items-end justify-between">
                             <div>
-                                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold mb-3">Escopo</p>
+                                <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mb-3">Escopo</p>
                                 <p class="text-white text-base font-light">Identidade visual · E-commerce · UX</p>
                             </div>
                             <div class="w-12 h-12 rounded-full border border-gpurple-primary/30 flex items-center justify-center text-gpurple-primary group-hover:bg-gpurple-primary group-hover:text-white transition-all duration-500">
@@ -340,7 +343,7 @@
                 </a>
 
                 <!-- Templates de e-mail (projeto autoral) -->
-                <a href="materiais/templates-email.html" class="min-w-[85vw] md:min-w-[1050px] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer relative">
+                <a href="materiais/templates-email.html" class="min-w-[85vw] md:min-w-[min(1050px,88vw)] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer relative">
                     <div class="absolute top-6 right-6 z-20 bg-white/10 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
                         Projeto autoral
                     </div>
@@ -356,7 +359,7 @@
                         <p class="text-zinc-400 text-base md:text-lg leading-relaxed font-light">Biblioteca de templates de e-mail corporativo com visual de marca, testada para Gmail, Outlook e Apple Mail, no desktop e no celular.</p>
                         <div class="border-t border-white/10 pt-10 mt-auto flex items-end justify-between">
                             <div>
-                                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold mb-3">Escopo</p>
+                                <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mb-3">Escopo</p>
                                 <p class="text-white text-base font-light">Design system · HTML de e-mail</p>
                             </div>
                             <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 group-hover:bg-gpurple-primary group-hover:text-white group-hover:border-gpurple-primary transition-all duration-500">
@@ -415,7 +418,7 @@
                     <li class="p-6 md:p-8 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col gap-6">
                         <span class="text-gpurple-primary text-[10px] font-bold uppercase tracking-widest">Etapa 04</span>
                         <h3 class="text-2xl font-light text-white">Desenvolvimento e lançamento</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Construímos, testamos em vários aparelhos e colocamos no ar. Depois, seguimos medindo e ajustando com você.</p>
+                        <p class="text-neutral-400 text-sm leading-relaxed">Construímos, testamos no celular e no computador e colocamos no ar. Depois, você pode seguir com um plano mensal de manutenção e melhorias.</p>
                     </li>
                 </ol>
             </div>
@@ -464,7 +467,7 @@
                         <p class="text-sm text-neutral-300 md:text-right max-w-[220px]">Ideal para quem quer um time digital sem montar um internamente.</p>
                     </div>
 
-                    <p class="text-center text-neutral-500 text-sm relative z-10">Cada proposta é apresentada ao vivo, depois do diagnóstico, com escopo e prazo definidos.</p>
+                    <p class="text-center text-neutral-400 text-sm relative z-10">Cada proposta é apresentada ao vivo, depois do diagnóstico, com escopo e prazo definidos.</p>
                 </div>
             </div>
         </section>
@@ -508,6 +511,66 @@
                 </div>
             </div>
         </section>
+
+        <!-- 8. Perguntas frequentes -->
+        <section id="faq" class="relative w-full py-32 bg-neutral-950 flex flex-col items-center z-10 border-t border-white/5">
+            <div class="w-full max-w-[860px] px-4 md:px-8 flex flex-col gap-12">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-2 text-[10px] text-neutral-400 font-bold uppercase tracking-[0.2em]">
+                        <span class="w-1.5 h-1.5 bg-gpurple-accent"></span> Perguntas frequentes
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none">
+                        Antes de conversar,<br>
+                        <span class="text-neutral-500">o que costumam perguntar.</span>
+                    </h2>
+                </div>
+
+                <div class="flex flex-col divide-y divide-white/10 border-y border-white/10">
+                    <details class="group py-6">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                            O que eu recebo no diagnóstico gratuito?
+                            <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
+                        </summary>
+                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">Um vídeo curto, gravado em cima do seu site, mostrando os pontos que mais atrapalham a conversão e como resolveríamos cada um. Você pode usar essas ideias com a gente ou com quem preferir.</p>
+                    </details>
+                    <details class="group py-6">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                            Quanto custa um projeto?
+                            <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
+                        </summary>
+                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">Depende do escopo. Por isso o diagnóstico vem antes: com ele, apresentamos uma proposta com escopo, prazo e investimento fechados, sem cobrança por hora.</p>
+                    </details>
+                    <details class="group py-6">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                            Quanto tempo leva?
+                            <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
+                        </summary>
+                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">O prazo é definido na proposta, com datas para cada etapa. Você acompanha o andamento e aprova as telas antes de começarmos o desenvolvimento.</p>
+                    </details>
+                    <details class="group py-6">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                            Vocês trabalham com WordPress, Webflow ou Shopify?
+                            <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
+                        </summary>
+                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">Sim, e também com código próprio, React, Next.js e Framer. Escolhemos a ferramenta pelo que o seu negócio precisa, inclusive pensando em quem vai atualizar o site depois.</p>
+                    </details>
+                    <details class="group py-6">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                            Preciso ter logo e identidade visual prontos?
+                            <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
+                        </summary>
+                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">Não. Podemos partir da identidade que você já tem ou renovar a marca junto com o site, como no projeto do Orquidário Cantareira.</p>
+                    </details>
+                    <details class="group py-6">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                            E depois que o site vai ao ar?
+                            <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
+                        </summary>
+                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">Você pode seguir com um plano mensal de manutenção: segurança, backups, velocidade e pequenas melhorias com base no que os números mostram.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- 8. Contato e rodapé -->
@@ -521,12 +584,33 @@
                 <span class="text-neutral-500">seu site juntos?</span>
             </h2>
             <p class="text-neutral-400 max-w-xl text-sm md:text-base leading-relaxed tracking-wide">
-                Mande o endereço do seu site e o que você gostaria de melhorar. Respondemos com um diagnóstico gratuito, sem compromisso, mostrando o que mais pesa nos seus resultados.
+                Mande o endereço do seu site e o que você gostaria de melhorar. O diagnóstico é gratuito e sem compromisso.
             </p>
-            <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Diagn%C3%B3stico%20gratuito&body=Ol%C3%A1%2C%20GPurple!%0A%0ASite%3A%20%0AO%20que%20eu%20gostaria%20de%20melhorar%3A%20%0A" class="mt-2 bg-white text-neutral-950 px-12 py-5 text-sm font-bold uppercase tracking-widest rounded-full transition-all duration-[600ms] ease-out hover:bg-gpurple-primary hover:text-white hover:scale-105 hover:shadow-[0_0_40px_rgba(139,92,246,0.3)]">
-                Pedir diagnóstico grátis
-            </a>
-            <p class="text-neutral-500 text-sm">ou escreva para <a href="mailto:gmbarros@gpurpledesign.com.br" class="text-white underline decoration-gpurple-primary underline-offset-4 hover:text-gpurple-accent">gmbarros@gpurpledesign.com.br</a></p>
+
+            <ol class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl text-left">
+                <li class="glass rounded-2xl p-5 flex flex-col gap-2">
+                    <span class="text-gpurple-accent text-[11px] font-bold uppercase tracking-widest">1. Você escreve</span>
+                    <span class="text-neutral-300 text-sm leading-relaxed">Endereço do site e o que te incomoda nele hoje.</span>
+                </li>
+                <li class="glass rounded-2xl p-5 flex flex-col gap-2">
+                    <span class="text-gpurple-accent text-[11px] font-bold uppercase tracking-widest">2. A gente analisa</span>
+                    <span class="text-neutral-300 text-sm leading-relaxed">Você recebe um vídeo curto com os pontos que mais pesam.</span>
+                </li>
+                <li class="glass rounded-2xl p-5 flex flex-col gap-2">
+                    <span class="text-gpurple-accent text-[11px] font-bold uppercase tracking-widest">3. Vocês decidem</span>
+                    <span class="text-neutral-300 text-sm leading-relaxed">Se fizer sentido, marcamos uma conversa e montamos a proposta.</span>
+                </li>
+            </ol>
+
+            <div class="flex flex-col sm:flex-row items-center gap-3 mt-2">
+                <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Diagn%C3%B3stico%20gratuito&body=Ol%C3%A1%2C%20GPurple!%0A%0ASite%3A%20%0AO%20que%20eu%20gostaria%20de%20melhorar%3A%20%0A" class="bg-gpurple-accent text-gpurple-dark px-10 py-5 text-sm font-bold uppercase tracking-widest rounded-full transition-all duration-300 hover:bg-[#c4fc38] hover:scale-105 shadow-[0_0_30px_rgba(217,249,86,0.2)]">
+                    Pedir diagnóstico grátis
+                </a>
+                <button type="button" data-copy="gmbarros@gpurpledesign.com.br" class="glass text-white px-8 py-5 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-white/10 transition-colors">
+                    <span data-copy-label>Copiar e-mail</span>
+                </button>
+            </div>
+            <p class="text-neutral-400 text-sm">Ou escreva direto para <a href="mailto:gmbarros@gpurpledesign.com.br" class="text-white underline decoration-gpurple-primary underline-offset-4 hover:text-gpurple-accent">gmbarros@gpurpledesign.com.br</a></p>
         </div>
 
         <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/5 pt-8 relative z-10">

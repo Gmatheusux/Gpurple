@@ -37,7 +37,8 @@ Projeto original criado por [Dex](https://github.com/GZR-dex/Gpurple). Textos re
 │       ├── projetos/               # Imagens dos cases
 │       └── materiais/              # Imagens da apresentação
 ├── src/tailwind.css                # Entrada do Tailwind (gera assets/css/tailwind.css)
-├── tailwind.config.js              # Cores e fontes da marca
+├── tailwind.config.js              # Cores e fontes da marca (site)
+├── tailwind.templates.config.js    # Config separada da página de templates de e-mail
 ├── 404.html                        # Página de erro
 └── favicon.svg
 ```
@@ -57,7 +58,8 @@ Se você adicionar ou trocar classes do Tailwind no HTML, gere o CSS de novo ant
 
 ```bash
 npm install
-npm run build   # ou npm run dev para recompilar enquanto edita
+npm run build   # gera o CSS do site e o da página de templates
+npm run dev     # recompila o CSS do site enquanto você edita
 ```
 
 ## Publicação
