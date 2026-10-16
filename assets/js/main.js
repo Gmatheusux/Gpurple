@@ -51,31 +51,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('main section[id]').forEach((section) => observer.observe(section));
     }
-
-    // ----------------------------------------------------
-    // Botão "Copiar e-mail" (para quem não usa app de e-mail no computador)
-    // ----------------------------------------------------
-    const status = document.querySelector('[data-copy-status]');
-
-    document.querySelectorAll('[data-copy]').forEach((button) => {
-        const label = button.querySelector('[data-copy-label]') || button;
-        const original = label.textContent;
-
-        button.addEventListener('click', async () => {
-            const text = button.getAttribute('data-copy');
-            try {
-                await navigator.clipboard.writeText(text);
-                label.textContent = 'E-mail copiado';
-                if (status) status.textContent = 'E-mail ' + text + ' copiado.';
-            } catch {
-                // Navegadores sem acesso à área de transferência: abre o e-mail como alternativa
-                window.location.href = 'mailto:' + text;
-                return;
-            }
-            setTimeout(() => {
-                label.textContent = original;
-                if (status) status.textContent = '';
-            }, 2500);
-        });
-    });
 });
