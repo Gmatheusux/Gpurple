@@ -33,6 +33,7 @@ Projeto original criado por [Dex](https://github.com/GZR-dex/Gpurple). Textos re
 │   ├── js/main.js                  # Arrastar para rolar no carrossel de projetos
 │   └── img/
 │       ├── marca/                  # Símbolo 3D e logo
+│       ├── equipe/                 # Fotos dos sócios
 │       ├── projetos/               # Imagens dos cases
 │       └── materiais/              # Imagens da apresentação
 ├── src/tailwind.css                # Entrada do Tailwind (gera assets/css/tailwind.css)
@@ -75,13 +76,13 @@ O tom segue o Manual de Identidade Visual da GPurple (documento interno): autori
 
 ## Pendências antes de prospectar
 
-- [ ] Fotos reais dos sócios na seção **Estúdio** (hoje há um monograma no lugar)
-- [ ] Links do Instagram e LinkedIn no rodapé (estão ocultos até ter as URLs)
+- [ ] Foto do Dex na seção **Estúdio** (hoje há um monograma no lugar)
+- [ ] LinkedIn do Dex, se ele quiser aparecer
 - [ ] WhatsApp e link de agendamento (Cal.com ou Calendly) ao lado do e-mail, na seção de contato
-- [ ] Confirmar se o e-mail `contato@gpurple.com.br` já recebe mensagens
+- [ ] Criar `contato@` no domínio e trocar o e-mail de contato (hoje vai para gmbarros@gpurpledesign.com.br)
 - [ ] Autorização do Orquidário Cantareira para exibir o case
 - [ ] Novos cases, com resultados reais, conforme os projetos forem entregues
-- [ ] Domínio próprio (`gpurple.com.br`) apontando para o GitHub Pages
+- [ ] Domínio próprio (ex.: `gpurpledesign.com.br`) apontando para o GitHub Pages
 
 ## Como adicionar um novo case
 
