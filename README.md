@@ -77,6 +77,7 @@ O tom segue o Manual de Identidade Visual da GPurple (documento interno): autori
 
 - [ ] Fotos reais dos sócios na seção **Estúdio** (hoje há um monograma no lugar)
 - [ ] Links do Instagram e LinkedIn no rodapé (estão ocultos até ter as URLs)
+- [ ] WhatsApp e link de agendamento (Cal.com ou Calendly) ao lado do e-mail, na seção de contato
 - [ ] Confirmar se o e-mail `contato@gpurple.com.br` já recebe mensagens
 - [ ] Autorização do Orquidário Cantareira para exibir o case
 - [ ] Novos cases, com resultados reais, conforme os projetos forem entregues
