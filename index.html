@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPurple Studio | Design e desenvolvimento de sites que convertem</title>
-    <meta name="description" content="Estúdio boutique de design e tecnologia. Criamos sites, lojas e landing pages com direção de arte, performance e foco em gerar clientes. Peça um diagnóstico gratuito.">
+    <title>GPurple Studio | Design e desenvolvimento de sites para negócios de alto padrão</title>
+    <meta name="description" content="Estúdio boutique de design e tecnologia. Criamos sites, lojas e landing pages com direção de arte, performance e foco em gerar clientes.">
     <meta name="theme-color" content="#0B0A14">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
@@ -14,59 +14,67 @@
     <meta property="og:url" content="https://gmatheusux.github.io/Gpurple/">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:title" content="GPurple Studio | Sites que fazem sua marca parecer tão boa quanto ela é">
-    <meta property="og:description" content="Design, desenvolvimento e estratégia no mesmo time. Peça um diagnóstico gratuito do seu site.">
+    <meta property="og:description" content="Design, desenvolvimento e estratégia no mesmo time, para negócios de alto padrão.">
     <meta property="og:image" content="https://gmatheusux.github.io/Gpurple/assets/img/marca/g-3d.jpg">
 
-    <!-- Tipografia: Inter (texto) e Poppins (títulos), conforme o manual da marca -->
+    <!-- Tipografia do manual: Poppins (títulos) e Inter (texto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/tailwind.css">
-
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-gpurple-dark text-white font-sans antialiased overflow-x-hidden">
 
-    <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-gpurple-accent focus:text-gpurple-dark focus:px-4 focus:py-2 focus:rounded-full">Pular para o conteúdo</a>
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-gpurple-accent focus:text-gpurple-ink focus:px-4 focus:py-2 focus:rounded-full">Pular para o conteúdo</a>
 
     <!-- Header (cápsula flutuante) -->
-    <header class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] md:w-[95%] max-w-5xl glass rounded-full px-4 py-3 md:px-6 md:py-4 flex items-center justify-between shadow-2xl backdrop-blur-xl">
-        <a href="#" aria-label="GPurple Studio, voltar ao início" class="flex items-center gap-0.5 font-sans font-bold text-xl md:text-2xl tracking-tighter text-white">
-            <span class="font-heading text-gpurple-primary text-3xl md:text-4xl font-bold leading-none drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]">G</span>
-            <span class="lowercase">purple<span class="text-gpurple-accent">.</span></span>
+    <header class="site-header fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] md:w-[95%] max-w-5xl glass rounded-full px-4 py-3 md:px-6 md:py-3.5 flex items-center justify-between gap-4">
+        <a href="#" aria-label="GPurple Studio, voltar ao início" class="flex items-center gap-0.5 font-bold text-xl md:text-2xl tracking-tighter text-white">
+            <span class="font-heading text-gpurple-primary text-3xl md:text-4xl font-bold leading-none">G</span>
+            <span class="lowercase">purple<span class="text-gpurple-volt">.</span></span>
         </a>
 
-        <nav aria-label="Principal" class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gray-300">
-            <a href="#servicos" class="hover:text-white transition-colors">Serviços</a>
-            <a href="#projetos" class="hover:text-white transition-colors">Projetos</a>
-            <a href="#processo" class="hover:text-white transition-colors">Processo</a>
-            <a href="#formatos" class="hover:text-white transition-colors">Formatos</a>
-            <a href="#estudio" class="hover:text-white transition-colors">Estúdio</a>
-            <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        <nav aria-label="Principal" class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gpurple-body">
+            <a href="#servicos" class="nav-link hover:text-white transition-colors">Serviços</a>
+            <a href="#projetos" class="nav-link hover:text-white transition-colors">Projetos</a>
+            <a href="#processo" class="nav-link hover:text-white transition-colors">Processo</a>
+            <a href="#formatos" class="nav-link hover:text-white transition-colors">Formatos</a>
+            <a href="#estudio" class="nav-link hover:text-white transition-colors">Estúdio</a>
+            <a href="#faq" class="nav-link hover:text-white transition-colors">FAQ</a>
         </nav>
 
-        <a href="#contato" class="bg-gpurple-accent text-gpurple-dark px-5 py-2.5 rounded-full text-sm font-bold hover:scale-105 hover:bg-[#c4fc38] transition-all duration-300 shadow-[0_0_15px_rgba(217,249,86,0.3)]">
-            Diagnóstico grátis
-        </a>
+        <div class="flex items-center gap-2">
+            <span class="hidden sm:block"><a href="#contato" class="btn-primary px-5 py-2.5 text-sm">Iniciar um projeto</a></span>
+            <button type="button" class="md:hidden inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 text-sm font-semibold text-white" aria-expanded="false" aria-controls="menu-celular" data-menu-toggle>
+                <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
+                <span data-menu-label>Menu</span>
+            </button>
+        </div>
     </header>
+
+    <!-- Menu do celular -->
+    <nav id="menu-celular" aria-label="Menu" class="mobile-menu md:hidden fixed inset-0 z-40 bg-gpurple-dark px-6 pt-28 pb-10 flex flex-col gap-8" hidden>
+        <ul class="flex flex-col gap-1 text-3xl font-heading font-semibold">
+            <li><a href="#servicos" class="block py-2">Serviços</a></li>
+            <li><a href="#projetos" class="block py-2">Projetos</a></li>
+            <li><a href="#processo" class="block py-2">Processo</a></li>
+            <li><a href="#formatos" class="block py-2">Formatos</a></li>
+            <li><a href="#estudio" class="block py-2">Estúdio</a></li>
+            <li><a href="#faq" class="block py-2">Perguntas frequentes</a></li>
+        </ul>
+        <a href="#contato" class="btn-primary self-start px-6 py-3.5 text-base">Iniciar um projeto</a>
+    </nav>
 
     <main id="app" class="relative w-full flex flex-col items-center">
 
-
-
-        <!-- 1. Hero
-             Coluna flex: espaço para o header fixo no topo, wordmark no meio e CTAs embaixo.
-             Nada é posicionado por porcentagem da largura, então o header nunca cobre o título,
-             mesmo em telas largas e baixas (ex.: 1920 x 650). -->
-        <section id="hero" class="relative w-full min-h-[100svh] flex flex-col pt-28 pb-10 md:pb-12 bg-gpurple-deep overflow-hidden bg-grid">
-            <div class="bg-ellipse"></div>
-            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gpurple-primary/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
-            <div class="absolute inset-0 bg-black/15 z-[25] pointer-events-none"></div>
-
-            <!-- Wordmark com o G 3D ao centro -->
-            <div class="relative flex-1 min-h-[340px] md:min-h-[400px] w-full max-w-[1200px] mx-auto flex items-center justify-between px-4 md:px-8">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none mix-blend-screen" style="-webkit-mask-image: radial-gradient(circle, black 40%, transparent 68%); mask-image: radial-gradient(circle, black 40%, transparent 68%);">
-                    <div class="relative w-[320px] sm:w-[400px] md:w-[600px] animate-levitate-g">
+        <!-- 1. Abertura
+             Coluna flex: espaço para o header fixo, título com a proposta de valor e CTAs embaixo.
+             O G 3D fica à direita como imagem de marca (atrás do texto no celular). -->
+        <section id="hero" class="relative w-full min-h-[100svh] flex flex-col pt-28 pb-10 md:pb-14 bg-gpurple-deep overflow-hidden">
+            <div class="relative flex-1 w-full max-w-[1200px] mx-auto px-4 md:px-8 flex items-center">
+                <div aria-hidden="true" class="hero-g absolute top-1/2 -translate-y-1/2 right-[-30%] sm:right-[-10%] md:right-0 z-0 pointer-events-none mix-blend-screen" style="-webkit-mask-image: radial-gradient(circle, black 40%, transparent 68%); mask-image: radial-gradient(circle, black 40%, transparent 68%);">
+                    <div class="relative w-[340px] sm:w-[420px] md:w-[520px] lg:w-[600px] animate-levitate-g">
                         <img src="./assets/img/marca/g-3d.jpg" alt="" class="w-full h-full opacity-90">
                         <div class="absolute inset-0 mix-blend-overlay overflow-hidden">
                             <div class="animate-glass-sweep"></div>
@@ -74,551 +82,379 @@
                     </div>
                 </div>
 
-                <div class="relative z-30 flex flex-col -mt-12 md:-mt-24">
-                    <div class="absolute bottom-full left-0 flex items-center gap-2 text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] mb-2 ml-1 whitespace-nowrap">
-                        <span class="w-1.5 h-1.5 bg-gpurple-primary shadow-[0_0_8px_#8b5cf6]"></span> Estúdio de design e tecnologia
-                    </div>
-                    <h1 class="text-5xl sm:text-6xl md:text-[6rem] lg:text-[8rem] xl:text-[9rem] font-sans font-light tracking-tight text-white leading-none neon-text-white">
-                        GPurple <span class="sr-only">Studio: design e desenvolvimento de sites que convertem</span>
+                <div class="relative z-10 max-w-[720px] py-10">
+                    <p class="eyebrow mb-5">GPurple Studio · Design e tecnologia</p>
+                    <h1 class="font-heading font-bold text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-7xl tracking-[-0.025em] text-white">
+                        Sites que fazem sua marca parecer <span class="text-gpurple-accent">tão boa quanto ela é.</span>
                     </h1>
-                </div>
-
-                <div class="relative z-30 flex items-center mt-20 md:mt-32">
-                    <p aria-hidden="true" class="text-5xl sm:text-6xl md:text-[6rem] lg:text-[8rem] xl:text-[9rem] font-sans font-light tracking-tight text-gpurple-primary leading-none whitespace-nowrap neon-text-purple">
-                        Studio
-                    </p>
                 </div>
             </div>
 
-            <!-- Proposta de valor + CTAs -->
-            <div class="relative z-30 w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <p class="text-gray-300 text-base md:text-lg leading-relaxed max-w-md">
+            <div class="relative z-10 w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <p class="text-gpurple-body text-lg md:text-xl leading-relaxed max-w-lg">
                     Sites e lojas virtuais para negócios de alto padrão. Bonitos para gerar desejo, rápidos e claros para gerar clientes.
                 </p>
                 <div class="flex flex-wrap gap-3">
-                    <a href="#contato" class="bg-gpurple-accent text-gpurple-dark px-6 py-3 rounded-full text-sm font-bold hover:bg-[#c4fc38] transition-colors">Pedir diagnóstico grátis</a>
-                    <a href="#projetos" class="glass text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/10 transition-colors">Ver projetos</a>
+                    <a href="#contato" class="btn-primary px-6 py-3.5 text-base">Iniciar um projeto</a>
+                    <a href="projetos/orquidario-cantareira.html" class="btn-ghost px-6 py-3.5 text-base">Ver o case do Orquidário</a>
                 </div>
             </div>
         </section>
 
         <div id="conteudo"></div>
 
-        <!-- 2. O problema -->
-        <section id="problema" class="relative w-full py-32 bg-zinc-950 flex flex-col items-center z-10 overflow-hidden">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/[0.02] blur-[120px] rounded-full pointer-events-none z-0"></div>
-
-            <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-16 relative z-10">
-                <div class="flex flex-col gap-4 max-w-2xl">
-                    <div class="flex items-center gap-2 text-[10px] text-zinc-500 font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-red-500 shadow-[0_0_12px_#ef4444]"></span> Onde os sites perdem clientes
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none mb-2">
-                        O problema raramente é falta de visitas.<br>
-                        <span class="text-zinc-500">É o que acontece depois do clique.</span>
-                    </h2>
+        <!-- 2. O problema: composição editorial, título fixo à esquerda e lista à direita -->
+        <section id="problema" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
+            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20">
+                <div class="lg:sticky lg:top-32 self-start flex flex-col gap-5">
+                    <p class="eyebrow">Onde os sites perdem clientes</p>
+                    <h2 class="section-title">O problema raramente é falta de visitas.</h2>
+                    <p class="section-sub">É o que acontece depois do clique. Quem chega a um site confuso, lento ou genérico vai embora, e quase nunca avisa.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                    <!-- Card 1 -->
-                    <div class="md:col-span-2 group relative p-6 md:p-10 rounded-3xl bg-white/[0.02] overflow-hidden transition-all duration-500 hover:bg-white/[0.04] flex flex-col justify-between">
-                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative z-10 mb-8">
-                            <h3 class="text-2xl font-light text-white mb-4">Anúncio bom, página fraca</h3>
-                            <p class="text-zinc-400 text-sm leading-relaxed max-w-md">
-                                Pagar por clique e levar a pessoa para uma página genérica é dinheiro indo embora. Se a página não entrega o que o anúncio prometeu, o visitante sai e o custo de cada cliente sobe.
-                            </p>
-                        </div>
-
-                        <div class="relative z-10 w-full flex flex-col sm:flex-row gap-4 mt-auto" aria-label="Cenário ilustrativo">
-                            <div class="flex-1 bg-black/40 rounded-2xl p-6 flex flex-col justify-center">
-                                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-bold mb-2">Investimento em anúncios</span>
-                                <span class="text-3xl text-white font-light tracking-tighter">R$ 24.500/mês</span>
-                            </div>
-                            <div class="flex-1 bg-red-500/10 rounded-2xl border border-red-500/20 p-6 flex flex-col justify-center relative overflow-hidden group-hover:bg-red-500/20 transition-colors duration-500">
-                                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-red-500 shadow-[0_0_15px_#ef4444]"></div>
-                                <span class="text-[10px] text-red-400 uppercase tracking-widest font-bold mb-2">Visitas que viram contato</span>
-                                <span class="text-3xl text-red-500 font-light tracking-tighter">0,8%</span>
-                            </div>
-                        </div>
-                        <p class="relative z-10 text-[10px] text-zinc-600 uppercase tracking-widest mt-4">Cenário ilustrativo</p>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="md:col-span-1 group relative p-6 md:p-10 rounded-3xl bg-white/[0.02] overflow-hidden transition-all duration-500 hover:bg-white/[0.04] flex flex-col gap-8">
-                        <div class="absolute inset-0 bg-gradient-to-b from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative z-10">
-                            <h3 class="text-2xl font-light text-white mb-4">Lentidão passa descuido</h3>
-                            <p class="text-zinc-400 text-sm leading-relaxed">
-                                Um site que demora a abrir dá a impressão de descuido antes de qualquer palavra ser lida. No celular, cada segundo a mais é gente desistindo.
-                            </p>
-                        </div>
-
-                        <div class="relative z-10 w-full mt-auto bg-black/40 rounded-2xl border border-red-500/20 p-6 flex flex-col gap-4 group-hover:border-red-500/40 transition-colors">
-                            <div class="flex justify-between items-center">
-                                <span class="text-[10px] text-zinc-400 font-bold uppercase tracking-widest">Tempo para abrir</span>
-                                <span class="text-[10px] text-red-500 font-bold uppercase tracking-widest bg-red-500/10 px-2 py-1 rounded">Lento</span>
-                            </div>
-                            <div class="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                                <div class="w-[85%] h-full bg-red-500 shadow-[0_0_10px_#ef4444] animate-pulse"></div>
-                            </div>
-                            <div class="flex justify-between items-end mt-2">
-                                <span class="text-2xl text-white font-light tracking-tighter">4,2s</span>
-                                <span class="text-[10px] text-red-400 text-right">Acima de 3s, a<br>desistência dispara</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="md:col-span-3 group relative p-6 md:p-12 rounded-3xl bg-white/[0.02] overflow-hidden transition-all duration-500 hover:bg-white/[0.04] flex flex-col md:flex-row items-center gap-12">
-                        <div class="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative z-10 flex-1">
-                            <h3 class="text-2xl font-light text-white mb-4">O atrito que ninguém vê</h3>
-                            <p class="text-zinc-400 text-sm leading-relaxed max-w-xl">
-                                Formulário confuso, botão escondido, pagamento que trava. São detalhes que passam despercebidos para quem fez o site, mas não para quem está tentando comprar. E quem desiste raramente avisa.
-                            </p>
-                        </div>
-
-                        <div class="w-full md:w-[40%] flex flex-col justify-center relative z-10 space-y-3" aria-hidden="true">
-                            <div class="w-full bg-black/40 rounded-xl p-4 flex items-center gap-4 transform translate-y-2 scale-95 opacity-50">
-                                <div class="w-2 h-2 rounded-full bg-zinc-600"></div>
-                                <div class="flex flex-col">
-                                    <span class="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">Visita #892</span>
-                                    <span class="text-sm text-zinc-400 font-light">Desistiu no formulário</span>
-                                </div>
-                            </div>
-                            <div class="w-full bg-black/80 backdrop-blur-xl rounded-xl border border-red-500/30 p-5 flex items-center justify-between gap-4 relative shadow-2xl shadow-red-500/5 group-hover:scale-105 group-hover:border-red-500/50 transition-all duration-500">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-2.5 h-2.5 rounded-full bg-red-500 shadow-[0_0_12px_#ef4444] animate-ping opacity-75 absolute"></div>
-                                    <div class="w-2.5 h-2.5 rounded-full bg-red-500 relative"></div>
-                                    <div class="flex flex-col">
-                                        <span class="text-[10px] text-red-400 font-bold uppercase tracking-widest">Erro no checkout</span>
-                                        <span class="text-base text-white font-light">Cliente travou no pagamento</span>
-                                    </div>
-                                </div>
-                                <span class="text-lg text-white font-light tracking-tighter whitespace-nowrap">− R$ 4.800</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Serviços -->
-        <section id="servicos" class="relative w-full py-32 bg-neutral-950 flex flex-col items-center z-10 border-t border-white/5 overflow-hidden">
-            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gpurple-primary/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
-            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
-
-            <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-20 relative z-10">
-                <div class="flex flex-col gap-6 max-w-3xl">
-                    <div class="flex items-center gap-2 text-[10px] text-gpurple-primary font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-gpurple-primary shadow-[0_0_12px_#8b5cf6]"></span> O que fazemos
-                    </div>
-                    <h2 class="text-4xl md:text-6xl font-sans font-light tracking-tighter text-white leading-[1.1]">
-                        Design, tecnologia e estratégia<br>
-                        <span class="text-neutral-500 font-normal">no mesmo time.</span>
-                    </h2>
-                    <p class="text-neutral-400 text-base md:text-lg max-w-xl leading-relaxed">
-                        Cuidamos do projeto de ponta a ponta, da primeira tela ao último detalhe de código. Você fala direto com quem desenha e com quem programa, sem intermediários.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Pilar 1 -->
-                    <div class="group p-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-[2rem] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
-                        <div class="w-full h-full p-6 md:p-10 rounded-[2rem] bg-zinc-950 flex flex-col gap-6">
-                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white font-light text-xl">01</div>
-                            <div>
-                                <h3 class="text-2xl font-light text-white mb-3">Design e experiência</h3>
-                                <p class="text-neutral-400 text-sm leading-relaxed mb-8">
-                                    Interfaces com direção de arte, hierarquia clara e textos que explicam o seu valor em segundos. O objetivo é que o visitante entenda, confie e queira dar o próximo passo.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-6 border-t border-white/5">
-                                <span class="text-[10px] text-white uppercase tracking-widest font-bold mb-4 block">O que entra</span>
-                                <ul class="flex flex-col gap-3">
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Direção de arte e interface sob medida</li>
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>UX e arquitetura de informação</li>
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Copywriting e UX writing</li>
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Design system da sua marca</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pilar 2 -->
-                    <div class="group p-[1px] bg-gradient-to-b from-gpurple-primary/40 to-transparent rounded-[2rem] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
-                        <div class="w-full h-full p-6 md:p-10 rounded-[2rem] bg-zinc-950 flex flex-col gap-6 relative overflow-hidden">
-                            <div class="absolute -top-20 -right-20 w-40 h-40 bg-gpurple-primary/20 blur-[50px] rounded-full pointer-events-none"></div>
-                            <div class="w-12 h-12 rounded-full bg-gpurple-primary/10 border border-gpurple-primary/30 flex items-center justify-center text-gpurple-primary font-light text-xl relative z-10">02</div>
-                            <div class="relative z-10">
-                                <h3 class="text-2xl font-light text-white mb-3">Desenvolvimento e performance</h3>
-                                <p class="text-neutral-400 text-sm leading-relaxed mb-8">
-                                    Sites rápidos, acessíveis e prontos para receber tráfego. A tecnologia é escolhida pelo que o projeto pede: código próprio, WordPress, Webflow, Framer ou Shopify.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-6 border-t border-white/5 relative z-10">
-                                <span class="text-[10px] text-white uppercase tracking-widest font-bold mb-4 block">O que entra</span>
-                                <ul class="flex flex-col gap-3">
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Carregamento rápido (Core Web Vitals)</li>
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Acessibilidade (WCAG) e SEO técnico</li>
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>A tecnologia certa para cada projeto</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pilar 3 -->
-                    <div class="group p-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-[2rem] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
-                        <div class="w-full h-full p-6 md:p-10 rounded-[2rem] bg-zinc-950 flex flex-col gap-6">
-                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white font-light text-xl">03</div>
-                            <div>
-                                <h3 class="text-2xl font-light text-white mb-3">Lançamento e evolução</h3>
-                                <p class="text-neutral-400 text-sm leading-relaxed mb-8">
-                                    O lançamento é o começo. Medimos o que acontece no site, levamos os contatos direto para o seu CRM e seguimos melhorando o que traz resultado.
-                                </p>
-                            </div>
-                            <div class="mt-auto pt-6 border-t border-white/5">
-                                <span class="text-[10px] text-white uppercase tracking-widest font-bold mb-4 block">O que entra</span>
-                                <ul class="flex flex-col gap-3">
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Medição de conversões e relatórios</li>
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Formulários integrados ao seu CRM</li>
-                                    <li class="flex items-center gap-3 text-sm text-neutral-300"><svg aria-hidden="true" class="w-4 h-4 shrink-0 text-gpurple-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Plano mensal de manutenção e melhorias</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Projetos -->
-        <section id="projetos" class="relative w-full py-32 bg-zinc-950 flex flex-col items-center z-10 overflow-hidden">
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/[0.02] blur-[150px] rounded-full pointer-events-none z-0"></div>
-
-            <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 relative z-10">
-                <div class="flex flex-col gap-4 max-w-2xl">
-                    <div class="flex items-center gap-2 text-[10px] text-white font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-white shadow-[0_0_12px_#ffffff]"></span> Projetos
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none mb-2">
-                        Trabalho recente.<br>
-                        <span class="text-zinc-500">Todo projeto começa pelo negócio, não pelo layout.</span>
-                    </h2>
-                </div>
-                <p class="text-zinc-400 text-xs uppercase tracking-widest font-bold hidden md:block">Arraste para ver mais →</p>
-            </div>
-
-            <div id="portfolio-slider" class="w-full pl-4 md:pl-[max(2rem,calc(50vw-600px+2rem))] pr-4 flex gap-10 overflow-x-auto snap-x snap-mandatory pb-12 hide-scrollbar cursor-grab active:cursor-grabbing relative z-10">
-
-                <!-- Orquidário Cantareira (cliente, em andamento) -->
-                <a href="projetos/orquidario-cantareira.html" class="min-w-[85vw] md:min-w-[min(1050px,88vw)] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer relative">
-                    <div class="absolute top-6 right-6 z-20 bg-gpurple-primary text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(139,92,246,0.3)]">
-                        Em andamento
-                    </div>
-                    <div class="w-full md:w-[55%] h-[300px] md:h-[600px] bg-zinc-950 relative overflow-hidden flex items-center justify-center p-6 md:p-12">
-                        <div class="absolute inset-0  bg-cover bg-center opacity-30 blur-2xl group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000" style="background-image: url('./assets/img/projetos/orquidario-mockup.png')"></div>
-                        <div class="absolute inset-0 bg-zinc-950/40"></div>
-                        <img src="./assets/img/projetos/orquidario-mockup.png" alt="Página inicial do novo site do Orquidário Cantareira" class="relative z-10 w-full h-auto rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-700">
-                    </div>
-                    <div class="w-full md:w-[45%] p-6 md:p-16 flex flex-col justify-center gap-10 relative">
+                <ol class="flex flex-col border-t border-white/10">
+                    <li class="py-8 md:py-10 border-b border-white/10 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3">
+                        <span aria-hidden="true" class="font-heading font-semibold text-gpurple-soft text-lg leading-8">A</span>
                         <div>
-                            <p class="text-gpurple-primary text-sm font-bold tracking-widest uppercase mb-4">Orquidário Cantareira</p>
-                            <h3 class="text-4xl md:text-5xl font-light text-white tracking-tighter">Da estufa para o digital</h3>
+                            <h3 class="font-heading font-semibold text-2xl md:text-3xl text-white mb-3">Anúncio bom, página fraca</h3>
+                            <p class="text-gpurple-body text-base md:text-lg leading-relaxed">Pagar por clique e levar a pessoa para uma página genérica é dinheiro indo embora. Se a página não entrega o que o anúncio prometeu, o visitante sai e o custo de cada cliente sobe.</p>
                         </div>
-                        <p class="text-zinc-400 text-base md:text-lg leading-relaxed font-light">Nova identidade e loja virtual para um orquidário tradicional, pensadas para colecionadores que querem ver cada detalhe da planta antes de comprar.</p>
-                        <div class="border-t border-white/10 pt-10 mt-auto flex items-end justify-between">
-                            <div>
-                                <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mb-3">Escopo</p>
-                                <p class="text-white text-base font-light">Identidade visual · E-commerce · UX</p>
-                            </div>
-                            <div class="w-12 h-12 rounded-full border border-gpurple-primary/30 flex items-center justify-center text-gpurple-primary group-hover:bg-gpurple-primary group-hover:text-white transition-all duration-500">
-                                <svg aria-hidden="true" class="w-5 h-5 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Templates de e-mail (projeto autoral) -->
-                <a href="materiais/templates-email.html" class="min-w-[85vw] md:min-w-[min(1050px,88vw)] flex flex-col md:flex-row bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] overflow-hidden snap-center group transition-all duration-700 hover:bg-white/[0.05] hover:scale-[1.02] cursor-pointer relative">
-                    <div class="absolute top-6 right-6 z-20 bg-white/10 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                        Projeto autoral
-                    </div>
-                    <div class="w-full md:w-[55%] h-[300px] md:h-[600px] bg-zinc-950 relative overflow-hidden flex items-center justify-center p-6 md:p-12">
-                        <div class="absolute inset-0  bg-cover bg-center opacity-20 blur-2xl group-hover:opacity-30 transition-all duration-1000" style="background-image: url('./assets/img/projetos/templates-email.png')"></div>
-                        <img src="./assets/img/projetos/templates-email.png" alt="Biblioteca de templates de e-mail corporativo da GPurple" class="relative z-10 h-full w-auto max-w-full object-contain rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] group-hover:scale-105 transition-all duration-700">
-                    </div>
-                    <div class="w-full md:w-[45%] p-6 md:p-16 flex flex-col justify-center gap-10">
+                    </li>
+                    <li class="py-8 md:py-10 border-b border-white/10 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3">
+                        <span aria-hidden="true" class="font-heading font-semibold text-gpurple-soft text-lg leading-8">B</span>
                         <div>
-                            <p class="text-gpurple-primary text-sm font-bold tracking-widest uppercase mb-4">GPurple Lab</p>
-                            <h3 class="text-4xl md:text-5xl font-light text-white tracking-tighter">E-mails que abrem bem em qualquer lugar</h3>
+                            <h3 class="font-heading font-semibold text-2xl md:text-3xl text-white mb-3">Lentidão passa descuido</h3>
+                            <p class="text-gpurple-body text-base md:text-lg leading-relaxed">Um site que demora a abrir dá a impressão de descuido antes de qualquer palavra ser lida. No celular, cada segundo a mais é gente desistindo.</p>
                         </div>
-                        <p class="text-zinc-400 text-base md:text-lg leading-relaxed font-light">Biblioteca de templates de e-mail corporativo com visual de marca, testada para Gmail, Outlook e Apple Mail, no desktop e no celular.</p>
-                        <div class="border-t border-white/10 pt-10 mt-auto flex items-end justify-between">
-                            <div>
-                                <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mb-3">Escopo</p>
-                                <p class="text-white text-base font-light">Design system · HTML de e-mail</p>
-                            </div>
-                            <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 group-hover:bg-gpurple-primary group-hover:text-white group-hover:border-gpurple-primary transition-all duration-500">
-                                <svg aria-hidden="true" class="w-5 h-5 -rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </div>
+                    </li>
+                    <li class="py-8 md:py-10 border-b border-white/10 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3">
+                        <span aria-hidden="true" class="font-heading font-semibold text-gpurple-soft text-lg leading-8">C</span>
+                        <div>
+                            <h3 class="font-heading font-semibold text-2xl md:text-3xl text-white mb-3">O atrito que ninguém vê</h3>
+                            <p class="text-gpurple-body text-base md:text-lg leading-relaxed">Formulário confuso, botão escondido, pagamento que trava. São detalhes que passam despercebidos para quem fez o site, mas não para quem está tentando comprar.</p>
                         </div>
-                    </div>
-                </a>
-
-                <!-- Convite: próximo projeto -->
-                <a href="#contato" class="min-w-[85vw] md:min-w-[600px] flex flex-col justify-between bg-gradient-to-br from-gpurple-primary/20 to-white/[0.02] rounded-[2.5rem] overflow-hidden snap-center group p-8 md:p-16 transition-all duration-700 hover:scale-[1.02] cursor-pointer">
-                    <p class="text-gpurple-accent text-sm font-bold tracking-widest uppercase">Agenda aberta</p>
-                    <div class="flex flex-col gap-6 my-16">
-                        <h3 class="text-4xl md:text-5xl font-light text-white tracking-tighter">O próximo projeto pode ser o seu.</h3>
-                        <p class="text-zinc-300 text-base md:text-lg leading-relaxed font-light">Estamos aceitando novos projetos. Conte o que você precisa e respondemos com um diagnóstico do seu site atual.</p>
-                    </div>
-                    <span class="inline-flex items-center gap-3 text-white font-bold text-sm uppercase tracking-widest">
-                        Começar uma conversa
-                        <svg aria-hidden="true" class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </span>
-                </a>
+                    </li>
+                </ol>
             </div>
         </section>
 
-        <!-- 5. Processo -->
-        <section id="processo" class="relative w-full py-32 bg-gpurple-deep flex flex-col items-center z-10 border-t border-white/5 overflow-hidden">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-gpurple-primary/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
-
-            <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-16 relative z-10">
-                <div class="flex flex-col gap-4 max-w-2xl">
-                    <div class="flex items-center gap-2 text-[10px] text-white font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-white shadow-[0_0_12px_#ffffff]"></span> Como trabalhamos
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none mb-2">
-                        Um processo curto e transparente.<br>
-                        <span class="text-neutral-500">Você sabe o que acontece em cada etapa.</span>
-                    </h2>
+        <!-- 3. Serviços: lista com divisórias, sem cards -->
+        <section id="servicos" class="relative w-full py-24 md:py-32 bg-gpurple-card">
+            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
+                <div class="flex flex-col gap-5 max-w-3xl">
+                    <p class="eyebrow">O que fazemos</p>
+                    <h2 class="section-title">Design, tecnologia e estratégia no mesmo time.</h2>
+                    <p class="section-sub">Cuidamos do projeto de ponta a ponta, da primeira tela ao último detalhe de código. Você fala direto com quem desenha e com quem programa, <strong class="text-white font-semibold">sem intermediários</strong>.</p>
                 </div>
 
-                <ol class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <li class="p-6 md:p-8 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col gap-6">
-                        <span class="text-gpurple-primary text-[10px] font-bold uppercase tracking-widest">Etapa 01</span>
-                        <h3 class="text-2xl font-light text-white">Diagnóstico</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Analisamos o seu site, os concorrentes e os seus objetivos. Você recebe um retrato claro do que está travando os resultados.</p>
+                <div class="flex flex-col border-t border-white/10">
+                    <article class="py-10 border-b border-white/10 grid grid-cols-1 md:grid-cols-[1fr_1.4fr_1fr] gap-6 md:gap-10">
+                        <h3 class="font-heading font-semibold text-2xl text-white">Design e experiência</h3>
+                        <p class="text-gpurple-body text-base leading-relaxed">Interfaces com direção de arte, hierarquia clara e textos que explicam o seu valor em segundos. O objetivo é que o visitante entenda, confie e queira dar o próximo passo.</p>
+                        <ul class="check-list">
+                            <li>Direção de arte e interface sob medida</li>
+                            <li>UX e arquitetura de informação</li>
+                            <li>Copywriting e UX writing</li>
+                            <li>Design system da sua marca</li>
+                        </ul>
+                    </article>
+                    <article class="py-10 border-b border-white/10 grid grid-cols-1 md:grid-cols-[1fr_1.4fr_1fr] gap-6 md:gap-10">
+                        <h3 class="font-heading font-semibold text-2xl text-white">Desenvolvimento e performance</h3>
+                        <p class="text-gpurple-body text-base leading-relaxed">Sites rápidos, acessíveis e prontos para receber tráfego. A tecnologia é escolhida pelo que o projeto pede: código próprio, WordPress, Webflow, Framer ou Shopify.</p>
+                        <ul class="check-list">
+                            <li>Carregamento rápido (Core Web Vitals)</li>
+                            <li>Acessibilidade (WCAG) e SEO técnico</li>
+                            <li>A tecnologia certa para cada projeto</li>
+                        </ul>
+                    </article>
+                    <article class="py-10 border-b border-white/10 grid grid-cols-1 md:grid-cols-[1fr_1.4fr_1fr] gap-6 md:gap-10">
+                        <h3 class="font-heading font-semibold text-2xl text-white">Lançamento e evolução</h3>
+                        <p class="text-gpurple-body text-base leading-relaxed">O lançamento é o começo. Medimos o que acontece no site, levamos os contatos direto para o seu CRM e seguimos melhorando o que traz resultado.</p>
+                        <ul class="check-list">
+                            <li>Medição de conversões e relatórios</li>
+                            <li>Formulários integrados ao seu CRM</li>
+                            <li>Plano mensal de manutenção e melhorias</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Projetos: seção clara, case principal em destaque e projetos menores embaixo.
+             Para adicionar um case, duplique um card de .projetos-grid (veja o README). -->
+        <section id="projetos" class="relative w-full py-24 md:py-32 bg-gpurple-light text-gpurple-ink">
+            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div class="flex flex-col gap-5 max-w-2xl">
+                        <p class="eyebrow eyebrow--light">Projetos</p>
+                        <h2 class="section-title text-gpurple-ink">Trabalho recente.</h2>
+                        <p class="text-[#4a4560] text-lg leading-relaxed">Todo projeto começa pelo negócio, não pelo layout.</p>
+                    </div>
+                </div>
+
+                <!-- Case principal -->
+                <a href="projetos/orquidario-cantareira.html" class="project-feature group grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] bg-white rounded-3xl overflow-hidden border border-[#e4e0ee]">
+                    <div class="bg-[#e9e6dd] p-6 md:p-12 flex items-center justify-center overflow-hidden">
+                        <img src="./assets/img/projetos/orquidario-mockup.png" alt="Página inicial do novo site do Orquidário Cantareira" class="w-full h-auto rounded-xl shadow-[0_20px_50px_rgba(21,18,31,0.18)] transition-transform duration-700 group-hover:scale-[1.02]">
+                    </div>
+                    <div class="p-6 md:p-12 flex flex-col gap-6 justify-center">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <span class="text-sm font-semibold text-[#5b30d6]">Orquidário Cantareira</span>
+                            <span class="text-xs font-semibold uppercase tracking-wider bg-[#efe9ff] text-[#4c2bb8] px-3 py-1 rounded-full">Em andamento</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-3xl md:text-4xl tracking-[-0.02em] text-gpurple-ink">Da estufa para o digital</h3>
+                        <p class="text-[#4a4560] text-base md:text-lg leading-relaxed">Identidade visual e loja virtual criadas do zero para um orquidário tradicional, pensadas para colecionadores que querem ver cada detalhe da planta antes de comprar.</p>
+                        <dl class="border-t border-[#e4e0ee] pt-6">
+                            <dt class="text-xs font-semibold uppercase tracking-wider text-[#5f5a73] mb-1">Escopo</dt>
+                            <dd class="text-gpurple-ink">Identidade visual · E-commerce · UX</dd>
+                        </dl>
+                        <span class="inline-flex items-center gap-2 font-semibold text-gpurple-ink">
+                            Ver o case completo
+                            <svg aria-hidden="true" class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <div class="projetos-grid grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Templates de e-mail (projeto autoral) -->
+                    <a href="materiais/templates-email.html" class="group flex flex-col bg-white rounded-3xl overflow-hidden border border-[#e4e0ee]">
+                        <div class="bg-[#15121f] h-56 md:h-64 flex items-start justify-center px-8 pt-8 overflow-hidden">
+                            <img src="./assets/img/projetos/templates-email.png" alt="Biblioteca de templates de e-mail corporativo da GPurple" class="w-full max-w-sm h-auto rounded-t-lg transition-transform duration-700 group-hover:-translate-y-1">
+                        </div>
+                        <div class="p-6 md:p-8 flex flex-col gap-3">
+                            <span class="text-sm font-semibold text-[#5b30d6]">GPurple Lab · Projeto autoral</span>
+                            <h3 class="font-heading font-bold text-2xl text-gpurple-ink">E-mails que abrem bem em qualquer lugar</h3>
+                            <p class="text-[#4a4560] leading-relaxed">Templates de e-mail corporativo com visual de marca, testados para Gmail, Outlook e Apple Mail, no desktop e no celular.</p>
+                        </div>
+                    </a>
+
+                    <!-- Convite -->
+                    <a href="#contato" class="group flex flex-col justify-between gap-10 bg-gpurple-ink text-white rounded-3xl p-6 md:p-10">
+                        <p class="text-sm font-semibold text-gpurple-accent">Agenda aberta</p>
+                        <div class="flex flex-col gap-4">
+                            <h3 class="font-heading font-bold text-3xl tracking-[-0.02em]">O próximo projeto pode ser o seu.</h3>
+                            <p class="text-gpurple-body leading-relaxed">Conte o que você precisa. Começamos com uma análise do seu site atual.</p>
+                        </div>
+                        <span class="inline-flex items-center gap-2 font-semibold text-gpurple-accent">
+                            Iniciar um projeto
+                            <svg aria-hidden="true" class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Processo: linha do tempo -->
+        <section id="processo" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
+            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-16">
+                <div class="flex flex-col gap-5 max-w-2xl">
+                    <p class="eyebrow">Como trabalhamos</p>
+                    <h2 class="section-title">Um processo curto e transparente.</h2>
+                    <p class="section-sub">Você sabe o que acontece em cada etapa e aprova antes de seguirmos para a próxima.</p>
+                </div>
+
+                <ol class="timeline grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+                    <li class="timeline-step">
+                        <span class="timeline-num">Etapa 1</span>
+                        <h3 class="font-heading font-semibold text-xl text-white">Análise do seu site</h3>
+                        <p class="text-gpurple-body leading-relaxed">Gravamos um vídeo curto, em cima do seu site, com o que mais trava os resultados hoje e como resolveríamos.</p>
                     </li>
-                    <li class="p-6 md:p-8 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col gap-6">
-                        <span class="text-gpurple-primary text-[10px] font-bold uppercase tracking-widest">Etapa 02</span>
-                        <h3 class="text-2xl font-light text-white">Estratégia</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Definimos a estrutura das páginas, a jornada do visitante e a mensagem principal antes de desenhar qualquer tela.</p>
+                    <li class="timeline-step">
+                        <span class="timeline-num">Etapa 2</span>
+                        <h3 class="font-heading font-semibold text-xl text-white">Estratégia e proposta</h3>
+                        <p class="text-gpurple-body leading-relaxed">Definimos a estrutura das páginas, a jornada do visitante e a mensagem principal. Você recebe escopo, prazo e investimento fechados.</p>
                     </li>
-                    <li class="p-6 md:p-8 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col gap-6">
-                        <span class="text-gpurple-primary text-[10px] font-bold uppercase tracking-widest">Etapa 03</span>
-                        <h3 class="text-2xl font-light text-white">Design</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">O projeto ganha forma visual. Você acompanha, comenta e aprova as telas antes de qualquer linha de código.</p>
+                    <li class="timeline-step">
+                        <span class="timeline-num">Etapa 3</span>
+                        <h3 class="font-heading font-semibold text-xl text-white">Design</h3>
+                        <p class="text-gpurple-body leading-relaxed">O projeto ganha forma visual. Você acompanha, comenta e aprova as telas antes de qualquer linha de código.</p>
                     </li>
-                    <li class="p-6 md:p-8 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col gap-6">
-                        <span class="text-gpurple-primary text-[10px] font-bold uppercase tracking-widest">Etapa 04</span>
-                        <h3 class="text-2xl font-light text-white">Desenvolvimento e lançamento</h3>
-                        <p class="text-neutral-400 text-sm leading-relaxed">Construímos, testamos no celular e no computador e colocamos no ar. Depois, você pode seguir com um plano mensal de manutenção e melhorias.</p>
+                    <li class="timeline-step">
+                        <span class="timeline-num">Etapa 4</span>
+                        <h3 class="font-heading font-semibold text-xl text-white">Desenvolvimento e lançamento</h3>
+                        <p class="text-gpurple-body leading-relaxed">Construímos, testamos no celular e no computador e colocamos no ar. Depois, você pode seguir com um plano mensal de melhorias.</p>
                     </li>
                 </ol>
             </div>
         </section>
 
         <!-- 6. Formatos -->
-        <section id="formatos" class="relative w-full py-32 bg-neutral-950 flex flex-col items-center z-10 overflow-hidden">
-            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.01] blur-[100px] rounded-full pointer-events-none z-0"></div>
-
-            <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-16 relative z-10">
-                <div class="flex flex-col gap-4 max-w-2xl mx-auto text-center items-center">
-                    <div class="flex items-center gap-2 text-[10px] text-neutral-500 font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-neutral-500"></span> Formatos de projeto
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none mb-2">
-                        Escolha o ponto de partida.<br>
-                        <span class="text-neutral-500">O escopo final sai do diagnóstico.</span>
-                    </h2>
+        <section id="formatos" class="relative w-full py-24 md:py-32 bg-gpurple-card">
+            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
+                <div class="flex flex-col gap-5 max-w-2xl">
+                    <p class="eyebrow">Formatos de projeto</p>
+                    <h2 class="section-title">Escolha o ponto de partida.</h2>
+                    <p class="section-sub">O escopo final sai da análise do seu site. Cada proposta é apresentada ao vivo, com escopo e prazo definidos.</p>
                 </div>
 
-                <div class="flex flex-col gap-6 max-w-4xl mx-auto w-full relative">
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-32 bg-gpurple-primary/10 blur-[80px] pointer-events-none z-0"></div>
-
-                    <div class="w-full p-6 md:p-10 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
-                        <div class="flex-1">
-                            <h3 class="text-2xl font-light text-white mb-2 tracking-tighter">Essencial <span class="text-[10px] text-gpurple-primary uppercase tracking-widest ml-4 font-bold">Para começar bem</span></h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed max-w-md">Site institucional ou landing page com design sob medida, textos estratégicos e performance de verdade.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <article class="format-card">
+                        <h3 class="font-heading font-semibold text-2xl text-white">Essencial</h3>
+                        <p class="text-gpurple-soft text-sm font-semibold">Para começar bem</p>
+                        <p class="text-gpurple-body leading-relaxed">Site institucional ou landing page com design sob medida, textos estratégicos e performance de verdade.</p>
+                        <p class="text-white/90 text-sm leading-relaxed mt-auto pt-6 border-t border-white/10">Ideal para quem está lançando ou renovando a presença digital.</p>
+                        <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Projeto%20-%20formato%20Essencial" class="format-link">Começar pelo Essencial</a>
+                    </article>
+                    <article class="format-card format-card--featured">
+                        <div class="flex items-center justify-between gap-3">
+                            <h3 class="font-heading font-semibold text-2xl text-white">Growth</h3>
+                            <span class="text-xs font-semibold uppercase tracking-wider bg-gpurple-accent text-gpurple-ink px-3 py-1 rounded-full">Recomendado</span>
                         </div>
-                        <p class="text-sm text-neutral-300 md:text-right max-w-[220px]">Ideal para quem está lançando ou renovando a presença digital.</p>
-                    </div>
-
-                    <div class="w-full p-6 md:p-10 rounded-[2rem] bg-zinc-900/60 backdrop-blur-2xl border border-gpurple-primary/30 flex flex-col md:flex-row md:items-center justify-between gap-8 relative overflow-hidden transition-colors hover:bg-zinc-900/80 z-10">
-                        <div class="absolute top-0 left-0 w-1.5 h-full bg-gpurple-primary"></div>
-                        <div class="flex-1">
-                            <h3 class="text-2xl font-light text-white mb-2 tracking-tighter">Growth <span class="text-[10px] text-gpurple-primary uppercase tracking-widest ml-4 font-bold">Recomendado</span></h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed max-w-md">Site completo, integrado ao seu CRM, com automações e medição de conversões desde o primeiro dia.</p>
-                        </div>
-                        <p class="text-sm text-neutral-300 md:text-right max-w-[220px]">Ideal para quem já investe em anúncios e quer converter mais.</p>
-                    </div>
-
-                    <div class="w-full p-6 md:p-10 rounded-[2rem] bg-zinc-950/80 backdrop-blur-2xl flex flex-col md:flex-row md:items-center justify-between gap-8 relative z-10">
-                        <div class="flex-1">
-                            <h3 class="text-2xl font-light text-white mb-2 tracking-tighter">Parceria <span class="text-[10px] text-neutral-500 uppercase tracking-widest ml-4 font-bold">Evolução contínua</span></h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed max-w-md">Design, desenvolvimento e melhoria contínua com acompanhamento mensal de resultados.</p>
-                        </div>
-                        <p class="text-sm text-neutral-300 md:text-right max-w-[220px]">Ideal para quem quer um time digital sem montar um internamente.</p>
-                    </div>
-
-                    <p class="text-center text-neutral-400 text-sm relative z-10">Cada proposta é apresentada ao vivo, depois do diagnóstico, com escopo e prazo definidos.</p>
+                        <p class="text-gpurple-soft text-sm font-semibold">Para quem já investe em anúncios</p>
+                        <p class="text-gpurple-body leading-relaxed">Site completo, integrado ao seu CRM, com automações e medição de conversões desde o primeiro dia.</p>
+                        <p class="text-white/90 text-sm leading-relaxed mt-auto pt-6 border-t border-white/10">Ideal para quem quer converter mais o tráfego que já paga.</p>
+                        <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Projeto%20-%20formato%20Growth" class="format-link">Começar pelo Growth</a>
+                    </article>
+                    <article class="format-card">
+                        <h3 class="font-heading font-semibold text-2xl text-white">Parceria</h3>
+                        <p class="text-gpurple-soft text-sm font-semibold">Evolução contínua</p>
+                        <p class="text-gpurple-body leading-relaxed">Design, desenvolvimento e melhoria contínua com acompanhamento mensal de resultados.</p>
+                        <p class="text-white/90 text-sm leading-relaxed mt-auto pt-6 border-t border-white/10">Ideal para quem quer um time digital sem montar um internamente.</p>
+                        <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Projeto%20-%20formato%20Parceria" class="format-link">Começar pela Parceria</a>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- 7. Estúdio -->
-        <section id="estudio" class="relative w-full py-32 bg-zinc-950 flex flex-col items-center z-10 overflow-hidden">
-            <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col gap-16 relative z-10">
-                <div class="flex flex-col gap-4 max-w-2xl mx-auto text-center items-center">
-                    <div class="flex items-center gap-2 text-[10px] text-neutral-500 font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-neutral-500"></span> Quem faz
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none mb-2">
-                        Um estúdio enxuto e sênior.<br>
-                        <span class="text-neutral-500">Você fala direto com quem faz.</span>
-                    </h2>
+        <section id="estudio" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
+            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20">
+                <div class="flex flex-col gap-5">
+                    <p class="eyebrow">Quem faz</p>
+                    <h2 class="section-title">Um estúdio enxuto e sênior.</h2>
+                    <p class="section-sub">Você fala direto com quem faz. Sem gerente de conta no meio do caminho.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                    <div class="relative h-[420px] md:h-[520px] rounded-[2.5rem] overflow-hidden group bg-gradient-to-br from-gpurple-primary/25 via-zinc-900 to-zinc-950">
-                        <span aria-hidden="true" class="absolute -top-6 right-6 font-heading font-bold text-[16rem] leading-none text-white/[0.04] group-hover:text-gpurple-primary/10 transition-colors duration-700">G</span>
-                        <img src="assets/img/equipe/gabriel-barros.jpg" alt="Foto de Gabriel Barros" width="400" height="400" class="absolute top-8 left-6 md:top-10 md:left-10 w-28 h-28 md:w-36 md:h-36 rounded-full object-cover ring-2 ring-gpurple-primary/40 shadow-[0_0_40px_rgba(139,92,246,0.25)]">
-                        <div class="absolute bottom-0 p-6 md:p-10 w-full z-10">
-                            <p class="text-gpurple-primary text-[10px] font-bold tracking-widest uppercase mb-2">Gabriel Barros</p>
-                            <h3 class="text-3xl font-light text-white mb-4">Design e UX</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed max-w-sm mb-6">Cuida da direção de arte, das interfaces e da experiência de uso. Para ele, bom design é o que faz o cliente entender o seu valor sem esforço.</p>
-                            <a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest hover:text-gpurple-accent transition-colors">
-                                <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-                                LinkedIn
-                            </a>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <article class="rounded-3xl bg-gpurple-card border border-white/10 p-6 md:p-8 flex flex-col gap-5">
+                        <img src="assets/img/equipe/gabriel-barros.jpg" alt="Foto de Gabriel Barros" width="400" height="400" class="w-24 h-24 rounded-full object-cover ring-2 ring-[rgba(196,181,253,0.4)]">
+                        <div>
+                            <h3 class="font-heading font-semibold text-2xl text-white">Gabriel Barros</h3>
+                            <p class="text-gpurple-soft text-sm font-semibold mt-1">Design e UX</p>
                         </div>
-                    </div>
+                        <p class="text-gpurple-body leading-relaxed">Cuida da direção de arte, das interfaces e da experiência de uso. Para ele, bom design é o que faz o cliente entender o seu valor sem esforço.</p>
+                        <a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener" class="mt-auto inline-flex items-center gap-2 text-white text-sm font-semibold hover:text-gpurple-accent transition-colors">
+                            <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                            LinkedIn<span class="sr-only"> de Gabriel Barros (abre em nova aba)</span>
+                        </a>
+                    </article>
                     <!-- TODO: trocar o monograma pela foto do Dex (assets/img/equipe/) -->
-                    <div class="relative h-[420px] md:h-[520px] rounded-[2.5rem] overflow-hidden group bg-gradient-to-br from-gpurple-accent/10 via-zinc-900 to-zinc-950">
-                        <span aria-hidden="true" class="absolute -top-6 right-6 font-heading font-bold text-[16rem] leading-none text-white/[0.04] group-hover:text-gpurple-accent/10 transition-colors duration-700">G</span>
-                        <div class="absolute bottom-0 p-6 md:p-10 w-full z-10">
-                            <p class="text-gpurple-primary text-[10px] font-bold tracking-widest uppercase mb-2">Dex</p>
-                            <h3 class="text-3xl font-light text-white mb-4">Engenharia e tráfego</h3>
-                            <p class="text-neutral-400 text-sm leading-relaxed max-w-sm">Cuida do código, da performance e das integrações. Garante que o site aguente o volume de acesso e transforme visita em contato.</p>
+                    <article class="rounded-3xl bg-gpurple-card border border-white/10 p-6 md:p-8 flex flex-col gap-5">
+                        <div aria-hidden="true" class="w-24 h-24 rounded-full bg-[#221c3d] ring-2 ring-[rgba(232,207,160,0.35)] flex items-center justify-center font-heading font-bold text-4xl text-gpurple-accent">D</div>
+                        <div>
+                            <h3 class="font-heading font-semibold text-2xl text-white">Dex</h3>
+                            <p class="text-gpurple-soft text-sm font-semibold mt-1">Engenharia e tráfego</p>
                         </div>
-                    </div>
+                        <p class="text-gpurple-body leading-relaxed">Cuida do código, da performance e das integrações. Garante que o site aguente o volume de acesso e transforme visita em contato.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- 8. Perguntas frequentes -->
-        <section id="faq" class="relative w-full py-32 bg-neutral-950 flex flex-col items-center z-10 border-t border-white/5">
-            <div class="w-full max-w-[860px] px-4 md:px-8 flex flex-col gap-12">
-                <div class="flex flex-col gap-4">
-                    <div class="flex items-center gap-2 text-[10px] text-neutral-400 font-bold uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 bg-gpurple-accent"></span> Perguntas frequentes
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-sans font-light tracking-tighter text-white leading-none">
-                        Antes de conversar,<br>
-                        <span class="text-neutral-500">o que costumam perguntar.</span>
-                    </h2>
+        <section id="faq" class="relative w-full py-24 md:py-32 bg-gpurple-card">
+            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20">
+                <div class="flex flex-col gap-5">
+                    <p class="eyebrow">Perguntas frequentes</p>
+                    <h2 class="section-title">Antes de conversar.</h2>
+                    <p class="section-sub">O que costumam perguntar antes do primeiro contato.</p>
                 </div>
 
                 <div class="flex flex-col divide-y divide-white/10 border-y border-white/10">
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
-                            O que eu recebo no diagnóstico gratuito?
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
+                            Como funciona a primeira análise?
                             <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
                         </summary>
-                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">Um vídeo curto, gravado em cima do seu site, mostrando os pontos que mais atrapalham a conversão e como resolveríamos cada um. Você pode usar essas ideias com a gente ou com quem preferir.</p>
+                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Gravamos um vídeo curto em cima do seu site, mostrando os pontos que mais atrapalham a conversão e como resolveríamos cada um. A análise não tem custo, e você pode usar essas ideias com a gente ou com quem preferir.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
                             Quanto custa um projeto?
                             <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
                         </summary>
-                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">Depende do escopo. Por isso o diagnóstico vem antes: com ele, apresentamos uma proposta com escopo, prazo e investimento fechados, sem cobrança por hora.</p>
+                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Depende do escopo. Por isso a análise vem antes: com ela, apresentamos uma proposta com escopo, prazo e investimento fechados, sem cobrança por hora.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
                             Quanto tempo leva?
                             <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
                         </summary>
-                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">O prazo é definido na proposta, com datas para cada etapa. Você acompanha o andamento e aprova as telas antes de começarmos o desenvolvimento.</p>
+                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">O prazo é definido na proposta, com datas para cada etapa. Você acompanha o andamento e aprova as telas antes de começarmos o desenvolvimento.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
                             Vocês trabalham com WordPress, Webflow ou Shopify?
                             <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
                         </summary>
-                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">Sim, e também com código próprio, React, Next.js e Framer. Escolhemos a ferramenta pelo que o seu negócio precisa, inclusive pensando em quem vai atualizar o site depois.</p>
+                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Sim, e também com código próprio, React, Next.js e Framer. Escolhemos a ferramenta pelo que o seu negócio precisa, inclusive pensando em quem vai atualizar o site depois.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
                             Preciso ter logo e identidade visual prontos?
                             <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
                         </summary>
-                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">Não. Podemos partir da identidade que você já tem ou renovar a marca junto com o site, como no projeto do Orquidário Cantareira.</p>
+                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Não. Podemos partir da identidade que você já tem ou criar a marca junto com o site, como fizemos do zero no Orquidário Cantareira.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer text-lg md:text-xl font-light text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
                             E depois que o site vai ao ar?
                             <span aria-hidden="true" class="faq-icon text-gpurple-accent text-2xl leading-none transition-transform">+</span>
                         </summary>
-                        <p class="mt-4 text-neutral-400 text-sm md:text-base leading-relaxed max-w-2xl">Você pode seguir com um plano mensal de manutenção: segurança, backups, velocidade e pequenas melhorias com base no que os números mostram.</p>
+                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Você pode seguir com um plano mensal de manutenção: segurança, backups, velocidade e pequenas melhorias com base no que os números mostram.</p>
                     </details>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 8. Contato e rodapé -->
-    <footer id="contato" class="relative w-full pt-40 pb-12 bg-neutral-950 flex flex-col items-center z-10 overflow-hidden">
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-white/[0.01] blur-[150px] pointer-events-none z-0"></div>
-        <div class="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+    <!-- 9. Contato e rodapé -->
+    <footer id="contato" class="relative w-full pt-28 md:pt-36 pb-10 bg-gpurple-deep flex flex-col items-center overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full h-[420px] bg-[radial-gradient(ellipse_at_top,rgba(139,92,246,0.18),transparent_70%)] pointer-events-none"></div>
 
-        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col items-center gap-10 relative z-10 text-center mb-40">
-            <h2 class="text-4xl md:text-7xl lg:text-[7rem] font-sans font-light tracking-tighter text-white leading-[0.95]">
-                Vamos olhar o<br>
-                <span class="text-neutral-500">seu site juntos?</span>
+        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col items-center gap-10 relative z-10 text-center mb-28">
+            <p class="eyebrow">Contato</p>
+            <h2 class="font-heading font-bold text-4xl md:text-6xl lg:text-7xl tracking-[-0.025em] leading-[1.05] text-white max-w-4xl">
+                Vamos conversar sobre <span class="text-gpurple-accent">o seu projeto?</span>
             </h2>
-            <p class="text-neutral-400 max-w-xl text-sm md:text-base leading-relaxed tracking-wide">
-                Mande o endereço do seu site e o que você gostaria de melhorar. O diagnóstico é gratuito e sem compromisso.
+            <p class="text-gpurple-body max-w-xl text-lg leading-relaxed">
+                Mande o endereço do seu site e o que você gostaria de melhorar. Respondemos com os próximos passos.
             </p>
 
             <ol class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl text-left">
-                <li class="glass rounded-2xl p-5 flex flex-col gap-2">
-                    <span class="text-gpurple-accent text-[11px] font-bold uppercase tracking-widest">1. Você escreve</span>
-                    <span class="text-neutral-300 text-sm leading-relaxed">Endereço do site e o que te incomoda nele hoje.</span>
+                <li class="rounded-2xl border border-white/10 bg-gpurple-card p-5 flex flex-col gap-2">
+                    <span class="text-gpurple-accent text-sm font-semibold">1. Você conta</span>
+                    <span class="text-gpurple-body leading-relaxed">O endereço do site e o que te incomoda nele hoje.</span>
                 </li>
-                <li class="glass rounded-2xl p-5 flex flex-col gap-2">
-                    <span class="text-gpurple-accent text-[11px] font-bold uppercase tracking-widest">2. A gente analisa</span>
-                    <span class="text-neutral-300 text-sm leading-relaxed">Você recebe um vídeo curto com os pontos que mais pesam.</span>
+                <li class="rounded-2xl border border-white/10 bg-gpurple-card p-5 flex flex-col gap-2">
+                    <span class="text-gpurple-accent text-sm font-semibold">2. Analisamos</span>
+                    <span class="text-gpurple-body leading-relaxed">Você recebe um vídeo curto com os pontos que mais pesam.</span>
                 </li>
-                <li class="glass rounded-2xl p-5 flex flex-col gap-2">
-                    <span class="text-gpurple-accent text-[11px] font-bold uppercase tracking-widest">3. Vocês decidem</span>
-                    <span class="text-neutral-300 text-sm leading-relaxed">Se fizer sentido, marcamos uma conversa e montamos a proposta.</span>
+                <li class="rounded-2xl border border-white/10 bg-gpurple-card p-5 flex flex-col gap-2">
+                    <span class="text-gpurple-accent text-sm font-semibold">3. Vocês decidem</span>
+                    <span class="text-gpurple-body leading-relaxed">Se fizer sentido, marcamos uma conversa e montamos a proposta.</span>
                 </li>
             </ol>
 
             <div class="flex flex-col sm:flex-row items-center gap-3 mt-2">
-                <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Diagn%C3%B3stico%20gratuito&body=Ol%C3%A1%2C%20GPurple!%0A%0ASite%3A%20%0AO%20que%20eu%20gostaria%20de%20melhorar%3A%20%0A" class="bg-gpurple-accent text-gpurple-dark px-10 py-5 text-sm font-bold uppercase tracking-widest rounded-full transition-all duration-300 hover:bg-[#c4fc38] hover:scale-105 shadow-[0_0_30px_rgba(217,249,86,0.2)]">
-                    Pedir diagnóstico grátis
+                <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Novo%20projeto&body=Ol%C3%A1%2C%20GPurple!%0A%0ASite%3A%20%0AO%20que%20eu%20gostaria%20de%20melhorar%3A%20%0A" class="btn-primary px-8 py-4 text-base">
+                    Contar sobre o projeto
                 </a>
-                <button type="button" data-copy="gmbarros@gpurpledesign.com.br" class="glass text-white px-8 py-5 text-sm font-bold uppercase tracking-widest rounded-full hover:bg-white/10 transition-colors">
+                <button type="button" data-copy="gmbarros@gpurpledesign.com.br" class="btn-ghost px-8 py-4 text-base">
                     <span data-copy-label>Copiar e-mail</span>
                 </button>
             </div>
-            <p class="text-neutral-400 text-sm">Ou escreva direto para <a href="mailto:gmbarros@gpurpledesign.com.br" class="text-white underline decoration-gpurple-primary underline-offset-4 hover:text-gpurple-accent">gmbarros@gpurpledesign.com.br</a></p>
+            <p class="sr-only" role="status" aria-live="polite" data-copy-status></p>
+            <p class="text-gpurple-body text-sm">A primeira conversa e a análise do seu site atual não têm custo.<br class="hidden sm:block"> Ou escreva direto para <a href="mailto:gmbarros@gpurpledesign.com.br" class="text-white underline decoration-gpurple-accent underline-offset-4 hover:text-gpurple-accent">gmbarros@gpurpledesign.com.br</a></p>
         </div>
 
-        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/5 pt-8 relative z-10">
-            <a href="#" aria-label="Voltar ao início" class="flex items-center gap-0.5 font-sans font-bold text-xl tracking-tighter text-white opacity-80 hover:opacity-100 transition-opacity">
-                <span class="font-heading text-gpurple-primary text-2xl font-bold leading-none drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]">G</span>
-                <span class="lowercase">purple<span class="text-gpurple-accent">.</span></span>
+        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8 relative z-10">
+            <a href="#" aria-label="Voltar ao início" class="flex items-center gap-0.5 font-bold text-xl tracking-tighter text-white">
+                <span class="font-heading text-gpurple-primary text-2xl font-bold leading-none">G</span>
+                <span class="lowercase">purple<span class="text-gpurple-volt">.</span></span>
             </a>
-            <p class="text-neutral-600 text-[10px] uppercase tracking-widest">© 2026 GPurple Studio. Todos os direitos reservados.</p>
-            <a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener" class="text-neutral-500 hover:text-white text-[10px] uppercase tracking-widest transition-colors duration-300">LinkedIn</a>
+            <p class="text-gpurple-body text-xs">© 2026 GPurple Studio. Todos os direitos reservados.</p>
+            <a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener" class="text-gpurple-body hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors">LinkedIn<span class="sr-only"> (abre em nova aba)</span></a>
         </div>
     </footer>
 

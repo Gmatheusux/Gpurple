@@ -1,58 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------
-    // Carrossel de projetos: arrastar com o mouse no desktop
+    // Menu do celular
     // ----------------------------------------------------
-    const slider = document.getElementById('portfolio-slider');
+    const toggle = document.querySelector('[data-menu-toggle]');
+    const menu = document.getElementById('menu-celular');
 
-    if (slider) {
-        let isDown = false;
-        let isDragging = false; // true quando o usuário arrastou, false quando só clicou
-        let startX = 0;
-        let scrollLeft = 0;
+    if (toggle && menu) {
+        const label = toggle.querySelector('[data-menu-label]');
 
-        const endDrag = () => {
-            isDown = false;
-            slider.style.scrollSnapType = '';
+        const setOpen = (open) => {
+            toggle.setAttribute('aria-expanded', String(open));
+            menu.hidden = !open;
+            document.body.classList.toggle('menu-aberto', open);
+            if (label) label.textContent = open ? 'Fechar' : 'Menu';
         };
 
-        slider.addEventListener('mousedown', (e) => {
-            if (e.button !== 0) return; // só o botão esquerdo inicia o arraste
-            isDown = true;
-            isDragging = false;
-            slider.style.scrollSnapType = 'none'; // sem snap durante o arraste, para ficar fluido
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
+        toggle.addEventListener('click', () => {
+            setOpen(toggle.getAttribute('aria-expanded') !== 'true');
         });
 
-        slider.addEventListener('mouseleave', endDrag);
-        slider.addEventListener('mouseup', endDrag);
-
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            const x = e.pageX - slider.offsetLeft;
-            if (Math.abs(x - startX) > 5) {
-                isDragging = true;
-                e.preventDefault(); // evita selecionar texto enquanto arrasta
-                slider.scrollLeft = scrollLeft - (x - startX) * 1.5;
+        // Fecha ao escolher uma seção ou apertar Esc
+        menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+                setOpen(false);
+                toggle.focus();
             }
         });
 
-        // Um arraste não deve abrir o card. Um clique normal segue o link
-        // do jeito nativo (Ctrl/Cmd+clique e botão do meio continuam abrindo em nova aba).
-        slider.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('dragstart', (e) => e.preventDefault());
-            link.addEventListener('click', (e) => {
-                if (isDragging) {
-                    e.preventDefault();
-                    isDragging = false;
-                }
-            });
+        // Se a tela crescer para desktop com o menu aberto, fecha
+        window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
+            if (e.matches) setOpen(false);
         });
+    }
+
+    // ----------------------------------------------------
+    // Menu do desktop: marca a seção que está na tela
+    // ----------------------------------------------------
+    const navLinks = document.querySelectorAll('.nav-link');
+    if (navLinks.length && 'IntersectionObserver' in window) {
+        const byId = new Map([...navLinks].map((a) => [a.getAttribute('href').slice(1), a]));
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                navLinks.forEach((a) => a.removeAttribute('aria-current'));
+                const link = byId.get(entry.target.id);
+                if (link) link.setAttribute('aria-current', 'true');
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+
+        document.querySelectorAll('main section[id]').forEach((section) => observer.observe(section));
     }
 
     // ----------------------------------------------------
     // Botão "Copiar e-mail" (para quem não usa app de e-mail no computador)
     // ----------------------------------------------------
+    const status = document.querySelector('[data-copy-status]');
+
     document.querySelectorAll('[data-copy]').forEach((button) => {
         const label = button.querySelector('[data-copy-label]') || button;
         const original = label.textContent;
@@ -62,12 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 await navigator.clipboard.writeText(text);
                 label.textContent = 'E-mail copiado';
+                if (status) status.textContent = 'E-mail ' + text + ' copiado.';
             } catch {
                 // Navegadores sem acesso à área de transferência: abre o e-mail como alternativa
                 window.location.href = 'mailto:' + text;
                 return;
             }
-            setTimeout(() => { label.textContent = original; }, 2500);
+            setTimeout(() => {
+                label.textContent = original;
+                if (status) status.textContent = '';
+            }, 2500);
         });
     });
 });
