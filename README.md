@@ -221,11 +221,12 @@ Segue o Manual de Identidade Visual, com um ajuste aprovado em 16/10/2026: o **V
 | `--color-brand-accent` | `#E8CFA0` Champanhe | Botões principais, frases-chave dos títulos, links de ação. |
 | `--color-brand-volt` | `#D9F956` Volt Lime | Só o ponto final do logo (`gpurple.`). |
 | `--color-surface-dark` / `--color-surface-card` | `#0B0A14` / `#141124` | Fundos das seções, alternados. |
-| `--color-surface-light` | `#F4F2F8` | Seção clara (Projetos). |
+| `--color-surface-light` | `#F4F2F8` | Seções claras (Projetos e Estúdio). |
 | `--color-text-secondary` | `#B4BCCB` | Texto de leitura sobre fundo escuro. |
 
 - **Títulos** em Poppins 600/700 (classe `section-title`), texto em Inter 16 px ou mais. Nada abaixo de 12 px.
 - **Uma frase-chave por tela** em Champanhe, no máximo.
+- **Rótulo acima do título** (`.rotulo`): só onde ajuda a se localizar (Projetos, Perguntas frequentes, Contato), sem caixa alta e sem cor de marca. Cartões usam superfície sólida, sem gradiente nem sombra roxa. Referência: o documento "o que evitar para não parecer site feito por IA", no projeto.
 - **Brilho e animação** só no G da abertura. Brilhos e sombras sutis; sem manchas desfocadas nem sombras neon nas seções.
 - **Símbolo da abertura** (19/10/2026): o G de vidro 3D saiu. A abertura usa o G geométrico do logo, sólido e com volume discreto, dentro de anéis finos em órbita. O manual da marca ainda cita o G 3D como visual da abertura e os botões em Volt Lime, e precisa ser atualizado.
 - No Tailwind, as cores da marca são variáveis CSS: use `bg-gpurple-accent`, mas não `bg-gpurple-accent/10` (o modificador de opacidade não funciona com variáveis). Para transparência, use um valor `rgba(...)` entre colchetes.

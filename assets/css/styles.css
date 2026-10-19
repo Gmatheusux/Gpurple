@@ -47,99 +47,6 @@
     border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-/* Utilitário de Texto Gradiente (Muito usado no Framer) */
-.text-gradient {
-    background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-text-secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* ----------------------------------
-   High-Impact Badge (Framer Style) 
-   ---------------------------------- */
-.badge-impact {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    background: transparent;
-    color: #e5e7eb;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.025em;
-    z-index: 1;
-}
-
-/* Anel de gradiente animado por trás */
-.badge-impact::before {
-    content: '';
-    position: absolute;
-    inset: -1.5px;
-    border-radius: 9999px;
-    background: conic-gradient(from 0deg, transparent 0%, rgba(var(--color-brand-accent-rgb), 0.4) 20%, var(--color-brand-accent) 40%, rgba(var(--color-brand-primary-rgb), 0.8) 60%, transparent 80%);
-    z-index: -2;
-    animation: rotate-gradient 3s linear infinite;
-}
-
-/* Fundo interno que mascara o gradiente, deixando só a borda */
-.badge-impact::after {
-    content: '';
-    position: absolute;
-    inset: 1px;
-    background: rgba(10, 10, 10, 0.9);
-    backdrop-filter: blur(12px);
-    border-radius: 9999px;
-    z-index: -1;
-}
-
-@keyframes rotate-gradient {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* ----------------------------------
-   Hero Section Backgrounds
-   ---------------------------------- */
-.bg-grid {
-    background-size: 80px 80px;
-    background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-position: center center;
-}
-
-.bg-ellipse {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 140vw;
-    height: 90vh;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: radial-gradient(ellipse at center, rgba(var(--color-brand-primary-rgb), 0.03) 0%, rgba(0,0,0,0) 70%);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
-    z-index: 0;
-}
-
-/* ----------------------------------
-   Tipografia - Efeitos Neon
-   ---------------------------------- */
-.neon-text-white {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3), /* Brilho neon sutil interno */
-                 0 0 40px rgba(0, 0, 0, 0.7),       /* Escudo preto protetor mais suave e difuso */
-                 0 0 80px rgba(0, 0, 0, 0.5);       /* Espalhamento atmosférico */
-}
-
-.neon-text-purple {
-    text-shadow: 0 0 20px rgba(var(--color-brand-primary-rgb), 0.4),  /* Brilho neon roxo interno mais etéreo */
-                 0 0 40px rgba(0, 0, 0, 0.7),       
-                 0 0 80px rgba(0, 0, 0, 0.5);
-}
-
 /* ----------------------------------
    Utilitários Extras
    ---------------------------------- */
@@ -209,7 +116,7 @@ details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
 .faq-icon { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(var(--color-brand-accent-rgb), 0.5); color: var(--color-brand-accent); font-family: 'Inter', sans-serif; font-size: 1.125rem; line-height: 1; transition: transform .25s, background-color .25s, color .25s; }
 details[open] .faq-icon { transform: rotate(45deg); background: var(--color-brand-accent); color: var(--color-text-ink); }
-.faq-pergunte { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; padding: 1.375rem; border-radius: 1.25rem; background: linear-gradient(180deg, #1b1732 0%, #17132b 100%); border: 1px solid rgba(255, 255, 255, 0.12); }
+.faq-pergunte { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; padding: 1.375rem; border-radius: 1.25rem; background: #18142b; border: 1px solid rgba(255, 255, 255, 0.12); }
 
 /* Contato: modelo do e-mail visível e rodapé completo */
 .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -218,7 +125,7 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .contato-passos strong { display: block; font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--color-text-primary); }
 .contato-passos span:not(.contato-num) { color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.55; }
 .contato-num { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(var(--color-brand-accent-rgb), 0.5); color: var(--color-brand-accent); font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 0.8125rem; }
-.contato-email { background: var(--color-surface-light); color: var(--color-text-ink); border-radius: 1.375rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: 0 30px 60px -40px rgba(var(--color-brand-primary-rgb), 0.45); }
+.contato-email { background: var(--color-surface-light); color: var(--color-text-ink); border-radius: 1.375rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: 0 30px 60px -40px rgba(0, 0, 0, 0.6); }
 .contato-email__chrome { display: flex; align-items: center; gap: 6px; padding: 12px 16px; background: #e7e3f0; border-bottom: 1px solid #dcd6e8; }
 .contato-email__chrome i { width: 10px; height: 10px; border-radius: 50%; background: #cfc8de; }
 .contato-email__chrome span { margin-left: 10px; font-size: 0.75rem; font-weight: 600; color: #5b5670; }
@@ -280,6 +187,10 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 }
 .eyebrow--light { color: #5b30d6; }
 
+/* Rótulo discreto: só onde ajuda a se localizar (sem caixa alta, sem cor de marca) */
+.rotulo { font-size: 0.9375rem; font-weight: 500; color: var(--color-text-secondary); }
+.rotulo--claro { color: #4a4560; }
+
 .section-title {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -333,7 +244,7 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .trilha { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
 @media (max-width: 1024px) { .trilha { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .trilha { grid-template-columns: 1fr; } }
-.trilha-etapa { display: flex; flex-direction: column; border-radius: 1.5rem; overflow: hidden; background: linear-gradient(180deg, #1b1732 0%, #17132b 100%); border: 1px solid rgba(255, 255, 255, 0.12); }
+.trilha-etapa { display: flex; flex-direction: column; border-radius: 1.5rem; overflow: hidden; background: #18142b; border: 1px solid rgba(255, 255, 255, 0.12); }
 .trilha-tela { height: 9.5rem; padding: 1.125rem; }
 .trilha-tela .sinal-janela { max-width: 12.5rem; }
 .trilha-texto { flex: 1; display: flex; flex-direction: column; gap: 0.625rem; padding: 1.375rem 1.375rem 1.5rem; }
@@ -428,9 +339,8 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
     display: flex;
     border-radius: 1.5rem;
     overflow: hidden;
-    background: linear-gradient(180deg, #1b1732 0%, #17132b 100%);
+    background: #18142b;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 20px 40px -34px rgba(var(--color-brand-primary-rgb), 0.35);
     transition: transform .35s ease, border-color .35s ease;
 }
 .mosaico-bloco:hover { transform: translateY(-4px); border-color: rgba(var(--color-brand-accent-rgb), 0.55); }
@@ -443,7 +353,6 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .mosaico-texto { flex: 1 1 52%; display: flex; flex-direction: column; justify-content: center; gap: 0.75rem; padding: 1.875rem 2rem 2rem; }
 .mosaico-bloco--estreito .mosaico-texto { padding: 1.5rem 1.75rem 1.75rem; }
 .mosaico-resolve { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 600; color: var(--color-brand-accent); }
-.mosaico-resolve::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #e11d48; box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.25); }
 .mosaico-etiquetas { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.375rem; list-style: none; padding: 0; }
 .mosaico-etiquetas li { font-size: 0.8125rem; font-weight: 600; color: #fff; border: 1px solid rgba(var(--color-brand-accent-rgb), 0.4); background: rgba(var(--color-brand-accent-rgb), 0.06); border-radius: 9999px; padding: 0.375rem 0.75rem; }
 .mosaico-titulo { display: block; height: 12px; width: 70%; border-radius: 4px; background: var(--color-text-ink); }
@@ -532,10 +441,16 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .estudio-pessoa { display: grid; grid-template-columns: 72px 1fr; gap: 1.25rem; padding-block: 1.625rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 .estudio-foto { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; }
 .estudio-foto--monograma { display: grid; place-items: center; background: #221c3d; color: var(--color-brand-accent); font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.75rem; }
+/* Estúdio em fundo claro: quebra a sequência de seções escuras e destaca as fotos */
+#estudio .section-sub { color: #4a4560; }
+#estudio .estudio-manifesto em { color: #5b30d6; }
+#estudio .estudio-pessoas, #estudio .estudio-pessoa { border-color: rgba(21, 18, 31, 0.12); }
+#estudio .estudio-apelido { color: #5b30d6; border-color: rgba(91, 48, 214, 0.35); }
+#estudio a:hover { color: #5b30d6; }
 .estudio-apelido { margin-left: 0.375rem; padding: 0.15rem 0.55rem; border-radius: 9999px; border: 1px solid rgba(var(--color-brand-accent-rgb), 0.4); color: var(--color-brand-accent); font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; vertical-align: middle; }
 
 /* Formatos: comparativo (tabela no desktop, blocos no celular) */
-.comparativo { border-radius: 1.5rem; overflow: hidden; background: linear-gradient(180deg, #1b1732 0%, #17132b 100%); border: 1px solid rgba(255, 255, 255, 0.12); }
+.comparativo { border-radius: 1.5rem; overflow: hidden; background: #18142b; border: 1px solid rgba(255, 255, 255, 0.12); }
 .comparativo-tabela { width: 100%; border-collapse: collapse; table-layout: fixed; }
 .comparativo-tabela th, .comparativo-tabela td { padding: 1rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 .comparativo-tabela th:first-child, .comparativo-tabela td:first-child { width: 34%; text-align: left; }
