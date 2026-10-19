@@ -87,6 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { rootMargin: '-45% 0px -50% 0px' });
 
-        document.querySelectorAll('main section[id]').forEach((section) => observer.observe(section));
+        document.querySelectorAll('main section[id], #contato').forEach((section) => observer.observe(section));
     }
 });
