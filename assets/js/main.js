@@ -49,6 +49,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ----------------------------------------------------
+    // Abertura: o G acompanha levemente o mouse (só com mouse e com movimento liberado)
+    // ----------------------------------------------------
+    const heroVisual = document.querySelector('[data-hero-visual]');
+    const hero = document.getElementById('hero');
+    if (heroVisual && hero && matchMedia('(pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const layer = heroVisual.firstElementChild;
+        hero.addEventListener('pointermove', (e) => {
+            const r = hero.getBoundingClientRect();
+            layer.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5) * -18 + 'px');
+            layer.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5) * -14 + 'px');
+        });
+        hero.addEventListener('pointerleave', () => {
+            layer.style.setProperty('--px', '0px');
+            layer.style.setProperty('--py', '0px');
+        });
+    }
+
+    // ----------------------------------------------------
     // Marca a seção que está na tela (atalhos da barra e itens do menu)
     // ----------------------------------------------------
     const sectionLinks = document.querySelectorAll('.nav-link, .site-menu__link');

@@ -90,28 +90,54 @@
              O G 3D fica à direita como imagem de marca (atrás do texto no celular). -->
         <section id="hero" class="relative w-full min-h-[100svh] flex flex-col pt-28 pb-10 md:pb-14 bg-gpurple-deep overflow-hidden">
             <div class="relative flex-1 w-full max-w-[1200px] mx-auto px-4 md:px-8 flex items-center">
-                <div aria-hidden="true" class="hero-g absolute top-1/2 -translate-y-1/2 right-[-30%] sm:right-[-10%] md:right-0 z-0 pointer-events-none mix-blend-screen" style="-webkit-mask-image: radial-gradient(circle, black 40%, transparent 68%); mask-image: radial-gradient(circle, black 40%, transparent 68%);">
-                    <div class="relative w-[340px] sm:w-[420px] md:w-[520px] lg:w-[600px] animate-levitate-g">
-                        <img src="./assets/img/marca/g-3d.jpg" alt="" class="w-full h-full opacity-90">
-                        <div class="absolute inset-0 mix-blend-overlay overflow-hidden">
-                            <div class="animate-glass-sweep"></div>
+                <!-- Visual da abertura: disco e anéis em órbita destacam o G do fundo -->
+                <div aria-hidden="true" class="hero-visual" data-hero-visual>
+                    <div class="hero-parallax">
+                        <div class="hero-orbit">
+                            <div class="hero-orbit__disc"></div>
+                            <svg class="hero-orbit__rings" viewBox="0 0 600 600" focusable="false">
+                                <g class="hero-orbit__spin">
+                                    <circle class="hero-orbit__ring" cx="300" cy="300" r="262" stroke="rgba(232,207,160,.55)" stroke-width="1.2" style="--len:1646;--d:.2s"/>
+                                    <circle class="hero-orbit__sat" cx="300" cy="38" r="4.5" fill="#e8cfa0"/>
+                                </g>
+                                <g class="hero-orbit__spin hero-orbit__spin--rev">
+                                    <circle class="hero-orbit__ring" cx="300" cy="300" r="222" stroke="rgba(196,181,253,.35)" stroke-width="1" stroke-dasharray="2 10" style="--len:1395;--d:.45s"/>
+                                    <circle class="hero-orbit__sat" cx="78" cy="300" r="3" fill="#c4b5fd"/>
+                                </g>
+                                <g class="hero-orbit__spin">
+                                    <circle class="hero-orbit__ring" cx="300" cy="300" r="292" stroke="rgba(139,92,246,.35)" stroke-width="1" style="--len:1835;--d:.7s"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="hero-g mix-blend-screen" style="-webkit-mask-image: radial-gradient(circle, black 40%, transparent 68%); mask-image: radial-gradient(circle, black 40%, transparent 68%);">
+                            <div class="hero-g__enter">
+                                <div class="relative w-full h-full animate-levitate-g">
+                                    <img src="./assets/img/marca/g-3d.jpg" alt="" class="w-full h-full opacity-90">
+                                    <div class="absolute inset-0 mix-blend-overlay overflow-hidden">
+                                        <div class="animate-glass-sweep"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Escurece o fundo onde há leitura -->
+                <div aria-hidden="true" class="hero-shade"></div>
+
                 <div class="relative z-10 max-w-[720px] py-10">
-                    <p class="eyebrow mb-5">GPurple Studio · Design e tecnologia</p>
+                    <p class="eyebrow mb-5 hero-in" style="--d:.15s">GPurple Studio · Design e tecnologia</p>
                     <h1 class="font-heading font-bold text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-7xl tracking-[-0.025em] text-white">
-                        Sites que fazem sua marca parecer <span class="text-gpurple-accent">tão boa quanto ela é.</span>
+                        <span class="hero-w"><span style="--i:0">Sites</span></span> <span class="hero-w"><span style="--i:1">que</span></span> <span class="hero-w"><span style="--i:2">fazem</span></span> <span class="hero-w"><span style="--i:3">sua</span></span> <span class="hero-w"><span style="--i:4">marca</span></span> <span class="hero-w"><span style="--i:5">parecer</span></span> <span class="text-gpurple-accent"><span class="hero-w"><span style="--i:6">tão</span></span> <span class="hero-w"><span style="--i:7">boa</span></span> <span class="hero-w"><span style="--i:8">quanto</span></span> <span class="hero-w"><span style="--i:9">ela</span></span> <span class="hero-w"><span style="--i:10">é.</span></span></span>
                     </h1>
                 </div>
             </div>
 
             <div class="relative z-10 w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <p class="text-gpurple-body text-lg md:text-xl leading-relaxed max-w-lg">
+                <p class="text-gpurple-body text-lg md:text-xl leading-relaxed max-w-lg hero-in" style="--d:1.05s">
                     Sites e lojas virtuais para negócios de alto padrão. Bonitos para gerar desejo, rápidos e claros para gerar clientes.
                 </p>
-                <div class="flex flex-wrap gap-3">
+                <div class="flex flex-wrap gap-3 hero-in" style="--d:1.2s">
                     <a href="#contato" class="btn-primary px-6 py-3.5 text-base">Iniciar um projeto</a>
                     <a href="projetos/orquidario-cantareira.html" class="btn-ghost px-6 py-3.5 text-base">Ver o case do Orquidário</a>
                 </div>
