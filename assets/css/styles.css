@@ -476,26 +476,40 @@ details[open] .faq-icon { transform: rotate(45deg); }
     .projeto-faixa-link { grid-column: 1 / -1; }
 }
 
-/* Formatos */
-.format-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 2rem;
-    border-radius: 1.5rem;
-    background: var(--color-surface-dark);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* Formatos: comparativo (tabela no desktop, blocos no celular) */
+.comparativo { border-radius: 1.5rem; overflow: hidden; background: linear-gradient(180deg, #1b1732 0%, #17132b 100%); border: 1px solid rgba(255, 255, 255, 0.12); }
+.comparativo-tabela { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.comparativo-tabela th, .comparativo-tabela td { padding: 1rem 1.25rem; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.comparativo-tabela th:first-child, .comparativo-tabela td:first-child { width: 34%; text-align: left; }
+.comparativo-tabela thead th { vertical-align: top; padding-top: 1.875rem; padding-bottom: 1.375rem; }
+.comparativo-tabela thead th:first-child { vertical-align: bottom; }
+.comparativo-tabela thead th > span { display: block; }
+.comparativo-tabela tbody th { font-weight: 400; font-size: 0.9375rem; color: #fff; }
+.comparativo-tabela tbody th small { display: block; margin-top: 2px; font-size: 0.8125rem; color: var(--color-text-secondary); }
+.comparativo-tabela tfoot td { border-bottom: 0; padding: 1.5rem 1.25rem 1.875rem; }
+.comparativo-tabela tfoot td:first-child { font-size: 0.875rem; color: var(--color-text-secondary); }
+.comparativo-destaque { background: rgba(var(--color-brand-accent-rgb), 0.06); box-shadow: inset 1px 0 0 rgba(var(--color-brand-accent-rgb), 0.35), inset -1px 0 0 rgba(var(--color-brand-accent-rgb), 0.35); }
+thead .comparativo-destaque { box-shadow: inset 1px 0 0 rgba(var(--color-brand-accent-rgb), 0.35), inset -1px 0 0 rgba(var(--color-brand-accent-rgb), 0.35), inset 0 2px 0 var(--color-brand-accent); }
+.comparativo-nome { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.375rem; color: #fff; }
+.comparativo-para { margin-top: 0.375rem; font-size: 0.8125rem; font-weight: 600; color: var(--color-brand-primary-soft); }
+.comparativo-selo { display: inline-block; width: fit-content; margin: 0 auto 0.5rem; padding: 0.25rem 0.625rem; border-radius: 9999px; background: var(--color-brand-accent); color: var(--color-text-ink); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.comparativo-sim { display: inline-block; width: 12px; height: 7px; border-left: 2px solid var(--color-brand-accent); border-bottom: 2px solid var(--color-brand-accent); transform: rotate(-45deg); }
+.comparativo-nao { display: inline-block; width: 14px; height: 2px; vertical-align: middle; background: rgba(255, 255, 255, 0.18); }
+.comparativo-botao { display: inline-flex; align-items: center; justify-content: center; padding: 0.7rem 1.1rem; border-radius: 9999px; border: 1px solid rgba(var(--color-brand-accent-rgb), 0.5); color: var(--color-brand-accent); font-size: 0.875rem; font-weight: 600; transition: background-color .2s; }
+.comparativo-botao:hover { background: rgba(var(--color-brand-accent-rgb), 0.08); }
+.comparativo-botao--cheio { background: var(--color-brand-accent); color: var(--color-text-ink); border-color: var(--color-brand-accent); }
+.comparativo-botao--cheio:hover { background: var(--color-brand-accent-hover); }
+.comparativo-blocos { display: none; }
+.comparativo-mais { font-size: 0.875rem; font-weight: 600; color: var(--color-brand-accent); }
+@media (max-width: 900px) {
+    .comparativo-tabela { display: none; }
+    .comparativo-blocos { display: grid; gap: 0.75rem; padding: 1rem; }
+    .comparativo-bloco { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.375rem; border-radius: 1.125rem; border: 1px solid rgba(255, 255, 255, 0.1); }
+    .comparativo-bloco--destaque { border-color: var(--color-brand-accent); }
+    .comparativo-bloco .comparativo-para { margin-top: -0.25rem; }
+    .comparativo-bloco .comparativo-selo { margin: 0; }
+    .comparativo-bloco .comparativo-botao { align-self: flex-start; margin-top: 0.25rem; }
 }
-.format-card--featured { border-color: var(--color-brand-accent); }
-.format-link {
-    margin-top: 0.5rem;
-    font-weight: 600;
-    color: var(--color-brand-accent);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 5px;
-}
-.format-link:hover { color: var(--color-brand-accent-hover); }
 
 /* Cards de projeto na seção clara */
 .project-feature:focus-visible,
