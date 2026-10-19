@@ -92,7 +92,8 @@ Segue o Manual de Identidade Visual, com um ajuste aprovado em 16/10/2026: o **V
 
 - **Títulos** em Poppins 600/700 (classe `section-title`), texto em Inter 16 px ou mais. Nada abaixo de 12 px.
 - **Uma frase-chave por tela** em Champanhe, no máximo.
-- **Brilho e animação** só no G 3D da abertura. Sem manchas desfocadas nem sombras neon nas seções.
+- **Brilho e animação** só no G da abertura. Sem manchas desfocadas nem sombras neon nas seções.
+- **Símbolo da abertura** (19/10/2026): o G de vidro 3D saiu. A abertura usa o G geométrico do logo, sólido e com volume discreto, dentro de anéis finos em órbita. O manual da marca ainda cita o G 3D como visual da abertura e precisa ser atualizado.
 - No Tailwind, as cores da marca são variáveis CSS: use `bg-gpurple-accent`, mas não `bg-gpurple-accent/10` (o modificador de opacidade não funciona com variáveis). Para transparência, use um valor `rgba(...)` entre colchetes.
 
 ## Pendências antes de prospectar
