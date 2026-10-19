@@ -94,7 +94,7 @@ Cada seção do `index.html` começa com um comentário numerado (`<!-- 4. Proje
 | --- | --- | --- | --- |
 | – | – | Header | Barra de ponta a ponta com atalhos para as seções e botão **Menu**, que abre um mapa em tela cheia com uma linha explicando cada seção. |
 | 1 | `#hero` | Abertura | G sólido do logo com volume discreto, dentro de anéis champanhe em órbita. Segue o mouse devagar. Quem reduz movimento no sistema vê só um esmaecer curto. |
-| 2 | `#problema` | O problema | Três cartões, cada um com uma mini tela mostrando onde o visitante desiste. |
+| 2 | `#problema` | O problema | Três cartões, um por motivo de desistência: mini tela, o que acontece, "Como saber se é o seu caso" e "O que fazemos" (com link para o serviço). Fecha com o convite para a análise. |
 | 3 | `#servicos` | Serviços | Mosaico; cada serviço diz qual problema de cima ele resolve. |
 | 4 | `#projetos` | Projetos | Case principal em vitrine (capa de fundo, logo e mockup) e projetos menores em faixas. |
 | 5 | `#processo` | Processo | Trilha de cartões, cada etapa mostra o que o cliente recebe. |
