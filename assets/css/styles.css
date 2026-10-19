@@ -418,6 +418,46 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
     color: var(--color-brand-accent);
 }
 
+.sinal-card .sinal-texto { flex: 1 1 auto; }
+.sinal-rotulo {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-brand-primary-soft);
+}
+.sinal-bloco { display: flex; flex-direction: column; gap: 0.5rem; margin: 0.5rem 0 0.75rem; }
+.sinal-sinais { display: flex; flex-direction: column; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
+.sinal-sinais li { position: relative; padding-left: 1.125rem; font-size: 0.9375rem; line-height: 1.55; color: var(--color-text-secondary); }
+.sinal-sinais li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: #e11d48; box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.25); }
+.sinal-solucao {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-top: auto;
+    padding-top: 1.125rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: #fff;
+}
+.sinal-link { align-self: flex-start; font-weight: 600; color: var(--color-brand-accent); text-decoration: underline; text-decoration-color: rgba(var(--color-brand-accent-rgb), 0.4); text-underline-offset: 4px; }
+.sinal-link:hover { text-decoration-color: var(--color-brand-accent); }
+.sinais-fecho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 2.5rem;
+    padding: 1.75rem 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(var(--color-brand-accent-rgb), 0.3);
+    background: rgba(var(--color-brand-accent-rgb), 0.05);
+}
+.sinais-fecho p { max-width: 44rem; font-size: 1.0625rem; line-height: 1.6; color: var(--color-text-secondary); }
+.sinais-fecho strong { color: #fff; font-weight: 600; }
+@media (max-width: 860px) { .sinais-fecho { flex-direction: column; align-items: flex-start; padding: 1.5rem; } }
+
 /* Serviços: mosaico de blocos com mini telas (mesma linguagem dos cartões de O problema) */
 .mosaico { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.25rem; }
 .mosaico-bloco {
