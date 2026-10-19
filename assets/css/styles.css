@@ -492,9 +492,103 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 @media (min-width: 1024px) { .site-menu__img { display: block; } }
 .site-menu__case:hover .text-gpurple-body { color: var(--color-brand-accent); }
 
-/* G 3D atrás do título no celular */
+/* ----------------------------------
+   Abertura: G em órbita
+   O G do logo, com volume, sobre um disco que o separa do fundo; anéis finos se desenham na entrada e giram bem devagar.
+   Com "reduzir movimento" ativo, a regra global acima leva tudo direto ao estado final.
+   ---------------------------------- */
+.hero-visual {
+    position: absolute;
+    top: 50%;
+    right: -30%;
+    z-index: 0;
+    width: 340px;
+    aspect-ratio: 1;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+@media (min-width: 640px)  { .hero-visual { right: -10%; width: 420px; } }
+@media (min-width: 768px)  { .hero-visual { right: 0; width: 520px; } }
+@media (min-width: 1024px) { .hero-visual { right: -40px; width: 600px; } }
+
+.hero-parallax {
+    position: absolute;
+    inset: 0;
+    transform: translate(var(--px, 0px), var(--py, 0px));
+    transition: transform 1.6s cubic-bezier(.22, 1, .36, 1);
+}
+.hero-orbit { position: absolute; inset: 0; }
+.hero-orbit__disc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 112%;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, #1a1433 0%, #120e24 40%, rgba(12, 9, 22, .5) 58%, rgba(7, 6, 13, 0) 70%);
+}
+.hero-orbit__rings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 124%;
+    height: 124%;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+}
+.hero-orbit__spin { transform-origin: 300px 300px; animation: hero-gira 120s linear infinite; }
+.hero-orbit__spin--rev { animation-duration: 180s; animation-direction: reverse; }
+.hero-orbit__ring { fill: none; stroke-linecap: round; }
+.hero-g { position: absolute; inset: 0; animation: levitate-solido 10s ease-in-out infinite; }
+.hero-g__svg {
+    position: absolute;
+    inset: 19%;
+    width: 62%;
+    height: 62%;
+    overflow: visible;
+    transform: perspective(900px) rotateY(var(--ry, 0deg)) rotateX(var(--rx, 0deg));
+    transition: transform 1.8s cubic-bezier(.22, 1, .36, 1);
+}
+@keyframes levitate-solido { 50% { transform: translateY(-10px); } }
+
+@keyframes hero-gira { to { transform: rotate(360deg); } }
+@keyframes hero-desenha { to { stroke-dashoffset: 0; } }
+@keyframes hero-acende { from { opacity: 0; } }
+@keyframes hero-sobe { from { opacity: 0; transform: translateY(18px); } }
+@keyframes hero-palavra { from { transform: translateY(105%); } }
+@keyframes hero-cresce { from { transform: scale(0); } }
+@keyframes hero-respira { 50% { opacity: .18; } }
+@keyframes hero-reflexo { 0% { transform: translateX(-420px) skewX(-20deg); } 30%, 100% { transform: translateX(760px) skewX(-20deg); } }
+
+/* Título palavra por palavra: cada palavra sobe de dentro de uma máscara */
+.hero-w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.hero-w > span { display: inline-block; animation: hero-palavra .9s cubic-bezier(.2, .75, .15, 1) both; animation-delay: calc(.3s + var(--i) * 55ms); }
+.hero-in { animation: hero-sobe .8s cubic-bezier(.2, .7, .2, 1) both; animation-delay: var(--d, 0s); }
+.hero-g__giro { stroke-dasharray: 1; stroke-dashoffset: 1; animation: hero-desenha 1.5s cubic-bezier(.65, 0, .25, 1) forwards .35s; }
+.hero-g__miolo { transform-box: fill-box; transform-origin: center; animation: hero-cresce .4s cubic-bezier(.3, 0, .2, 1) both 1.4s; }
+.hero-g__aura { animation: hero-acende 1.2s ease-out both 1.4s, hero-respira 5s ease-in-out infinite 2.6s; }
+.hero-g__reflexo { transform: translateX(-420px) skewX(-20deg); animation: hero-reflexo 6s cubic-bezier(.45, 0, .2, 1) infinite 2s; }
+.hero-orbit__disc { animation: hero-acende 1.6s ease-out both; }
+.hero-orbit__ring { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); animation: hero-desenha 2.8s cubic-bezier(.6, .1, .2, 1) forwards; animation-delay: var(--d); }
+.hero-orbit__ring--dots { stroke-dasharray: 1.5 9; stroke-dashoffset: 0; animation: hero-acende 2s ease-out both var(--d); }
+.hero-orbit__sat { animation: hero-acende 1s ease-out both 2.6s; }
+
+/* Protege o título: os anéis passam por trás dele, apagados */
+.hero-shade {
+    position: absolute;
+    inset: -20% auto -20% -50vw;
+    width: calc(50vw + 62%);
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(7, 6, 13, .94) 0%, rgba(7, 6, 13, .94) 80%, rgba(7, 6, 13, .5) 92%, rgba(7, 6, 13, 0) 100%);
+}
+
+/* Celular: o G fica atrás do título, mais apagado */
 @media (max-width: 767px) {
-    .hero-g { opacity: 0.45; }
+    .hero-visual { opacity: 0.35; }
+    .hero-orbit__sat { display: none; }
+    .hero-shade { display: none; }
 }
 
 body.menu-aberto { overflow: hidden; }
