@@ -110,4 +110,4 @@ Segue o Manual de Identidade Visual, com um ajuste aprovado em 16/10/2026: o **V
 
 1. Copie `projetos/orquidario-cantareira.html` para `projetos/nome-do-cliente.html` e troque textos e imagens.
 2. Coloque as imagens em `assets/img/projetos/` com nomes em minúsculas e hífens (`cliente-capa.jpg`). Exporte em JPG ou WebP com até ~300 KB.
-3. No `index.html`, duplique um card dentro de `.projetos-grid` (seção `#projetos`) e aponte o `href` para a nova página. O case mais forte fica no bloco grande acima da grade.
+3. No `index.html`, duplique uma faixa (`.projeto-faixa`) dentro de `.projetos-grid` (seção `#projetos`) e aponte o `href` para a nova página. O case mais forte fica na vitrine acima das faixas, com a capa de fundo, o logo e o mockup.
