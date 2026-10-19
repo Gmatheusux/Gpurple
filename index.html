@@ -63,7 +63,7 @@
         <div class="site-menu__inner">
             <nav aria-label="Seções do site">
                 <ul class="site-menu__list">
-                    <li><a href="#problema" class="site-menu__link"><span class="site-menu__title">O problema</span><span class="site-menu__desc">Onde os sites perdem clientes</span></a></li>
+                    <li><a href="#problema" class="site-menu__link"><span class="site-menu__title">O problema</span><span class="site-menu__desc">Por que as visitas não viram clientes</span></a></li>
                     <li><a href="#servicos" class="site-menu__link"><span class="site-menu__title">Serviços</span><span class="site-menu__desc">Design, desenvolvimento e evolução do site</span></a></li>
                     <li><a href="#projetos" class="site-menu__link"><span class="site-menu__title">Projetos</span><span class="site-menu__desc">O case do Orquidário Cantareira</span></a></li>
                     <li><a href="#processo" class="site-menu__link"><span class="site-menu__title">Processo</span><span class="site-menu__desc">Como trabalhamos, em 4 etapas</span></a></li>
@@ -166,13 +166,14 @@
 
         <div id="conteudo"></div>
 
-        <!-- 2. O problema: três cartões, cada um com uma mini tela mostrando onde o visitante desiste -->
+        <!-- 2. O problema: três cartões, um por motivo de desistência. Cada um tem a mini tela, o que acontece,
+             como o cliente reconhece no próprio site e o que fazemos. Fecha com o convite para a análise. -->
         <section id="problema" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
                 <div class="flex flex-col gap-5 max-w-3xl">
-                    <p class="eyebrow">Onde os sites perdem clientes</p>
-                    <h2 class="section-title">O problema raramente é falta de visitas.</h2>
-                    <p class="section-sub">É o que acontece depois do clique. Quem chega a um site confuso, lento ou genérico vai embora, e quase nunca avisa.</p>
+                    <p class="eyebrow">Por que as visitas não viram clientes</p>
+                    <h2 class="section-title">Talvez o seu problema não seja falta de visitas.</h2>
+                    <p class="section-sub">Muita gente entra no site, olha e vai embora sem mandar mensagem. Quase sempre é por um destes três motivos, e todos têm solução.</p>
                 </div>
 
                 <ol class="sinais-grid">
@@ -188,9 +189,14 @@
                             <span class="sinal-etiqueta sinal-etiqueta--erro" style="bottom:1.375rem;right:1.125rem">Cadê a coleção?</span>
                         </div>
                         <div class="sinal-texto">
-                            <p class="sinal-momento">No clique</p>
-                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">Anúncio bom, página fraca</h3>
-                            <p class="text-gpurple-body leading-relaxed">Pagar por clique e levar a pessoa para uma página genérica é dinheiro indo embora. Se a página não entrega o que o anúncio prometeu, o visitante sai e o custo de cada cliente sobe.</p>
+                            <p class="sinal-momento">Assim que a pessoa chega</p>
+                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">Ela não encontra o que veio buscar</h3>
+                            <p class="text-gpurple-body leading-relaxed">A pessoa viu um anúncio, um post ou um resultado no Google e clicou. Se a página que abre não mostra logo aquilo, ela volta e procura outra empresa.</p>
+                            <div class="sinal-bloco">
+                                <p class="sinal-rotulo">Como saber se é o seu caso</p>
+                                <ul class="sinal-sinais"><li>Você investe em anúncios, mas os contatos não aumentam.</li><li>Quem clica cai na página inicial, e não na do produto ou serviço anunciado.</li></ul>
+                            </div>
+                            <p class="sinal-solucao"><span class="sinal-rotulo">O que fazemos</span>Páginas que mostram de cara o que a pessoa procurava e o próximo passo. <a href="#servicos" class="sinal-link">Ver Design e experiência <span aria-hidden="true">→</span></a></p>
                         </div>
                     </li>
                     <li class="sinal-card">
@@ -204,9 +210,14 @@
                             <span class="sinal-etiqueta sinal-etiqueta--erro" style="bottom:1.375rem;right:1.125rem">Ainda carregando…</span>
                         </div>
                         <div class="sinal-texto">
-                            <p class="sinal-momento">Enquanto a página abre</p>
-                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">Lentidão passa descuido</h3>
-                            <p class="text-gpurple-body leading-relaxed">Um site que demora a abrir dá a impressão de descuido antes de qualquer palavra ser lida. No celular, cada segundo a mais é gente desistindo.</p>
+                            <p class="sinal-momento">Enquanto o site abre</p>
+                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">O site demora e ela desiste</h3>
+                            <p class="text-gpurple-body leading-relaxed">Ninguém fica esperando uma página carregar, ainda mais no celular. Um site lento passa a impressão de descuido antes de qualquer palavra ser lida.</p>
+                            <div class="sinal-bloco">
+                                <p class="sinal-rotulo">Como saber se é o seu caso</p>
+                                <ul class="sinal-sinais"><li>Você abre o próprio site no celular e fica olhando para a tela branca.</li><li>As imagens aparecem aos pedaços ou o texto pula enquanto a página carrega.</li></ul>
+                            </div>
+                            <p class="sinal-solucao"><span class="sinal-rotulo">O que fazemos</span>Um site leve, que abre rápido até na internet do celular. <a href="#servicos" class="sinal-link">Ver Desenvolvimento e performance <span aria-hidden="true">→</span></a></p>
                         </div>
                     </li>
                     <li class="sinal-card">
@@ -221,12 +232,22 @@
                             <span class="sinal-etiqueta sinal-etiqueta--erro" style="top:1.25rem;right:1.125rem">Campo inválido</span>
                         </div>
                         <div class="sinal-texto">
-                            <p class="sinal-momento">Na hora de comprar</p>
-                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">O atrito que ninguém vê</h3>
-                            <p class="text-gpurple-body leading-relaxed">Formulário confuso, botão escondido, pagamento que trava. São detalhes que passam despercebidos para quem fez o site, mas não para quem está tentando comprar.</p>
+                            <p class="sinal-momento">Na hora de pedir ou comprar</p>
+                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">Ela trava no último passo</h3>
+                            <p class="text-gpurple-body leading-relaxed">A pessoa já decidiu, mas o botão está escondido, o formulário pede dados demais ou o pagamento dá erro. Ela desiste a um clique de virar cliente, e você nem fica sabendo.</p>
+                            <div class="sinal-bloco">
+                                <p class="sinal-rotulo">Como saber se é o seu caso</p>
+                                <ul class="sinal-sinais"><li>Clientes comentam que tentaram falar com você pelo site e não conseguiram.</li><li>Você não sabe quantas pessoas começam um pedido e param no meio.</li></ul>
+                            </div>
+                            <p class="sinal-solucao"><span class="sinal-rotulo">O que fazemos</span>Um caminho curto até o contato ou a compra, e medição para ver onde as pessoas param. <a href="#servicos" class="sinal-link">Ver Lançamento e evolução <span aria-hidden="true">→</span></a></p>
                         </div>
                     </li>
                 </ol>
+
+                <div class="sinais-fecho">
+                    <p><strong>Não sabe qual é o seu caso?</strong> É isso que a primeira análise mostra: gravamos um vídeo curto navegando no seu site e apontando o que mais faz as pessoas desistirem.</p>
+                    <a href="#contato" class="btn-primary px-6 py-3.5 text-base shrink-0">Pedir a análise do meu site</a>
+                </div>
             </div>
         </section>
 
@@ -252,7 +273,7 @@
                             <span class="sinal-etiqueta" style="top:1.125rem;right:1.125rem">Clareza em segundos</span>
                         </div>
                         <div class="mosaico-texto">
-                            <p class="mosaico-resolve">Resolve: anúncio bom, página fraca</p>
+                            <p class="mosaico-resolve">Resolve: não encontra o que veio buscar</p>
                             <h3 class="font-heading font-semibold text-2xl text-white">Design e experiência</h3>
                             <p class="text-gpurple-body leading-relaxed">Interfaces com direção de arte, hierarquia clara e textos que explicam o seu valor em segundos.</p>
                             <ul class="mosaico-etiquetas"><li>Direção de arte</li><li>UX</li><li>Copywriting</li><li>Design system</li></ul>
@@ -268,7 +289,7 @@
                             <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:1rem;right:1rem">Abriu rápido</span>
                         </div>
                         <div class="mosaico-texto">
-                            <p class="mosaico-resolve">Resolve: lentidão passa descuido</p>
+                            <p class="mosaico-resolve">Resolve: o site demora e ela desiste</p>
                             <h3 class="font-heading font-semibold text-2xl text-white">Desenvolvimento e performance</h3>
                             <p class="text-gpurple-body leading-relaxed">Sites rápidos e acessíveis, em código próprio, WordPress, Webflow ou Shopify.</p>
                             <ul class="mosaico-etiquetas"><li>Core Web Vitals</li><li>SEO técnico</li></ul>
@@ -287,7 +308,7 @@
                             <span class="sinal-etiqueta" style="top:1.125rem;left:1.125rem">Novo contato no CRM</span>
                         </div>
                         <div class="mosaico-texto">
-                            <p class="mosaico-resolve">Resolve: o atrito que ninguém vê</p>
+                            <p class="mosaico-resolve">Resolve: trava no último passo</p>
                             <h3 class="font-heading font-semibold text-2xl text-white">Lançamento e evolução</h3>
                             <p class="text-gpurple-body leading-relaxed">Medimos o que acontece no site, levamos os contatos direto para o seu CRM e seguimos melhorando o que traz resultado.</p>
                             <ul class="mosaico-etiquetas"><li>Conversões</li><li>CRM</li><li>Plano mensal</li></ul>
