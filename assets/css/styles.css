@@ -207,7 +207,9 @@ summary:focus-visible,
 /* FAQ: esconde o marcador padrão e gira o ícone ao abrir */
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
-details[open] .faq-icon { transform: rotate(45deg); }
+.faq-icon { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(var(--color-brand-accent-rgb), 0.5); color: var(--color-brand-accent); font-family: 'Inter', sans-serif; font-size: 1.125rem; line-height: 1; transition: transform .25s, background-color .25s, color .25s; }
+details[open] .faq-icon { transform: rotate(45deg); background: var(--color-brand-accent); color: var(--color-text-ink); }
+.faq-pergunte { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; padding: 1.375rem; border-radius: 1.25rem; background: linear-gradient(180deg, #1b1732 0%, #17132b 100%); border: 1px solid rgba(255, 255, 255, 0.12); }
 
 /* Respeita quem pediu menos movimento no sistema */
 @media (prefers-reduced-motion: reduce) {
