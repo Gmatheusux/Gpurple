@@ -770,7 +770,6 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 .hero__destaque { color: #5b30d6; }
 .hero__sub { color: #4a4560; font-size: 1.125rem; line-height: 1.65; }
 @media (min-width: 768px) { .hero__sub { font-size: 1.25rem; } }
-.hero__nota { color: #4a4560; font-size: .9375rem; line-height: 1.55; }
 
 /* No fundo claro o Champanhe some; o botão principal fica em tinta escura */
 .hero__btn {
