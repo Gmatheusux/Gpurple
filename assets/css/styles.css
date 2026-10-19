@@ -443,6 +443,47 @@ details[open] .faq-icon { transform: rotate(45deg); }
     .mosaico-bloco--largo .mosaico-tela { flex: 0 0 auto; min-height: 0; height: 12.5rem; }
 }
 
+/* Projetos: vitrine do case principal e faixas dos projetos menores */
+.vitrine {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 35rem;
+    border-radius: 1.75rem;
+    overflow: hidden;
+    color: #fff;
+}
+.vitrine-fundo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+.vitrine:hover .vitrine-fundo { transform: scale(1.03); }
+.vitrine::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 14, 18, 0.92) 0%, rgba(12, 14, 18, 0.7) 45%, rgba(12, 14, 18, 0.1) 100%); }
+.vitrine-texto { display: flex; flex-direction: column; justify-content: flex-end; gap: 1.375rem; padding: 3.5rem 3.25rem; }
+.vitrine-marca { display: flex; align-items: center; gap: 0.875rem; font-size: 0.8125rem; color: rgba(255, 255, 255, 0.7); }
+.vitrine-marca strong { display: block; font-family: 'Poppins', sans-serif; font-size: 0.9375rem; color: #fff; }
+.vitrine-logo { flex: none; width: 64px; height: 64px; border-radius: 50%; overflow: hidden; background: #fff; }
+.vitrine-logo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.22); }
+.vitrine-fatos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+.vitrine-fatos dt { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); margin-bottom: 0.25rem; }
+.vitrine-fatos dd { font-size: 0.9375rem; }
+.vitrine-botao { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.4rem; border-radius: 9999px; background: var(--color-brand-accent); color: var(--color-text-ink); font-weight: 600; transition: background-color .2s; }
+.vitrine:hover .vitrine-botao { background: var(--color-brand-accent-hover); }
+.vitrine-mockup { display: flex; align-items: flex-end; justify-content: flex-end; padding: 3rem 0; }
+.vitrine-mockup img { width: 112%; max-width: none; border-radius: 14px 0 0 14px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45); transform: translateX(4%); }
+.projeto-faixa { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.5rem; padding: 1.125rem 1.5rem 1.125rem 1.125rem; border-radius: 1.25rem; background: #fff; border: 1px solid #e4e0ee; transition: border-color .25s; }
+.projeto-faixa:hover { border-color: #c9bff0; }
+.projeto-faixa-miniatura { width: 84px; height: 64px; border-radius: 10px; overflow: hidden; background: var(--color-text-ink); padding: 8px 8px 0; }
+.projeto-faixa-link { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; color: var(--color-text-ink); white-space: nowrap; }
+@media (max-width: 900px) {
+    .vitrine { grid-template-columns: 1fr; min-height: 0; }
+    .vitrine::before { background: linear-gradient(180deg, rgba(12, 14, 18, 0.2) 0%, rgba(12, 14, 18, 0.9) 45%); }
+    .vitrine-mockup { order: -1; padding: 1.5rem 0 0 1.5rem; }
+    .vitrine-mockup img { width: 100%; transform: none; }
+    .vitrine-texto { padding: 1.75rem 1.5rem 2rem; }
+    .vitrine-fatos { grid-template-columns: 1fr 1fr; }
+    .projeto-faixa { grid-template-columns: auto 1fr; }
+    .projeto-faixa-link { grid-column: 1 / -1; }
+}
+
 /* Formatos */
 .format-card {
     display: flex;
@@ -467,6 +508,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 /* Cards de projeto na seção clara */
 .project-feature:focus-visible,
 .projetos-grid a:focus-visible { outline-color: #5b30d6; }
+.vitrine:focus-visible { outline-offset: 4px; }
 
 /* ----------------------------------
    Header e menu em tela cheia

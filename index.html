@@ -300,66 +300,56 @@
             </div>
         </section>
 
-        <!-- 4. Projetos: seção clara, case principal em destaque e projetos menores embaixo.
-             Para adicionar um case, duplique um card de .projetos-grid (veja o README). -->
+        <!-- 4. Projetos: case principal em vitrine (capa de fundo, logo e mockup) e projetos menores em faixas.
+             Para adicionar um case, duplique uma faixa de .projetos-grid (veja o README). -->
         <section id="projetos" class="relative w-full py-24 md:py-32 bg-gpurple-light text-gpurple-ink">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-12">
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                    <div class="flex flex-col gap-5 max-w-2xl">
-                        <p class="eyebrow eyebrow--light">Projetos</p>
-                        <h2 class="section-title text-gpurple-ink">Trabalho recente.</h2>
-                        <p class="text-[#4a4560] text-lg leading-relaxed">Todo projeto começa pelo negócio, não pelo layout.</p>
+                <div class="flex flex-col gap-5 max-w-2xl">
+                    <p class="eyebrow eyebrow--light">Projetos</p>
+                    <h2 class="section-title text-gpurple-ink">Trabalho recente.</h2>
+                    <p class="text-[#4a4560] text-lg leading-relaxed">Todo projeto começa pelo negócio, não pelo layout.</p>
+                </div>
+
+                <div class="flex flex-col gap-6">
+                    <!-- Case principal -->
+                    <a href="projetos/orquidario-cantareira.html" class="project-feature vitrine group">
+                        <img src="./assets/img/projetos/orquidario-capa.jpg" alt="" class="vitrine-fundo" loading="lazy">
+                        <div class="vitrine-texto">
+                            <div class="vitrine-marca">
+                                <span class="vitrine-logo"><img src="./assets/img/projetos/orquidario-logo.jpg" alt="Logo do Orquidário Cantareira" loading="lazy"></span>
+                                <span><strong>Orquidário Cantareira</strong>Identidade visual e loja virtual · em andamento</span>
+                            </div>
+                            <h3 class="font-heading font-bold text-4xl md:text-5xl tracking-[-0.02em] text-white">Da estufa para o digital</h3>
+                            <p class="text-white/80 text-base md:text-lg leading-relaxed max-w-md">Criados do zero para um orquidário tradicional, pensados para colecionadores que querem ver cada detalhe da planta antes de comprar.</p>
+                            <dl class="vitrine-fatos">
+                                <div><dt>Identidade</dt><dd>Logo e direção de arte</dd></div>
+                                <div><dt>Loja</dt><dd>E-commerce</dd></div>
+                                <div><dt>Experiência</dt><dd>UX da compra</dd></div>
+                            </dl>
+                            <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
+                        </div>
+                        <div class="vitrine-mockup">
+                            <img src="./assets/img/projetos/orquidario-mockup.png" alt="Página inicial da loja do Orquidário Cantareira" loading="lazy">
+                        </div>
+                    </a>
+
+                    <div class="projetos-grid flex flex-col gap-4">
+                        <!-- Templates de e-mail (projeto autoral) -->
+                        <a href="materiais/templates-email.html" class="projeto-faixa group">
+                            <span class="projeto-faixa-miniatura"><img src="./assets/img/projetos/templates-email.png" alt="" loading="lazy"></span>
+                            <span class="flex flex-col gap-1 min-w-0">
+                                <span class="text-sm font-semibold text-[#5b30d6]">GPurple Lab · Projeto autoral</span>
+                                <span class="font-heading font-bold text-lg text-gpurple-ink">E-mails que abrem bem em qualquer lugar</span>
+                                <span class="text-[#4a4560] text-sm">Templates testados no Gmail, Outlook e Apple Mail, no desktop e no celular.</span>
+                            </span>
+                            <span class="projeto-faixa-link">Ver templates <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Case principal -->
-                <a href="projetos/orquidario-cantareira.html" class="project-feature group grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] bg-white rounded-3xl overflow-hidden border border-[#e4e0ee]">
-                    <div class="bg-[#e9e6dd] p-6 md:p-12 flex items-center justify-center overflow-hidden">
-                        <img src="./assets/img/projetos/orquidario-mockup.png" alt="Página inicial do novo site do Orquidário Cantareira" class="w-full h-auto rounded-xl shadow-[0_20px_50px_rgba(21,18,31,0.18)] transition-transform duration-700 group-hover:scale-[1.02]">
-                    </div>
-                    <div class="p-6 md:p-12 flex flex-col gap-6 justify-center">
-                        <div class="flex flex-wrap items-center gap-3">
-                            <span class="text-sm font-semibold text-[#5b30d6]">Orquidário Cantareira</span>
-                            <span class="text-xs font-semibold uppercase tracking-wider bg-[#efe9ff] text-[#4c2bb8] px-3 py-1 rounded-full">Em andamento</span>
-                        </div>
-                        <h3 class="font-heading font-bold text-3xl md:text-4xl tracking-[-0.02em] text-gpurple-ink">Da estufa para o digital</h3>
-                        <p class="text-[#4a4560] text-base md:text-lg leading-relaxed">Identidade visual e loja virtual criadas do zero para um orquidário tradicional, pensadas para colecionadores que querem ver cada detalhe da planta antes de comprar.</p>
-                        <dl class="border-t border-[#e4e0ee] pt-6">
-                            <dt class="text-xs font-semibold uppercase tracking-wider text-[#5f5a73] mb-1">Escopo</dt>
-                            <dd class="text-gpurple-ink">Identidade visual · E-commerce · UX</dd>
-                        </dl>
-                        <span class="inline-flex items-center gap-2 font-semibold text-gpurple-ink">
-                            Ver o case completo
-                            <svg aria-hidden="true" class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </span>
-                    </div>
-                </a>
-
-                <div class="projetos-grid grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Templates de e-mail (projeto autoral) -->
-                    <a href="materiais/templates-email.html" class="group flex flex-col bg-white rounded-3xl overflow-hidden border border-[#e4e0ee]">
-                        <div class="bg-[#15121f] h-56 md:h-64 flex items-start justify-center px-8 pt-8 overflow-hidden">
-                            <img src="./assets/img/projetos/templates-email.png" alt="Biblioteca de templates de e-mail corporativo da GPurple" class="w-full max-w-sm h-auto rounded-t-lg transition-transform duration-700 group-hover:-translate-y-1">
-                        </div>
-                        <div class="p-6 md:p-8 flex flex-col gap-3">
-                            <span class="text-sm font-semibold text-[#5b30d6]">GPurple Lab · Projeto autoral</span>
-                            <h3 class="font-heading font-bold text-2xl text-gpurple-ink">E-mails que abrem bem em qualquer lugar</h3>
-                            <p class="text-[#4a4560] leading-relaxed">Templates de e-mail corporativo com visual de marca, testados para Gmail, Outlook e Apple Mail, no desktop e no celular.</p>
-                        </div>
-                    </a>
-
-                    <!-- Convite -->
-                    <a href="#contato" class="group flex flex-col justify-between gap-10 bg-gpurple-ink text-white rounded-3xl p-6 md:p-10">
-                        <p class="text-sm font-semibold text-gpurple-accent">Agenda aberta</p>
-                        <div class="flex flex-col gap-4">
-                            <h3 class="font-heading font-bold text-3xl tracking-[-0.02em]">O próximo projeto pode ser o seu.</h3>
-                            <p class="text-gpurple-body leading-relaxed">Conte o que você precisa. Começamos com uma análise do seu site atual.</p>
-                        </div>
-                        <span class="inline-flex items-center gap-2 font-semibold text-gpurple-accent">
-                            Iniciar um projeto
-                            <svg aria-hidden="true" class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </span>
-                    </a>
+                <div class="flex flex-wrap items-center justify-between gap-4 border-t border-[#e4e0ee] pt-8">
+                    <p class="font-heading font-semibold text-xl text-gpurple-ink">O próximo case pode ser o seu.</p>
+                    <a href="#contato" class="inline-flex items-center gap-2 font-semibold text-[#5b30d6] hover:text-gpurple-ink transition-colors">Iniciar um projeto <span aria-hidden="true">→</span></a>
                 </div>
             </div>
         </section>
