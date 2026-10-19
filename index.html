@@ -13,14 +13,14 @@
     <meta property="og:locale" content="pt_BR">
     <meta property="og:url" content="https://gmatheusux.github.io/Gpurple/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:title" content="GPurple Studio | Sites que fazem sua marca parecer tão boa quanto ela é">
+    <meta property="og:title" content="GPurple Studio | Seu negócio é bom. Seu site precisa provar isso.">
     <meta property="og:description" content="Quem desenha o seu site também programa. Sites e lojas que trazem clientes.">
     <meta property="og:image" content="https://gmatheusux.github.io/Gpurple/assets/img/marca/g-3d.jpg">
 
-    <!-- Tipografia do manual: Poppins (títulos) e Inter (texto) -->
+    <!-- Tipografia: Montserrat (títulos) e Inter (texto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/tailwind.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -30,11 +30,11 @@
 
     <!-- Header: barra de ponta a ponta (transparente no topo, sólida ao rolar).
          Em telas largas todas as seções ficam visíveis na barra; nas menores, o botão "Menu" abre o mapa completo do site. -->
-    <header class="site-header" data-header>
+    <header class="site-header site-header--claro" data-header>
         <div class="site-header__inner">
             <a href="#" aria-label="GPurple Studio, voltar ao início" class="flex items-center gap-0.5 font-bold text-xl md:text-2xl tracking-tighter text-white">
                 <span class="font-heading text-gpurple-primary text-3xl md:text-4xl font-bold leading-none">G</span>
-                <span class="lowercase">purple<span class="text-gpurple-volt">.</span></span>
+                <span class="lowercase site-header__logo-texto">purple<span class="text-gpurple-volt">.</span></span>
             </a>
 
             <nav aria-label="Atalhos" class="site-header__links">
@@ -63,7 +63,7 @@
         <div class="site-menu__inner">
             <nav aria-label="Seções do site">
                 <ul class="site-menu__list">
-                    <li><a href="#problema" class="site-menu__link"><span class="site-menu__title">O problema</span><span class="site-menu__desc">Onde os sites perdem clientes</span></a></li>
+                    <li><a href="#problema" class="site-menu__link"><span class="site-menu__title">O problema</span><span class="site-menu__desc">Por que as visitas não viram clientes</span></a></li>
                     <li><a href="#servicos" class="site-menu__link"><span class="site-menu__title">Serviços</span><span class="site-menu__desc">Design, desenvolvimento e evolução do site</span></a></li>
                     <li><a href="#projetos" class="site-menu__link"><span class="site-menu__title">Projetos</span><span class="site-menu__desc">O projeto do Orquidário Cantareira</span></a></li>
                     <li><a href="#processo" class="site-menu__link"><span class="site-menu__title">Processo</span><span class="site-menu__desc">Como trabalhamos, em 4 etapas</span></a></li>
@@ -93,86 +93,56 @@
     <main id="app" class="relative w-full flex flex-col items-center">
 
         <!-- 1. Abertura
-             Coluna flex: espaço para o header fixo, título com a proposta de valor e CTAs embaixo.
-             O G 3D fica à direita como imagem de marca (atrás do texto no celular). -->
-        <section id="hero" class="relative w-full min-h-[100svh] flex flex-col pt-28 pb-10 md:pb-14 bg-gpurple-deep overflow-hidden">
-            <div class="relative flex-1 w-full max-w-[1200px] mx-auto px-4 md:px-8 flex items-center">
-                <!-- Visual da abertura: o G do logo em órbita, com volume, sobre um disco que o separa do fundo -->
-                <div aria-hidden="true" class="hero-visual" data-hero-visual>
-                    <div class="hero-parallax">
-                        <div class="hero-orbit">
-                            <div class="hero-orbit__disc"></div>
-                            <svg class="hero-orbit__rings" viewBox="0 0 600 600" focusable="false">
-                                <g class="hero-orbit__spin">
-                                    <circle class="hero-orbit__ring" cx="300" cy="300" r="262" stroke="rgba(232,207,160,.3)" stroke-width=".8" style="--len:1646;--d:.2s"/>
-                                    <circle class="hero-orbit__sat" cx="300" cy="38" r="2.6" fill="rgba(232,207,160,.85)"/>
-                                </g>
-                                <g class="hero-orbit__spin hero-orbit__spin--rev">
-                                    <circle class="hero-orbit__ring hero-orbit__ring--dots" cx="300" cy="300" r="222" stroke="rgba(196,181,253,.2)" stroke-width=".8" style="--d:.6s"/>
-                                </g>
-                                <g class="hero-orbit__spin">
-                                    <circle class="hero-orbit__ring" cx="300" cy="300" r="292" stroke="rgba(139,92,246,.18)" stroke-width=".8" style="--len:1835;--d:.7s"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="hero-g">
-                            <svg class="hero-g__svg" viewBox="232 232 560 560" focusable="false">
-                                <defs>
-                                    <linearGradient id="hero-g-face" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#cbb8ff"/><stop offset=".32" stop-color="#9f7aea"/><stop offset=".7" stop-color="#7c4dff"/><stop offset="1" stop-color="#5b2fd0"/></linearGradient>
-                                    <linearGradient id="hero-g-lado" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a35c4"/><stop offset="1" stop-color="#3a2088"/></linearGradient>
-                                    <linearGradient id="hero-g-bisel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#f1dcb4" stop-opacity=".45"/></linearGradient>
-                                    <linearGradient id="hero-g-reflexo" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#f1dcb4" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-                                    <clipPath id="hero-g-forma"><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z"/></clipPath>
-                                    <filter id="hero-g-brilho" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="34"/></filter>
-                                    <!-- Revela o G num giro que segue o traço da letra, do topo até a barra -->
-                                    <mask id="hero-g-revela" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
-                                        <path class="hero-g__giro" pathLength="1" d="M691.7 376.6A225 225 0 1 0 332.3 647.4A225 225 0 1 0 691.7 376.6" fill="none" stroke="#fff" stroke-width="330"/>
-                                        <circle class="hero-g__miolo" cx="512" cy="512" r="72" fill="#fff"/>
-                                    </mask>
-                                </defs>
-                                <path class="hero-g__aura" d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" fill="#8b5cf6" opacity=".32" filter="url(#hero-g-brilho)"/>
-                                <g mask="url(#hero-g-revela)">
-                                    <g fill="url(#hero-g-lado)" opacity=".75"><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(7.2 8.55)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(6.4 7.6)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(5.6 6.65)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(4.8 5.7)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(4.0 4.75)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(3.2 3.8)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(2.4 2.85)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(1.6 1.9)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(0.8 0.95)"/></g>
-                                    <path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" fill="url(#hero-g-face)"/>
-                                    <path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" fill="none" stroke="url(#hero-g-bisel)" stroke-width="6" clip-path="url(#hero-g-forma)"/>
-                                    <g clip-path="url(#hero-g-forma)"><rect class="hero-g__reflexo" x="232" y="180" width="150" height="680" fill="url(#hero-g-reflexo)"/></g>
-                                </g>
-                            </svg>
-                        </div>
+             Fundo claro, texto à esquerda com a proposta e quem faz; à direita, trabalho real (a loja do Orquidário)
+             com dois pinos numerados que remetem às notas de projeto da legenda. Sem brilho nem órbita: o trabalho é o visual. -->
+        <section id="hero" class="hero relative w-full overflow-hidden">
+            <div class="hero__inner w-full max-w-[1200px] mx-auto px-4 md:px-8">
+                <div class="hero__texto">
+                    <p class="hero__autoria">
+                        <span class="hero__rostos" aria-hidden="true">
+                            <img src="assets/img/equipe/gabriel-barros.jpg" alt="" width="40" height="40">
+                            <span>D</span>
+                        </span>
+                        <span>Gabe e Dex, do estúdio GPurple</span>
+                    </p>
+                    <h1 class="hero__titulo">Seu negócio é bom. Seu site <span class="hero__destaque">precisa provar isso.</span></h1>
+                    <p class="hero__sub">Criamos sites e lojas que fazem o seu cliente entender o que você vende e ter vontade de comprar. Sem intermediários: você fala direto com quem faz.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#contato" class="hero__btn hero__btn--cheio">Iniciar um projeto</a>
+                        <a href="#projetos" class="hero__btn hero__btn--linha">Ver projetos</a>
                     </div>
                 </div>
 
-                <!-- Escurece o fundo onde há leitura -->
-                <div aria-hidden="true" class="hero-shade"></div>
-
-                <div class="relative z-10 max-w-[720px] py-10">
-                    <p class="eyebrow mb-5 hero-in" style="--d:.15s">GPurple Studio · Design e tecnologia</p>
-                    <h1 class="font-heading font-bold text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-7xl tracking-[-0.025em] text-white">
-                        <span class="hero-w"><span style="--i:0">Sites</span></span> <span class="hero-w"><span style="--i:1">que</span></span> <span class="hero-w"><span style="--i:2">fazem</span></span> <span class="hero-w"><span style="--i:3">sua</span></span> <span class="hero-w"><span style="--i:4">marca</span></span> <span class="hero-w"><span style="--i:5">parecer</span></span> <span class="text-gpurple-accent"><span class="hero-w"><span style="--i:6">tão</span></span> <span class="hero-w"><span style="--i:7">boa</span></span> <span class="hero-w"><span style="--i:8">quanto</span></span> <span class="hero-w"><span style="--i:9">ela</span></span> <span class="hero-w"><span style="--i:10">é.</span></span></span>
-                    </h1>
-                </div>
-            </div>
-
-            <div class="relative z-10 w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
-                <p class="text-gpurple-body text-lg md:text-xl leading-relaxed max-w-lg hero-in" style="--d:1.05s">
-                    Sites e lojas virtuais para negócios de alto padrão. Bonitos para gerar desejo, rápidos e claros para gerar clientes.
-                </p>
-                <div class="flex flex-wrap gap-3 hero-in" style="--d:1.2s">
-                    <a href="#contato" class="btn-primary px-6 py-3.5 text-base">Iniciar um projeto</a>
-                    <a href="projetos/orquidario-cantareira.html" class="btn-ghost px-6 py-3.5 text-base">Ver o case do Orquidário</a>
-                </div>
+                <figure class="hero-obra">
+                    <a href="projetos/orquidario-cantareira.html" class="hero-obra__janela">
+                        <span class="hero-obra__barra" aria-hidden="true"><i></i><i></i><i></i><span>Orquidário Cantareira · loja virtual</span></span>
+                        <span class="hero-obra__tela">
+                            <img src="assets/img/projetos/orquidario-mockup.png" alt="Página inicial da loja do Orquidário Cantareira, desenhada pela GPurple" width="1024" height="506" fetchpriority="high">
+                            <span class="hero-obra__pino" style="left:74%;top:36%" aria-hidden="true">1</span>
+                            <span class="hero-obra__pino" style="left:11%;top:82%" aria-hidden="true">2</span>
+                        </span>
+                    </a>
+                    <figcaption class="hero-obra__legenda">
+                        <ol class="hero-obra__notas">
+                            <li><span aria-hidden="true">1</span>Foto grande da planta, porque o colecionador quer ver cada detalhe antes de comprar.</li>
+                            <li><span aria-hidden="true">2</span>Um caminho só na primeira tela: explorar a coleção.</li>
+                        </ol>
+                        <a href="projetos/orquidario-cantareira.html" class="hero-obra__link">Identidade e loja virtual, em andamento <span aria-hidden="true">→</span></a>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
         <div id="conteudo"></div>
 
-        <!-- 2. O problema: três cartões, cada um com uma mini tela mostrando onde o visitante desiste -->
+        <!-- 2. O problema: três cartões, um por motivo de desistência. Cada um tem a mini tela, o que acontece,
+             como o cliente reconhece no próprio site e o que fazemos. Fecha com o convite para a análise. -->
         <section id="problema" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
                 <div class="flex flex-col gap-5 max-w-3xl">
-                    <p class="eyebrow">Onde os sites perdem clientes</p>
-                    <h2 class="section-title">O problema raramente é falta de visitas.</h2>
-                    <p class="section-sub">É o que acontece depois do clique. Quem chega a um site confuso, lento ou genérico vai embora, e quase nunca avisa.</p>
+                    <p class="eyebrow">Por que as visitas não viram clientes</p>
+                    <h2 class="section-title">Talvez o seu problema não seja falta de visitas.</h2>
+                    <p class="section-sub">Muita gente entra no site, olha e vai embora sem mandar mensagem. Quase sempre é por um destes três motivos, e todos têm solução.</p>
                 </div>
 
                 <ol class="sinais-grid">
@@ -188,9 +158,14 @@
                             <span class="sinal-etiqueta sinal-etiqueta--erro" style="bottom:1.375rem;right:1.125rem">Cadê a coleção?</span>
                         </div>
                         <div class="sinal-texto">
-                            <p class="sinal-momento">No clique</p>
-                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">Anúncio bom, página fraca</h3>
-                            <p class="text-gpurple-body leading-relaxed">Pagar por clique e levar a pessoa para uma página genérica é dinheiro indo embora. Se a página não entrega o que o anúncio prometeu, o visitante sai e o custo de cada cliente sobe.</p>
+                            <p class="sinal-momento">Assim que a pessoa chega</p>
+                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">Ela não encontra o que veio buscar</h3>
+                            <p class="text-gpurple-body leading-relaxed">A pessoa viu um anúncio, um post ou um resultado no Google e clicou. Se a página que abre não mostra logo aquilo, ela volta e procura outra empresa.</p>
+                            <div class="sinal-bloco">
+                                <p class="sinal-rotulo">Como saber se é o seu caso</p>
+                                <ul class="sinal-sinais"><li>Você investe em anúncios, mas os contatos não aumentam.</li><li>Quem clica no anúncio cai na página inicial e precisa procurar sozinho o que viu.</li></ul>
+                            </div>
+                            <p class="sinal-solucao"><span class="sinal-rotulo">O que fazemos</span>Páginas que mostram de cara o que a pessoa procurava e o próximo passo. <a href="#servicos" class="sinal-link">Ver Design e experiência <span aria-hidden="true">→</span></a></p>
                         </div>
                     </li>
                     <li class="sinal-card">
@@ -204,9 +179,14 @@
                             <span class="sinal-etiqueta sinal-etiqueta--erro" style="bottom:1.375rem;right:1.125rem">Ainda carregando…</span>
                         </div>
                         <div class="sinal-texto">
-                            <p class="sinal-momento">Enquanto a página abre</p>
-                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">Lentidão passa descuido</h3>
-                            <p class="text-gpurple-body leading-relaxed">Um site que demora a abrir dá a impressão de descuido antes de qualquer palavra ser lida. No celular, cada segundo a mais é gente desistindo.</p>
+                            <p class="sinal-momento">Enquanto o site abre</p>
+                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">O site demora e ela desiste</h3>
+                            <p class="text-gpurple-body leading-relaxed">Ninguém fica esperando uma página carregar, ainda mais no celular. Um site lento passa a impressão de descuido antes de qualquer palavra ser lida.</p>
+                            <div class="sinal-bloco">
+                                <p class="sinal-rotulo">Como saber se é o seu caso</p>
+                                <ul class="sinal-sinais"><li>Você abre o próprio site no celular e fica olhando para a tela branca.</li><li>As imagens aparecem aos pedaços ou o texto pula enquanto a página carrega.</li></ul>
+                            </div>
+                            <p class="sinal-solucao"><span class="sinal-rotulo">O que fazemos</span>Um site leve, que abre no celular sem deixar a pessoa esperando. <a href="#servicos" class="sinal-link">Ver Desenvolvimento e performance <span aria-hidden="true">→</span></a></p>
                         </div>
                     </li>
                     <li class="sinal-card">
@@ -221,12 +201,22 @@
                             <span class="sinal-etiqueta sinal-etiqueta--erro" style="top:1.25rem;right:1.125rem">Campo inválido</span>
                         </div>
                         <div class="sinal-texto">
-                            <p class="sinal-momento">Na hora de comprar</p>
-                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">O atrito que ninguém vê</h3>
-                            <p class="text-gpurple-body leading-relaxed">Formulário confuso, botão escondido, pagamento que trava. São detalhes que passam despercebidos para quem fez o site, mas não para quem está tentando comprar.</p>
+                            <p class="sinal-momento">Na hora de pedir ou comprar</p>
+                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">Ela trava no último passo</h3>
+                            <p class="text-gpurple-body leading-relaxed">A pessoa já decidiu, mas não acha o botão ou o formulário pede dados demais. Ela desiste a um clique de virar cliente, e você nem fica sabendo.</p>
+                            <div class="sinal-bloco">
+                                <p class="sinal-rotulo">Como saber se é o seu caso</p>
+                                <ul class="sinal-sinais"><li>Clientes comentam que tentaram falar com você pelo site e não conseguiram.</li><li>Você não sabe quantas pessoas começam um pedido e param no meio.</li></ul>
+                            </div>
+                            <p class="sinal-solucao"><span class="sinal-rotulo">O que fazemos</span>Um caminho curto até o contato ou a compra, e medição para ver onde as pessoas param. <a href="#servicos" class="sinal-link">Ver Lançamento e evolução <span aria-hidden="true">→</span></a></p>
                         </div>
                     </li>
                 </ol>
+
+                <div class="sinais-fecho">
+                    <p><strong>Não sabe qual é o seu caso?</strong> Gravamos um vídeo curto navegando no seu site e mostramos onde as pessoas desistem.</p>
+                    <a href="#contato" class="btn-primary px-6 py-3.5 text-base shrink-0">Pedir análise</a>
+                </div>
             </div>
         </section>
 
@@ -252,7 +242,7 @@
                             <span class="sinal-etiqueta" style="top:1.125rem;right:1.125rem">Clareza em segundos</span>
                         </div>
                         <div class="mosaico-texto">
-                            <p class="mosaico-resolve">Resolve: anúncio bom, página fraca</p>
+                            <p class="mosaico-resolve">Resolve: não encontra o que veio buscar</p>
                             <h3 class="font-heading font-semibold text-2xl text-white">Design e experiência</h3>
                             <p class="text-gpurple-body leading-relaxed">Telas com a cara da sua marca, em que o visitante entende em segundos o que você oferece.</p>
                             <ul class="mosaico-etiquetas"><li>Visual da sua marca</li><li>Textos que explicam o que você vende</li></ul>
@@ -268,7 +258,7 @@
                             <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:1rem;right:1rem">Abriu rápido</span>
                         </div>
                         <div class="mosaico-texto">
-                            <p class="mosaico-resolve">Resolve: lentidão passa descuido</p>
+                            <p class="mosaico-resolve">Resolve: o site demora e ela desiste</p>
                             <h3 class="font-heading font-semibold text-2xl text-white">Desenvolvimento e performance</h3>
                             <p class="text-gpurple-body leading-relaxed">Sites rápidos e acessíveis, em código próprio, WordPress, Webflow ou Shopify.</p>
                             <ul class="mosaico-etiquetas"><li>Abre rápido no celular</li><li>Aparece no Google</li></ul>
@@ -287,7 +277,7 @@
                             <span class="sinal-etiqueta" style="top:1.125rem;left:1.125rem">Novo contato no CRM</span>
                         </div>
                         <div class="mosaico-texto">
-                            <p class="mosaico-resolve">Resolve: o atrito que ninguém vê</p>
+                            <p class="mosaico-resolve">Resolve: trava no último passo</p>
                             <h3 class="font-heading font-semibold text-2xl text-white">Lançamento e evolução</h3>
                             <p class="text-gpurple-body leading-relaxed">Acompanhamos quantas visitas viram contato, mandamos cada contato direto para a sua planilha ou CRM e seguimos melhorando o que traz resultado.</p>
                             <ul class="mosaico-etiquetas"><li>Contatos organizados</li><li>Melhorias todo mês</li></ul>
@@ -629,7 +619,7 @@
                 <div class="rodape__marca">
                     <a href="#" aria-label="Voltar ao início" class="flex items-center gap-0.5 font-bold text-xl tracking-tighter text-white">
                         <span class="font-heading text-gpurple-primary text-2xl font-bold leading-none">G</span>
-                        <span class="lowercase">purple<span class="text-gpurple-volt">.</span></span>
+                        <span class="lowercase site-header__logo-texto">purple<span class="text-gpurple-volt">.</span></span>
                     </a>
                     <p>Estúdio de design e desenvolvimento. Sites, lojas e landing pages que trazem clientes.</p>
                 </div>
