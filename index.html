@@ -28,43 +28,60 @@
 
     <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-gpurple-accent focus:text-gpurple-ink focus:px-4 focus:py-2 focus:rounded-full">Pular para o conteúdo</a>
 
-    <!-- Header (cápsula flutuante) -->
-    <header class="site-header fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] md:w-[95%] max-w-5xl glass rounded-full px-4 py-3 md:px-6 md:py-3.5 flex items-center justify-between gap-4">
-        <a href="#" aria-label="GPurple Studio, voltar ao início" class="flex items-center gap-0.5 font-bold text-xl md:text-2xl tracking-tighter text-white">
-            <span class="font-heading text-gpurple-primary text-3xl md:text-4xl font-bold leading-none">G</span>
-            <span class="lowercase">purple<span class="text-gpurple-volt">.</span></span>
-        </a>
+    <!-- Header: barra de ponta a ponta (transparente no topo, sólida ao rolar).
+         Os 3 destinos principais ficam visíveis no desktop; o botão "Menu" abre o mapa completo do site. -->
+    <header class="site-header" data-header>
+        <div class="site-header__inner">
+            <a href="#" aria-label="GPurple Studio, voltar ao início" class="flex items-center gap-0.5 font-bold text-xl md:text-2xl tracking-tighter text-white">
+                <span class="font-heading text-gpurple-primary text-3xl md:text-4xl font-bold leading-none">G</span>
+                <span class="lowercase">purple<span class="text-gpurple-volt">.</span></span>
+            </a>
 
-        <nav aria-label="Principal" class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-gpurple-body">
-            <a href="#servicos" class="nav-link hover:text-white transition-colors">Serviços</a>
-            <a href="#projetos" class="nav-link hover:text-white transition-colors">Projetos</a>
-            <a href="#processo" class="nav-link hover:text-white transition-colors">Processo</a>
-            <a href="#formatos" class="nav-link hover:text-white transition-colors">Formatos</a>
-            <a href="#estudio" class="nav-link hover:text-white transition-colors">Estúdio</a>
-            <a href="#faq" class="nav-link hover:text-white transition-colors">FAQ</a>
-        </nav>
+            <nav aria-label="Atalhos" class="site-header__links">
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#projetos" class="nav-link">Projetos</a>
+                <a href="#processo" class="nav-link">Processo</a>
+            </nav>
 
-        <div class="flex items-center gap-2">
-            <span class="hidden sm:block"><a href="#contato" class="btn-primary px-5 py-2.5 text-sm">Iniciar um projeto</a></span>
-            <button type="button" class="md:hidden inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 text-sm font-semibold text-white" aria-expanded="false" aria-controls="menu-celular" data-menu-toggle>
-                <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/></svg>
-                <span data-menu-label>Menu</span>
-            </button>
+            <div class="flex items-center gap-2 md:gap-3">
+                <span class="hidden sm:block" data-header-cta><a href="#contato" class="btn-primary px-5 py-2.5 text-sm">Iniciar um projeto</a></span>
+                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-site" data-menu-toggle>
+                    <span class="menu-toggle__icon" aria-hidden="true"></span>
+                    <span data-menu-label>Menu</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Menu do celular -->
-    <nav id="menu-celular" aria-label="Menu" class="mobile-menu md:hidden fixed inset-0 z-40 bg-gpurple-dark px-6 pt-28 pb-10 flex flex-col gap-8" hidden>
-        <ul class="flex flex-col gap-1 text-3xl font-heading font-semibold">
-            <li><a href="#servicos" class="block py-2">Serviços</a></li>
-            <li><a href="#projetos" class="block py-2">Projetos</a></li>
-            <li><a href="#processo" class="block py-2">Processo</a></li>
-            <li><a href="#formatos" class="block py-2">Formatos</a></li>
-            <li><a href="#estudio" class="block py-2">Estúdio</a></li>
-            <li><a href="#faq" class="block py-2">Perguntas frequentes</a></li>
-        </ul>
-        <a href="#contato" class="btn-primary self-start px-6 py-3.5 text-base">Iniciar um projeto</a>
-    </nav>
+    <!-- Menu em tela cheia: todas as seções, com uma linha explicando cada uma -->
+    <div id="menu-site" class="site-menu" hidden>
+        <div class="site-menu__inner">
+            <nav aria-label="Seções do site">
+                <ul class="site-menu__list">
+                    <li><a href="#servicos" class="site-menu__link"><span class="site-menu__title">Serviços</span><span class="site-menu__desc">Design, desenvolvimento e evolução do site</span></a></li>
+                    <li><a href="#projetos" class="site-menu__link"><span class="site-menu__title">Projetos</span><span class="site-menu__desc">O case do Orquidário Cantareira</span></a></li>
+                    <li><a href="#processo" class="site-menu__link"><span class="site-menu__title">Processo</span><span class="site-menu__desc">Como trabalhamos, em 4 etapas</span></a></li>
+                    <li><a href="#formatos" class="site-menu__link"><span class="site-menu__title">Formatos</span><span class="site-menu__desc">Pontos de partida para o seu projeto</span></a></li>
+                    <li><a href="#estudio" class="site-menu__link"><span class="site-menu__title">Estúdio</span><span class="site-menu__desc">Quem faz o seu projeto</span></a></li>
+                    <li><a href="#faq" class="site-menu__link"><span class="site-menu__title">Perguntas frequentes</span><span class="site-menu__desc">Preço, prazo e tecnologia</span></a></li>
+                </ul>
+            </nav>
+
+            <aside class="site-menu__aside">
+                <a href="projetos/orquidario-cantareira.html" class="site-menu__case">
+                    <span class="site-menu__label">Projeto em destaque</span>
+                    <img src="assets/img/projetos/orquidario-mockup.png" alt="" loading="lazy" class="site-menu__img">
+                    <span class="text-white font-semibold">Orquidário Cantareira</span>
+                    <span class="text-gpurple-body">Identidade e loja criadas do zero. Ver o case →</span>
+                </a>
+                <div class="flex flex-col gap-3">
+                    <span class="site-menu__label">Contato</span>
+                    <a href="mailto:gmbarros@gpurpledesign.com.br" class="text-white underline decoration-gpurple-accent underline-offset-4 break-all">gmbarros@gpurpledesign.com.br</a>
+                    <a href="#contato" class="btn-primary self-start px-6 py-3.5 text-base mt-2">Iniciar um projeto</a>
+                </div>
+            </aside>
+        </div>
+    </div>
 
     <main id="app" class="relative w-full flex flex-col items-center">
 
