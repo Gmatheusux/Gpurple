@@ -257,14 +257,10 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
         transition-duration: 0.01ms !important;
     }
 }
-/* Mesmo assim, a abertura entra com um esmaecer curto, sem deslocamento, giro ou rotação */
+/* Mesmo assim, a imagem da abertura entra com um esmaecer curto, sem deslocamento */
 @media (prefers-reduced-motion: reduce) {
-    .hero-visual, .hero-in, .hero-w > span {
-        animation: hero-esmaece .6s ease-out both !important;
-    }
-    .hero-w > span { animation-delay: .1s !important; }
-    .hero-visual { animation-delay: .25s !important; }
-    .hero-in { animation-delay: calc(var(--d, 0s) * .35) !important; }
+    .hero-obra { animation: hero-esmaece .6s ease-out both !important; }
+    .hero-obra__janela:hover { transform: none; }
 }
 @keyframes hero-esmaece { from { opacity: 0; } }
 
@@ -732,102 +728,121 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 .site-menu__case:hover .text-gpurple-body { color: var(--color-brand-accent); }
 
 /* ----------------------------------
-   Abertura: G em órbita
-   O G do logo, com volume, sobre um disco que o separa do fundo; anéis finos se desenham na entrada e giram bem devagar.
-   Com "reduzir movimento" ativo, a regra global acima leva tudo direto ao estado final.
+   Abertura: proposta à esquerda, trabalho real à direita
+   Fundo claro para fugir do "roxo sobre preto com brilho" de site gerado. A loja do Orquidário aparece numa janela
+   de navegador, com pinos numerados que remetem às notas de projeto da legenda. Só a imagem entra com movimento.
    ---------------------------------- */
-.hero-visual {
-    position: absolute;
-    top: 50%;
-    right: -30%;
-    z-index: 0;
-    width: 340px;
-    aspect-ratio: 1;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-@media (min-width: 640px)  { .hero-visual { right: -10%; width: 420px; } }
-@media (min-width: 768px)  { .hero-visual { right: 0; width: 520px; } }
-@media (min-width: 1024px) { .hero-visual { right: -40px; width: 600px; } }
+.hero { background: var(--color-surface-light); color: var(--color-text-ink); padding: 7.5rem 0 4rem; }
+@media (min-width: 1024px) { .hero { min-height: 100svh; display: flex; align-items: center; padding: 8rem 0 5rem; } }
 
-.hero-parallax {
-    position: absolute;
-    inset: 0;
-    transform: translate(var(--px, 0px), var(--py, 0px));
-    transition: transform 1.6s cubic-bezier(.22, 1, .36, 1);
-}
-.hero-orbit { position: absolute; inset: 0; }
-.hero-orbit__disc {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 112%;
-    aspect-ratio: 1;
-    transform: translate(-50%, -50%);
+.hero__inner { display: grid; gap: 3.5rem; }
+@media (min-width: 1024px) { .hero__inner { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; } }
+
+.hero__texto { display: flex; flex-direction: column; gap: 1.5rem; max-width: 36rem; }
+
+.hero__autoria { display: flex; align-items: center; gap: .75rem; color: #4a4560; font-size: .9375rem; font-weight: 500; }
+.hero__rostos { display: flex; }
+.hero__rostos > * {
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
-    background: radial-gradient(circle, #1a1433 0%, #120e24 40%, rgba(12, 9, 22, .5) 58%, rgba(7, 6, 13, 0) 70%);
+    border: 2px solid var(--color-surface-light);
+    object-fit: cover;
 }
-.hero-orbit__rings {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 124%;
-    height: 124%;
-    transform: translate(-50%, -50%);
-    overflow: visible;
-}
-.hero-orbit__spin { transform-origin: 300px 300px; animation: hero-gira 120s linear infinite; }
-.hero-orbit__spin--rev { animation-duration: 180s; animation-direction: reverse; }
-.hero-orbit__ring { fill: none; stroke-linecap: round; }
-.hero-g { position: absolute; inset: 0; animation: levitate-solido 10s ease-in-out infinite; }
-.hero-g__svg {
-    position: absolute;
-    inset: 19%;
-    width: 62%;
-    height: 62%;
-    overflow: visible;
-    transform: perspective(900px) rotateY(var(--ry, 0deg)) rotateX(var(--rx, 0deg));
-    transition: transform 1.8s cubic-bezier(.22, 1, .36, 1);
-}
-@keyframes levitate-solido { 50% { transform: translateY(-10px); } }
-
-@keyframes hero-gira { to { transform: rotate(360deg); } }
-@keyframes hero-desenha { to { stroke-dashoffset: 0; } }
-@keyframes hero-acende { from { opacity: 0; } }
-@keyframes hero-sobe { from { opacity: 0; transform: translateY(18px); } }
-@keyframes hero-palavra { from { transform: translateY(105%); } }
-@keyframes hero-cresce { from { transform: scale(0); } }
-@keyframes hero-respira { 50% { opacity: .18; } }
-@keyframes hero-reflexo { 0% { transform: translateX(-420px) skewX(-20deg); } 30%, 100% { transform: translateX(760px) skewX(-20deg); } }
-
-/* Título palavra por palavra: cada palavra sobe de dentro de uma máscara */
-.hero-w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
-.hero-w > span { display: inline-block; animation: hero-palavra .9s cubic-bezier(.2, .75, .15, 1) both; animation-delay: calc(.3s + var(--i) * 55ms); }
-.hero-in { animation: hero-sobe .8s cubic-bezier(.2, .7, .2, 1) both; animation-delay: var(--d, 0s); }
-.hero-g__giro { stroke-dasharray: 1; stroke-dashoffset: 1; animation: hero-desenha 1.5s cubic-bezier(.65, 0, .25, 1) forwards .35s; }
-.hero-g__miolo { transform-box: fill-box; transform-origin: center; animation: hero-cresce .4s cubic-bezier(.3, 0, .2, 1) both 1.4s; }
-.hero-g__aura { animation: hero-acende 1.2s ease-out both 1.4s, hero-respira 5s ease-in-out infinite 2.6s; }
-.hero-g__reflexo { transform: translateX(-420px) skewX(-20deg); animation: hero-reflexo 6s cubic-bezier(.45, 0, .2, 1) infinite 2s; }
-.hero-orbit__disc { animation: hero-acende 1.6s ease-out both; }
-.hero-orbit__ring { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); animation: hero-desenha 2.8s cubic-bezier(.6, .1, .2, 1) forwards; animation-delay: var(--d); }
-.hero-orbit__ring--dots { stroke-dasharray: 1.5 9; stroke-dashoffset: 0; animation: hero-acende 2s ease-out both var(--d); }
-.hero-orbit__sat { animation: hero-acende 1s ease-out both 2.6s; }
-
-/* Protege o título: os anéis passam por trás dele, apagados */
-.hero-shade {
-    position: absolute;
-    inset: -20% auto -20% -50vw;
-    width: calc(50vw + 62%);
-    z-index: 1;
-    pointer-events: none;
-    background: linear-gradient(90deg, rgba(7, 6, 13, .94) 0%, rgba(7, 6, 13, .94) 80%, rgba(7, 6, 13, .5) 92%, rgba(7, 6, 13, 0) 100%);
+.hero__rostos > span {
+    margin-left: -.625rem;
+    display: grid;
+    place-items: center;
+    background: var(--color-text-ink);
+    color: var(--color-brand-primary-soft);
+    font: 600 .875rem/1 Poppins, sans-serif;
 }
 
-/* Celular: o G fica atrás do título, mais apagado */
-@media (max-width: 767px) {
-    .hero-visual { opacity: 0.35; }
-    .hero-orbit__sat { display: none; }
-    .hero-shade { display: none; }
+.hero__titulo {
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+    line-height: 1.06;
+    letter-spacing: -.025em;
+    color: var(--color-text-ink);
+    text-wrap: balance;
 }
+.hero__destaque { color: #5b30d6; }
+.hero__sub { color: #4a4560; font-size: 1.125rem; line-height: 1.65; }
+@media (min-width: 768px) { .hero__sub { font-size: 1.25rem; } }
+.hero__nota { color: #4a4560; font-size: .9375rem; line-height: 1.55; }
+
+/* No fundo claro o Champanhe some; o botão principal fica em tinta escura */
+.hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .875rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+.hero__btn--cheio { background: var(--color-text-ink); color: #fff; }
+.hero__btn--cheio:hover { background: #5b30d6; }
+.hero__btn--linha { border: 1px solid rgba(21, 18, 31, .22); color: var(--color-text-ink); }
+.hero__btn--linha:hover { border-color: #5b30d6; color: #5b30d6; }
+
+.hero-obra { display: flex; flex-direction: column; gap: 1.25rem; margin: 0; animation: hero-sobe .9s cubic-bezier(.2, .7, .2, 1) both .15s; }
+.hero-obra__janela {
+    display: block;
+    border-radius: .875rem;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(21, 18, 31, .12);
+    box-shadow: 0 30px 60px -36px rgba(21, 18, 31, .35);
+    transition: transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s;
+}
+.hero-obra__janela:hover { transform: translateY(-4px); box-shadow: 0 40px 70px -36px rgba(21, 18, 31, .45); }
+.hero-obra__barra {
+    display: flex;
+    align-items: center;
+    gap: .375rem;
+    padding: .625rem .875rem;
+    background: var(--color-text-ink);
+    color: #b4bccb;
+    font-size: .75rem;
+}
+.hero-obra__barra i { width: .5rem; height: .5rem; border-radius: 50%; background: rgba(255, 255, 255, .22); }
+.hero-obra__barra span { margin-left: .5rem; }
+.hero-obra__tela { position: relative; display: block; }
+.hero-obra__tela img { display: block; width: 100%; height: auto; }
+
+/* Pinos e notas: o mesmo número liga o ponto da tela à explicação */
+.hero-obra__pino,
+.hero-obra__notas li > span {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: #5b30d6;
+    color: #fff;
+    font: 600 .8125rem/1 Poppins, sans-serif;
+}
+.hero-obra__pino { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 0 0 4px rgba(255, 255, 255, .75); }
+
+.hero-obra__legenda { display: flex; flex-direction: column; gap: 1rem; }
+.hero-obra__notas { display: grid; gap: .875rem; }
+@media (min-width: 640px) { .hero-obra__notas { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+.hero-obra__notas li { display: flex; gap: .75rem; color: #4a4560; font-size: .9375rem; line-height: 1.55; }
+.hero-obra__link { align-self: flex-start; color: var(--color-text-ink); font-weight: 600; font-size: .9375rem; }
+.hero-obra__link:hover { color: #5b30d6; }
+
+@keyframes hero-sobe { from { opacity: 0; transform: translateY(16px); } }
+
+/* Header sobre a abertura clara: tinta escura até a página rolar e a barra ficar sólida */
+.site-header--claro:not(.is-solid) .site-header__logo-texto { color: var(--color-text-ink); }
+.site-header--claro:not(.is-solid) .site-header__links .nav-link { color: #4a4560; }
+.site-header--claro:not(.is-solid) .site-header__links .nav-link:hover,
+.site-header--claro:not(.is-solid) .site-header__links .nav-link[aria-current="true"] { color: var(--color-text-ink); }
+.site-header--claro:not(.is-solid) .menu-toggle { color: var(--color-text-ink); background: rgba(255, 255, 255, .7); border-color: rgba(21, 18, 31, .18); }
+body.menu-aberto .site-header--claro .site-header__logo-texto { color: #fff; }
 
 body.menu-aberto { overflow: hidden; }
