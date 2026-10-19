@@ -138,7 +138,7 @@ Para cada projeto, tenha em mãos:
 | Hero do projeto | Eyebrow com o nome do cliente, título curto (a ideia do projeto), uma frase de resumo e a ficha com **Status**, **Escopo** e **Segmento**. A capa entra como fundo. |
 | Desafio e abordagem | "O desafio" em dois parágrafos; "A abordagem" com três passos numerados. |
 | Galeria | Mockup grande no topo e duas imagens lado a lado (logo e direção de arte). |
-| CTA final | Pergunta de fechamento e botão "Quero a análise do meu site". Pode manter o texto. |
+| CTA final | Pergunta de fechamento e botão "Pedir análise". Pode manter o texto. |
 
 Se o projeto tiver resultado real, acrescente uma seção entre a abordagem e a galeria, no mesmo padrão das outras (`<section class="w-full py-24 bg-gpurple-dark ...">`).
 
@@ -204,7 +204,7 @@ O arquivo `.nojekyll` faz o GitHub servir os arquivos como estão, sem processar
 O tom segue o Manual de Identidade Visual da GPurple (documento interno) e o guia [Tom de voz e melhorias na copy](https://claude.ai/code/artifact/2da5728d-33a8-44fb-9165-fab9f74ad803): um especialista conversando com o dono do negócio. Sempre "você" (nunca alternando com "te" ou "vocês"), frases curtas, sem gíria e sem jargão sem tradução.
 
 - **Fale com o cliente, não sobre você.** "Você fala direto com quem faz" em vez de "Nós possuímos uma equipe sênior".
-- **Botão diz o que a pessoa recebe, sem falar de preço.** "Quero a análise do meu site" no botão principal e "Falar com a gente" nos demais. Nunca "Clique aqui", "Enviar" nem "grátis" no botão: a análise sem custo é mencionada uma vez, em texto, na área de contato e no FAQ.
+- **Botão diz o que a pessoa recebe, sem falar de preço.** "Pedir análise" no botão principal e "Falar com a gente" nos demais. Nunca "Clique aqui", "Enviar" nem "grátis" no botão: a análise sem custo é mencionada uma vez, em texto, na área de contato e no FAQ.
 - **Prova real ou nenhuma.** Só publique números, depoimentos e logos de clientes com autorização e dados verificáveis. Números ilustrativos levam o rótulo "Cenário ilustrativo".
 - **Nada de escassez falsa.** Não use "apenas 2 vagas" se não for verdade.
 - **Português do dia a dia.** Prefira "medir conversões" a "tagueamento server-side" no texto para o cliente; o termo técnico pode vir entre parênteses.
