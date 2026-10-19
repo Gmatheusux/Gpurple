@@ -606,14 +606,16 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 @media (min-width: 768px) {
     .site-header__inner { padding: 0 2rem; height: 84px; }
 }
-@media (min-width: 1024px) {
-    .site-header__inner { grid-template-columns: 1fr auto 1fr; }
-    .site-header__inner > :last-child { justify-self: end; }
-    .site-header__links { display: flex; gap: 2.25rem; }
+/* Todas as seções na barra só quando cabem com folga; abaixo disso fica o botão "Menu" */
+@media (min-width: 1200px) {
+    .site-header__inner { grid-template-columns: auto 1fr auto; gap: 2rem; }
+    .site-header__links { display: flex; justify-content: center; gap: 1.75rem; }
+    .site-header .menu-toggle { display: none; }
 }
 .site-header__links .nav-link {
     position: relative;
     padding: 6px 0;
+    white-space: nowrap;
     font-size: 0.9375rem;
     font-weight: 500;
     color: var(--color-text-secondary);
