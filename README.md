@@ -224,7 +224,7 @@ Segue o Manual de Identidade Visual, com um ajuste aprovado em 16/10/2026: o **V
 | `--color-surface-light` | `#F4F2F8` | Seção clara (Projetos). |
 | `--color-text-secondary` | `#B4BCCB` | Texto de leitura sobre fundo escuro. |
 
-- **Títulos** em Poppins 600/700 (classe `section-title`), texto em Inter 16 px ou mais. Nada abaixo de 12 px.
+- **Títulos** em Montserrat 600/700 (classe `section-title`), texto em Inter 16 px ou mais. Nada abaixo de 12 px. A Montserrat substituiu a Poppins em 19/10/2026, porque a Poppins é uma das fontes mais repetidas em sites gerados por IA.
 - **Uma frase-chave por tela** em Champanhe, no máximo.
 - **Brilho e animação**: nada de brilho, glow ou manchas desfocadas. Movimento só para guiar o olhar (a imagem da abertura entra uma vez) ou mostrar mudança de estado.
 - **Abertura** (19/10/2026): o G em órbita saiu, porque roxo com brilho sobre fundo preto é o retrato de site gerado por IA. A abertura tem fundo claro e mostra trabalho real (o Orquidário). Sobre o fundo claro, o botão principal fica em tinta escura e a frase-chave em roxo escuro `#5b30d6`, já que o Champanhe perde contraste. O manual da marca ainda cita o G 3D como visual da abertura e os botões em Volt Lime, e precisa ser atualizado.
@@ -254,4 +254,4 @@ Cada etapa entrou na `main` por um pull request, onde estão as prévias e as de
 - [ ] Autorização do Orquidário Cantareira para exibir o case
 - [ ] Documentar os outros projetos e publicar como cases (veja [Projetos](#projetos-como-documentar-e-adicionar-cases))
 - [ ] Domínio próprio (ex.: `gpurpledesign.com.br`) apontando para o GitHub Pages
-- [ ] Atualizar o Manual de Identidade Visual: botões em champanhe e a abertura clara com trabalho real
+- [ ] Atualizar o Manual de Identidade Visual: botões em champanhe, títulos em Montserrat e a abertura clara com trabalho real
