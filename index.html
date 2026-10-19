@@ -354,7 +354,7 @@
             </div>
         </section>
 
-        <!-- 5. Processo: linha do tempo -->
+        <!-- 5. Processo: trilha de cartões, cada etapa mostra o que o cliente recebe -->
         <section id="processo" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-16">
                 <div class="flex flex-col gap-5 max-w-2xl">
@@ -363,26 +363,55 @@
                     <p class="section-sub">Você sabe o que acontece em cada etapa e aprova antes de seguirmos para a próxima.</p>
                 </div>
 
-                <ol class="timeline grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
-                    <li class="timeline-step">
-                        <span class="timeline-num">Etapa 1</span>
-                        <h3 class="font-heading font-semibold text-xl text-white">Análise do seu site</h3>
-                        <p class="text-gpurple-body leading-relaxed">Gravamos um vídeo curto, em cima do seu site, com o que mais trava os resultados hoje e como resolveríamos.</p>
+                <ol class="trilha">
+                    <li class="trilha-etapa">
+                        <div class="sinal-tela trilha-tela" aria-hidden="true">
+                            <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina trilha-video"><span class="sinal-linha" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:80%"></span><span class="sinal-linha" style="width:50%"></span><span class="trilha-play"></span></div></div>
+                            <span class="sinal-etiqueta" style="bottom:0.75rem;right:0.75rem">Vídeo da análise</span>
+                        </div>
+                        <div class="trilha-texto">
+                            <p class="trilha-topo"><span class="trilha-num">01</span></p>
+                            <h3 class="font-heading font-semibold text-xl text-white">Análise do seu site</h3>
+                            <p class="text-gpurple-body leading-relaxed">Gravamos um vídeo curto, em cima do seu site, com o que mais trava os resultados hoje e como resolveríamos.</p>
+                            <p class="trilha-recebe"><span>Você recebe</span>O vídeo com a análise</p>
+                        </div>
                     </li>
-                    <li class="timeline-step">
-                        <span class="timeline-num">Etapa 2</span>
-                        <h3 class="font-heading font-semibold text-xl text-white">Estratégia e proposta</h3>
-                        <p class="text-gpurple-body leading-relaxed">Definimos a estrutura das páginas, a jornada do visitante e a mensagem principal. Você recebe escopo, prazo e investimento fechados.</p>
+                    <li class="trilha-etapa">
+                        <div class="sinal-tela trilha-tela" aria-hidden="true">
+                            <div class="trilha-doc"><span class="trilha-doc-titulo"></span><span class="trilha-doc-linha">Escopo<i></i></span><span class="trilha-doc-linha">Prazo<i></i></span><span class="trilha-doc-linha">Investimento<i></i></span></div>
+                            <span class="sinal-etiqueta" style="bottom:0.75rem;right:0.75rem">Proposta fechada</span>
+                        </div>
+                        <div class="trilha-texto">
+                            <p class="trilha-topo"><span class="trilha-num">02</span><span class="trilha-aprova">Você aprova</span></p>
+                            <h3 class="font-heading font-semibold text-xl text-white">Estratégia e proposta</h3>
+                            <p class="text-gpurple-body leading-relaxed">Definimos a estrutura das páginas, a jornada do visitante e a mensagem principal.</p>
+                            <p class="trilha-recebe"><span>Você recebe</span>Escopo, prazo e investimento fechados</p>
+                        </div>
                     </li>
-                    <li class="timeline-step">
-                        <span class="timeline-num">Etapa 3</span>
-                        <h3 class="font-heading font-semibold text-xl text-white">Design</h3>
-                        <p class="text-gpurple-body leading-relaxed">O projeto ganha forma visual. Você acompanha, comenta e aprova as telas antes de qualquer linha de código.</p>
+                    <li class="trilha-etapa">
+                        <div class="sinal-tela trilha-tela" aria-hidden="true">
+                            <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina"><span class="mosaico-titulo"></span><span class="sinal-linha" style="width:85%"></span><span class="mosaico-cta"></span><span class="sinal-linha" style="width:60%"></span></div></div>
+                            <span class="trilha-pino" style="left:62%;top:4.6rem">1</span><span class="trilha-pino" style="left:40%;top:5.7rem">2</span>
+                            <span class="trilha-balao">"Pode ser maior?"</span>
+                        </div>
+                        <div class="trilha-texto">
+                            <p class="trilha-topo"><span class="trilha-num">03</span><span class="trilha-aprova">Você aprova</span></p>
+                            <h3 class="font-heading font-semibold text-xl text-white">Design</h3>
+                            <p class="text-gpurple-body leading-relaxed">O projeto ganha forma visual. Você comenta e aprova as telas antes de qualquer linha de código.</p>
+                            <p class="trilha-recebe"><span>Você recebe</span>As telas para comentar</p>
+                        </div>
                     </li>
-                    <li class="timeline-step">
-                        <span class="timeline-num">Etapa 4</span>
-                        <h3 class="font-heading font-semibold text-xl text-white">Desenvolvimento e lançamento</h3>
-                        <p class="text-gpurple-body leading-relaxed">Construímos, testamos no celular e no computador e colocamos no ar. Depois, você pode seguir com um plano mensal de melhorias.</p>
+                    <li class="trilha-etapa">
+                        <div class="sinal-tela trilha-tela" aria-hidden="true">
+                            <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina"><span class="mosaico-titulo" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:70%"></span><span class="mosaico-cta"></span></div></div>
+                            <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:0.75rem;right:0.75rem">No ar</span>
+                        </div>
+                        <div class="trilha-texto">
+                            <p class="trilha-topo"><span class="trilha-num">04</span></p>
+                            <h3 class="font-heading font-semibold text-xl text-white">Desenvolvimento e lançamento</h3>
+                            <p class="text-gpurple-body leading-relaxed">Construímos, testamos no celular e no computador e colocamos no ar.</p>
+                            <p class="trilha-recebe"><span>Você recebe</span>O site no ar e, se quiser, o plano mensal de melhorias</p>
+                        </div>
                     </li>
                 </ol>
             </div>

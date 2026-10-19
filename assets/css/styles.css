@@ -204,11 +204,6 @@ html {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
-.timeline-step:focus-visible {
-    outline: 2px solid var(--color-brand-accent);
-    outline-offset: 3px;
-}
-
 /* FAQ: esconde o marcador padrão e gira o ícone ao abrir */
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
@@ -285,32 +280,29 @@ details[open] .faq-icon { transform: rotate(45deg); }
             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-/* Processo: linha do tempo (horizontal no desktop, vertical no celular) */
-.timeline-step {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
-}
-.timeline-step::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 0;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: var(--color-brand-accent);
-}
-.timeline-num {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-brand-primary-soft);
-}
+/* Processo: trilha de cartões com a entrega de cada etapa */
+.trilha { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+@media (max-width: 1024px) { .trilha { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .trilha { grid-template-columns: 1fr; } }
+.trilha-etapa { display: flex; flex-direction: column; border-radius: 1.5rem; overflow: hidden; background: linear-gradient(180deg, #1b1732 0%, #17132b 100%); border: 1px solid rgba(255, 255, 255, 0.12); }
+.trilha-tela { height: 9.5rem; padding: 1.125rem; }
+.trilha-tela .sinal-janela { max-width: 12.5rem; }
+.trilha-texto { flex: 1; display: flex; flex-direction: column; gap: 0.625rem; padding: 1.375rem 1.375rem 1.5rem; }
+.trilha-topo { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; min-height: 1.5rem; }
+.trilha-num { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--color-brand-accent); font-variant-numeric: tabular-nums; }
+.trilha-aprova { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.25rem 0.625rem; border-radius: 9999px; background: var(--color-brand-accent); color: var(--color-surface-dark); font-size: 0.75rem; font-weight: 600; }
+.trilha-aprova::before { content: ""; width: 8px; height: 5px; border-left: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg) translateY(-1px); }
+.trilha-recebe { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.875rem; color: #fff; }
+.trilha-recebe span { display: block; margin-bottom: 0.2rem; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-accent); }
+.trilha-video { position: relative; }
+.trilha-play { position: absolute; inset: 0; margin: auto; width: 30px; height: 30px; border-radius: 50%; background: var(--color-text-ink); }
+.trilha-play::after { content: ""; position: absolute; left: 12px; top: 9px; border-left: 9px solid var(--color-brand-accent); border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+.trilha-doc { width: 7.5rem; display: flex; flex-direction: column; gap: 6px; padding: 12px; border-radius: 8px; background: #fff; border: 1px solid #e4e0ee; box-shadow: 0 16px 32px -16px rgba(21, 18, 31, 0.35); }
+.trilha-doc-titulo { display: block; height: 7px; width: 70%; border-radius: 3px; background: var(--color-text-ink); }
+.trilha-doc-linha { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 8px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-text-ink); }
+.trilha-doc-linha i { height: 5px; width: 40%; border-radius: 3px; background: #7c4dff; }
+.trilha-pino { position: absolute; display: grid; place-items: center; width: 16px; height: 16px; border-radius: 50%; background: #7c4dff; border: 2px solid #fff; color: #fff; font-size: 9px; font-weight: 700; }
+.trilha-balao { position: absolute; right: 1.25rem; top: 1.125rem; padding: 5px 8px; border-radius: 10px 10px 10px 2px; background: var(--color-text-ink); color: var(--color-brand-accent); font-size: 10px; font-weight: 700; }
 
 /* O problema: cartões com mini telas (área clara, no lilás da seção Projetos) */
 .sinais-grid {
