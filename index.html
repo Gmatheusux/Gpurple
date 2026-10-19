@@ -580,48 +580,76 @@
     </main>
 
     <!-- 9. Contato e rodapé -->
-    <footer id="contato" class="relative w-full pt-28 md:pt-36 pb-10 bg-gpurple-deep flex flex-col items-center overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full h-[420px] bg-[radial-gradient(ellipse_at_top,rgba(139,92,246,0.18),transparent_70%)] pointer-events-none"></div>
+    <footer id="contato" class="relative w-full pt-28 md:pt-36 pb-10 bg-gpurple-deep overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full h-[380px] bg-[radial-gradient(ellipse_at_top,rgba(139,92,246,0.12),transparent_70%)] pointer-events-none"></div>
 
-        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col items-center gap-10 relative z-10 text-center mb-28">
-            <p class="eyebrow">Contato</p>
-            <h2 class="font-heading font-bold text-4xl md:text-6xl lg:text-7xl tracking-[-0.025em] leading-[1.05] text-white max-w-4xl">
-                Vamos conversar sobre <span class="text-gpurple-accent">o seu projeto?</span>
-            </h2>
-            <p class="text-gpurple-body max-w-xl text-lg leading-relaxed">
-                Mande o endereço do seu site e o que você gostaria de melhorar. Respondemos com os próximos passos.
-            </p>
+        <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 relative z-10">
+            <div class="contato-grid">
+                <div class="flex flex-col gap-6">
+                    <p class="eyebrow">Contato</p>
+                    <h2 class="font-heading font-bold text-4xl md:text-6xl tracking-[-0.025em] leading-[1.05] text-white">
+                        Vamos conversar sobre <span class="text-gpurple-accent">o seu projeto?</span>
+                    </h2>
+                    <ol class="contato-passos">
+                        <li><span class="contato-num" aria-hidden="true">1</span><div><strong>Você conta</strong><span>O endereço do site e o que te incomoda nele hoje.</span></div></li>
+                        <li><span class="contato-num" aria-hidden="true">2</span><div><strong>Analisamos</strong><span>Você recebe um vídeo curto com os pontos que mais pesam.</span></div></li>
+                        <li><span class="contato-num" aria-hidden="true">3</span><div><strong>Vocês decidem</strong><span>Se fizer sentido, marcamos uma conversa e montamos a proposta.</span></div></li>
+                    </ol>
+                    <p class="text-gpurple-body text-sm">A primeira conversa e a análise do seu site atual não têm custo.</p>
+                </div>
 
-            <ol class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl text-left">
-                <li class="rounded-2xl border border-white/10 bg-gpurple-card p-5 flex flex-col gap-2">
-                    <span class="text-gpurple-accent text-sm font-semibold">1. Você conta</span>
-                    <span class="text-gpurple-body leading-relaxed">O endereço do site e o que te incomoda nele hoje.</span>
-                </li>
-                <li class="rounded-2xl border border-white/10 bg-gpurple-card p-5 flex flex-col gap-2">
-                    <span class="text-gpurple-accent text-sm font-semibold">2. Analisamos</span>
-                    <span class="text-gpurple-body leading-relaxed">Você recebe um vídeo curto com os pontos que mais pesam.</span>
-                </li>
-                <li class="rounded-2xl border border-white/10 bg-gpurple-card p-5 flex flex-col gap-2">
-                    <span class="text-gpurple-accent text-sm font-semibold">3. Vocês decidem</span>
-                    <span class="text-gpurple-body leading-relaxed">Se fizer sentido, marcamos uma conversa e montamos a proposta.</span>
-                </li>
-            </ol>
-
-            <div class="flex flex-col sm:flex-row items-center gap-3 mt-2">
-                <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Novo%20projeto&body=Ol%C3%A1%2C%20GPurple!%0A%0ASite%3A%20%0AO%20que%20eu%20gostaria%20de%20melhorar%3A%20%0A" class="btn-primary px-8 py-4 text-base">
-                    Contar sobre o projeto
-                </a>
+                <!-- Modelo da mensagem visível antes do clique: o botão abre o e-mail com o mesmo texto -->
+                <div class="contato-email" role="group" aria-label="Modelo da mensagem">
+                    <div class="contato-email__chrome" aria-hidden="true"><i></i><i></i><i></i><span>Nova mensagem</span></div>
+                    <div class="contato-email__linha"><span>Para</span><strong>gmbarros@gpurpledesign.com.br</strong></div>
+                    <div class="contato-email__linha"><span>Assunto</span><strong>Novo projeto</strong></div>
+                    <div class="contato-email__corpo">
+                        <p>Olá, GPurple!</p>
+                        <p class="contato-email__campo">Site:<span aria-hidden="true"></span></p>
+                        <p class="contato-email__campo">O que eu gostaria de melhorar:<span aria-hidden="true"></span></p>
+                    </div>
+                    <div class="contato-email__acoes">
+                        <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Novo%20projeto&body=Ol%C3%A1%2C%20GPurple!%0A%0ASite%3A%20%0AO%20que%20eu%20gostaria%20de%20melhorar%3A%20%0A" class="btn-primary inline-flex items-center gap-2.5 px-6 py-3.5 text-base">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                            Abrir no meu e-mail
+                        </a>
+                        <span>ou copie o endereço acima</span>
+                    </div>
+                </div>
             </div>
-            <p class="text-gpurple-body text-sm">A primeira conversa e a análise do seu site atual não têm custo.<br class="hidden sm:block"> Ou escreva direto para <a href="mailto:gmbarros@gpurpledesign.com.br" class="text-white underline decoration-gpurple-accent underline-offset-4 hover:text-gpurple-accent">gmbarros@gpurpledesign.com.br</a></p>
-        </div>
 
-        <div class="w-full max-w-[1200px] px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8 relative z-10">
-            <a href="#" aria-label="Voltar ao início" class="flex items-center gap-0.5 font-bold text-xl tracking-tighter text-white">
-                <span class="font-heading text-gpurple-primary text-2xl font-bold leading-none">G</span>
-                <span class="lowercase">purple<span class="text-gpurple-volt">.</span></span>
-            </a>
-            <p class="text-gpurple-body text-xs">© 2026 GPurple Studio. Todos os direitos reservados.</p>
-            <a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener" class="text-gpurple-body hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors">LinkedIn<span class="sr-only"> (abre em nova aba)</span></a>
+            <div class="rodape">
+                <div class="rodape__marca">
+                    <a href="#" aria-label="Voltar ao início" class="flex items-center gap-0.5 font-bold text-xl tracking-tighter text-white">
+                        <span class="font-heading text-gpurple-primary text-2xl font-bold leading-none">G</span>
+                        <span class="lowercase">purple<span class="text-gpurple-volt">.</span></span>
+                    </a>
+                    <p>Estúdio boutique de design e tecnologia. Sites, lojas e landing pages com foco em gerar clientes.</p>
+                </div>
+                <nav aria-label="Seções do site no rodapé">
+                    <h3 class="rodape__titulo">Navegue</h3>
+                    <ul>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#processo">Processo</a></li>
+                        <li><a href="#formatos">Formatos</a></li>
+                        <li><a href="#estudio">Estúdio</a></li>
+                        <li><a href="#faq">Perguntas frequentes</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h3 class="rodape__titulo">Contato</h3>
+                    <ul>
+                        <li><a href="mailto:gmbarros@gpurpledesign.com.br">gmbarros@gpurpledesign.com.br</a></li>
+                        <li><a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener">LinkedIn do Gabe<span class="sr-only"> (abre em nova aba)</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rodape__barra">
+                <p>© 2026 GPurple Studio. Todos os direitos reservados.</p>
+                <a href="#">Voltar ao topo</a>
+            </div>
         </div>
     </footer>
 
