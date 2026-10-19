@@ -1,51 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('[data-header]');
+
     // ----------------------------------------------------
-    // Menu do celular
+    // Header: ganha fundo sólido assim que a página rola
+    // ----------------------------------------------------
+    if (header) {
+        const updateHeader = () => header.classList.toggle('is-solid', window.scrollY > 24);
+        updateHeader();
+        window.addEventListener('scroll', updateHeader, { passive: true });
+    }
+
+    // ----------------------------------------------------
+    // Menu em tela cheia
     // ----------------------------------------------------
     const toggle = document.querySelector('[data-menu-toggle]');
-    const menu = document.getElementById('menu-celular');
+    const menu = document.getElementById('menu-site');
 
     if (toggle && menu) {
         const label = toggle.querySelector('[data-menu-label]');
+        // Enquanto o menu está aberto, o resto da página fica fora do alcance do teclado e do leitor de tela
+        const background = [document.getElementById('app'), document.getElementById('contato'), document.querySelector('[data-header-cta]')].filter(Boolean);
 
-        const setOpen = (open) => {
+        const setOpen = (open, { restoreFocus = true } = {}) => {
             toggle.setAttribute('aria-expanded', String(open));
             menu.hidden = !open;
             document.body.classList.toggle('menu-aberto', open);
+            background.forEach((el) => { el.inert = open; });
             if (label) label.textContent = open ? 'Fechar' : 'Menu';
+            if (open) {
+                menu.querySelector('a').focus();
+            } else if (restoreFocus) {
+                toggle.focus();
+            }
         };
 
         toggle.addEventListener('click', () => {
             setOpen(toggle.getAttribute('aria-expanded') !== 'true');
         });
 
-        // Fecha ao escolher uma seção ou apertar Esc
-        menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-                setOpen(false);
-                toggle.focus();
-            }
+        // Escolher uma seção fecha o menu e deixa a página rolar até ela
+        menu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => setOpen(false, { restoreFocus: false }));
         });
 
-        // Se a tela crescer para desktop com o menu aberto, fecha
-        window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
-            if (e.matches) setOpen(false);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setOpen(false);
         });
     }
 
     // ----------------------------------------------------
-    // Menu do desktop: marca a seção que está na tela
+    // Marca a seção que está na tela (atalhos da barra e itens do menu)
     // ----------------------------------------------------
-    const navLinks = document.querySelectorAll('.nav-link');
-    if (navLinks.length && 'IntersectionObserver' in window) {
-        const byId = new Map([...navLinks].map((a) => [a.getAttribute('href').slice(1), a]));
+    const sectionLinks = document.querySelectorAll('.nav-link, .site-menu__link');
+    if (sectionLinks.length && 'IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
-                navLinks.forEach((a) => a.removeAttribute('aria-current'));
-                const link = byId.get(entry.target.id);
-                if (link) link.setAttribute('aria-current', 'true');
+                const target = '#' + entry.target.id;
+                sectionLinks.forEach((a) => {
+                    if (a.getAttribute('href') === target) a.setAttribute('aria-current', 'true');
+                    else a.removeAttribute('aria-current');
+                });
             });
         }, { rootMargin: '-45% 0px -50% 0px' });
 
