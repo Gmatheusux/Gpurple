@@ -6,7 +6,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
-                heading: ['Poppins', 'sans-serif'],
+                heading: ['Montserrat', 'sans-serif'],
             },
             colors: {
                 gpurple: {
