@@ -257,6 +257,16 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
         transition-duration: 0.01ms !important;
     }
 }
+/* Mesmo assim, a abertura entra com um esmaecer curto, sem deslocamento, giro ou rotação */
+@media (prefers-reduced-motion: reduce) {
+    .hero-visual, .hero-in, .hero-w > span {
+        animation: hero-esmaece .6s ease-out both !important;
+    }
+    .hero-w > span { animation-delay: .1s !important; }
+    .hero-visual { animation-delay: .25s !important; }
+    .hero-in { animation-delay: calc(var(--d, 0s) * .35) !important; }
+}
+@keyframes hero-esmaece { from { opacity: 0; } }
 
 /* ----------------------------------
    Componentes do site (tipografia do manual: Poppins nos títulos)
