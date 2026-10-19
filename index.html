@@ -90,34 +90,47 @@
              O G 3D fica à direita como imagem de marca (atrás do texto no celular). -->
         <section id="hero" class="relative w-full min-h-[100svh] flex flex-col pt-28 pb-10 md:pb-14 bg-gpurple-deep overflow-hidden">
             <div class="relative flex-1 w-full max-w-[1200px] mx-auto px-4 md:px-8 flex items-center">
-                <!-- Visual da abertura: disco e anéis em órbita destacam o G do fundo -->
+                <!-- Visual da abertura: o G do logo em órbita, com volume, sobre um disco que o separa do fundo -->
                 <div aria-hidden="true" class="hero-visual" data-hero-visual>
                     <div class="hero-parallax">
                         <div class="hero-orbit">
                             <div class="hero-orbit__disc"></div>
                             <svg class="hero-orbit__rings" viewBox="0 0 600 600" focusable="false">
                                 <g class="hero-orbit__spin">
-                                    <circle class="hero-orbit__ring" cx="300" cy="300" r="262" stroke="rgba(232,207,160,.55)" stroke-width="1.2" style="--len:1646;--d:.2s"/>
-                                    <circle class="hero-orbit__sat" cx="300" cy="38" r="4.5" fill="#e8cfa0"/>
+                                    <circle class="hero-orbit__ring" cx="300" cy="300" r="262" stroke="rgba(232,207,160,.3)" stroke-width=".8" style="--len:1646;--d:.2s"/>
+                                    <circle class="hero-orbit__sat" cx="300" cy="38" r="2.6" fill="rgba(232,207,160,.85)"/>
                                 </g>
                                 <g class="hero-orbit__spin hero-orbit__spin--rev">
-                                    <circle class="hero-orbit__ring" cx="300" cy="300" r="222" stroke="rgba(196,181,253,.35)" stroke-width="1" stroke-dasharray="2 10" style="--len:1395;--d:.45s"/>
-                                    <circle class="hero-orbit__sat" cx="78" cy="300" r="3" fill="#c4b5fd"/>
+                                    <circle class="hero-orbit__ring hero-orbit__ring--dots" cx="300" cy="300" r="222" stroke="rgba(196,181,253,.2)" stroke-width=".8" style="--d:.6s"/>
                                 </g>
                                 <g class="hero-orbit__spin">
-                                    <circle class="hero-orbit__ring" cx="300" cy="300" r="292" stroke="rgba(139,92,246,.35)" stroke-width="1" style="--len:1835;--d:.7s"/>
+                                    <circle class="hero-orbit__ring" cx="300" cy="300" r="292" stroke="rgba(139,92,246,.18)" stroke-width=".8" style="--len:1835;--d:.7s"/>
                                 </g>
                             </svg>
                         </div>
-                        <div class="hero-g mix-blend-screen" style="-webkit-mask-image: radial-gradient(circle, black 40%, transparent 68%); mask-image: radial-gradient(circle, black 40%, transparent 68%);">
-                            <div class="hero-g__enter">
-                                <div class="relative w-full h-full animate-levitate-g">
-                                    <img src="./assets/img/marca/g-3d.jpg" alt="" class="w-full h-full opacity-90">
-                                    <div class="absolute inset-0 mix-blend-overlay overflow-hidden">
-                                        <div class="animate-glass-sweep"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="hero-g">
+                            <svg class="hero-g__svg" viewBox="232 232 560 560" focusable="false">
+                                <defs>
+                                    <linearGradient id="hero-g-face" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#cbb8ff"/><stop offset=".32" stop-color="#9f7aea"/><stop offset=".7" stop-color="#7c4dff"/><stop offset="1" stop-color="#5b2fd0"/></linearGradient>
+                                    <linearGradient id="hero-g-lado" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a35c4"/><stop offset="1" stop-color="#3a2088"/></linearGradient>
+                                    <linearGradient id="hero-g-bisel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#f1dcb4" stop-opacity=".45"/></linearGradient>
+                                    <linearGradient id="hero-g-reflexo" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#f1dcb4" stop-opacity=".7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+                                    <clipPath id="hero-g-forma"><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z"/></clipPath>
+                                    <filter id="hero-g-brilho" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="34"/></filter>
+                                    <!-- Revela o G num giro que segue o traço da letra, do topo até a barra -->
+                                    <mask id="hero-g-revela" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+                                        <path class="hero-g__giro" pathLength="1" d="M691.7 376.6A225 225 0 1 0 332.3 647.4A225 225 0 1 0 691.7 376.6" fill="none" stroke="#fff" stroke-width="330"/>
+                                        <circle class="hero-g__miolo" cx="512" cy="512" r="72" fill="#fff"/>
+                                    </mask>
+                                </defs>
+                                <path class="hero-g__aura" d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" fill="#8b5cf6" opacity=".32" filter="url(#hero-g-brilho)"/>
+                                <g mask="url(#hero-g-revela)">
+                                    <g fill="url(#hero-g-lado)" opacity=".75"><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(7.2 8.55)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(6.4 7.6)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(5.6 6.65)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(4.8 5.7)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(4.0 4.75)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(3.2 3.8)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(2.4 2.85)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(1.6 1.9)"/><path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" transform="translate(0.8 0.95)"/></g>
+                                    <path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" fill="url(#hero-g-face)"/>
+                                    <path d="M715.7 358.5A255 255 0 1 0 692.3 692.3V768H768V491Q768 475 752 475H512V549H688.2A180 180 0 1 1 655.8 403.7Z" fill="none" stroke="url(#hero-g-bisel)" stroke-width="6" clip-path="url(#hero-g-forma)"/>
+                                    <g clip-path="url(#hero-g-forma)"><rect class="hero-g__reflexo" x="232" y="180" width="150" height="680" fill="url(#hero-g-reflexo)"/></g>
+                                </g>
+                            </svg>
                         </div>
                     </div>
                 </div>

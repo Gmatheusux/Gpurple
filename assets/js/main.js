@@ -49,20 +49,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ----------------------------------------------------
-    // Abertura: o G acompanha levemente o mouse (só com mouse e com movimento liberado)
+    // Abertura: o G acompanha o mouse devagar e inclina de leve (só com mouse e com movimento liberado)
     // ----------------------------------------------------
     const heroVisual = document.querySelector('[data-hero-visual]');
     const hero = document.getElementById('hero');
     if (heroVisual && hero && matchMedia('(pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const layer = heroVisual.firstElementChild;
+        const layer = heroVisual.querySelector('.hero-parallax');
+        const symbol = heroVisual.querySelector('.hero-g__svg');
         hero.addEventListener('pointermove', (e) => {
             const r = hero.getBoundingClientRect();
-            layer.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5) * -18 + 'px');
-            layer.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5) * -14 + 'px');
+            const x = (e.clientX - r.left) / r.width - 0.5;
+            const y = (e.clientY - r.top) / r.height - 0.5;
+            layer.style.setProperty('--px', x * -18 + 'px');
+            layer.style.setProperty('--py', y * -14 + 'px');
+            symbol.style.setProperty('--ry', x * 10 + 'deg');
+            symbol.style.setProperty('--rx', y * -7 + 'deg');
         });
         hero.addEventListener('pointerleave', () => {
-            layer.style.setProperty('--px', '0px');
-            layer.style.setProperty('--py', '0px');
+            ['--px', '--py'].forEach((v) => layer.style.setProperty(v, '0px'));
+            ['--rx', '--ry'].forEach((v) => symbol.style.setProperty(v, '0deg'));
         });
     }
 
