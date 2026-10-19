@@ -159,35 +159,64 @@
 
         <div id="conteudo"></div>
 
-        <!-- 2. O problema: composição editorial, título fixo à esquerda e lista à direita -->
+        <!-- 2. O problema: três cartões, cada um com uma mini tela mostrando onde o visitante desiste -->
         <section id="problema" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
-            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20">
-                <div class="lg:sticky lg:top-32 self-start flex flex-col gap-5">
+            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
+                <div class="flex flex-col gap-5 max-w-3xl">
                     <p class="eyebrow">Onde os sites perdem clientes</p>
                     <h2 class="section-title">O problema raramente é falta de visitas.</h2>
                     <p class="section-sub">É o que acontece depois do clique. Quem chega a um site confuso, lento ou genérico vai embora, e quase nunca avisa.</p>
                 </div>
 
-                <ol class="flex flex-col border-t border-white/10">
-                    <li class="py-8 md:py-10 border-b border-white/10 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3">
-                        <span aria-hidden="true" class="font-heading font-semibold text-gpurple-soft text-lg leading-8">A</span>
-                        <div>
-                            <h3 class="font-heading font-semibold text-2xl md:text-3xl text-white mb-3">Anúncio bom, página fraca</h3>
-                            <p class="text-gpurple-body text-base md:text-lg leading-relaxed">Pagar por clique e levar a pessoa para uma página genérica é dinheiro indo embora. Se a página não entrega o que o anúncio prometeu, o visitante sai e o custo de cada cliente sobe.</p>
+                <ol class="sinais-grid">
+                    <li class="sinal-card">
+                        <div class="sinal-tela" aria-hidden="true">
+                            <div class="sinal-janela">
+                                <div class="sinal-chrome"><i></i><i></i><i></i></div>
+                                <div class="sinal-pagina">
+                                    <span class="sinal-linha" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:80%"></span><span class="sinal-linha" style="width:45%"></span>
+                                </div>
+                            </div>
+                            <span class="sinal-etiqueta" style="top:1.25rem;left:1.125rem">Anúncio: coleção nova</span>
+                            <span class="sinal-etiqueta sinal-etiqueta--erro" style="bottom:1.375rem;right:1.125rem">Cadê a coleção?</span>
+                        </div>
+                        <div class="sinal-texto">
+                            <p class="sinal-momento">No clique</p>
+                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">Anúncio bom, página fraca</h3>
+                            <p class="text-gpurple-body leading-relaxed">Pagar por clique e levar a pessoa para uma página genérica é dinheiro indo embora. Se a página não entrega o que o anúncio prometeu, o visitante sai e o custo de cada cliente sobe.</p>
                         </div>
                     </li>
-                    <li class="py-8 md:py-10 border-b border-white/10 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3">
-                        <span aria-hidden="true" class="font-heading font-semibold text-gpurple-soft text-lg leading-8">B</span>
-                        <div>
-                            <h3 class="font-heading font-semibold text-2xl md:text-3xl text-white mb-3">Lentidão passa descuido</h3>
-                            <p class="text-gpurple-body text-base md:text-lg leading-relaxed">Um site que demora a abrir dá a impressão de descuido antes de qualquer palavra ser lida. No celular, cada segundo a mais é gente desistindo.</p>
+                    <li class="sinal-card">
+                        <div class="sinal-tela" aria-hidden="true">
+                            <div class="sinal-janela">
+                                <div class="sinal-chrome"><i></i><i></i><i></i></div>
+                                <div class="sinal-pagina sinal-pagina--carregando">
+                                    <span class="sinal-progresso"><span></span></span><span class="sinal-linha" style="width:50%;margin:0 auto"></span>
+                                </div>
+                            </div>
+                            <span class="sinal-etiqueta sinal-etiqueta--erro" style="bottom:1.375rem;right:1.125rem">Ainda carregando…</span>
+                        </div>
+                        <div class="sinal-texto">
+                            <p class="sinal-momento">Enquanto a página abre</p>
+                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">Lentidão passa descuido</h3>
+                            <p class="text-gpurple-body leading-relaxed">Um site que demora a abrir dá a impressão de descuido antes de qualquer palavra ser lida. No celular, cada segundo a mais é gente desistindo.</p>
                         </div>
                     </li>
-                    <li class="py-8 md:py-10 border-b border-white/10 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3">
-                        <span aria-hidden="true" class="font-heading font-semibold text-gpurple-soft text-lg leading-8">C</span>
-                        <div>
-                            <h3 class="font-heading font-semibold text-2xl md:text-3xl text-white mb-3">O atrito que ninguém vê</h3>
-                            <p class="text-gpurple-body text-base md:text-lg leading-relaxed">Formulário confuso, botão escondido, pagamento que trava. São detalhes que passam despercebidos para quem fez o site, mas não para quem está tentando comprar.</p>
+                    <li class="sinal-card">
+                        <div class="sinal-tela" aria-hidden="true">
+                            <div class="sinal-janela">
+                                <div class="sinal-chrome"><i></i><i></i><i></i></div>
+                                <div class="sinal-pagina">
+                                    <span class="sinal-linha" style="width:40%"></span><span class="sinal-campo"></span><span class="sinal-campo sinal-campo--erro"></span><span class="sinal-botao"></span>
+                                </div>
+                            </div>
+                            <svg class="sinal-cursor" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2l16 10-7 1.5L9.5 21z"/></svg>
+                            <span class="sinal-etiqueta sinal-etiqueta--erro" style="top:1.25rem;right:1.125rem">Campo inválido</span>
+                        </div>
+                        <div class="sinal-texto">
+                            <p class="sinal-momento">Na hora de comprar</p>
+                            <h3 class="font-heading font-semibold text-[1.375rem] text-white">O atrito que ninguém vê</h3>
+                            <p class="text-gpurple-body leading-relaxed">Formulário confuso, botão escondido, pagamento que trava. São detalhes que passam despercebidos para quem fez o site, mas não para quem está tentando comprar.</p>
                         </div>
                     </li>
                 </ol>

@@ -312,6 +312,75 @@ details[open] .faq-icon { transform: rotate(45deg); }
     color: var(--color-brand-primary-soft);
 }
 
+/* O problema: cartões com mini telas (área clara, no lilás da seção Projetos) */
+.sinais-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 860px) { .sinais-grid { grid-template-columns: 1fr; } }
+.sinal-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background: var(--color-surface-card);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: transform .35s ease, border-color .35s ease;
+}
+.sinal-card:hover { transform: translateY(-4px); border-color: rgba(var(--color-brand-accent-rgb), 0.55); }
+.sinal-tela {
+    position: relative;
+    height: 12.5rem;
+    display: grid;
+    place-items: center;
+    padding: 1.375rem;
+    background: var(--color-surface-light);
+}
+.sinal-janela {
+    width: 100%;
+    max-width: 15rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e4e0ee;
+    box-shadow: 0 20px 40px -18px rgba(21, 18, 31, 0.35);
+}
+.sinal-chrome { height: 18px; display: flex; gap: 4px; align-items: center; padding: 0 8px; background: #efecf5; }
+.sinal-chrome i { width: 6px; height: 6px; border-radius: 50%; background: #cfc8de; }
+.sinal-pagina { padding: 10px; display: flex; flex-direction: column; gap: 7px; }
+.sinal-pagina--carregando { gap: 12px; padding: 22px 14px; }
+.sinal-linha { display: block; height: 7px; border-radius: 4px; background: #e4e0ee; }
+.sinal-campo { display: block; height: 20px; border-radius: 6px; border: 1px solid #d9d4e6; }
+.sinal-campo--erro { border-color: #e11d48; box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15); }
+.sinal-botao { display: block; height: 20px; width: 45%; margin-left: auto; border-radius: 9999px; background: #e4e0ee; }
+.sinal-progresso { display: block; height: 8px; border-radius: 4px; background: #e4e0ee; overflow: hidden; }
+.sinal-progresso span { display: block; height: 100%; width: 42%; border-radius: 4px; background: #7c4dff; animation: sinal-carrega 3.2s ease-in-out infinite; }
+@keyframes sinal-carrega { 0% { width: 8%; } 60% { width: 42%; } 100% { width: 46%; } }
+.sinal-cursor { position: absolute; right: 30%; bottom: 2.125rem; width: 16px; height: 16px; color: var(--color-text-ink); }
+.sinal-etiqueta {
+    position: absolute;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    border-radius: 9999px;
+    padding: 0.3rem 0.65rem;
+    background: var(--color-text-ink);
+    color: var(--color-brand-accent);
+}
+.sinal-etiqueta--erro { background: #e11d48; color: #fff; }
+.sinal-texto { padding: 1.5rem 1.75rem 1.875rem; display: flex; flex-direction: column; gap: 0.625rem; }
+.sinal-momento {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-brand-accent);
+}
+
 /* Formatos */
 .format-card {
     display: flex;
