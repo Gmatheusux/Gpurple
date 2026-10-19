@@ -71,7 +71,7 @@ Se você está abrindo este repositório numa conversa nova para continuar o sit
 │   │   ├── styles.css              # Tokens de cor e o visual de cada seção (comentado por seção)
 │   │   ├── tailwind.css            # Gerado pelo `npm run build`, não editar à mão
 │   │   └── templates-email.css     # Gerado pelo `npm run build`, só da página de templates
-│   ├── js/main.js                  # Header ao rolar, menu em tela cheia, G que segue o mouse, seção ativa
+│   ├── js/main.js                  # Header ao rolar, menu em tela cheia, seção ativa
 │   └── img/
 │       ├── marca/                  # G 3D (imagem de compartilhamento) e logo em SVG
 │       ├── equipe/                 # Fotos dos sócios
@@ -93,7 +93,7 @@ Cada seção do `index.html` começa com um comentário numerado (`<!-- 4. Proje
 | # | Âncora | Seção | Como é |
 | --- | --- | --- | --- |
 | – | – | Header | Barra de ponta a ponta com atalhos para as seções e botão **Menu**, que abre um mapa em tela cheia com uma linha explicando cada seção. |
-| 1 | `#hero` | Abertura | G sólido do logo com volume discreto, dentro de anéis champanhe em órbita. Segue o mouse devagar. Quem reduz movimento no sistema vê só um esmaecer curto. |
+| 1 | `#hero` | Abertura | Fundo claro. À esquerda, Gabe e Dex, o título e os botões; à direita, a loja do Orquidário numa janela de navegador, com dois pinos numerados que explicam decisões do projeto. Só a imagem entra com movimento. |
 | 2 | `#problema` | O problema | Três cartões, um por motivo de desistência: mini tela, o que acontece, "Como saber se é o seu caso" e "O que fazemos" (com link para o serviço). Fecha com o convite para a análise. |
 | 3 | `#servicos` | Serviços | Mosaico; cada serviço diz qual problema de cima ele resolve. |
 | 4 | `#projetos` | Projetos | Case principal em vitrine (capa de fundo, logo e mockup) e projetos menores em faixas. |
@@ -224,10 +224,10 @@ Segue o Manual de Identidade Visual, com um ajuste aprovado em 16/10/2026: o **V
 | `--color-surface-light` | `#F4F2F8` | Seção clara (Projetos). |
 | `--color-text-secondary` | `#B4BCCB` | Texto de leitura sobre fundo escuro. |
 
-- **Títulos** em Poppins 600/700 (classe `section-title`), texto em Inter 16 px ou mais. Nada abaixo de 12 px.
+- **Títulos** em Montserrat 600/700 (classe `section-title`), texto em Inter 16 px ou mais. Nada abaixo de 12 px. A Montserrat substituiu a Poppins em 19/10/2026, porque a Poppins é uma das fontes mais repetidas em sites gerados por IA.
 - **Uma frase-chave por tela** em Champanhe, no máximo.
-- **Brilho e animação** só no G da abertura. Brilhos e sombras sutis; sem manchas desfocadas nem sombras neon nas seções.
-- **Símbolo da abertura** (19/10/2026): o G de vidro 3D saiu. A abertura usa o G geométrico do logo, sólido e com volume discreto, dentro de anéis finos em órbita. O manual da marca ainda cita o G 3D como visual da abertura e os botões em Volt Lime, e precisa ser atualizado.
+- **Brilho e animação**: nada de brilho, glow ou manchas desfocadas. Movimento só para guiar o olhar (a imagem da abertura entra uma vez) ou mostrar mudança de estado.
+- **Abertura** (19/10/2026): o G em órbita saiu, porque roxo com brilho sobre fundo preto é o retrato de site gerado por IA. A abertura tem fundo claro e mostra trabalho real (o Orquidário). Sobre o fundo claro, o botão principal fica em tinta escura e a frase-chave em roxo escuro `#5b30d6`, já que o Champanhe perde contraste. O manual da marca ainda cita o G 3D como visual da abertura e os botões em Volt Lime, e precisa ser atualizado.
 - No Tailwind, as cores da marca são variáveis CSS: use `bg-gpurple-accent`, mas não `bg-gpurple-accent/10` (o modificador de opacidade não funciona com variáveis). Para transparência, use um valor `rgba(...)` entre colchetes.
 
 ## Como o site foi construído
@@ -254,4 +254,4 @@ Cada etapa entrou na `main` por um pull request, onde estão as prévias e as de
 - [ ] Autorização do Orquidário Cantareira para exibir o case
 - [ ] Documentar os outros projetos e publicar como cases (veja [Projetos](#projetos-como-documentar-e-adicionar-cases))
 - [ ] Domínio próprio (ex.: `gpurpledesign.com.br`) apontando para o GitHub Pages
-- [ ] Atualizar o Manual de Identidade Visual: botões em champanhe e o G sólido na abertura
+- [ ] Atualizar o Manual de Identidade Visual: botões em champanhe, títulos em Montserrat e a abertura clara com trabalho real
