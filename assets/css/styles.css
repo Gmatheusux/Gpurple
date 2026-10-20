@@ -772,31 +772,14 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
    Fundo claro para fugir do "roxo sobre preto com brilho" de site gerado. A loja do Orquidário aparece numa janela
    de navegador, com pinos numerados que remetem às notas de projeto da legenda. Só a imagem entra com movimento.
    ---------------------------------- */
-.hero { background: var(--color-surface-light); color: var(--color-text-ink); padding: 7.5rem 0 4rem; }
-@media (min-width: 1024px) { .hero { min-height: 100svh; display: flex; align-items: center; padding: 8rem 0 5rem; } }
+.hero { background: var(--color-surface-light); color: var(--color-text-ink); padding: 6.5rem 0 3.5rem; }
+@media (min-width: 1024px) { .hero { padding: 9rem 0 6rem; } }
 
-.hero__inner { display: grid; gap: 3.5rem; }
-@media (min-width: 1024px) { .hero__inner { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; } }
+/* A demonstração ganha a coluna maior: é ela que mostra o produto */
+.hero__inner { display: grid; gap: 3rem; }
+@media (min-width: 1024px) { .hero__inner { grid-template-columns: 2fr 3fr; gap: 4rem; align-items: center; } }
 
-.hero__texto { display: flex; flex-direction: column; gap: 1.5rem; max-width: 36rem; }
-
-.hero__autoria { display: flex; align-items: center; gap: .75rem; color: #4a4560; font-size: .9375rem; font-weight: 500; }
-.hero__rostos { display: flex; }
-.hero__rostos > * {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    border: 2px solid var(--color-surface-light);
-    object-fit: cover;
-}
-.hero__rostos > span {
-    margin-left: -.625rem;
-    display: grid;
-    place-items: center;
-    background: var(--color-text-ink);
-    color: var(--color-brand-primary-soft);
-    font: 600 .875rem/1 Montserrat, sans-serif;
-}
+.hero__texto { display: flex; flex-direction: column; gap: 1.25rem; max-width: 34rem; }
 
 .hero__titulo {
     font-family: Montserrat, sans-serif;
@@ -808,8 +791,11 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
     text-wrap: balance;
 }
 .hero__destaque { color: #5b30d6; }
-.hero__sub { color: #4a4560; font-size: 1.125rem; line-height: 1.65; }
-@media (min-width: 768px) { .hero__sub { font-size: 1.25rem; } }
+.hero__sub { color: #4a4560; font-size: 1.0625rem; line-height: 1.6; }
+@media (min-width: 768px) { .hero__sub { font-size: 1.1875rem; } }
+
+/* Respiro maior antes dos botões para o "Iniciar um projeto" não competir com o texto */
+.hero__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.5rem; margin-top: 1rem; }
 
 /* No fundo claro o Champanhe some; o botão principal fica em tinta escura */
 .hero__btn {
@@ -822,10 +808,11 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
     font-size: 1rem;
     transition: background-color .2s ease, border-color .2s ease, color .2s ease;
 }
-.hero__btn--cheio { background: var(--color-text-ink); color: #fff; }
+.hero__btn--cheio { background: var(--color-text-ink); color: #fff; padding: 1.0625rem 2rem; font-size: 1.0625rem; box-shadow: 0 14px 28px -16px rgba(21, 18, 31, .6); }
 .hero__btn--cheio:hover { background: #5b30d6; }
-.hero__btn--linha { border: 1px solid rgba(21, 18, 31, .22); color: var(--color-text-ink); }
-.hero__btn--linha:hover { border-color: #5b30d6; color: #5b30d6; }
+/* "Ver projetos" fica como link: segunda opção, sem disputar com o botão principal */
+.hero__btn--linha { padding-left: 0; padding-right: 0; color: var(--color-text-ink); text-decoration: underline; text-decoration-color: rgba(21, 18, 31, .3); text-underline-offset: 6px; }
+.hero__btn--linha:hover { color: #5b30d6; text-decoration-color: currentColor; }
 
 .hero-obra { display: flex; flex-direction: column; gap: 1.25rem; margin: 0; animation: hero-sobe .9s cubic-bezier(.2, .7, .2, 1) both .15s; }
 .hero-obra__janela {
@@ -867,7 +854,7 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 }
 .hero-obra__pino { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 0 0 4px rgba(255, 255, 255, .75); }
 
-.hero-obra__legenda { display: flex; flex-direction: column; gap: 1rem; }
+.hero-obra__legenda { display: flex; flex-direction: column; gap: .875rem; }
 .hero-obra__notas { display: grid; gap: .875rem; }
 @media (min-width: 640px) { .hero-obra__notas { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
 .hero-obra__notas li { display: flex; gap: .75rem; color: #4a4560; font-size: .9375rem; line-height: 1.55; }
