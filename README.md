@@ -93,7 +93,7 @@ Cada seção do `index.html` começa com um comentário numerado (`<!-- 4. Proje
 | # | Âncora | Seção | Como é |
 | --- | --- | --- | --- |
 | – | – | Header | Barra de ponta a ponta com atalhos para as seções e botão **Menu**, que abre um mapa em tela cheia com uma linha explicando cada seção. |
-| 1 | `#hero` | Abertura | Fundo claro. À esquerda, Gabe e Dex, o título e os botões; à direita, a loja do Orquidário numa janela de navegador, com dois pinos numerados que explicam decisões do projeto. Só a imagem entra com movimento. |
+| 1 | `#hero` | Abertura | Fundo claro. À esquerda, o título, o subtítulo e os botões; à direita, a loja do Orquidário numa janela de navegador, com dois pinos numerados que explicam decisões do projeto. Só a imagem entra com movimento. |
 | 2 | `#problema` | O problema | Três cartões, um por motivo de desistência: mini tela, o que acontece, "Como saber se é o seu caso" e "O que fazemos" (com link para o serviço). Fecha com o convite para a análise. |
 | 3 | `#servicos` | Serviços | Mosaico; cada serviço diz qual problema de cima ele resolve. |
 | 4 | `#projetos` | Projetos | Case principal em vitrine (capa de fundo, logo e mockup) e projetos menores em faixas. |
