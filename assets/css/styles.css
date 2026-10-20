@@ -409,6 +409,24 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
     color: var(--color-brand-accent);
 }
 .sinal-etiqueta--erro { background: #e11d48; color: #fff; }
+/* Primeiro cartão: o anúncio mostra um produto, a página que abre não mostra */
+.sinal-banner { display: grid; place-items: center; height: 44px; border-radius: 6px; background: #efecf5; color: #8a84a0; font-size: 9px; font-weight: 600; }
+.sinal-anuncio {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem 0.375rem 0.375rem;
+    border-radius: 0.625rem;
+    background: var(--color-text-ink);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 12px 24px -12px rgba(21, 18, 31, 0.5);
+}
+.sinal-anuncio small { display: block; font-size: 0.625rem; font-weight: 600; color: var(--color-brand-accent); }
+.sinal-anuncio__foto { width: 1.875rem; height: 1.875rem; border-radius: 0.375rem; background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
 .sinal-texto { padding: 1.5rem 1.75rem 1.875rem; display: flex; flex-direction: column; gap: 0.625rem; }
 .sinal-momento {
     font-size: 0.75rem;
@@ -419,6 +437,15 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 }
 
 .sinal-card .sinal-texto { flex: 1 1 auto; }
+/* Três colunas: cada parte do cartão ocupa a mesma linha da grade nos três, então títulos, sinais e
+   "O que fazemos" começam na mesma altura, mesmo quando um cartão tem mais texto */
+@media (min-width: 861px) {
+    @supports (grid-template-rows: subgrid) {
+        .sinal-card { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; }
+        .sinal-card .sinal-texto { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0.625rem; }
+        .sinal-card .sinal-solucao { margin-top: 0; }
+    }
+}
 .sinal-rotulo {
     display: block;
     font-size: 0.75rem;
