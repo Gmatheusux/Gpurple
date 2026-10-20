@@ -337,8 +337,18 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .trilha-num { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--color-brand-accent); font-variant-numeric: tabular-nums; }
 .trilha-aprova { display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.25rem 0.625rem; border-radius: 9999px; background: var(--color-brand-accent); color: var(--color-surface-dark); font-size: 0.75rem; font-weight: 600; }
 .trilha-aprova::before { content: ""; width: 8px; height: 5px; border-left: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg) translateY(-1px); }
+.trilha-intro { display: flex; flex-direction: column; gap: 0.625rem; }
 .trilha-recebe { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.875rem; color: #fff; }
 .trilha-recebe span { display: block; margin-bottom: 0.2rem; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-accent); }
+/* Cartões lado a lado: número, título e texto, e "Você recebe" ocupam a mesma linha da grade em todos.
+   A sobra de espaço fica antes de "Você recebe", como em "O problema" */
+@media (min-width: 641px) {
+    @supports (grid-template-rows: subgrid) {
+        .trilha-etapa { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; }
+        .trilha-texto { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0.625rem; }
+        .trilha-recebe { align-self: start; margin-top: 0; }
+    }
+}
 .trilha-video { position: relative; }
 .trilha-play { position: absolute; inset: 0; margin: auto; width: 30px; height: 30px; border-radius: 50%; background: var(--color-text-ink); }
 .trilha-play::after { content: ""; position: absolute; left: 12px; top: 9px; border-left: 9px solid var(--color-brand-accent); border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
