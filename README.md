@@ -96,7 +96,7 @@ Cada seção do `index.html` começa com um comentário numerado (`<!-- 4. Proje
 | 1 | `#hero` | Abertura | Fundo claro. À esquerda, o título, o subtítulo e os botões; à direita, a loja do Orquidário numa janela de navegador, com dois pinos numerados que explicam decisões do projeto. Só a imagem entra com movimento. |
 | 2 | `#problema` | O problema | Três cartões, um por motivo de desistência: mini tela, o que acontece, "Como saber se é o seu caso" e "O que fazemos" (com link para o serviço). Fecha com o convite para a análise. |
 | 3 | `#servicos` | Serviços | Mosaico; cada serviço diz qual problema de cima ele resolve. |
-| 4 | `#projetos` | Projetos | Case principal em vitrine (capa de fundo, logo e mockup) e projetos menores em faixas. |
+| 4 | `#projetos` | Projetos | Carrossel: o projeto em destaque fica grande (nome, cliente, descrição e "Ver o case completo") e os outros aparecem em miniaturas embaixo. Troca sozinho a cada 7 s e para com o mouse ou o foco em cima. |
 | 5 | `#processo` | Processo | Trilha de cartões, cada etapa mostra o que o cliente recebe. |
 | 6 | `#formatos` | Formatos | Comparativo Essencial, Growth e Parceria (tabela no desktop, blocos no celular). |
 | 7 | `#estudio` | Estúdio | Manifesto à esquerda, Gabe e Dex em linhas à direita. |
@@ -148,8 +148,8 @@ Se o projeto tiver resultado real, acrescente uma seção entre a abordagem e a 
 2. Coloque as imagens em `assets/img/projetos/` com o nome do cliente na frente: `cliente-capa.jpg`, `cliente-logo.jpg`, `cliente-mockup.png`. Exporte em JPG ou WebP com até ~300 KB (PNG só para o mockup com transparência).
 3. Troque textos, imagens, `<title>`, `description` e tags `og:` da nova página. Dentro de `projetos/`, os caminhos começam com `../` (`../assets/img/projetos/...`).
 4. No `index.html`, seção `#projetos`:
-   - **Projeto menor:** duplique uma faixa (`<a class="projeto-faixa">`) dentro de `.projetos-grid`, aponte o `href` para a nova página e troque miniatura, etiqueta, título e frase.
-   - **Novo destaque:** o case mais forte fica na vitrine (`<a class="project-feature vitrine">`), com capa de fundo, logo, três fatos e o mockup. Se outro projeto passar a ser o destaque, o Orquidário vira uma faixa.
+   - Dentro de `.carrossel-palco`, duplique uma vitrine (`<a class="project-feature vitrine" data-slide>`), troque o `id`, o `href`, as imagens, o nome, o cliente e a descrição, e deixe `hidden`. Imagem em pé usa `vitrine-mockup--retrato`.
+   - Dentro de `.carrossel-miniaturas`, duplique uma miniatura (`<button role="tab" data-aba>`), troque o `id`, o `aria-controls` (o `id` da vitrine) e os textos. A ordem das miniaturas é a ordem do carrossel; a primeira começa selecionada.
    - Na página principal os caminhos começam com `./` (`./assets/img/projetos/...`).
 5. Se usou classes do Tailwind que ainda não existiam no site, rode `npm run build`.
 6. Abra o site local (veja [Rodar localmente](#rodar-localmente)) e confira no desktop e no celular.

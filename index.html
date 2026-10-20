@@ -306,50 +306,52 @@
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-12">
                 <div class="flex flex-col gap-5 max-w-2xl">
                     <p class="eyebrow eyebrow--light">Projetos</p>
-                    <h2 class="section-title text-gpurple-ink">Trabalho recente.</h2>
+                    <h2 class="section-title text-gpurple-ink">Nossos projetos.</h2>
                     <p class="text-[#4a4560] text-lg leading-relaxed">Todo projeto começa pelo negócio, não pelo layout.</p>
                 </div>
 
-                <div class="flex flex-col gap-6">
-                    <!-- Case principal -->
-                    <a href="projetos/orquidario-cantareira.html" class="project-feature vitrine group">
-                        <img src="./assets/img/projetos/orquidario-capa.jpg" alt="" class="vitrine-fundo" loading="lazy">
-                        <div class="vitrine-texto">
-                            <div class="vitrine-marca">
-                                <span class="vitrine-logo"><img src="./assets/img/projetos/orquidario-logo.jpg" alt="Logo do Orquidário Cantareira" loading="lazy"></span>
-                                <span><strong>Orquidário Cantareira</strong>Identidade visual e loja virtual · em andamento</span>
+                <!-- Carrossel: o projeto em destaque fica grande; os outros aparecem como miniaturas embaixo
+                     e passam sozinhos para o destaque. Clicar numa miniatura leva o projeto para cima.
+                     Para incluir um projeto, copie uma vitrine e uma miniatura e troque o id. -->
+                <div class="carrossel" data-carrossel>
+                    <div class="carrossel-palco">
+                        <a href="projetos/orquidario-cantareira.html" id="projeto-orquidario" role="tabpanel" aria-labelledby="aba-orquidario" class="project-feature vitrine group" data-slide>
+                            <img src="./assets/img/projetos/orquidario-capa.jpg" alt="" class="vitrine-fundo" loading="lazy">
+                            <div class="vitrine-texto">
+                                <h3 class="vitrine-nome">Da estufa para o digital</h3>
+                                <p class="vitrine-cliente">Orquidário Cantareira</p>
+                                <p class="vitrine-descricao">Identidade visual e loja virtual criadas do zero para um orquidário tradicional, pensadas para colecionadores que querem ver cada detalhe da planta antes de comprar.</p>
+                                <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
                             </div>
-                            <h3 class="font-heading font-bold text-4xl md:text-5xl tracking-[-0.02em] text-white">Da estufa para o digital</h3>
-                            <p class="text-white/80 text-base md:text-lg leading-relaxed max-w-md">Criados do zero para um orquidário tradicional, pensados para colecionadores que querem ver cada detalhe da planta antes de comprar.</p>
-                            <dl class="vitrine-fatos">
-                                <div><dt>Identidade</dt><dd>Logo e direção de arte</dd></div>
-                                <div><dt>Loja</dt><dd>E-commerce</dd></div>
-                                <div><dt>Experiência</dt><dd>UX da compra</dd></div>
-                            </dl>
-                            <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
-                        </div>
-                        <div class="vitrine-mockup">
-                            <img src="./assets/img/projetos/orquidario-mockup.png" alt="Página inicial da loja do Orquidário Cantareira" loading="lazy">
-                        </div>
-                    </a>
-
-                    <div class="projetos-grid flex flex-col gap-4">
-                        <!-- Templates de e-mail (projeto autoral) -->
-                        <a href="materiais/templates-email.html" class="projeto-faixa group">
-                            <span class="projeto-faixa-miniatura"><img src="./assets/img/projetos/templates-email.png" alt="" loading="lazy"></span>
-                            <span class="flex flex-col gap-1 min-w-0">
-                                <span class="text-sm font-semibold text-[#5b30d6]">GPurple Lab · Projeto autoral</span>
-                                <span class="font-heading font-bold text-lg text-gpurple-ink">E-mails que abrem bem em qualquer lugar</span>
-                                <span class="text-[#4a4560] text-sm">Templates testados no Gmail, Outlook e Apple Mail, no desktop e no celular.</span>
-                            </span>
-                            <span class="projeto-faixa-link">Ver templates <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
+                            <div class="vitrine-mockup">
+                                <img src="./assets/img/projetos/orquidario-mockup.png" alt="Página inicial da loja do Orquidário Cantareira" loading="lazy">
+                            </div>
+                        </a>
+                        <a href="materiais/templates-email.html" id="projeto-emails" role="tabpanel" aria-labelledby="aba-emails" class="project-feature vitrine vitrine--emails group" data-slide hidden>
+                            <div class="vitrine-texto">
+                                <h3 class="vitrine-nome">E-mails que abrem bem em qualquer lugar</h3>
+                                <p class="vitrine-cliente">GPurple Lab, projeto autoral</p>
+                                <p class="vitrine-descricao">Templates de e-mail testados no Gmail, no Outlook e no Apple Mail, no computador e no celular, para a mensagem chegar do jeito que foi desenhada.</p>
+                                <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
+                            </div>
+                            <div class="vitrine-mockup vitrine-mockup--retrato">
+                                <img src="./assets/img/projetos/templates-email.png" alt="Templates de e-mail da GPurple" loading="lazy">
+                            </div>
                         </a>
                     </div>
-                </div>
 
-                <div class="flex flex-wrap items-center justify-between gap-4 border-t border-[#e4e0ee] pt-8">
-                    <p class="font-heading font-semibold text-xl text-gpurple-ink">O próximo case pode ser o seu.</p>
-                    <a href="#contato" class="inline-flex items-center gap-2 font-semibold text-[#5b30d6] hover:text-gpurple-ink transition-colors">Iniciar um projeto <span aria-hidden="true">→</span></a>
+                    <div class="carrossel-miniaturas" role="tablist" aria-label="Escolha um projeto">
+                        <button type="button" role="tab" id="aba-orquidario" aria-controls="projeto-orquidario" aria-selected="true" class="carrossel-miniatura" data-aba>
+                            <img src="./assets/img/projetos/orquidario-mockup.png" alt="" loading="lazy">
+                            <span><strong>Da estufa para o digital</strong>Orquidário Cantareira · identidade e loja virtual</span>
+                            <i class="carrossel-tempo" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" role="tab" id="aba-emails" aria-controls="projeto-emails" aria-selected="false" tabindex="-1" class="carrossel-miniatura" data-aba>
+                            <img src="./assets/img/projetos/templates-email.png" alt="" loading="lazy" class="carrossel-miniatura__retrato">
+                            <span><strong>E-mails que abrem bem em qualquer lugar</strong>GPurple Lab · templates de e-mail</span>
+                            <i class="carrossel-tempo" aria-hidden="true"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>

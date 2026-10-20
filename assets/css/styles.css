@@ -561,45 +561,79 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
     .mosaico-bloco--largo .mosaico-tela { flex: 0 0 auto; min-height: 0; height: auto; padding: 1.5rem 1.25rem; }
 }
 
-/* Projetos: vitrine do case principal e faixas dos projetos menores */
+/* Projetos: carrossel com o projeto em destaque grande e os demais em miniaturas embaixo */
 .vitrine {
     position: relative;
     isolation: isolate;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 35rem;
+    min-height: 32rem;
     border-radius: 1.75rem;
     overflow: hidden;
     color: #fff;
+    background: var(--color-text-ink);
 }
+/* Os projetos ficam empilhados na mesma célula: o palco tem a altura do maior e a página não pula na troca */
+.carrossel-palco { display: grid; }
+.carrossel-palco > .vitrine { grid-area: 1 / 1; }
+.carrossel-palco > .vitrine[hidden] { display: grid; visibility: hidden; }
+.vitrine.is-entrando { animation: vitrine-entra .6s ease both; }
+@keyframes vitrine-entra { from { opacity: 0; } }
 .vitrine-fundo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
 .vitrine:hover .vitrine-fundo { transform: scale(1.03); }
 .vitrine::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 14, 18, 0.92) 0%, rgba(12, 14, 18, 0.7) 45%, rgba(12, 14, 18, 0.1) 100%); }
-.vitrine-texto { display: flex; flex-direction: column; justify-content: flex-end; gap: 1.375rem; padding: 3.5rem 3.25rem; }
-.vitrine-marca { display: flex; align-items: center; gap: 0.875rem; font-size: 0.8125rem; color: rgba(255, 255, 255, 0.7); }
-.vitrine-marca strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 0.9375rem; color: #fff; }
-.vitrine-logo { flex: none; width: 64px; height: 64px; border-radius: 50%; overflow: hidden; background: #fff; }
-.vitrine-logo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.22); }
-.vitrine-fatos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.2); }
-.vitrine-fatos dt { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); margin-bottom: 0.25rem; }
-.vitrine-fatos dd { font-size: 0.9375rem; }
-.vitrine-botao { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.4rem; border-radius: 9999px; background: var(--color-brand-accent); color: var(--color-text-ink); font-weight: 600; transition: background-color .2s; }
+.vitrine--emails::before { background: radial-gradient(circle at 80% 30%, rgba(124, 77, 255, 0.28), transparent 60%); }
+.vitrine-texto { display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 3.5rem 3.25rem; }
+.vitrine-nome { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2.25rem, 1.5rem + 2.4vw, 3.25rem); line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance; }
+.vitrine-cliente { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.125rem; color: var(--color-brand-accent); }
+.vitrine-descricao { max-width: 28rem; color: rgba(255, 255, 255, 0.8); font-size: 1.0625rem; line-height: 1.65; }
+.vitrine-botao { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; padding: 0.8rem 1.4rem; border-radius: 9999px; background: var(--color-brand-accent); color: var(--color-text-ink); font-weight: 600; transition: background-color .2s; }
 .vitrine:hover .vitrine-botao { background: var(--color-brand-accent-hover); }
 .vitrine-mockup { display: flex; align-items: flex-end; justify-content: flex-end; padding: 3rem 0; }
 .vitrine-mockup img { width: 112%; max-width: none; border-radius: 14px 0 0 14px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45); transform: translateX(4%); }
-.projeto-faixa { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.5rem; padding: 1.125rem 1.5rem 1.125rem 1.125rem; border-radius: 1.25rem; background: #fff; border: 1px solid #e4e0ee; transition: border-color .25s; }
-.projeto-faixa:hover { border-color: #c9bff0; }
-.projeto-faixa-miniatura { width: 84px; height: 64px; border-radius: 10px; overflow: hidden; background: var(--color-text-ink); padding: 8px 8px 0; }
-.projeto-faixa-link { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; color: var(--color-text-ink); white-space: nowrap; }
+/* Imagem em pé (templates de e-mail): entra pela base, cortada no fim do cartão */
+.vitrine-mockup--retrato { position: relative; align-items: flex-start; justify-content: center; padding: 3rem 2rem 0; overflow: hidden; }
+.vitrine-mockup--retrato img { position: absolute; top: 3rem; left: 50%; width: min(calc(100% - 4rem), 22rem); border-radius: 14px 14px 0 0; transform: translateX(-50%); }
+
+.carrossel { display: flex; flex-direction: column; gap: 1rem; }
+.carrossel-miniaturas { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
+.carrossel-miniatura {
+    position: relative;
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+    overflow: hidden;
+    border-radius: 1.125rem;
+    background: #fff;
+    border: 1px solid #e4e0ee;
+    text-align: left;
+    color: #4a4560;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    cursor: pointer;
+    transition: border-color .25s, box-shadow .25s;
+}
+.carrossel-miniatura:hover { border-color: #c9bff0; }
+.carrossel-miniatura[aria-selected="true"] { border-color: #5b30d6; box-shadow: 0 0 0 1px #5b30d6; }
+.carrossel-miniatura img { width: 5.5rem; height: 4rem; border-radius: 0.625rem; object-fit: cover; object-position: left top; background: var(--color-text-ink); }
+.carrossel-miniatura strong { display: block; margin-bottom: 0.125rem; font-family: 'Montserrat', sans-serif; font-size: 0.9375rem; color: var(--color-text-ink); }
+.carrossel-miniatura:focus-visible { outline-color: #5b30d6; }
+/* Barra de tempo: mostra quando o carrossel vai trocar de projeto sozinho */
+.carrossel-tempo { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: #5b30d6; }
+.carrossel.is-rodando .carrossel-miniatura[aria-selected="true"] .carrossel-tempo { animation: carrossel-tempo var(--carrossel-tempo, 7s) linear forwards; }
+.carrossel.is-pausado .carrossel-tempo { animation-play-state: paused !important; }
+@keyframes carrossel-tempo { to { width: 100%; } }
+
 @media (max-width: 900px) {
     .vitrine { grid-template-columns: 1fr; min-height: 0; }
     .vitrine::before { background: linear-gradient(180deg, rgba(12, 14, 18, 0.2) 0%, rgba(12, 14, 18, 0.9) 45%); }
     .vitrine-mockup { order: -1; padding: 1.5rem 0 0 1.5rem; }
     .vitrine-mockup img { width: 100%; transform: none; }
+    .vitrine-mockup--retrato { height: 15rem; padding: 0; }
+    .vitrine-mockup--retrato img { top: 1.5rem; }
     .vitrine-texto { padding: 1.75rem 1.5rem 2rem; }
-    .vitrine-fatos { grid-template-columns: 1fr 1fr; }
-    .projeto-faixa { grid-template-columns: auto 1fr; }
-    .projeto-faixa-link { grid-column: 1 / -1; }
 }
 
 /* Estúdio: manifesto e as duas pessoas em linhas */
@@ -647,8 +681,7 @@ thead .comparativo-destaque { box-shadow: inset 1px 0 0 rgba(var(--color-brand-a
 }
 
 /* Cards de projeto na seção clara */
-.project-feature:focus-visible,
-.projetos-grid a:focus-visible { outline-color: #5b30d6; }
+.project-feature:focus-visible { outline-color: #5b30d6; }
 .vitrine:focus-visible { outline-offset: 4px; }
 
 /* ----------------------------------

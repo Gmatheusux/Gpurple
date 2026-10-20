@@ -66,4 +66,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('main section[id], #contato').forEach((section) => observer.observe(section));
     }
+
+    // ----------------------------------------------------
+    // Projetos: carrossel. Troca de projeto sozinho a cada 7 s; para quando o mouse ou o foco
+    // está nele e não roda para quem pediu menos movimento. As miniaturas funcionam como abas.
+    // ----------------------------------------------------
+    const carrossel = document.querySelector('[data-carrossel]');
+    if (carrossel) {
+        const abas = [...carrossel.querySelectorAll('[data-aba]')];
+        const slides = abas.map((aba) => document.getElementById(aba.getAttribute('aria-controls')));
+        const tempo = 7000;
+        const reduzMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let atual = 0;
+        let timer = null;
+
+        const mostrar = (i, { foco = false } = {}) => {
+            atual = (i + abas.length) % abas.length;
+            abas.forEach((aba, n) => {
+                const ativa = n === atual;
+                aba.setAttribute('aria-selected', String(ativa));
+                aba.tabIndex = ativa ? 0 : -1;
+                slides[n].hidden = !ativa;
+                slides[n].classList.toggle('is-entrando', ativa);
+            });
+            if (foco) abas[atual].focus();
+            reiniciar();
+        };
+
+        const reiniciar = () => {
+            clearTimeout(timer);
+            // Reinicia a barra de tempo da miniatura ativa
+            carrossel.classList.remove('is-rodando');
+            void carrossel.offsetWidth;
+            if (reduzMovimento || abas.length < 2) return;
+            carrossel.classList.add('is-rodando');
+            if (!carrossel.classList.contains('is-pausado')) timer = setTimeout(proximo, tempo);
+        };
+        const proximo = () => mostrar(atual + 1);
+
+        carrossel.style.setProperty('--carrossel-tempo', tempo + 'ms');
+        abas.forEach((aba, n) => {
+            aba.addEventListener('click', () => mostrar(n));
+            aba.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') { e.preventDefault(); mostrar(atual + 1, { foco: true }); }
+                if (e.key === 'ArrowLeft') { e.preventDefault(); mostrar(atual - 1, { foco: true }); }
+            });
+        });
+
+        // Pausado, o relógio para; ao sair, a contagem recomeça do zero
+        const pausar = (sim) => {
+            if (carrossel.classList.contains('is-pausado') === sim) return;
+            carrossel.classList.toggle('is-pausado', sim);
+            if (sim) clearTimeout(timer);
+            else reiniciar();
+        };
+        carrossel.addEventListener('mouseenter', () => pausar(true));
+        carrossel.addEventListener('mouseleave', () => pausar(carrossel.contains(document.activeElement)));
+        carrossel.addEventListener('focusin', () => pausar(true));
+        carrossel.addEventListener('focusout', (e) => { if (!carrossel.contains(e.relatedTarget)) pausar(false); });
+
+        // Só começa a contar quando a seção aparece na tela
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver((entries, obs) => {
+                if (entries[0].isIntersecting) { reiniciar(); obs.disconnect(); }
+            }, { threshold: 0.4 }).observe(carrossel);
+        } else {
+            reiniciar();
+        }
+    }
 });
