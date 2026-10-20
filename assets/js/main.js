@@ -56,9 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
-                const target = '#' + entry.target.id;
+                const id = entry.target.id;
+                // data-secoes: um atalho que cobre mais de uma seção (Serviços = O problema + Serviços)
                 sectionLinks.forEach((a) => {
-                    if (a.getAttribute('href') === target) a.setAttribute('aria-current', 'true');
+                    const secoes = a.dataset.secoes ? a.dataset.secoes.split(' ') : [a.getAttribute('href').slice(1)];
+                    if (secoes.includes(id)) a.setAttribute('aria-current', 'true');
                     else a.removeAttribute('aria-current');
                 });
             });

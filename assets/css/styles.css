@@ -230,6 +230,11 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .contato-email__campo span { display: inline-block; width: 46%; margin-left: 6px; border-bottom: 1.5px dashed #c9c2da; vertical-align: middle; }
 .contato-email__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 0.875rem 1.125rem; padding: 18px 22px 22px; }
 .contato-email__acoes > span { font-size: 0.8125rem; color: #5b5670; }
+/* Contato em fundo claro: textos em tinta escura e o modelo do e-mail em branco para se destacar */
+.contato .contato-passos strong { color: var(--color-text-ink); }
+.contato .contato-passos span:not(.contato-num) { color: #4a4560; }
+.contato .contato-num { border-color: rgba(91, 48, 214, 0.4); color: #5b30d6; }
+.contato .contato-email { background: #fff; border-color: #e4e0ee; box-shadow: 0 30px 60px -36px rgba(21, 18, 31, 0.28); }
 .rodape { padding-top: 4.5rem; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; }
 .rodape ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.625rem; }
 .rodape li a { color: var(--color-text-secondary); font-size: 0.9375rem; transition: color .2s; }

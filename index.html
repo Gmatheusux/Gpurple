@@ -38,11 +38,10 @@
             </a>
 
             <nav aria-label="Atalhos" class="site-header__links">
-                <a href="#problema" class="nav-link">Problema</a>
-                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#problema" class="nav-link" data-secoes="problema servicos">Serviços</a>
                 <a href="#projetos" class="nav-link">Projetos</a>
                 <a href="#processo" class="nav-link">Processo</a>
-                <a href="#estudio" class="nav-link">Estúdio</a>
+                <a href="#estudio" class="nav-link">Equipe</a>
                 <a href="#contato" class="nav-link">Contato</a>
                 <a href="#faq" class="nav-link">Dúvidas</a>
             </nav>
@@ -62,11 +61,10 @@
         <div class="site-menu__inner">
             <nav aria-label="Seções do site">
                 <ul class="site-menu__list">
-                    <li><a href="#problema" class="site-menu__link"><span class="site-menu__title">O problema</span><span class="site-menu__desc">Por que as visitas não viram clientes</span></a></li>
-                    <li><a href="#servicos" class="site-menu__link"><span class="site-menu__title">Serviços</span><span class="site-menu__desc">Design, desenvolvimento e evolução do site</span></a></li>
-                    <li><a href="#projetos" class="site-menu__link"><span class="site-menu__title">Projetos</span><span class="site-menu__desc">O case do Orquidário Cantareira</span></a></li>
+                    <li><a href="#problema" class="site-menu__link" data-secoes="problema servicos"><span class="site-menu__title">Serviços</span><span class="site-menu__desc">Por que as visitas não viram clientes e como resolvemos</span></a></li>
+                    <li><a href="#projetos" class="site-menu__link"><span class="site-menu__title">Projetos</span><span class="site-menu__desc">Os cases que já entregamos</span></a></li>
                     <li><a href="#processo" class="site-menu__link"><span class="site-menu__title">Processo</span><span class="site-menu__desc">Como trabalhamos, em 4 etapas</span></a></li>
-                    <li><a href="#estudio" class="site-menu__link"><span class="site-menu__title">Estúdio</span><span class="site-menu__desc">Quem faz o seu projeto</span></a></li>
+                    <li><a href="#estudio" class="site-menu__link"><span class="site-menu__title">Equipe</span><span class="site-menu__desc">Quem faz o seu projeto</span></a></li>
                     <li><a href="#contato" class="site-menu__link"><span class="site-menu__title">Contato</span><span class="site-menu__desc">Conte sobre o seu projeto por e-mail</span></a></li>
                     <li><a href="#faq" class="site-menu__link"><span class="site-menu__title">Perguntas frequentes</span><span class="site-menu__desc">Preço, prazo e tecnologia</span></a></li>
                 </ul>
@@ -427,8 +425,8 @@
             </div>
         </section>
 
-        <!-- 6. Estúdio: manifesto à esquerda, as duas pessoas em linhas à direita -->
-        <section id="estudio" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
+        <!-- 6. Equipe: manifesto à esquerda, as duas pessoas em linhas à direita -->
+        <section id="estudio" class="relative w-full py-24 md:py-32 bg-gpurple-card">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-[4.5rem] items-center">
                 <div class="flex flex-col gap-5">
                     <p class="eyebrow">Quem faz</p>
@@ -463,21 +461,20 @@
         </section>
 
         <!-- 7. Contato -->
-        <section id="contato" class="relative w-full py-24 md:py-32 bg-gpurple-deep overflow-hidden">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full h-[380px] bg-[radial-gradient(ellipse_at_top,rgba(139,92,246,0.12),transparent_70%)] pointer-events-none"></div>
+        <section id="contato" class="contato relative w-full py-24 md:py-32 bg-gpurple-light text-gpurple-ink">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 relative z-10">
                 <div class="contato-grid">
                     <div class="flex flex-col gap-6">
-                        <p class="eyebrow">Contato</p>
-                        <h2 class="font-heading font-bold text-4xl md:text-6xl tracking-[-0.025em] leading-[1.05] text-white">
-                            Vamos conversar sobre <span class="text-gpurple-accent">o seu projeto?</span>
+                        <p class="eyebrow eyebrow--light">Contato</p>
+                        <h2 class="font-heading font-bold text-4xl md:text-6xl tracking-[-0.025em] leading-[1.05] text-gpurple-ink">
+                            Vamos conversar sobre <span class="text-[#5b30d6]">o seu projeto?</span>
                         </h2>
                         <ol class="contato-passos">
                             <li><span class="contato-num" aria-hidden="true">1</span><div><strong>Você conta</strong><span>O endereço do site e o que mais incomoda você nele hoje.</span></div></li>
                             <li><span class="contato-num" aria-hidden="true">2</span><div><strong>Analisamos</strong><span>Você recebe um vídeo curto com os pontos que mais pesam.</span></div></li>
                             <li><span class="contato-num" aria-hidden="true">3</span><div><strong>Você decide</strong><span>Se fizer sentido, marcamos uma conversa e montamos a proposta.</span></div></li>
                         </ol>
-                        <p class="text-gpurple-body text-sm">A primeira conversa e a análise do seu site atual não têm custo.</p>
+                        <p class="text-[#4a4560] text-sm">A primeira conversa e a análise do seu site atual não têm custo.</p>
                     </div>
 
                     <!-- Modelo da mensagem visível antes do clique: o botão abre o e-mail com o mesmo texto -->
@@ -503,7 +500,7 @@
         </section>
 
         <!-- 8. Perguntas frequentes -->
-        <section id="faq" class="relative w-full py-24 md:py-32 bg-gpurple-card">
+        <section id="faq" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20">
                 <div class="flex flex-col gap-5">
                     <p class="eyebrow">Perguntas frequentes</p>
@@ -565,7 +562,7 @@
     </main>
 
     <!-- 9. Rodapé -->
-    <footer id="rodape" class="relative w-full pb-10 bg-gpurple-deep">
+    <footer id="rodape" class="relative w-full pb-10 bg-gpurple-card">
         <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 relative z-10">
             <div class="rodape">
                 <div class="rodape__marca">
@@ -578,10 +575,10 @@
                 <nav aria-label="Seções do site no rodapé">
                     <h3 class="rodape__titulo">Navegue</h3>
                     <ul>
-                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#problema">Serviços</a></li>
                         <li><a href="#projetos">Projetos</a></li>
                         <li><a href="#processo">Processo</a></li>
-                        <li><a href="#estudio">Estúdio</a></li>
+                        <li><a href="#estudio">Equipe</a></li>
                         <li><a href="#contato">Contato</a></li>
                         <li><a href="#faq">Perguntas frequentes</a></li>
                     </ul>

@@ -98,10 +98,12 @@ Cada seção do `index.html` começa com um comentário numerado (`<!-- 4. Proje
 | 3 | `#servicos` | Serviços | Mosaico; cada serviço diz qual problema de cima ele resolve. |
 | 4 | `#projetos` | Projetos | Carrossel: o projeto em destaque fica grande (nome, cliente, descrição e "Ver o case completo") e os outros aparecem em miniaturas embaixo. Troca sozinho a cada 7 s e para com o mouse ou o foco em cima. |
 | 5 | `#processo` | Processo | Trilha de cartões, cada etapa mostra o que o cliente recebe. |
-| 6 | `#estudio` | Estúdio | Manifesto à esquerda, Gabriel Barros e Gabriel Zopello em linhas à direita. |
+| 6 | `#estudio` | Equipe | Manifesto à esquerda, Gabriel Barros e Gabriel Zopello em linhas à direita. |
 | 7 | `#contato` | Contato | Modelo do e-mail visível antes do clique; o botão abre o e-mail com o mesmo texto. |
 | 8 | `#faq` | Perguntas frequentes | Acordeão com a primeira resposta aberta. |
 | 9 | `#rodape` | Rodapé | Marca, links das seções, e-mail e LinkedIn. |
+
+Os fundos seguem um ciclo de três tons: claro, escuro e roxo médio (Abertura, O problema, Serviços; Projetos, Processo, Equipe; Contato, Perguntas frequentes, rodapé). No menu, o atalho Serviços cobre O problema e Serviços (atributo `data-secoes`).
 
 ## Projetos: como documentar e adicionar cases
 
