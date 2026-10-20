@@ -61,7 +61,8 @@ Se você está abrindo este repositório numa conversa nova para continuar o sit
 .
 ├── index.html                      # Página principal (todas as seções da home)
 ├── projetos/
-│   └── orquidario-cantareira.html  # Case: Orquidário Cantareira (modelo para novos cases)
+│   ├── orquidario-cantareira.html  # Case: Orquidário Cantareira (modelo para novos cases)
+│   └── allp-fit.html               # Case de UX: app Allp Fit Home (pesquisa, proposta de valor, arquitetura)
 ├── materiais/                      # Materiais comerciais (fora do menu, com noindex)
 │   ├── apresentacao.html           # Apresentação para reuniões (setas ← → navegam)
 │   ├── email-corporativo.html      # Modelo de e-mail com assinatura
@@ -113,8 +114,9 @@ Os fundos seguem um ciclo de três tons: claro, escuro e roxo médio (Abertura, 
 | --- | --- | --- | --- |
 | Vitrine (destaque) | Orquidário Cantareira: identidade visual e loja virtual, criadas do zero | `projetos/orquidario-cantareira.html` | Em andamento. Falta a autorização do cliente para exibir. |
 | Faixa | GPurple Lab: templates de e-mail (projeto autoral) | `materiais/templates-email.html` | Publicado. |
+| Faixa | Allp Fit Home: pesquisa, proposta de valor, arquitetura e wireframes de um app de treino | `projetos/allp-fit.html` | Entregue em 2023 pela VM Pereira Design, com Gabriel Barros como Lead Product Designer; outra empresa finalizou e publicou o app. Downloads e nota conferidos na Google Play em 25/05/2026. |
 
-O Orquidário é o único projeto de cliente no site. Os cases antigos do site original (TechCorp e Elite Studio) eram fictícios e foram removidos. Novos projetos entram aqui conforme forem documentados.
+O Orquidário e o Allp Fit são os projetos de cliente no site. A página do Allp Fit usa os blocos `.caso-*` do `styles.css` (seções em claro, escuro e roxo médio, diagramas em HTML) e pode servir de modelo para cases longos de UX. Os cases antigos do site original (TechCorp e Elite Studio) eram fictícios e foram removidos. Novos projetos entram aqui conforme forem documentados.
 
 ### Antes de escrever: junte o material
 

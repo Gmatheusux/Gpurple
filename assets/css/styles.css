@@ -924,3 +924,157 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 body.menu-aberto .site-header--claro .site-header__logo-texto { color: #fff; }
 
 body.menu-aberto { overflow: hidden; }
+
+/* ----------------------------------
+   Página de case (projetos/allp-fit.html)
+   Fundos no mesmo ciclo da home: claro, escuro e roxo médio.
+   ---------------------------------- */
+.caso-header .site-header__inner { grid-template-columns: 1fr auto; }
+.caso-voltar { display: inline-flex; align-items: center; gap: .5rem; font-size: .9375rem; font-weight: 500; color: var(--color-text-secondary); transition: color .2s; }
+.caso-voltar:hover { color: #fff; }
+.caso-header:not(.is-solid) .caso-voltar { color: #4a4560; }
+.caso-header:not(.is-solid) .caso-voltar:hover { color: var(--color-text-ink); }
+
+.caso-secao { position: relative; width: 100%; padding: 6rem 0; }
+@media (min-width: 768px) { .caso-secao { padding: 8rem 0; } }
+.caso-secao--claro { background: var(--color-surface-light); color: var(--color-text-ink); }
+.caso-secao--escuro { background: var(--color-surface-dark); }
+.caso-secao--medio { background: var(--color-surface-card); }
+.caso-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; flex-direction: column; gap: 3.5rem; }
+@media (min-width: 768px) { .caso-container { padding: 0 2rem; } }
+
+.caso-rotulo { font-size: .9375rem; font-weight: 600; color: var(--color-brand-primary-soft); }
+.caso-secao--claro .caso-rotulo { color: #5b30d6; }
+.caso-titulo { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2.25rem, 5.2vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance; }
+.caso-lead { font-size: 1.1875rem; line-height: 1.6; color: #4a4560; max-width: 40rem; }
+.caso-lead--menor { font-size: 1.125rem; }
+.caso-intro { display: flex; flex-direction: column; gap: 1.25rem; }
+.caso-intro--larga { max-width: 48rem; }
+.caso-subtitulo { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.375rem; line-height: 1.25; margin-bottom: 1.25rem; }
+.caso-corpo { display: flex; flex-direction: column; gap: 1.125rem; }
+.caso-corpo p, .caso-corpo-texto { font-size: 1.0625rem; line-height: 1.7; color: var(--color-text-secondary); }
+
+.caso-duas { display: grid; gap: 3rem; }
+@media (min-width: 900px) { .caso-duas { grid-template-columns: 1fr 1fr; gap: 5rem; } }
+.caso-duas--topo { margin-top: 1rem; }
+
+/* Abertura */
+.caso-abertura { padding-top: 9rem; }
+.caso-abertura__grade { display: grid; gap: 2.5rem; align-items: end; }
+@media (min-width: 900px) { .caso-abertura__grade { grid-template-columns: 1.6fr 1fr; gap: 4rem; } }
+.caso-abertura__texto { display: flex; flex-direction: column; gap: 1.25rem; }
+.caso-ficha { display: grid; gap: 1rem; padding: 1.5rem; border-radius: 1.25rem; background: #fff; border: 1px solid #e4e0ee; }
+.caso-ficha div { display: grid; gap: .125rem; }
+.caso-ficha dt { font-size: .8125rem; font-weight: 600; color: #5b30d6; }
+.caso-ficha dd { font-size: .9375rem; line-height: 1.5; color: var(--color-text-ink); }
+.caso-capa { border-radius: 1.5rem; overflow: hidden; background: #1a0f0a; box-shadow: 0 30px 60px -40px rgba(21, 18, 31, .6); }
+.caso-capa img { display: block; width: 100%; height: auto; }
+.caso-numeros { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; list-style: none; margin: 0; padding: 0; }
+@media (min-width: 768px) { .caso-numeros { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.caso-numeros li { display: flex; flex-direction: column; gap: .25rem; padding-top: 1rem; border-top: 2px solid var(--color-text-ink); }
+.caso-numeros strong { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.75rem, 3.4vw, 2.5rem); letter-spacing: -0.02em; line-height: 1.1; }
+.caso-numeros span { font-size: .9375rem; color: #4a4560; line-height: 1.45; }
+.caso-fonte { margin-top: -2.25rem; font-size: .8125rem; color: #5b5670; }
+
+/* Cartões numerados (visão de negócio e proposta de valor) */
+.caso-cartoes { display: grid; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+@media (min-width: 640px) { .caso-cartoes--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .caso-cartoes--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.caso-cartao { display: flex; flex-direction: column; gap: .625rem; padding: 1.5rem; border-radius: 1.25rem; border: 1px solid rgba(255, 255, 255, .12); }
+.caso-cartao__num { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--color-brand-accent); font-variant-numeric: tabular-nums; }
+.caso-cartao h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.125rem; line-height: 1.3; }
+.caso-cartao p { font-size: .9375rem; line-height: 1.6; color: var(--color-text-secondary); }
+
+/* Pesquisa */
+.caso-dados { display: grid; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+@media (min-width: 640px) { .caso-dados { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .caso-dados { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.caso-dados li { display: flex; flex-direction: column; gap: .5rem; padding: 1.5rem; border-radius: 1.25rem; background: #fff; border: 1px solid #e4e0ee; }
+.caso-dados strong { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 2.25rem; letter-spacing: -0.02em; line-height: 1; color: #5b30d6; }
+.caso-dados span { font-size: .9375rem; line-height: 1.5; color: #4a4560; }
+
+.caso-tabela { margin-top: -2rem; border-top: 1px solid #d9d4e6; }
+.caso-tabela__linha { display: grid; gap: .375rem; padding: 1.125rem 0; border-bottom: 1px solid #d9d4e6; font-size: 1rem; line-height: 1.55; color: #4a4560; }
+@media (min-width: 768px) { .caso-tabela__linha { grid-template-columns: 1fr 1.4fr; gap: 2.5rem; } }
+.caso-tabela__linha strong { color: var(--color-text-ink); font-weight: 600; }
+.caso-tabela__linha--topo { font-size: .8125rem; font-weight: 600; color: #5b30d6; padding: .75rem 0; }
+@media (max-width: 767px) { .caso-tabela__linha--topo { display: none; } }
+
+.caso-personas { display: grid; gap: 1rem; }
+.caso-persona { padding: 1.375rem 1.5rem; border-radius: 1.25rem; background: #fff; border: 1px solid #e4e0ee; }
+.caso-persona h4 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.125rem; }
+.caso-persona__tipo { margin: .125rem 0 .625rem; font-size: .875rem; font-weight: 600; color: #5b30d6; }
+.caso-persona p:last-child { font-size: .9375rem; line-height: 1.6; color: #4a4560; }
+.caso-concorrentes { display: flex; flex-direction: column; gap: .875rem; list-style: none; margin: 0 0 1.5rem; padding: 0; }
+.caso-concorrentes li { font-size: 1rem; line-height: 1.6; color: #4a4560; padding-left: 1rem; border-left: 2px solid #d9d4e6; }
+.caso-concorrentes strong { color: var(--color-text-ink); }
+.caso-destaque { padding: 1.375rem 1.5rem; border-radius: 1.25rem; background: var(--color-text-ink); color: #fff; font-size: 1.0625rem; line-height: 1.6; }
+
+/* Figuras */
+.caso-figura { display: flex; flex-direction: column; gap: .875rem; }
+.caso-figura img { display: block; width: 100%; height: auto; border-radius: 1.25rem; background: #fff; border: 1px solid #e4e0ee; }
+.caso-figura--clara img { border-color: rgba(255, 255, 255, .12); }
+.caso-figura figcaption { font-size: .9375rem; line-height: 1.6; color: #4a4560; max-width: 46rem; }
+.caso-secao--escuro .caso-figura figcaption { color: var(--color-text-secondary); }
+.caso-figura figcaption strong { color: var(--color-text-ink); }
+.caso-galeria { display: flex; flex-direction: column; gap: 3.5rem; }
+.caso-figura--estreita img { max-width: 52rem; }
+
+/* Escopo da primeira versão */
+.caso-escopo { display: grid; gap: 2.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(255, 255, 255, .12); }
+@media (min-width: 900px) { .caso-escopo { grid-template-columns: 1.2fr 1fr; gap: 5rem; } }
+.caso-lista { display: flex; flex-direction: column; gap: .75rem; list-style: none; margin: 0; padding: 0; }
+.caso-lista li { position: relative; padding-left: 1.5rem; font-size: 1rem; line-height: 1.6; color: var(--color-text-secondary); }
+.caso-lista li::before { content: ""; position: absolute; left: 0; top: .45em; width: 10px; height: 6px; border-left: 2px solid var(--color-brand-accent); border-bottom: 2px solid var(--color-brand-accent); transform: rotate(-45deg); }
+
+/* Arquitetura: mapa e fluxos desenhados em HTML */
+.caso-mapa { display: flex; flex-direction: column; align-items: center; }
+.caso-mapa__raiz { position: relative; padding: .875rem 1.75rem; border-radius: .875rem; background: var(--color-brand-accent); color: var(--color-text-ink); font-family: 'Montserrat', sans-serif; font-weight: 700; }
+.caso-mapa__ramos { position: relative; display: grid; gap: 1rem; width: 100%; list-style: none; margin: 2.5rem 0 0; padding: 0; }
+.caso-mapa__ramos::before { content: ""; position: absolute; left: 50%; top: -2.5rem; height: 2.5rem; border-left: 2px solid rgba(255, 255, 255, .25); }
+@media (min-width: 768px) {
+    .caso-mapa__ramos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+    .caso-mapa__ramos::before { height: 1.25rem; }
+    .caso-mapa__ramos::after { content: ""; position: absolute; top: -1.25rem; left: 16.66%; right: 16.66%; border-top: 2px solid rgba(255, 255, 255, .25); }
+    .caso-mapa__ramos li::before { content: ""; position: absolute; left: 50%; top: -1.25rem; height: 1.25rem; border-left: 2px solid rgba(255, 255, 255, .25); }
+}
+.caso-mapa__ramos li { position: relative; display: flex; flex-direction: column; gap: .375rem; padding: 1.25rem 1.375rem; border-radius: 1rem; border: 1px solid rgba(255, 255, 255, .14); background: var(--color-surface-dark); }
+.caso-mapa__ramos strong { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.125rem; }
+.caso-mapa__ramos span { font-size: .9375rem; line-height: 1.55; color: var(--color-text-secondary); }
+
+.caso-fluxos { display: grid; gap: 2.5rem; }
+@media (min-width: 900px) { .caso-fluxos { grid-template-columns: 1.3fr 1fr; gap: 3rem; } }
+.caso-fluxo > p { margin-top: 1.25rem; font-size: 1rem; line-height: 1.6; color: var(--color-text-secondary); }
+.caso-passos { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; list-style: none; margin: 0; padding: 0; counter-reset: passo; }
+.caso-passos li { counter-increment: passo; display: inline-flex; align-items: center; gap: .5rem; padding: .5rem .875rem; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, .18); font-size: .9375rem; font-weight: 500; }
+.caso-passos li::before { content: counter(passo); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: .8125rem; color: var(--color-brand-accent); }
+.caso-passos li:not(:last-child)::after { content: "→"; margin-left: .375rem; color: var(--color-text-secondary); }
+.caso-passos--ciclo li:last-child::after { content: "↺"; margin-left: .375rem; color: var(--color-brand-accent); }
+
+.caso-decisoes { display: grid; gap: 1.5rem 3rem; list-style: none; margin: 0; padding: 2.5rem 0 0; border-top: 1px solid rgba(255, 255, 255, .12); }
+@media (min-width: 768px) { .caso-decisoes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.caso-decisoes h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.0625rem; margin-bottom: .375rem; }
+.caso-decisoes p { font-size: .9375rem; line-height: 1.6; color: var(--color-text-secondary); }
+
+/* App publicado */
+.caso-publicado { display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 900px) { .caso-publicado { grid-template-columns: 1.1fr 1fr; gap: 5rem; } }
+.caso-telas { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 30rem; width: 100%; margin: 0 auto; }
+.caso-telas figure { display: flex; flex-direction: column; gap: .625rem; }
+.caso-telas figure:last-child { margin-top: 2.5rem; }
+.caso-telas img { display: block; width: 100%; height: auto; border-radius: 1.25rem; border: 6px solid #221c3d; }
+.caso-telas figcaption { text-align: center; font-size: .875rem; color: var(--color-text-secondary); }
+
+/* Resultado */
+.caso-aprendizados { display: flex; flex-direction: column; gap: 1.75rem; }
+.caso-aprendizados div { padding-bottom: 1.75rem; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+.caso-aprendizados div:last-child { border-bottom: 0; padding-bottom: 0; }
+.caso-aprendizados h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.125rem; margin-bottom: .5rem; }
+.caso-aprendizados p { font-size: 1rem; line-height: 1.65; color: var(--color-text-secondary); }
+
+/* Créditos e CTA */
+.caso-creditos { max-width: 48rem; padding-left: 1rem; border-left: 2px solid #c9c2da; font-size: .9375rem; line-height: 1.65; color: #4a4560; }
+.caso-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; max-width: 44rem; }
+.caso-cta p { font-size: 1.125rem; line-height: 1.6; color: #4a4560; }
+.caso-cta__botao { margin-top: .5rem; background: var(--color-text-ink); color: #fff; }
+.caso-cta__botao:hover { background: #5b30d6; }
