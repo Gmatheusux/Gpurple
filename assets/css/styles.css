@@ -581,18 +581,19 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 @keyframes vitrine-entra { from { opacity: 0; } }
 .vitrine-fundo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
 .vitrine:hover .vitrine-fundo { transform: scale(1.03); }
-.vitrine::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 14, 18, 0.92) 0%, rgba(12, 14, 18, 0.7) 45%, rgba(12, 14, 18, 0.1) 100%); }
+/* Fundo mais escuro atrás do texto para a leitura não competir com a foto */
+.vitrine::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 14, 18, 0.96) 0%, rgba(12, 14, 18, 0.88) 42%, rgba(12, 14, 18, 0.25) 100%); }
 .vitrine--emails::before { background: radial-gradient(circle at 80% 30%, rgba(124, 77, 255, 0.28), transparent 60%); }
 .vitrine-texto { display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: 3.5rem 3.25rem; }
 .vitrine-nome { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2.25rem, 1.5rem + 2.4vw, 3.25rem); line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance; }
 .vitrine-cliente { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.125rem; color: var(--color-brand-accent); }
-.vitrine-descricao { max-width: 28rem; color: rgba(255, 255, 255, 0.8); font-size: 1.0625rem; line-height: 1.65; }
+.vitrine-descricao { max-width: 28rem; color: rgba(255, 255, 255, 0.94); font-size: 1.125rem; line-height: 1.65; }
 .vitrine-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; max-width: 30rem; list-style: none; margin: 0.25rem 0 0; padding: 0; }
-.vitrine-tags li { padding: 0.3rem 0.75rem; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.28); background: rgba(255, 255, 255, 0.08); font-size: 0.8125rem; font-weight: 600; color: #fff; }
-/* "Ver o case completo": só o texto, com sublinhado (sem pílula) */
-.vitrine-botao { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; padding-bottom: 0.25rem; border-bottom: 2px solid var(--color-brand-accent); color: var(--color-brand-accent); font-size: 1.0625rem; font-weight: 600; transition: color .2s, border-color .2s; }
-.vitrine:hover .vitrine-botao { color: #fff; border-color: #fff; }
-.vitrine-mockup { display: flex; align-items: flex-end; justify-content: flex-end; padding: 3rem 0; }
+.vitrine-tags li { padding: 0.3rem 0.75rem; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(12, 14, 18, 0.55); font-size: 0.875rem; font-weight: 600; color: #fff; }
+/* "Ver o case completo": só o texto, com sublinhado (sem pílula). O texto chama atenção; o sublinhado é discreto */
+.vitrine-botao { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; padding-bottom: 0.375rem; border-bottom: 1px solid rgba(var(--color-brand-accent-rgb), 0.45); color: var(--color-brand-accent); font-family: 'Montserrat', sans-serif; font-size: 1.25rem; font-weight: 700; transition: color .2s, border-color .2s; }
+.vitrine:hover .vitrine-botao { color: #fff; border-color: rgba(255, 255, 255, 0.6); }
+.vitrine-mockup { display: flex; align-items: center; justify-content: flex-end; padding: 3rem 0; }
 .vitrine-mockup img { width: 112%; max-width: none; border-radius: 14px 0 0 14px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45); transform: translateX(4%); }
 /* Imagem em pé (templates de e-mail): entra pela base, cortada no fim do cartão */
 .vitrine-mockup--retrato { position: relative; align-items: flex-start; justify-content: center; padding: 3rem 2rem 0; overflow: hidden; }
