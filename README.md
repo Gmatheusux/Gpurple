@@ -61,7 +61,8 @@ Se você está abrindo este repositório numa conversa nova para continuar o sit
 .
 ├── index.html                      # Página principal (todas as seções da home)
 ├── projetos/
-│   └── orquidario-cantareira.html  # Case: Orquidário Cantareira (modelo para novos cases)
+│   ├── orquidario-cantareira.html  # Case: Orquidário Cantareira (modelo para novos cases)
+│   └── allp-fit.html               # Case de UX: app Allp Fit Home (pesquisa, proposta de valor, arquitetura, telas de baixa e alta)
 ├── materiais/                      # Materiais comerciais (fora do menu, com noindex)
 │   ├── apresentacao.html           # Apresentação para reuniões (setas ← → navegam)
 │   ├── email-corporativo.html      # Modelo de e-mail com assinatura
@@ -113,8 +114,9 @@ Os fundos seguem um ciclo de três tons: claro, escuro e roxo médio (Abertura, 
 | --- | --- | --- | --- |
 | Vitrine (destaque) | Orquidário Cantareira: identidade visual e loja virtual, criadas do zero | `projetos/orquidario-cantareira.html` | Em andamento. Falta a autorização do cliente para exibir. |
 | Faixa | GPurple Lab: templates de e-mail (projeto autoral) | `materiais/templates-email.html` | Publicado. |
+| Faixa | Allp Fit Home: pesquisa, proposta de valor, arquitetura e wireframes de um app de treino | `projetos/allp-fit.html` | Entregue em 2023 pela VM Pereira Design, com Gabriel Barros como Lead Product Designer; outra empresa finalizou e publicou o app. Downloads e nota conferidos na Google Play em 25/05/2026. |
 
-O Orquidário é o único projeto de cliente no site. Os cases antigos do site original (TechCorp e Elite Studio) eram fictícios e foram removidos. Novos projetos entram aqui conforme forem documentados.
+O Orquidário e o Allp Fit são os projetos de cliente no site. A página do Allp Fit usa os blocos `.caso-*` do `styles.css` (seções em claro, escuro e roxo médio, diagramas em HTML) e pode servir de modelo para cases longos de UX. Os cases antigos do site original (TechCorp e Elite Studio) eram fictícios e foram removidos. Novos projetos entram aqui conforme forem documentados.
 
 ### Antes de escrever: junte o material
 
@@ -147,7 +149,7 @@ Se o projeto tiver resultado real, acrescente uma seção entre a abordagem e a 
 ### Passo a passo para um case novo
 
 1. Copie `projetos/orquidario-cantareira.html` para `projetos/nome-do-cliente.html` (minúsculas, hífens, sem acento).
-2. Coloque as imagens em `assets/img/projetos/` com o nome do cliente na frente: `cliente-capa.jpg`, `cliente-logo.jpg`, `cliente-mockup.png`. Exporte em JPG ou WebP com até ~300 KB (PNG só para o mockup com transparência).
+2. Coloque as imagens em `assets/img/projetos/` com o nome do cliente na frente: `cliente-capa.jpg`, `cliente-logo.jpg`, `cliente-mockup.png`. Exporte em JPG ou WebP com até ~300 KB (PNG só para o mockup com transparência). Um case com muitas telas pode ganhar uma pasta própria, como `assets/img/projetos/allp-fit/` (telas `baixa-*` e `alta-*` exportadas do Figma, `fundo.svg` da abertura e `og.jpg`).
 3. Troque textos, imagens, `<title>`, `description` e tags `og:` da nova página. Dentro de `projetos/`, os caminhos começam com `../` (`../assets/img/projetos/...`).
 4. No `index.html`, seção `#projetos`:
    - Dentro de `.carrossel-palco`, duplique uma vitrine (`<a class="project-feature vitrine" data-slide>`), troque o `id`, o `href`, as imagens, o nome, o cliente e a descrição, e deixe `hidden`. Imagem em pé usa `vitrine-mockup--retrato`.
