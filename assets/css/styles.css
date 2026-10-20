@@ -810,14 +810,26 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
    Fundo claro para fugir do "roxo sobre preto com brilho" de site gerado. A loja do Orquidário aparece numa janela
    de navegador, com pinos numerados que remetem às notas de projeto da legenda. Só a imagem entra com movimento.
    ---------------------------------- */
-.hero { background: var(--color-surface-light); color: var(--color-text-ink); padding: 6.5rem 0 3.5rem; }
-@media (min-width: 1024px) { .hero { padding: 9rem 0 6rem; } }
+/* A abertura ocupa a tela inteira. O espaço de cima é o do cabeçalho fixo e o de baixo, o da seta,
+   então o conteúdo fica no centro do que sobra */
+.hero { background: var(--color-surface-light); color: var(--color-text-ink); padding: 6.5rem 0 6rem; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
+.hero > .hero__inner { width: 100%; }
+@media (min-width: 1024px) { .hero { padding: 6.5rem 0 6.5rem; } }
+/* Telas baixas (notebook 720px): menos respiro para a abertura e a seta caberem na primeira tela */
+@media (min-width: 1024px) and (max-height: 780px) { .hero { padding: 5.5rem 0 5rem; } .hero__texto { gap: 1.25rem; } .hero__acoes { margin-top: 1rem; } .hero__rolar { bottom: 1.25rem; } }
 
 /* A demonstração ganha a coluna maior: é ela que mostra o produto */
 .hero__inner { display: grid; gap: 3rem; }
-@media (min-width: 1024px) { .hero__inner { grid-template-columns: 2fr 3fr; gap: 4rem; align-items: center; } }
+@media (min-width: 1024px) { .hero__inner { grid-template-columns: 2fr 3fr; gap: 5rem; align-items: center; } }
 
-.hero__texto { display: flex; flex-direction: column; gap: 1.25rem; max-width: 34rem; container-type: inline-size; }
+.hero__texto { display: flex; flex-direction: column; gap: 1.5rem; max-width: 34rem; container-type: inline-size; }
+
+/* Seta de rolagem: discreta, desce e volta devagar; parada para quem pediu menos movimento */
+.hero__rolar { position: absolute; left: 50%; bottom: 1.75rem; transform: translateX(-50%); display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid rgba(21, 18, 31, .14); color: rgba(21, 18, 31, .5); transition: color .2s, border-color .2s; }
+.hero__rolar:hover, .hero__rolar:focus-visible { color: #5b30d6; border-color: rgba(91, 48, 214, .4); }
+.hero__rolar svg { width: 1.125rem; height: 1.125rem; animation: hero-rolar 2.2s ease-in-out infinite; }
+@keyframes hero-rolar { 0%, 100% { transform: translateY(-3px); opacity: .55; } 50% { transform: translateY(4px); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .hero__rolar svg { animation: none; } }
 
 .hero__titulo {
     font-family: Montserrat, sans-serif;
@@ -835,7 +847,7 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 @media (min-width: 768px) { .hero__sub { font-size: 1.1875rem; } }
 
 /* Respiro maior antes dos botões para o "Iniciar um projeto" não competir com o texto */
-.hero__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.5rem; margin-top: 1rem; }
+.hero__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.5rem; margin-top: 1.25rem; }
 
 /* No fundo claro o Champanhe some; o botão principal fica em tinta escura */
 .hero__btn {
