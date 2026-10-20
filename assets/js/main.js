@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (toggle && menu) {
         const label = toggle.querySelector('[data-menu-label]');
         // Enquanto o menu está aberto, o resto da página fica fora do alcance do teclado e do leitor de tela
-        const background = [document.getElementById('app'), document.getElementById('contato'), document.querySelector('[data-header-cta]')].filter(Boolean);
+        const background = [document.getElementById('app'), document.getElementById('rodape'), document.querySelector('[data-header-cta]')].filter(Boolean);
 
         const setOpen = (open, { restoreFocus = true } = {}) => {
             toggle.setAttribute('aria-expanded', String(open));
@@ -56,14 +56,84 @@ document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
-                const target = '#' + entry.target.id;
+                const id = entry.target.id;
+                // data-secoes: um atalho que cobre mais de uma seção (Serviços = O problema + Serviços)
                 sectionLinks.forEach((a) => {
-                    if (a.getAttribute('href') === target) a.setAttribute('aria-current', 'true');
+                    const secoes = a.dataset.secoes ? a.dataset.secoes.split(' ') : [a.getAttribute('href').slice(1)];
+                    if (secoes.includes(id)) a.setAttribute('aria-current', 'true');
                     else a.removeAttribute('aria-current');
                 });
             });
         }, { rootMargin: '-45% 0px -50% 0px' });
 
-        document.querySelectorAll('main section[id], #contato').forEach((section) => observer.observe(section));
+        document.querySelectorAll('main section[id]').forEach((section) => observer.observe(section));
+    }
+
+    // ----------------------------------------------------
+    // Projetos: carrossel. Troca de projeto sozinho a cada 7 s; para quando o mouse ou o foco
+    // está nele e não roda para quem pediu menos movimento. As miniaturas funcionam como abas.
+    // ----------------------------------------------------
+    const carrossel = document.querySelector('[data-carrossel]');
+    if (carrossel) {
+        const abas = [...carrossel.querySelectorAll('[data-aba]')];
+        const slides = abas.map((aba) => document.getElementById(aba.getAttribute('aria-controls')));
+        const tempo = 7000;
+        const reduzMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let atual = 0;
+        let timer = null;
+
+        const mostrar = (i, { foco = false } = {}) => {
+            atual = (i + abas.length) % abas.length;
+            abas.forEach((aba, n) => {
+                const ativa = n === atual;
+                aba.setAttribute('aria-selected', String(ativa));
+                aba.tabIndex = ativa ? 0 : -1;
+                slides[n].hidden = !ativa;
+                slides[n].classList.toggle('is-entrando', ativa);
+            });
+            if (foco) abas[atual].focus();
+            reiniciar();
+        };
+
+        const reiniciar = () => {
+            clearTimeout(timer);
+            // Reinicia a barra de tempo da miniatura ativa
+            carrossel.classList.remove('is-rodando');
+            void carrossel.offsetWidth;
+            if (reduzMovimento || abas.length < 2) return;
+            carrossel.classList.add('is-rodando');
+            if (!carrossel.classList.contains('is-pausado')) timer = setTimeout(proximo, tempo);
+        };
+        const proximo = () => mostrar(atual + 1);
+
+        carrossel.style.setProperty('--carrossel-tempo', tempo + 'ms');
+        abas.forEach((aba, n) => {
+            aba.addEventListener('click', () => mostrar(n));
+            aba.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') { e.preventDefault(); mostrar(atual + 1, { foco: true }); }
+                if (e.key === 'ArrowLeft') { e.preventDefault(); mostrar(atual - 1, { foco: true }); }
+            });
+        });
+
+        // Pausado, o relógio para; ao sair, a contagem recomeça do zero
+        const pausar = (sim) => {
+            if (carrossel.classList.contains('is-pausado') === sim) return;
+            carrossel.classList.toggle('is-pausado', sim);
+            if (sim) clearTimeout(timer);
+            else reiniciar();
+        };
+        carrossel.addEventListener('mouseenter', () => pausar(true));
+        carrossel.addEventListener('mouseleave', () => pausar(carrossel.contains(document.activeElement)));
+        carrossel.addEventListener('focusin', () => pausar(true));
+        carrossel.addEventListener('focusout', (e) => { if (!carrossel.contains(e.relatedTarget)) pausar(false); });
+
+        // Só começa a contar quando a seção aparece na tela
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver((entries, obs) => {
+                if (entries[0].isIntersecting) { reiniciar(); obs.disconnect(); }
+            }, { threshold: 0.4 }).observe(carrossel);
+        } else {
+            reiniciar();
+        }
     }
 });

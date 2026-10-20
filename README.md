@@ -93,15 +93,17 @@ Cada seção do `index.html` começa com um comentário numerado (`<!-- 4. Proje
 | # | Âncora | Seção | Como é |
 | --- | --- | --- | --- |
 | – | – | Header | Barra de ponta a ponta com atalhos para as seções e botão **Menu**, que abre um mapa em tela cheia com uma linha explicando cada seção. |
-| 1 | `#hero` | Abertura | Fundo claro. À esquerda, Gabe e Dex, o título e os botões; à direita, a loja do Orquidário numa janela de navegador, com dois pinos numerados que explicam decisões do projeto. Só a imagem entra com movimento. |
+| 1 | `#hero` | Abertura | Fundo claro. À esquerda, o título, o subtítulo e os botões; à direita, a loja do Orquidário numa janela de navegador, com dois pinos numerados que explicam decisões do projeto. Só a imagem entra com movimento. |
 | 2 | `#problema` | O problema | Três cartões, um por motivo de desistência: mini tela, o que acontece, "Como saber se é o seu caso" e "O que fazemos" (com link para o serviço). Fecha com o convite para a análise. |
 | 3 | `#servicos` | Serviços | Mosaico; cada serviço diz qual problema de cima ele resolve. |
-| 4 | `#projetos` | Projetos | Case principal em vitrine (capa de fundo, logo e mockup) e projetos menores em faixas. |
+| 4 | `#projetos` | Projetos | Carrossel: o projeto em destaque fica grande (nome, cliente, descrição e "Ver o case completo") e os outros aparecem em miniaturas embaixo. Troca sozinho a cada 7 s e para com o mouse ou o foco em cima. |
 | 5 | `#processo` | Processo | Trilha de cartões, cada etapa mostra o que o cliente recebe. |
-| 6 | `#formatos` | Formatos | Comparativo Essencial, Growth e Parceria (tabela no desktop, blocos no celular). |
-| 7 | `#estudio` | Estúdio | Manifesto à esquerda, Gabe e Dex em linhas à direita. |
+| 6 | `#estudio` | Equipe | Manifesto à esquerda, Gabriel Barros e Gabriel Zopello em linhas à direita. |
+| 7 | `#contato` | Contato | Modelo do e-mail visível antes do clique; o botão abre o e-mail com o mesmo texto. |
 | 8 | `#faq` | Perguntas frequentes | Acordeão com a primeira resposta aberta. |
-| 9 | `#contato` | Contato e rodapé | Modelo do e-mail visível antes do clique; o botão abre o e-mail com o mesmo texto. |
+| 9 | `#rodape` | Rodapé | Marca, links das seções, e-mail e LinkedIn. |
+
+Os fundos seguem um ciclo de três tons: claro, escuro e roxo médio (Abertura, O problema, Serviços; Projetos, Processo, Equipe; Contato, Perguntas frequentes, rodapé). No menu, o atalho Serviços cobre O problema e Serviços (atributo `data-secoes`).
 
 ## Projetos: como documentar e adicionar cases
 
@@ -148,8 +150,8 @@ Se o projeto tiver resultado real, acrescente uma seção entre a abordagem e a 
 2. Coloque as imagens em `assets/img/projetos/` com o nome do cliente na frente: `cliente-capa.jpg`, `cliente-logo.jpg`, `cliente-mockup.png`. Exporte em JPG ou WebP com até ~300 KB (PNG só para o mockup com transparência).
 3. Troque textos, imagens, `<title>`, `description` e tags `og:` da nova página. Dentro de `projetos/`, os caminhos começam com `../` (`../assets/img/projetos/...`).
 4. No `index.html`, seção `#projetos`:
-   - **Projeto menor:** duplique uma faixa (`<a class="projeto-faixa">`) dentro de `.projetos-grid`, aponte o `href` para a nova página e troque miniatura, etiqueta, título e frase.
-   - **Novo destaque:** o case mais forte fica na vitrine (`<a class="project-feature vitrine">`), com capa de fundo, logo, três fatos e o mockup. Se outro projeto passar a ser o destaque, o Orquidário vira uma faixa.
+   - Dentro de `.carrossel-palco`, duplique uma vitrine (`<a class="project-feature vitrine" data-slide>`), troque o `id`, o `href`, as imagens, o nome, o cliente e a descrição, e deixe `hidden`. Imagem em pé usa `vitrine-mockup--retrato`.
+   - Dentro de `.carrossel-miniaturas`, duplique uma miniatura (`<button role="tab" data-aba>`), troque o `id`, o `aria-controls` (o `id` da vitrine) e os textos. A ordem das miniaturas é a ordem do carrossel; a primeira começa selecionada.
    - Na página principal os caminhos começam com `./` (`./assets/img/projetos/...`).
 5. Se usou classes do Tailwind que ainda não existiam no site, rode `npm run build`.
 6. Abra o site local (veja [Rodar localmente](#rodar-localmente)) e confira no desktop e no celular.
@@ -221,7 +223,7 @@ Segue o Manual de Identidade Visual, com um ajuste aprovado em 16/10/2026: o **V
 | `--color-brand-accent` | `#E8CFA0` Champanhe | Botões principais, frases-chave dos títulos, links de ação. |
 | `--color-brand-volt` | `#D9F956` Volt Lime | Só o ponto final do logo (`gpurple.`). |
 | `--color-surface-dark` / `--color-surface-card` | `#0B0A14` / `#141124` | Fundos das seções, alternados. |
-| `--color-surface-light` | `#F4F2F8` | Seções claras (Projetos e Estúdio). |
+| `--color-surface-light` | `#F4F2F8` | Seções claras (abertura, Projetos e Contato). |
 | `--color-text-secondary` | `#B4BCCB` | Texto de leitura sobre fundo escuro. |
 
 - **Títulos** em Montserrat 600/700 (classe `section-title`), texto em Inter 16 px ou mais. Nada abaixo de 12 px. A Montserrat substituiu a Poppins em 19/10/2026, porque a Poppins é uma das fontes mais repetidas em sites gerados por IA.
