@@ -223,11 +223,12 @@ Segue o Manual de Identidade Visual, com um ajuste aprovado em 16/10/2026: o **V
 | `--color-brand-accent` | `#E8CFA0` Champanhe | Botões principais, frases-chave dos títulos, links de ação. |
 | `--color-brand-volt` | `#D9F956` Volt Lime | Só o ponto final do logo (`gpurple.`). |
 | `--color-surface-dark` / `--color-surface-card` | `#0B0A14` / `#141124` | Fundos das seções, alternados. |
-| `--color-surface-light` | `#F4F2F8` | Seção clara (Projetos). |
+| `--color-surface-light` | `#F4F2F8` | Seções claras (abertura, Projetos e Contato). |
 | `--color-text-secondary` | `#B4BCCB` | Texto de leitura sobre fundo escuro. |
 
 - **Títulos** em Montserrat 600/700 (classe `section-title`), texto em Inter 16 px ou mais. Nada abaixo de 12 px. A Montserrat substituiu a Poppins em 19/10/2026, porque a Poppins é uma das fontes mais repetidas em sites gerados por IA.
 - **Uma frase-chave por tela** em Champanhe, no máximo.
+- **Rótulo acima do título** (`.rotulo`): só onde ajuda a se localizar (Projetos, Perguntas frequentes, Contato), sem caixa alta e sem cor de marca. Cartões usam superfície sólida, sem gradiente nem sombra roxa. Referência: o documento "o que evitar para não parecer site feito por IA", no projeto.
 - **Brilho e animação**: nada de brilho, glow ou manchas desfocadas. Movimento só para guiar o olhar (a imagem da abertura entra uma vez) ou mostrar mudança de estado.
 - **Abertura** (19/10/2026): o G em órbita saiu, porque roxo com brilho sobre fundo preto é o retrato de site gerado por IA. A abertura tem fundo claro e mostra trabalho real (o Orquidário). Sobre o fundo claro, o botão principal fica em tinta escura e a frase-chave em roxo escuro `#5b30d6`, já que o Champanhe perde contraste. O manual da marca ainda cita o G 3D como visual da abertura e os botões em Volt Lime, e precisa ser atualizado.
 - No Tailwind, as cores da marca são variáveis CSS: use `bg-gpurple-accent`, mas não `bg-gpurple-accent/10` (o modificador de opacidade não funciona com variáveis). Para transparência, use um valor `rgba(...)` entre colchetes.
