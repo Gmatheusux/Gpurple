@@ -594,6 +594,10 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 /* Imagem em pé (templates de e-mail): entra pela base, cortada no fim do cartão */
 .vitrine-mockup--retrato { position: relative; align-items: flex-start; justify-content: center; padding: 3rem 2rem 0; overflow: hidden; }
 .vitrine-mockup--retrato img { position: absolute; top: 3rem; left: 50%; width: min(calc(100% - 4rem), 22rem); border-radius: 14px 14px 0 0; transform: translateX(-50%); }
+/* Vitrine de app: celular inteiro em moldura, sobre o fundo do case */
+.vitrine-mockup--app { justify-content: center; padding: 2.5rem 2rem; }
+.vitrine-mockup--app .aparelho { width: min(100%, 15.5rem); border-radius: 1.75rem; padding: 6px; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6); }
+.vitrine-mockup--app .aparelho img { width: 100%; border-radius: calc(1.75rem - 6px); box-shadow: none; transform: none; }
 
 .carrossel { display: flex; flex-direction: column; gap: 1rem; }
 .carrossel-miniaturas { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; }
@@ -633,6 +637,8 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
     .vitrine-mockup img { width: 100%; transform: none; }
     .vitrine-mockup--retrato { height: 15rem; padding: 0; }
     .vitrine-mockup--retrato img { top: 1.5rem; }
+    .vitrine-mockup--app { padding: 1.5rem 1.5rem 0; }
+    .vitrine-mockup--app .aparelho { width: 11rem; }
     .vitrine-texto { padding: 1.75rem 1.5rem 2rem; }
 }
 
