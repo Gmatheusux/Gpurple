@@ -810,8 +810,10 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
    Fundo claro para fugir do "roxo sobre preto com brilho" de site gerado. A loja do Orquidário aparece numa janela
    de navegador, com pinos numerados que remetem às notas de projeto da legenda. Só a imagem entra com movimento.
    ---------------------------------- */
-.hero { background: var(--color-surface-light); color: var(--color-text-ink); padding: 6.5rem 0 3.5rem; }
-@media (min-width: 1024px) { .hero { padding: 9rem 0 6rem; } }
+/* A abertura ocupa a tela inteira; o conteúdo fica centralizado na altura, descontado o cabeçalho fixo */
+.hero { background: var(--color-surface-light); color: var(--color-text-ink); padding: 6.5rem 0 3.5rem; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
+.hero > * { width: 100%; }
+@media (min-width: 1024px) { .hero { padding: 7rem 0 4rem; } }
 
 /* A demonstração ganha a coluna maior: é ela que mostra o produto */
 .hero__inner { display: grid; gap: 3rem; }
