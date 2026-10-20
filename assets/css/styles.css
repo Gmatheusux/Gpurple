@@ -779,17 +779,19 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 .hero__inner { display: grid; gap: 3rem; }
 @media (min-width: 1024px) { .hero__inner { grid-template-columns: 2fr 3fr; gap: 4rem; align-items: center; } }
 
-.hero__texto { display: flex; flex-direction: column; gap: 1.25rem; max-width: 34rem; }
+.hero__texto { display: flex; flex-direction: column; gap: 1.25rem; max-width: 34rem; container-type: inline-size; }
 
 .hero__titulo {
     font-family: Montserrat, sans-serif;
     font-weight: 700;
     font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+    /* Tamanho em proporção à largura da coluna: a linha mais longa do título termina na mesma margem do subtítulo */
+    font-size: 10cqi;
     line-height: 1.06;
     letter-spacing: -.025em;
     color: var(--color-text-ink);
-    text-wrap: balance;
 }
+@media (min-width: 1024px) { .hero__titulo { font-size: 16cqi; } }
 .hero__destaque { color: #5b30d6; }
 .hero__sub { color: #4a4560; font-size: 1.0625rem; line-height: 1.6; }
 @media (min-width: 768px) { .hero__sub { font-size: 1.1875rem; } }
