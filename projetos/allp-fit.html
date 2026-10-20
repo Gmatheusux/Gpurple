@@ -13,7 +13,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:title" content="Allp Fit Home | GPurple Studio">
     <meta property="og:description" content="Da pesquisa ao app publicado: a estrutura de um app de treino com mais de 100 mil downloads.">
-    <meta property="og:image" content="https://gmatheusux.github.io/Gpurple/assets/img/projetos/allp-fit-capa.jpg">
+    <meta property="og:image" content="https://gmatheusux.github.io/Gpurple/assets/img/projetos/allp-fit/og.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,9 +55,14 @@
                     </dl>
                 </div>
 
-                <figure class="caso-capa">
-                    <img src="../assets/img/projetos/allp-fit-capa.jpg" alt="Três telas do Allp Fit Home: a página na Google Play, a tela de entrada e a home com as abas Allp home e Allp fit" width="1600" height="900" fetchpriority="high">
-                </figure>
+                <div class="caso-palco" role="img" aria-label="Três telas do Allp Fit Home em celulares: treino concluído, a home com as abas Allp home e Allp fit, e as estatísticas com nível e progresso do dia">
+                    <img class="caso-palco__fundo" src="../assets/img/projetos/allp-fit/fundo.svg" alt="" width="1600" height="900">
+                    <div class="caso-palco__aparelhos">
+                        <div class="aparelho aparelho--lado"><img src="../assets/img/projetos/allp-fit/alta-treino.jpg" alt="" width="480" height="971"></div>
+                        <div class="aparelho aparelho--centro"><img src="../assets/img/projetos/allp-fit/alta-home.jpg" alt="" width="480" height="963" fetchpriority="high"></div>
+                        <div class="aparelho aparelho--lado"><img src="../assets/img/projetos/allp-fit/alta-estatisticas.jpg" alt="" width="480" height="971"></div>
+                    </div>
+                </div>
 
                 <ul class="caso-numeros" aria-label="Resultados na Google Play">
                     <li><strong>+100 mil</strong><span>downloads na Google Play</span></li>
@@ -192,13 +197,30 @@
                 <div class="caso-intro caso-intro--larga">
                     <p class="caso-rotulo">Proposta de valor</p>
                     <h2 class="section-title">O que o app promete ao seu cliente.</h2>
-                    <p class="section-sub">O canvas de proposta de valor cruzou as tarefas, as dores e os ganhos das personas com o que a Allp Fit podia oferecer. Dele saíram as promessas do app.</p>
+                    <p class="section-sub">A matriz de proposta de valor cruza o que seu cliente precisa fazer, o que dói e o que ele quer ganhar com o que o app oferece em cada ponto. Dela saíram as promessas do app.</p>
                 </div>
 
-                <figure class="caso-figura caso-figura--clara">
-                    <img src="../assets/img/projetos/allp-fit-canvas.jpg" alt="Canvas de proposta de valor do Allp Fit Home: produtos e serviços, criadores de ganho e aliviadores de dor à esquerda; tarefas, ganhos e dores do usuário à direita" width="1600" height="615" loading="lazy">
-                    <figcaption>Canvas de proposta de valor feito na fase de descoberta.</figcaption>
-                </figure>
+                <div class="caso-matriz">
+                    <div class="caso-matriz__topo" aria-hidden="true">
+                        <div><span class="caso-forma caso-forma--circulo"></span><strong>Perfil do cliente</strong><span>O que a Jana e o Pedro vivem</span></div>
+                        <div><span class="caso-forma caso-forma--quadrado"></span><strong>Mapa de valor</strong><span>O que o app entrega</span></div>
+                    </div>
+                    <div class="caso-matriz__linha">
+                        <div class="caso-matriz__lado"><h3>Tarefas</h3><ul><li>Escolher um plano que caiba no bolso</li><li>Informar peso, altura, idade e objetivo</li><li>Agendar o dia de ir à unidade</li><li>Marcar o treino feito para ver o progresso</li></ul></div>
+                        <span class="caso-matriz__encaixe" aria-hidden="true"></span>
+                        <div class="caso-matriz__lado caso-matriz__lado--valor"><h3>Produtos e serviços</h3><ul><li>App exclusivo, com planos a partir de R$ 0,99</li><li>Mais de 100 programas de treino</li><li>Treino personalizado desde o primeiro acesso</li><li>Acesso à unidade uma vez por semana</li></ul></div>
+                    </div>
+                    <div class="caso-matriz__linha">
+                        <div class="caso-matriz__lado"><h3>Dores</h3><ul><li>Falta de dinheiro para cuidar da saúde</li><li>Desconforto no ambiente de academia</li><li>Falta de motivação para treinar sozinho</li><li>Nenhum app simples para treinar em casa</li></ul></div>
+                        <span class="caso-matriz__encaixe" aria-hidden="true"></span>
+                        <div class="caso-matriz__lado caso-matriz__lado--valor"><h3>Aliviadores de dor</h3><ul><li>Treinos em casa para quem está começando</li><li>Blog de nutrição e podcasts que motivam</li><li>Desafios e campanhas para chegar ao objetivo</li><li>Conteúdo para todas as idades e níveis</li></ul></div>
+                    </div>
+                    <div class="caso-matriz__linha">
+                        <div class="caso-matriz__lado"><h3>Ganhos</h3><ul><li>Treinar onde e quando quiser</li><li>Uma vida mais saudável</li><li>Qualidade com preço acessível</li><li>Ir à academia quando tiver vontade</li></ul></div>
+                        <span class="caso-matriz__encaixe" aria-hidden="true"></span>
+                        <div class="caso-matriz__lado caso-matriz__lado--valor"><h3>Criadores de ganho</h3><ul><li>Dieta personalizada junto dos treinos</li><li>Pontos por treino, trocados por descontos</li><li>Acompanhamento de profissionais</li><li>Desafios com metas que se ajustam ao histórico</li></ul></div>
+                    </div>
+                </div>
 
                 <ol class="caso-cartoes caso-cartoes--4">
                     <li class="caso-cartao">
@@ -293,32 +315,126 @@
             </div>
         </section>
 
-        <!-- 7. Wireframes: telas de baixa fidelidade, com a decisão de cada fluxo -->
+        <!-- 7. Telas: baixa e alta fidelidade lado a lado, por jornada e em passos -->
         <section class="caso-secao caso-secao--claro">
             <div class="caso-container">
                 <div class="caso-intro caso-intro--larga">
-                    <p class="caso-rotulo">Wireframes</p>
-                    <h2 class="section-title">As telas que viraram o app.</h2>
-                    <p class="caso-lead caso-lead--menor">Protótipos de baixa fidelidade seguindo os padrões do Android e do iOS, para seu cliente não precisar aprender a usar o app.</p>
+                    <p class="caso-rotulo">Telas</p>
+                    <h2 class="section-title">Do rascunho à tela final, passo a passo.</h2>
+                    <p class="caso-lead caso-lead--menor">Primeiro validamos cada caminho em cinza, sem cor nem marca, seguindo os padrões do Android e do iOS. Depois veio a identidade. Escolha uma jornada e compare cada passo.</p>
                 </div>
 
-                <div class="caso-galeria">
-                    <figure class="caso-figura">
-                        <img src="../assets/img/projetos/allp-fit-anamnese.jpg" alt="Cinco telas da avaliação inicial: dados do corpo, objetivo, grupo muscular, nível de experiência e dias de treino" width="1600" height="651" loading="lazy">
-                        <figcaption><strong>Avaliação em passos.</strong> Uma pergunta por tela e respostas com um toque, para quase não precisar digitar.</figcaption>
-                    </figure>
-                    <figure class="caso-figura caso-figura--estreita">
-                        <img src="../assets/img/projetos/allp-fit-treino.jpg" alt="Quatro telas de treino ao vivo: dias da semana, horários disponíveis, player com calorias, tempo e pontos, e aviso para adicionar a aula à agenda" width="1600" height="1173" loading="lazy">
-                        <figcaption><strong>Treino previsível.</strong> Calorias, tempo e pontos aparecem antes do play, para a pessoa decidir se tem 15 ou 45 minutos.</figcaption>
-                    </figure>
-                    <figure class="caso-figura">
-                        <img src="../assets/img/projetos/allp-fit-pagamento.jpg" alt="Cinco telas de plano e pagamento: escolha do plano, resumo de valores, formas de pagamento e escolha entre cartão de crédito e débito" width="1600" height="647" loading="lazy">
-                        <figcaption><strong>Pagamento sem medo.</strong> O aviso "a cobrança é mensal e não compromete o limite anual" responde à principal objeção de compra encontrada na pesquisa.</figcaption>
-                    </figure>
-                    <figure class="caso-figura">
-                        <img src="../assets/img/projetos/allp-fit-perfil.jpg" alt="Seis telas da área do usuário: perfil, estatísticas com nível e progresso diário, edição de perfil, dúvidas, política de privacidade e guia de uso" width="1600" height="539" loading="lazy">
-                        <figcaption><strong>Progresso à vista.</strong> Nível, pontos e metas diárias no Perfil, junto das dúvidas frequentes e do guia de uso.</figcaption>
-                    </figure>
+                <div class="caso-jornadas">
+                    <div role="tablist" aria-label="Escolha uma jornada" class="caso-jornadas__abas">
+                        <button type="button" role="tab" id="aba-entrada" aria-controls="jornada-entrada" aria-selected="true" class="caso-jornadas__aba" data-jornada-aba>Entrada e cadastro</button>
+                        <button type="button" role="tab" id="aba-pagamento" aria-controls="jornada-pagamento" aria-selected="false" tabindex="-1" class="caso-jornadas__aba" data-jornada-aba>Plano e pagamento</button>
+                        <button type="button" role="tab" id="aba-avaliacao" aria-controls="jornada-avaliacao" aria-selected="false" tabindex="-1" class="caso-jornadas__aba" data-jornada-aba>Avaliação</button>
+                        <button type="button" role="tab" id="aba-dia-a-dia" aria-controls="jornada-dia-a-dia" aria-selected="false" tabindex="-1" class="caso-jornadas__aba" data-jornada-aba>Dia a dia</button>
+                    </div>
+                    <div role="tabpanel" id="jornada-entrada" aria-labelledby="aba-entrada" class="caso-jornada" data-jornada>
+                        <p class="caso-jornada__resumo">Do primeiro toque à conta criada.</p>
+                        <ol class="caso-etapas">
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">1</span><div><h4>Abertura</h4><p>A marca aparece antes de qualquer pedido.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-entrada.jpg" alt="Abertura em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-entrada.jpg" alt="Abertura em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">2</span><div><h4>Login</h4><p>Entrar com e-mail, Google ou Facebook, sem obrigar um cadastro longo.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-login.jpg" alt="Login em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-login.jpg" alt="Login em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">3</span><div><h4>Cadastro</h4><p>Só os dados básicos. As perguntas de saúde ficam para depois do pagamento.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-cadastro.jpg" alt="Cadastro em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-cadastro.jpg" alt="Cadastro em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div role="tabpanel" id="jornada-pagamento" aria-labelledby="aba-pagamento" class="caso-jornada" data-jornada hidden>
+                        <p class="caso-jornada__resumo">Da escolha do plano à assinatura ativa.</p>
+                        <ol class="caso-etapas">
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">1</span><div><h4>Plano</h4><p>Tudo o que o plano inclui, com o preço e um único botão.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-planos.jpg" alt="Plano em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-planos.jpg" alt="Plano em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">2</span><div><h4>Pagamento</h4><p>O resumo avisa que a cobrança é mensal e não compromete o limite do cartão.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-pagamento.jpg" alt="Pagamento em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-pagamento.jpg" alt="Pagamento em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">3</span><div><h4>Confirmação</h4><p>Plano ativo e dois caminhos: fazer a avaliação ou ir direto para a home.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-confirmacao.jpg" alt="Confirmação em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-confirmacao.jpg" alt="Confirmação em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div role="tabpanel" id="jornada-avaliacao" aria-labelledby="aba-avaliacao" class="caso-jornada" data-jornada hidden>
+                        <p class="caso-jornada__resumo">Uma pergunta por tela, respondida com um toque.</p>
+                        <ol class="caso-etapas">
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">1</span><div><h4>Corpo</h4><p>Gênero, idade, peso, altura e meta de peso numa tela só.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-avaliacao-dados.jpg" alt="Corpo em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-avaliacao-dados.jpg" alt="Corpo em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">2</span><div><h4>Objetivo</h4><p>Hipertrofia, definição ou emagrecer, com uma linha explicando cada um.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-avaliacao-objetivo.jpg" alt="Objetivo em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-avaliacao-objetivo.jpg" alt="Objetivo em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">3</span><div><h4>Nível</h4><p>Iniciante, intermediário ou avançado, medido em tempo de prática.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-avaliacao-nivel.jpg" alt="Nível em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-avaliacao-nivel.jpg" alt="Nível em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div role="tabpanel" id="jornada-dia-a-dia" aria-labelledby="aba-dia-a-dia" class="caso-jornada" data-jornada hidden>
+                        <p class="caso-jornada__resumo">O ciclo que traz seu cliente de volta.</p>
+                        <ol class="caso-etapas">
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">1</span><div><h4>Home</h4><p>Abas Allp home e Allp fit, com os treinos em carrosséis por categoria.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-home.jpg" alt="Home em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-home.jpg" alt="Home em alta fidelidade" width="480" height="963" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">2</span><div><h4>Treino concluído</h4><p>Calorias, tempo e pontos do treino, com os exercícios feitos.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-treino.jpg" alt="Treino concluído em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-treino.jpg" alt="Treino concluído em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                            <li class="caso-etapa">
+                                <div class="caso-etapa__texto"><span class="caso-etapa__num">3</span><div><h4>Progresso</h4><p>Nível, pontos e as metas do dia: sono, calorias e treinos.</p></div></div>
+                                <div class="caso-etapa__telas">
+                                    <figure class="caso-tela caso-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-estatisticas.jpg" alt="Progresso em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure>
+                                    <figure class="caso-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-estatisticas.jpg" alt="Progresso em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </section>
@@ -330,20 +446,14 @@
                     <p class="caso-rotulo">O app publicado</p>
                     <h2 class="section-title">Outra equipe finalizou. A estrutura é a nossa.</h2>
                     <div class="caso-corpo">
-                        <p>Com o contrato encerrado, o visual final e o desenvolvimento ficaram com outra empresa. O app chegou à Google Play no fim de 2023 com a espinha dorsal deste projeto.</p>
-                        <p>A entrada com "Cadastro" e "Já sou cliente", as abas Allp home e Allp fit, os carrosséis por categoria e a barra com início, conquistas, treinos, agenda e perfil vieram dos wireframes e dos fluxos que entregamos.</p>
+                        <p>Com o contrato encerrado, o desenvolvimento e a publicação ficaram com outra empresa. O app chegou à Google Play no fim de 2023, publicado pela Allp Fit Academia, com a espinha dorsal deste projeto.</p>
+                        <p>As abas Allp home e Allp fit, os carrosséis por categoria e a barra com início, conquistas, treinos, agenda e perfil vieram dos fluxos e das telas que entregamos.</p>
                     </div>
                 </div>
-                <div class="caso-telas">
-                    <figure>
-                        <img src="../assets/img/projetos/allp-fit-app-entrada.jpg" alt="Tela de entrada do app publicado, com os botões Cadastro e Já sou cliente" width="360" height="800" loading="lazy">
-                        <figcaption>Entrada</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="../assets/img/projetos/allp-fit-app-home.jpg" alt="Home do app publicado, com as abas Allp home e Allp fit, carrosséis de treinos e a barra de navegação" width="360" height="794" loading="lazy">
-                        <figcaption>Home</figcaption>
-                    </figure>
-                </div>
+                <figure class="caso-loja">
+                    <div class="aparelho"><img src="../assets/img/projetos/allp-fit/google-play.jpg" alt="Página do Allp Fit Home na Google Play, publicada pela Allp Fit Academia, com mais de 100 mil downloads" width="540" height="1032" loading="lazy"></div>
+                    <figcaption>Allp Fit Home na Google Play, em 25/05/2026</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -375,7 +485,7 @@
         <!-- 10. Créditos e CTA final -->
         <section class="caso-secao caso-secao--claro caso-fecho">
             <div class="caso-container">
-                <p class="caso-creditos">Projeto conduzido por Gabriel Barros como Lead Product Designer na VM Pereira Design, com Vanessa e Diego na pesquisa e nas personas. A arquitetura de informação, os fluxos e os wireframes são de Gabriel Barros. O visual final e o desenvolvimento do app foram feitos por outra empresa.</p>
+                <p class="caso-creditos">Projeto conduzido por Gabriel Barros como Lead Product Designer na VM Pereira Design, com Vanessa e Diego na pesquisa e nas personas. A arquitetura de informação, os fluxos e os wireframes são de Gabriel Barros. O desenvolvimento e a publicação do app ficaram com outra empresa.</p>
                 <div class="caso-cta">
                     <h2 class="section-title">Seu produto também precisa fazer sentido para quem usa?</h2>
                     <p>Conte sobre o seu app, site ou loja. Começamos pelo negócio e pelo seu cliente.</p>
@@ -386,6 +496,27 @@
     </main>
 
     <script>
+        // Abas das jornadas: clique ou setas do teclado trocam a jornada visível
+        (() => {
+            const abas = [...document.querySelectorAll('[data-jornada-aba]')];
+            const escolher = (aba, foco) => {
+                abas.forEach((a) => {
+                    const ativa = a === aba;
+                    a.setAttribute('aria-selected', String(ativa));
+                    a.tabIndex = ativa ? 0 : -1;
+                    document.getElementById(a.getAttribute('aria-controls')).hidden = !ativa;
+                });
+                if (foco) aba.focus();
+            };
+            abas.forEach((aba, i) => {
+                aba.addEventListener('click', () => escolher(aba));
+                aba.addEventListener('keydown', (e) => {
+                    const passo = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+                    if (passo) { e.preventDefault(); escolher(abas[(i + passo + abas.length) % abas.length], true); }
+                });
+            });
+        })();
+
         // Header ganha fundo sólido ao rolar, como na home
         (() => {
             const header = document.querySelector('[data-header]');

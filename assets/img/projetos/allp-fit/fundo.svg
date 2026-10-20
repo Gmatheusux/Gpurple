@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Fundo da abertura do case Allp Fit: roxo da GPurple com faixas no laranja da Allp, sem brilho nem desfoque -->
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#140c2a"/>
+      <stop offset="1" stop-color="#2a1458"/>
+    </linearGradient>
+    <pattern id="pontos" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#c4b5fd" fill-opacity=".16"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#base)"/>
+  <rect width="1600" height="900" fill="url(#pontos)"/>
+  <!-- faixas diagonais que lembram o símbolo da Allp -->
+  <path d="M-80 760 L620 300 L760 300 L60 760 Z" fill="#8b5cf6" fill-opacity=".22"/>
+  <path d="M860 900 L1600 330 L1600 470 L1040 900 Z" fill="#ff7a00" fill-opacity=".9"/>
+  <path d="M1110 900 L1600 520 L1600 590 L1200 900 Z" fill="#ff7a00" fill-opacity=".35"/>
+  <path d="M980 -40 L1600 -40 L1600 120 L1180 120 Z" fill="#8b5cf6" fill-opacity=".3"/>
+  <circle cx="300" cy="190" r="120" fill="none" stroke="#e8cfa0" stroke-opacity=".35" stroke-width="2"/>
+  <circle cx="300" cy="190" r="46" fill="#ff7a00" fill-opacity=".85"/>
+  <path d="M1270 210 L1420 210" stroke="#e8cfa0" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M1270 236 L1370 236" stroke="#e8cfa0" stroke-opacity=".3" stroke-width="2"/>
+</svg>

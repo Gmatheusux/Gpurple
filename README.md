@@ -62,7 +62,7 @@ Se você está abrindo este repositório numa conversa nova para continuar o sit
 ├── index.html                      # Página principal (todas as seções da home)
 ├── projetos/
 │   ├── orquidario-cantareira.html  # Case: Orquidário Cantareira (modelo para novos cases)
-│   └── allp-fit.html               # Case de UX: app Allp Fit Home (pesquisa, proposta de valor, arquitetura)
+│   └── allp-fit.html               # Case de UX: app Allp Fit Home (pesquisa, proposta de valor, arquitetura, telas de baixa e alta)
 ├── materiais/                      # Materiais comerciais (fora do menu, com noindex)
 │   ├── apresentacao.html           # Apresentação para reuniões (setas ← → navegam)
 │   ├── email-corporativo.html      # Modelo de e-mail com assinatura
@@ -149,7 +149,7 @@ Se o projeto tiver resultado real, acrescente uma seção entre a abordagem e a 
 ### Passo a passo para um case novo
 
 1. Copie `projetos/orquidario-cantareira.html` para `projetos/nome-do-cliente.html` (minúsculas, hífens, sem acento).
-2. Coloque as imagens em `assets/img/projetos/` com o nome do cliente na frente: `cliente-capa.jpg`, `cliente-logo.jpg`, `cliente-mockup.png`. Exporte em JPG ou WebP com até ~300 KB (PNG só para o mockup com transparência).
+2. Coloque as imagens em `assets/img/projetos/` com o nome do cliente na frente: `cliente-capa.jpg`, `cliente-logo.jpg`, `cliente-mockup.png`. Exporte em JPG ou WebP com até ~300 KB (PNG só para o mockup com transparência). Um case com muitas telas pode ganhar uma pasta própria, como `assets/img/projetos/allp-fit/` (telas `baixa-*` e `alta-*` exportadas do Figma, `fundo.svg` da abertura e `og.jpg`).
 3. Troque textos, imagens, `<title>`, `description` e tags `og:` da nova página. Dentro de `projetos/`, os caminhos começam com `../` (`../assets/img/projetos/...`).
 4. No `index.html`, seção `#projetos`:
    - Dentro de `.carrossel-palco`, duplique uma vitrine (`<a class="project-feature vitrine" data-slide>`), troque o `id`, o `href`, as imagens, o nome, o cliente e a descrição, e deixe `hidden`. Imagem em pé usa `vitrine-mockup--retrato`.
