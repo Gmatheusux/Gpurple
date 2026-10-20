@@ -443,9 +443,10 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
    de espaço fica antes de "Como saber se é o seu caso" */
 @media (min-width: 861px) {
     @supports (grid-template-rows: subgrid) {
-        .sinal-card { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; }
-        .sinal-card .sinal-texto { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0.625rem; }
-        .sinal-card .sinal-solucao { margin-top: 0; }
+        .sinal-card { display: grid; grid-row: span 7; grid-template-rows: subgrid; row-gap: 0; }
+        .sinal-card .sinal-texto { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0.625rem; }
+        /* "O que fazemos": rótulo, texto e link também em linhas comuns, para os links ficarem na mesma altura */
+        .sinal-card .sinal-solucao { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0.375rem; margin-top: 0; }
     }
 }
 .sinal-rotulo {
