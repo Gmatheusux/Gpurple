@@ -587,6 +587,8 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .vitrine-nome { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2.25rem, 1.5rem + 2.4vw, 3.25rem); line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance; }
 .vitrine-cliente { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.125rem; color: var(--color-brand-accent); }
 .vitrine-descricao { max-width: 28rem; color: rgba(255, 255, 255, 0.8); font-size: 1.0625rem; line-height: 1.65; }
+.vitrine-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; max-width: 30rem; list-style: none; margin: 0.25rem 0 0; padding: 0; }
+.vitrine-tags li { padding: 0.3rem 0.75rem; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.28); background: rgba(255, 255, 255, 0.08); font-size: 0.8125rem; font-weight: 600; color: #fff; }
 .vitrine-botao { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.75rem; padding: 0.8rem 1.4rem; border-radius: 9999px; background: var(--color-brand-accent); color: var(--color-text-ink); font-weight: 600; transition: background-color .2s; }
 .vitrine:hover .vitrine-botao { background: var(--color-brand-accent-hover); }
 .vitrine-mockup { display: flex; align-items: flex-end; justify-content: flex-end; padding: 3rem 0; }
