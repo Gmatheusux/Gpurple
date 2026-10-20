@@ -437,12 +437,14 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 }
 
 .sinal-card .sinal-texto { flex: 1 1 auto; }
-/* Três colunas: cada parte do cartão ocupa a mesma linha da grade nos três, então títulos, sinais e
-   "O que fazemos" começam na mesma altura, mesmo quando um cartão tem mais texto */
+.sinal-intro { display: flex; flex-direction: column; gap: 0.625rem; }
+/* Três colunas: cada parte do cartão ocupa a mesma linha da grade nos três, então sinais e "O que fazemos"
+   começam na mesma altura. Título e texto ficam juntos numa linha só: o texto segue colado ao título e a sobra
+   de espaço fica antes de "Como saber se é o seu caso" */
 @media (min-width: 861px) {
     @supports (grid-template-rows: subgrid) {
-        .sinal-card { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; }
-        .sinal-card .sinal-texto { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0.625rem; }
+        .sinal-card { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; }
+        .sinal-card .sinal-texto { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0.625rem; }
         .sinal-card .sinal-solucao { margin-top: 0; }
     }
 }
