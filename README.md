@@ -40,7 +40,7 @@ Projeto original criado por [Dex](https://github.com/GZR-dex/Gpurple). Esta cóp
 | Nome no site | Apelido | Papel |
 | --- | --- | --- |
 | Gabriel Barros | Gabe | UX, arquitetura e segurança ([LinkedIn](https://www.linkedin.com/in/gabrielmbarros/)) |
-| Gabriel Zopello | Dex | UI e conversão |
+| Gabriel Zoppello | Dex | UI e conversão |
 
 Na seção **Estúdio** aparecem o nome completo e o apelido. No resto do site, só o apelido.
 
@@ -99,12 +99,12 @@ Cada seção do `index.html` começa com um comentário numerado (`<!-- 4. Proje
 | 3 | `#servicos` | Serviços | Mosaico; cada serviço diz qual problema de cima ele resolve. |
 | 4 | `#projetos` | Projetos | Carrossel: o projeto em destaque fica grande (nome, cliente, descrição e "Ver o case completo") e os outros aparecem em miniaturas embaixo. Troca sozinho a cada 7 s, para com o mouse ou o foco em cima e tem o botão "Pausar a troca automática". |
 | 5 | `#processo` | Processo | Trilha de cartões, cada etapa mostra o que o cliente recebe. |
-| 6 | `#estudio` | Equipe | Manifesto à esquerda, Gabriel Barros e Gabriel Zopello em linhas à direita. |
-| 7 | `#contato` | Contato | Modelo do e-mail visível antes do clique; o botão abre o e-mail com o mesmo texto. |
+| 6 | `#estudio` | Equipe | Manifesto à esquerda, Gabriel Barros e Gabriel Zoppello em linhas à direita. |
+| 7 | `#contato` | Contato | Formulário (nome, e-mail, site se tiver e mensagem) enviado pelo Formspree sem sair da página, com o e-mail como alternativa. O endereço do formulário fica no `action` do `<form data-contato-form>`; enquanto estiver `PREENCHER`, o envio abre o e-mail da pessoa com os campos preenchidos. |
 | 8 | `#faq` | Dúvidas frequentes | Acordeão com a primeira resposta aberta. |
 | 9 | `#rodape` | Rodapé | Marca, links das seções, e-mail e LinkedIn. |
 
-Os fundos seguem um ciclo de três tons: claro, escuro e roxo médio (Abertura, O problema, Serviços; Projetos, Processo, Equipe; Contato, Dúvidas frequentes, rodapé). Cada seção leva a classe do seu tom (`fundo-claro`, `fundo-escuro` ou `fundo-medio`; nos cases, `caso-secao--claro`, `--escuro` ou `--medio`). Com isso a passagem entre seções é automática: entre claro e escuro a seção que entra começa com uma faixa em degradê (`--faixa-passagem`), e entre os dois escuros o degradê corre pela seção inteira. Uma seção nova só precisa da classe do tom.
+Os fundos contam uma história de cor: a Abertura é clara, O problema desce para o quase preto e as seções seguintes clareiam em tons de roxo (`tom-1` a `tom-5`: O problema, Serviços, Projetos, Processo, Equipe) até voltar ao claro em Contato, Dúvidas frequentes e rodapé. Cada seção leva a classe do seu tom (`fundo-claro`, ou `fundo-escuro` com um `tom-N`; nos cases, `caso-secao--claro`, `--escuro` ou `--medio`). A passagem é automática: entre claro e escuro a seção que entra começa com uma faixa em degradê (`--faixa-passagem`), e entre dois escuros o degradê corre pela seção inteira. Uma seção nova só precisa da classe do tom.
 
 No menu, o atalho Serviços leva para Serviços e fica marcado também em O problema (atributo `data-secoes`).
 

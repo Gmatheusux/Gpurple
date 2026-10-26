@@ -151,4 +151,49 @@ document.addEventListener('DOMContentLoaded', () => {
             reiniciar();
         }
     }
+
+    // ----------------------------------------------------
+    // Contato: envia pelo Formspree sem sair da página. Sem o endereço do formulário no action
+    // (PREENCHER), abre o e-mail da pessoa com os mesmos campos preenchidos.
+    // ----------------------------------------------------
+    const form = document.querySelector('[data-contato-form]');
+    if (form) {
+        const status = form.querySelector('[data-contato-status]');
+        const botao = form.querySelector('button[type="submit"]');
+        const email = 'gmbarros@gpurpledesign.com.br';
+
+        const abrirEmail = (dados) => {
+            const corpo = `Olá, GPurple!\n\nNome: ${dados.get('nome')}\nSite: ${dados.get('site') || '(ainda não tenho)'}\n\n${dados.get('mensagem')}\n`;
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent('Novo projeto')}&body=${encodeURIComponent(corpo)}`;
+        };
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!form.reportValidity()) return;
+            const dados = new FormData(form);
+            if (dados.get('_gotcha')) return;
+            if (form.action.includes('PREENCHER')) { abrirEmail(dados); return; }
+
+            botao.disabled = true;
+            botao.textContent = 'Enviando…';
+            status.classList.remove('is-erro');
+            status.textContent = '';
+            try {
+                const resposta = await fetch(form.action, { method: 'POST', body: dados, headers: { Accept: 'application/json' } });
+                if (!resposta.ok) throw new Error(resposta.status);
+                const sucesso = document.createElement('div');
+                sucesso.className = 'contato-form__sucesso';
+                sucesso.setAttribute('role', 'status');
+                sucesso.tabIndex = -1;
+                sucesso.innerHTML = '<strong>Mensagem enviada.</strong><p>Obrigado por contar sobre o seu projeto. Vamos responder no e-mail que você informou.</p>';
+                form.replaceWith(sucesso);
+                sucesso.focus();
+            } catch {
+                status.classList.add('is-erro');
+                status.textContent = `Não conseguimos enviar agora. Tente de novo ou escreva para ${email}.`;
+                botao.disabled = false;
+                botao.textContent = 'Enviar mensagem';
+            }
+        });
+    }
 });
