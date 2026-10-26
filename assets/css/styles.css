@@ -391,43 +391,15 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 }
 
 .sinal-card .sinal-texto { flex: 1 1 auto; }
-.sinal-intro { display: flex; flex-direction: column; gap: 0.625rem; }
-/* Três colunas: cada parte do cartão ocupa a mesma linha da grade nos três, então sinais e "O que fazemos"
-   começam na mesma altura. Título e texto ficam juntos numa linha só: o texto segue colado ao título e a sobra
-   de espaço fica antes de "Como saber se é o seu caso" */
+.sinal-resumo { font-size: 0.9375rem; line-height: 1.55; color: var(--texto-corpo); }
+/* Três colunas: momento, título e linha ocupam as mesmas linhas da grade nos três cartões, então as linhas
+   começam na mesma altura mesmo quando um título quebra em duas */
 @media (min-width: 861px) {
     @supports (grid-template-rows: subgrid) {
-        .sinal-card { display: grid; grid-row: span 7; grid-template-rows: subgrid; row-gap: 0; }
-        .sinal-card .sinal-texto { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0.625rem; }
-        /* "O que fazemos": rótulo, texto e link também em linhas comuns, para os links ficarem na mesma altura */
-        .sinal-card .sinal-solucao { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0.375rem; margin-top: 0; }
+        .sinal-card { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; }
+        .sinal-card .sinal-texto { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0.625rem; align-content: start; }
     }
 }
-.sinal-rotulo {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--texto-destaque);
-}
-.sinal-bloco { display: flex; flex-direction: column; gap: 0.5rem; margin: 0.5rem 0 0.75rem; }
-.sinal-sinais { display: flex; flex-direction: column; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
-.sinal-sinais li { position: relative; padding-left: 1.125rem; font-size: 0.9375rem; line-height: 1.55; color: var(--texto-corpo); }
-.sinal-sinais li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: #e11d48; box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.25); }
-.sinal-solucao {
-    display: flex;
-    flex-direction: column;
-    gap: 0.375rem;
-    margin-top: auto;
-    padding-top: 1.125rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.9375rem;
-    line-height: 1.55;
-    color: #fff;
-}
-.sinal-link { align-self: flex-start; font-weight: 600; color: var(--color-brand-accent); text-decoration: underline; text-decoration-color: rgba(var(--color-brand-accent-rgb), 0.4); text-underline-offset: 4px; }
-.sinal-link:hover { text-decoration-color: var(--color-brand-accent); }
 .sinais-fecho {
     display: flex;
     align-items: center;
