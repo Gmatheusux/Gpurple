@@ -37,9 +37,9 @@
 }
 .fundo-claro, .hero, .caso-secao--claro,
 .contato-email, .contato-form__sucesso, .carrossel-miniatura,
-.caso-ficha, .caso-dados li, .caso-persona, .pv-dor__lado, .pv-depoimento, .pv-fecho .pv-proximo,
+.caso-dados li, .caso-persona, .pv-dor__lado, .pv-depoimento, .pv-fecho .pv-proximo,
 .sinal-tela, .mosaico-tela, .mosaico-convite, .trilha-tela,
-body:not(.menu-aberto) :is(.site-header--claro, .caso-header):not(.is-solid) {
+body:not(.menu-aberto) .site-header--claro:not(.is-solid) {
     --texto-titulo: #15121f;
     --texto-corpo: #4a4560;     /* 6,4:1 no lilás (#ddd3f4) */
     --texto-apoio: #5b5670;     /* 4,9:1 no lilás */
@@ -154,8 +154,8 @@ summary:focus-visible {
     outline: 2px solid var(--color-brand-accent);
     outline-offset: 3px;
 }
-:is(.fundo-claro, .caso-secao--claro) :focus-visible,
-body:not(.menu-aberto) :is(.site-header--claro, .caso-header):not(.is-solid) :focus-visible { outline-color: #5b30d6; }
+:is(.fundo-claro, .caso-secao--claro, .painel-claro) :focus-visible,
+body:not(.menu-aberto) .site-header--claro:not(.is-solid) :focus-visible { outline-color: #5b30d6; }
 
 /* FAQ: esconde o marcador padrão e gira o ícone ao abrir */
 details > summary { list-style: none; }
@@ -920,14 +920,12 @@ body.menu-aberto .site-header--claro .site-header__logo-texto { color: #fff; }
 body.menu-aberto { overflow: hidden; }
 
 /* ----------------------------------
-   Página de case (projetos/allp-fit.html)
-   Fundos no mesmo ciclo da home: claro, escuro e roxo médio.
+   Páginas de case (projetos/*.html)
+   Estrutura invertida da home: página escura com painéis claros (veja "Painel claro dos cases" no fim).
    ---------------------------------- */
 .caso-header .site-header__inner { grid-template-columns: 1fr auto; }
 .caso-voltar { display: inline-flex; align-items: center; gap: .5rem; font-size: .9375rem; font-weight: 500; color: var(--texto-corpo); transition: color .2s; }
 .caso-voltar:hover { color: #fff; }
-.caso-header:not(.is-solid) .caso-voltar { color: var(--texto-corpo); }
-.caso-header:not(.is-solid) .caso-voltar:hover { color: var(--color-text-ink); }
 
 .secao, .caso-secao { position: relative; width: 100%; padding-block: var(--respiro); }
 .caso-secao--claro { background: var(--color-surface-light); color: var(--color-text-ink); }
@@ -956,10 +954,10 @@ body.menu-aberto { overflow: hidden; }
 .caso-abertura__grade { display: grid; gap: 2.5rem; align-items: end; }
 @media (min-width: 900px) { .caso-abertura__grade { grid-template-columns: 1.6fr 1fr; gap: 4rem; } }
 .caso-abertura__texto { display: flex; flex-direction: column; gap: 1.25rem; }
-.caso-ficha { display: grid; gap: 1rem; padding: 1.5rem; border-radius: 1.25rem; background: #fff; border: 1px solid #e4e0ee; }
+.caso-ficha { display: grid; gap: 1rem; padding: 1.5rem; border-radius: 1.25rem; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .14); }
 .caso-ficha div { display: grid; gap: .125rem; }
 .caso-ficha dt { font-size: .8125rem; font-weight: 600; color: var(--texto-destaque); }
-.caso-ficha dd { font-size: .9375rem; line-height: 1.5; color: var(--color-text-ink); }
+.caso-ficha dd { font-size: .9375rem; line-height: 1.5; color: var(--texto-titulo); }
 /* Celular desenhado em CSS: moldura escura e cantos arredondados, sem brilho */
 .aparelho { padding: 5px; border-radius: 1.5rem; background: #0d0b16; box-shadow: 0 24px 40px -28px rgba(13, 11, 22, .7); }
 .aparelho img { display: block; width: 100%; height: auto; border-radius: calc(1.5rem - 5px); background: #fff; }
@@ -974,7 +972,7 @@ body.menu-aberto { overflow: hidden; }
 @media (max-width: 479px) { .caso-palco .aparelho--lado:last-child { display: none; } }
 .caso-numeros { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; list-style: none; margin: 0; padding: 0; }
 @media (min-width: 768px) { .caso-numeros { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-.caso-numeros li { display: flex; flex-direction: column; gap: .25rem; padding-top: 1rem; border-top: 2px solid var(--color-text-ink); }
+.caso-numeros li { display: flex; flex-direction: column; gap: .25rem; padding-top: 1rem; border-top: 2px solid rgba(255, 255, 255, .22); }
 .caso-numeros strong { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.75rem, 3.4vw, 2.5rem); letter-spacing: -0.02em; line-height: 1.1; }
 .caso-numeros span { font-size: .9375rem; color: var(--texto-corpo); line-height: 1.45; }
 .caso-fonte { margin-top: -2.25rem; font-size: .8125rem; color: var(--texto-apoio); }
@@ -1370,8 +1368,8 @@ body:has(> #rodape) { background-color: var(--color-surface-light); }
 #rodape .rodape__barra { border-top-color: #d9d4e6; }
 
 /* Botão do topo enquanto a barra está sobre o fundo claro: tinta escura, porque o Champanhe some no claro */
-body:not(.menu-aberto) :is(.site-header--claro, .caso-header):not(.is-solid) .btn-primary { background: var(--color-text-ink); color: #fff; }
-body:not(.menu-aberto) :is(.site-header--claro, .caso-header):not(.is-solid) .btn-primary:hover { background: #5b30d6; }
+body:not(.menu-aberto) .site-header--claro:not(.is-solid) .btn-primary { background: var(--color-text-ink); color: #fff; }
+body:not(.menu-aberto) .site-header--claro:not(.is-solid) .btn-primary:hover { background: #5b30d6; }
 
 /* ----------------------------------
    Telas muito largas (ultrawide e monitores 2K/4K)
@@ -1391,3 +1389,55 @@ body:not(.menu-aberto) :is(.site-header--claro, .caso-header):not(.is-solid) .bt
     .site-menu__inner { max-width: 1696px; }
     :root { --coluna: 1760px; }
 }
+
+/* ----------------------------------
+   Painel claro dos cases
+   Os cases usam o inverso da home: a página é escura (abertura, seções soltas e rodapé) e alguns blocos
+   ficam juntos num painel claro, com o mesmo formato do painel roxo (cartão arredondado, um pouco mais
+   largo que a coluna). Todos os cases seguem a mesma ordem: abertura escura, painel claro, seção escura,
+   painel claro (se houver), próximo passo escuro e rodapé escuro.
+   Dentro do painel as seções usam .caso-secao--claro, que já troca os quatro papéis de texto para o claro.
+   ---------------------------------- */
+body.caso-pagina { background-color: var(--color-surface-dark); }
+.painel-claro {
+    --painel-fundo: var(--color-surface-light);
+    position: relative;
+    width: min(100% - 2 * var(--painel-margem), var(--coluna) + 2 * var(--painel-folga));
+    margin-inline: auto;
+    border-radius: var(--painel-raio);
+    overflow: hidden;
+    background: var(--painel-fundo);
+    color: var(--color-text-ink);
+}
+.painel-claro + .painel-claro { margin-top: var(--respiro); }
+/* O fundo é do painel: as seções de dentro não pintam o próprio fundo nem fazem faixa de passagem */
+.painel-claro > .caso-secao { background: none; }
+/* Duas seções no mesmo painel: separadas por uma linha, como Contato e Dúvidas na home */
+.painel-claro > .caso-secao + .caso-secao { padding-top: 0; }
+.painel-claro > .caso-secao + .caso-secao > .caso-container { padding-top: var(--respiro); background: linear-gradient(#d9d4e6, #d9d4e6) top center / calc(100% - 2rem) 1px no-repeat; }
+@media (min-width: 768px) { .painel-claro > .caso-secao + .caso-secao > .caso-container { background-size: calc(100% - 4rem) 1px; } }
+
+/* Blocos pensados para o escuro, ajustados para dentro do painel claro */
+.painel-claro .caso-cartao { background: #fff; border-color: #e4e0ee; }
+.painel-claro .caso-cartao__num { color: var(--texto-destaque); }
+.painel-claro .pv-metas li { border-bottom-color: #d9d4e6; }
+.painel-claro .pv-pesquisa { border-top-color: #d9d4e6; }
+.painel-claro .pv-pizza { background: conic-gradient(#5b30d6 calc(var(--v) * 1%), #e4e0ee 0); }
+.painel-claro .pv-pizza::before { background: var(--painel-fundo); }
+.painel-claro .pv-pizza b { color: var(--texto-destaque); }
+.painel-claro .pv-pizza--clara::before { background: #fff; }
+.painel-claro .pv-graficos p { color: var(--texto-corpo); }
+.painel-claro .pv-graficos strong { color: var(--texto-titulo); }
+.painel-claro .pv-jornada { border-top-color: #d9d4e6; }
+.painel-claro .pv-passo__nome span { border-color: #5b30d6; color: var(--texto-destaque); }
+.painel-claro .pv-tela figcaption { color: var(--texto-destaque); }
+.painel-claro .pv-tela--baixa figcaption { color: var(--texto-apoio); }
+.painel-claro .pv-link { color: var(--texto-destaque); }
+
+/* Rodapé dos cases: o mesmo da home, no escuro. Os links clareiam no hover, como o menu sobre o escuro */
+.caso-rodape { padding-bottom: 2.5rem; background: var(--color-surface-dark); }
+.caso-rodape .rodape { padding-top: var(--respiro); border-top: 1px solid rgba(255, 255, 255, .12); }
+.caso-rodape .rodape li a:hover, .caso-rodape .rodape li a:focus-visible,
+.caso-rodape .rodape__barra a:hover, .caso-rodape .rodape__barra a:focus-visible { color: #fff; }
+.caso-rodape .rodape__barra { border-top-color: rgba(255, 255, 255, .12); }
+.caso-rodape .caso-container { gap: 0; }

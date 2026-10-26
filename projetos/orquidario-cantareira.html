@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../assets/css/tailwind.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
-<body class="bg-gpurple-dark text-white font-sans antialiased overflow-x-hidden">
+<body class="caso-pagina bg-gpurple-dark text-white font-sans antialiased overflow-x-hidden">
 
     <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-gpurple-accent focus:text-gpurple-ink focus:px-4 focus:py-2 focus:rounded-full">Pular para o conteúdo</a>
 
@@ -39,7 +39,7 @@
     <main id="conteudo">
 
         <!-- 1. Abertura: ideia do projeto, ficha e a loja numa janela de navegador -->
-        <section class="caso-secao caso-secao--claro caso-abertura">
+        <section class="caso-secao caso-secao--escuro caso-abertura">
             <div class="caso-container">
                 <div class="caso-abertura__grade">
                     <div class="caso-abertura__texto">
@@ -61,8 +61,12 @@
             </div>
         </section>
 
+        <!-- Painel claro: Desafio e Marca ficam num cartão arredondado sobre a página escura.
+             É o inverso da home: lá a página é clara e os painéis são roxos. -->
+        <div class="painel-claro">
+
         <!-- 2. Desafio e abordagem -->
-        <section class="caso-secao caso-secao--escuro">
+        <section class="caso-secao caso-secao--claro">
             <div class="caso-container caso-duas">
                 <div class="caso-intro">
                     <p class="caso-rotulo">O desafio</p>
@@ -96,7 +100,7 @@
         </section>
 
         <!-- 3. Galeria: marca e direção de arte -->
-        <section class="caso-secao caso-secao--medio">
+        <section class="caso-secao caso-secao--claro">
             <div class="caso-container">
                 <div class="caso-intro caso-intro--larga">
                     <p class="caso-rotulo">Marca e direção de arte</p>
@@ -112,6 +116,8 @@
                 </div>
             </div>
         </section>
+
+        </div>
 
         <!-- 4. CTA e próximo case -->
         <section class="caso-secao caso-secao--escuro">
@@ -129,6 +135,45 @@
             </div>
         </section>
     </main>
+
+    <!-- Rodapé: o mesmo da home, no escuro, fechando a página invertida -->
+    <footer class="caso-rodape">
+        <div class="caso-container">
+            <div class="rodape">
+                <div class="rodape__marca">
+                    <a href="../index.html" aria-label="Ir para a página inicial" class="flex items-center gap-0.5 font-bold text-xl tracking-tighter texto-titulo">
+                        <span class="font-heading text-gpurple-primary text-2xl font-bold leading-none">G</span>
+                        <span class="lowercase site-header__logo-texto">purple<span class="text-gpurple-volt">.</span></span>
+                    </a>
+                    <p>Estúdio de design e desenvolvimento no Rio de Janeiro, com atendimento online para todo o Brasil e o exterior. Sites, lojas e landing pages que trazem clientes.</p>
+                </div>
+                <nav aria-label="Seções do site no rodapé">
+                    <h3 class="rodape__titulo">Navegue</h3>
+                    <ul>
+                        <li><a href="../index.html#projetos">Projetos</a></li>
+                        <li><a href="../index.html#servicos">Serviços</a></li>
+                        <li><a href="../index.html#processo">Processo</a></li>
+                        <li><a href="../index.html#estudio">Equipe</a></li>
+                        <li><a href="../index.html#contato">Contato</a></li>
+                        <li><a href="../index.html#faq">Dúvidas frequentes</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h3 class="rodape__titulo">Contato</h3>
+                    <ul>
+                        <li><a href="mailto:gmbarros@gpurpledesign.com.br">gmbarros@gpurpledesign.com.br</a></li>
+                        <li><a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener">LinkedIn do Gabriel Barros<span class="sr-only"> (abre em nova aba)</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/gabrielzoppello/" target="_blank" rel="noopener">LinkedIn do Gabriel Zoppello<span class="sr-only"> (abre em nova aba)</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rodape__barra">
+                <p>© 2026 GPurple Studio. Todos os direitos reservados.</p>
+                <a href="#">Voltar ao topo</a>
+            </div>
+        </div>
+    </footer>
 
     <script>
         (() => {
