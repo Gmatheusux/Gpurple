@@ -38,7 +38,8 @@
 .fundo-claro, .hero, .caso-secao--claro,
 .contato-email, .contato-form__sucesso, .carrossel-miniatura, .faq-pergunte,
 .caso-ficha, .caso-dados li, .caso-persona, .pv-dor__lado, .pv-depoimento, .pv-fecho .pv-proximo,
-.sinal-tela, .mosaico-tela, .mosaico-convite, .trilha-tela {
+.sinal-tela, .mosaico-tela, .mosaico-convite, .trilha-tela,
+body:not(.menu-aberto) :is(.site-header--claro, .caso-header):not(.is-solid) {
     --texto-titulo: #15121f;
     --texto-corpo: #4a4560;     /* 6,4:1 no lilás (#ddd3f4) */
     --texto-apoio: #5b5670;     /* 4,9:1 no lilás */
