@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ----------------------------------------------------
-    // Projetos: carrossel. Troca de projeto sozinho a cada 7 s; para quando o mouse ou o foco
-    // está nele e quando a pessoa aperta "Pausar".
+    // Projetos: carrossel. Troca de projeto sozinho a cada 7 s; para quando o mouse ou o foco do
+    // teclado está nele e quando a pessoa aperta "Pausar". Ao sair, continua de onde parou.
     // As miniaturas funcionam como abas.
     // ----------------------------------------------------
     const carrossel = document.querySelector('[data-carrossel]');
@@ -124,7 +124,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const tempo = 7000;
         let atual = 0;
         let timer = null;
+        let rodando = false;  // já começou a contar (a seção apareceu na tela)
+        let restante = tempo; // quanto falta para trocar, guardado quando pausa
+        let inicio = 0;
+        // Motivos para pausar: botão "Pausar", mouse em cima, foco do teclado dentro
         let parado = false;
+        let mouseEmCima = false;
+        let focoDentro = false;
+
+        // Pausa ou retoma conforme os motivos acima, sem zerar o tempo que já passou
+        const atualizar = () => {
+            const pausa = parado || mouseEmCima || focoDentro;
+            carrossel.classList.toggle('is-pausado', pausa);
+            if (pausa && timer) {
+                clearTimeout(timer);
+                timer = null;
+                restante = Math.max(0, restante - (performance.now() - inicio));
+            } else if (!pausa && !timer && rodando) {
+                inicio = performance.now();
+                timer = setTimeout(proximo, restante);
+            }
+        };
 
         const mostrar = (i, { foco = false } = {}) => {
             atual = (i + abas.length) % abas.length;
@@ -139,16 +159,18 @@ document.addEventListener('DOMContentLoaded', () => {
             reiniciar();
         };
 
+        // Projeto novo: a contagem e a barra de tempo começam do zero
         const reiniciar = () => {
             clearTimeout(timer);
-            // Reinicia a barra de tempo da miniatura ativa
+            timer = null;
+            restante = tempo;
             carrossel.classList.remove('is-rodando');
             void carrossel.offsetWidth;
-            if (parado || abas.length < 2) return;
-            carrossel.classList.add('is-rodando');
-            if (!carrossel.classList.contains('is-pausado')) timer = setTimeout(proximo, tempo);
+            rodando = abas.length > 1;
+            if (rodando) carrossel.classList.add('is-rodando');
+            atualizar();
         };
-        const proximo = () => mostrar(atual + 1);
+        const proximo = () => { timer = null; mostrar(atual + 1); };
 
         carrossel.style.setProperty('--carrossel-tempo', tempo + 'ms');
 
@@ -159,8 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 parado = !parado;
                 botaoPausa.setAttribute('aria-pressed', String(parado));
                 botaoPausa.textContent = parado ? 'Retomar a troca automática' : 'Pausar a troca automática';
-                if (parado) clearTimeout(timer);
-                reiniciar();
+                atualizar();
             });
         }
         abas.forEach((aba, n) => {
@@ -171,17 +192,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Pausado, o relógio para; ao sair, a contagem recomeça do zero
-        const pausar = (sim) => {
-            if (carrossel.classList.contains('is-pausado') === sim) return;
-            carrossel.classList.toggle('is-pausado', sim);
-            if (sim) clearTimeout(timer);
-            else reiniciar();
-        };
-        carrossel.addEventListener('mouseenter', () => pausar(true));
-        carrossel.addEventListener('mouseleave', () => pausar(carrossel.contains(document.activeElement)));
-        carrossel.addEventListener('focusin', () => pausar(true));
-        carrossel.addEventListener('focusout', (e) => { if (!carrossel.contains(e.relatedTarget)) pausar(false); });
+        // Só o mouse pausa ao passar por cima; o toque no celular troca de projeto e segue contando
+        carrossel.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') { mouseEmCima = true; atualizar(); } });
+        carrossel.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') { mouseEmCima = false; atualizar(); } });
+        // Foco vindo do teclado pausa; o foco de um clique ou toque não
+        const focoDeTeclado = (el) => { try { return el.matches(':focus-visible'); } catch { return true; } };
+        carrossel.addEventListener('focusin', (e) => { focoDentro = focoDeTeclado(e.target); atualizar(); });
+        carrossel.addEventListener('focusout', (e) => {
+            if (!carrossel.contains(e.relatedTarget)) { focoDentro = false; atualizar(); }
+        });
 
         // Só começa a contar quando a seção aparece na tela
         if ('IntersectionObserver' in window) {
