@@ -154,28 +154,35 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
     .rodape { grid-template-columns: 1fr; }
 }
 .rodape li a { overflow-wrap: anywhere; }
-/* Formulário de contato: cartão branco sobre o Contato claro */
-.contato-form-caixa { display: flex; flex-direction: column; gap: 1rem; }
-.contato-form { display: grid; gap: 1.125rem; padding: 1.75rem; border-radius: 1.375rem; background: #fff; border: 1px solid #e4e0ee; box-shadow: 0 30px 60px -36px rgba(21, 18, 31, 0.28); }
-.contato-form__campo { display: grid; gap: 0.375rem; }
-.contato-form__campo label { font-size: 0.9375rem; font-weight: 600; color: var(--color-text-ink); }
-.contato-form__campo label span { font-weight: 400; color: #5b5670; }
-.contato-form__campo :is(input, textarea) { width: 100%; padding: 0.75rem 0.875rem; border-radius: 0.75rem; border: 1px solid #c9c2da; background: #fff; color: var(--color-text-ink); font: inherit; font-size: 1rem; transition: border-color .2s, box-shadow .2s; }
-.contato-form__campo textarea { resize: vertical; min-height: 7rem; }
-.contato-form__campo :is(input, textarea)::placeholder { color: #8f88a3; }
-.contato-form__campo :is(input, textarea):focus { outline: none; border-color: #5b30d6; box-shadow: 0 0 0 3px rgba(91, 48, 214, 0.2); }
-.contato-form__isca { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.contato-form__enviar { justify-self: start; padding: 0.9375rem 1.75rem; border-radius: 9999px; background: var(--color-text-ink); color: #fff; font-weight: 600; font-size: 1rem; transition: background-color .2s; }
-.contato-form__enviar:hover { background: #5b30d6; }
-.contato-form__enviar:disabled { opacity: 0.6; cursor: progress; }
-.contato-form__status { font-size: 0.9375rem; color: #4a4560; }
-.contato-form__status:empty { display: none; }
-.contato-form__status.is-erro { color: #be123c; }
-.contato-form__alternativa { font-size: 0.875rem; color: #4a4560; }
-.contato-form__alternativa a { color: #5b30d6; font-weight: 600; overflow-wrap: anywhere; }
-.contato-form__sucesso { display: grid; gap: 0.5rem; padding: 1.75rem; border-radius: 1.375rem; background: #fff; border: 1px solid #e4e0ee; color: #4a4560; }
+/* Contato em forma de e-mail: as lacunas do texto são os campos do formulário */
+.contato-email { background: #fff; color: var(--color-text-ink); border-radius: 1.375rem; overflow: hidden; border: 1px solid #e4e0ee; box-shadow: 0 30px 60px -36px rgba(21, 18, 31, 0.28); }
+.contato-email__chrome { display: flex; align-items: center; gap: 6px; padding: 12px 16px; background: #e7e3f0; border-bottom: 1px solid #dcd6e8; }
+.contato-email__chrome i { width: 10px; height: 10px; border-radius: 50%; background: #cfc8de; }
+.contato-email__chrome span { margin-left: 10px; font-size: 0.75rem; font-weight: 600; color: #5b5670; }
+.contato-email__linha { display: grid; grid-template-columns: 72px 1fr; gap: 10px; padding: 12px 22px; border-bottom: 1px solid #e4e0ee; font-size: 0.875rem; }
+.contato-email__linha span { color: #5b5670; }
+.contato-email__linha strong { font-weight: 600; word-break: break-all; }
+.contato-email__corpo { padding: 20px 22px 8px; font-size: 0.9375rem; line-height: 1.7; }
+.contato-email__campo { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; margin-top: 8px; color: #5b5670; }
+.contato-email__campo label { flex: none; }
+.contato-email__campo :is(input, textarea) { flex: 1 1 10rem; min-width: 0; padding: 2px 2px 3px; border: 0; border-bottom: 1.5px dashed #c9c2da; border-radius: 0; background: transparent; color: var(--color-text-ink); font: inherit; font-weight: 500; transition: border-color .2s, background-color .2s; }
+.contato-email__campo--texto textarea { flex-basis: 100%; margin-top: 4px; resize: vertical; min-height: 4.5rem; line-height: 1.6; background-image: repeating-linear-gradient(transparent 0 calc(1.6em - 1.5px), #e4e0ee calc(1.6em - 1.5px) 1.6em); border-bottom-style: dashed; }
+.contato-email__campo :is(input, textarea):focus { outline: none; border-bottom: 2px solid #5b30d6; background-color: rgba(91, 48, 214, 0.05); }
+.contato-email__campo :is(input, textarea):user-invalid { border-bottom-color: #be123c; }
+.contato-email__isca { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.contato-email__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 0.875rem 1.125rem; padding: 18px 22px 22px; }
+.contato-email__acoes button:disabled { opacity: 0.6; cursor: progress; }
+.contato-email__acoes > a { font-size: 0.8125rem; color: #5b5670; text-decoration: underline; text-underline-offset: 3px; }
+.contato-email__acoes > a:hover { color: #5b30d6; }
+.contato-email__status { padding: 0 22px 20px; font-size: 0.875rem; color: #be123c; }
+.contato-email__status:empty { display: none; }
+.contato-form__sucesso { display: grid; gap: 0.5rem; padding: 1.75rem; border-radius: 1.375rem; background: #fff; border: 1px solid #e4e0ee; color: #4a4560; box-shadow: 0 30px 60px -36px rgba(21, 18, 31, 0.28); }
 .contato-form__sucesso strong { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--color-text-ink); }
-@media (max-width: 640px) { .contato-form { padding: 1.25rem; } }
+@media (max-width: 640px) {
+    .contato-email__linha { grid-template-columns: 58px 1fr; padding-inline: 16px; }
+    .contato-email__corpo, .contato-email__acoes { padding-inline: 16px; }
+    .contato-email__status { padding-inline: 16px; }
+}
 
 /* Respeita quem pediu menos movimento no sistema */
 @media (prefers-reduced-motion: reduce) {
@@ -1177,31 +1184,54 @@ body.menu-aberto { overflow: hidden; }
 
 /* ----------------------------------
    Passagem de cor entre seções
-   A home começa clara, desce para o quase preto e vai clareando em tons de roxo (.tom-1 a .tom-5)
-   até voltar ao claro no Contato, nas Dúvidas e no rodapé.
-   Entre claro e escuro, a seção que entra começa com uma faixa que vai da cor da anterior até a sua,
-   com curva suave (mais lenta nas pontas); o conteúdo desce a altura da faixa para o texto nunca ficar
-   sobre o meio-tom. Entre dois escuros o degradê corre pela seção inteira. Sem brilho nem manchas.
+   A home faz um arco: branco, roxo claro, roxo cada vez mais escuro até o meio da página (Projetos),
+   roxo mais claro de novo e, no fim, roxo claro e branco (Contato, Dúvidas e rodapé).
+   - Seção clara antes de uma escura: o fundo vai do branco ao lilás na metade de baixo.
+   - Seção escura depois de uma clara: começa com uma faixa longa do lilás até o seu tom, passando pelos roxos médios;
+     o conteúdo desce a altura da faixa para o texto nunca ficar sobre o meio-tom.
+   - Seção clara depois de uma escura: o mesmo caminho ao contrário, do tom escuro ao lilás e do lilás ao branco.
+   - Entre dois escuros: degradê pela seção inteira.
    Fundos: .fundo-claro / .fundo-escuro (+ .tom-N) / .fundo-medio na home; .caso-secao--* nos cases.
    ---------------------------------- */
 :root {
-    --faixa-passagem: clamp(6rem, 11vw, 11rem);
-    --tom-1: #0b0a14;
-    --tom-2: #110e20;
-    --tom-3: #17132b;
-    --tom-4: #1e1838;
-    --tom-5: #272046;
+    --faixa-passagem: clamp(9rem, 16vw, 16rem);
+    --lilas: #ddd3f4;
+    --tom-1: #2a2150;   /* O problema: roxo médio, logo depois do lilás */
+    --tom-2: #1a1536;   /* Serviços */
+    --tom-3: #0e0b1c;   /* Projetos: o mais escuro, no meio da página */
+    --tom-4: #1a1536;   /* Processo */
+    --tom-5: #2e2558;   /* Equipe: roxo mais claro antes de voltar ao branco */
 }
-:is(.fundo-claro, .caso-secao--claro) + :is(.fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio),
-:is(.fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio) + :is(.fundo-claro, .caso-secao--claro) {
+/* Claro antes de escuro: desce do branco ao lilás */
+:is(.fundo-claro, .caso-secao--claro):has(+ :is(.fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio)) {
+    background-image: linear-gradient(to bottom, var(--color-surface-light) 0, var(--color-surface-light) 45%, color-mix(in oklab, var(--color-surface-light) 55%, var(--lilas)) 72%, var(--lilas) 100%);
+}
+:is(.fundo-claro, .caso-secao--claro):has(+ :is(.fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio)) + * { --passa-de: var(--lilas); }
+/* Escuro depois de claro: faixa longa do lilás até o tom da seção */
+:is(.fundo-claro, .caso-secao--claro) + :is(.fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio) {
     background-image: linear-gradient(to bottom, var(--passa-de) 0, var(--passa-para) var(--faixa-passagem));
     background-image: linear-gradient(to bottom,
         var(--passa-de) 0,
-        color-mix(in oklab, var(--passa-de) 94%, var(--passa-para)) calc(var(--faixa-passagem) * .14),
-        color-mix(in oklab, var(--passa-de) 72%, var(--passa-para)) calc(var(--faixa-passagem) * .34),
-        color-mix(in oklab, var(--passa-de) 36%, var(--passa-para)) calc(var(--faixa-passagem) * .6),
-        color-mix(in oklab, var(--passa-de) 10%, var(--passa-para)) calc(var(--faixa-passagem) * .84),
+        color-mix(in oklab, var(--passa-de) 88%, var(--passa-para)) calc(var(--faixa-passagem) * .16),
+        color-mix(in oklab, var(--passa-de) 66%, var(--passa-para)) calc(var(--faixa-passagem) * .36),
+        color-mix(in oklab, var(--passa-de) 40%, var(--passa-para)) calc(var(--faixa-passagem) * .56),
+        color-mix(in oklab, var(--passa-de) 18%, var(--passa-para)) calc(var(--faixa-passagem) * .76),
+        color-mix(in oklab, var(--passa-de) 5%, var(--passa-para)) calc(var(--faixa-passagem) * .9),
         var(--passa-para) var(--faixa-passagem));
+}
+/* Claro depois de escuro: do tom escuro ao lilás na faixa, e do lilás ao branco logo abaixo */
+:is(.fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio) + :is(.fundo-claro, .caso-secao--claro) {
+    background-image: linear-gradient(to bottom, var(--passa-de) 0, var(--color-surface-light) var(--faixa-passagem));
+    background-image: linear-gradient(to bottom,
+        var(--passa-de) 0,
+        color-mix(in oklab, var(--passa-de) 95%, var(--lilas)) calc(var(--faixa-passagem) * .1),
+        color-mix(in oklab, var(--passa-de) 82%, var(--lilas)) calc(var(--faixa-passagem) * .24),
+        color-mix(in oklab, var(--passa-de) 60%, var(--lilas)) calc(var(--faixa-passagem) * .44),
+        color-mix(in oklab, var(--passa-de) 34%, var(--lilas)) calc(var(--faixa-passagem) * .64),
+        color-mix(in oklab, var(--passa-de) 12%, var(--lilas)) calc(var(--faixa-passagem) * .84),
+        var(--lilas) var(--faixa-passagem),
+        color-mix(in oklab, var(--lilas) 50%, var(--color-surface-light)) calc(var(--faixa-passagem) * 1.6),
+        var(--color-surface-light) calc(var(--faixa-passagem) * 2.4));
 }
 :is(.fundo-claro, .caso-secao--claro) + :is(.fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio)::before,
 :is(.fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio) + :is(.fundo-claro, .caso-secao--claro)::before {
@@ -1220,7 +1250,8 @@ body.menu-aberto { overflow: hidden; }
 :is(.fundo-claro, .caso-secao--claro) + * { --passa-de: var(--color-surface-light); }
 :is(.fundo-escuro, .caso-secao--escuro) + * { --passa-de: var(--color-surface-dark); }
 :is(.fundo-medio, .caso-secao--medio) + * { --passa-de: var(--color-surface-card); }
-/* Tons de roxo da home, do mais escuro ao mais claro */
+:is(.fundo-claro, .caso-secao--claro):has(+ :is(.fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio)) + * { --passa-de: var(--lilas); }
+/* Tons de roxo da home */
 .tom-1 { background-color: var(--tom-1); --passa-para: var(--tom-1); }
 .tom-2 { background-color: var(--tom-2); --passa-para: var(--tom-2); }
 .tom-3 { background-color: var(--tom-3); --passa-para: var(--tom-3); }

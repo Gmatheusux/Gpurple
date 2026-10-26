@@ -508,33 +508,30 @@
                         <p class="text-[#4a4560] text-sm">A primeira conversa e a análise do seu site atual não têm custo. Ainda não tem site? Conte sobre o seu negócio e começamos pela estratégia. Estamos no Rio de Janeiro e atendemos online todo o Brasil e o exterior.</p>
                     </div>
 
-                    <!-- Formulário: envia pelo Formspree sem sair da página. Se o action voltar a ser PREENCHER,
-                         o envio abre o e-mail da pessoa com os mesmos campos preenchidos. -->
-                    <div class="contato-form-caixa">
-                        <form class="contato-form" action="https://formspree.io/f/xwlllbak" method="POST" data-contato-form>
-                            <input type="hidden" name="_subject" value="Novo projeto pelo site">
-                            <p class="contato-form__isca" aria-hidden="true"><label>Não preencha<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
-                            <div class="contato-form__campo">
-                                <label for="contato-nome">Seu nome</label>
-                                <input id="contato-nome" name="nome" type="text" autocomplete="name" required>
-                            </div>
-                            <div class="contato-form__campo">
-                                <label for="contato-email">Seu e-mail</label>
-                                <input id="contato-email" name="email" type="email" autocomplete="email" required>
-                            </div>
-                            <div class="contato-form__campo">
-                                <label for="contato-site">Site <span>(se tiver)</span></label>
-                                <input id="contato-site" name="site" type="text" inputmode="url" autocomplete="url" placeholder="seusite.com.br">
-                            </div>
-                            <div class="contato-form__campo">
-                                <label for="contato-mensagem">O que você gostaria de melhorar ou criar?</label>
-                                <textarea id="contato-mensagem" name="mensagem" rows="4" required></textarea>
-                            </div>
-                            <button type="submit" class="contato-form__enviar">Enviar mensagem</button>
-                            <p class="contato-form__status" role="status" aria-live="polite" data-contato-status></p>
-                        </form>
-                        <p class="contato-form__alternativa">Prefere e-mail? Escreva para <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Novo%20projeto">gmbarros@gpurpledesign.com.br</a></p>
-                    </div>
+                    <!-- Contato em forma de e-mail: a mensagem aparece como um e-mail em branco, e as lacunas são campos de verdade.
+                         Envia pelo Formspree sem sair da página; se o action virar PREENCHER, abre o e-mail da pessoa preenchido. -->
+                    <form class="contato-email" action="https://formspree.io/f/xwlllbak" method="POST" aria-label="Mensagem para a GPurple" data-contato-form>
+                        <input type="hidden" name="_subject" value="Novo projeto pelo site">
+                        <p class="contato-email__isca" aria-hidden="true"><label>Não preencha<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+                        <div class="contato-email__chrome" aria-hidden="true"><i></i><i></i><i></i><span>Nova mensagem</span></div>
+                        <div class="contato-email__linha"><span>Para</span><strong>gmbarros@gpurpledesign.com.br</strong></div>
+                        <div class="contato-email__linha"><span>Assunto</span><strong>Novo projeto</strong></div>
+                        <div class="contato-email__corpo">
+                            <p>Olá, GPurple!</p>
+                            <p class="contato-email__campo"><label for="contato-nome">Meu nome é</label><input id="contato-nome" name="nome" type="text" autocomplete="name" required></p>
+                            <p class="contato-email__campo"><label for="contato-email">Meu e-mail:</label><input id="contato-email" name="email" type="email" autocomplete="email" required></p>
+                            <p class="contato-email__campo"><label for="contato-site">Site (se tiver):</label><input id="contato-site" name="site" type="text" inputmode="url" autocomplete="url"></p>
+                            <p class="contato-email__campo contato-email__campo--texto"><label for="contato-mensagem">O que eu gostaria de melhorar:</label><textarea id="contato-mensagem" name="mensagem" rows="3" required></textarea></p>
+                        </div>
+                        <div class="contato-email__acoes">
+                            <button type="submit" class="btn-primary inline-flex items-center gap-2.5 px-6 py-3.5 text-base">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                                Enviar mensagem
+                            </button>
+                            <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Novo%20projeto&amp;body=Ol%C3%A1%2C%20GPurple!%0A%0AMeu%20nome%20%C3%A9%20%0ASite%20(se%20tiver)%3A%20%0AO%20que%20eu%20gostaria%20de%20melhorar%3A%20%0A">ou escreva do seu e-mail</a>
+                        </div>
+                        <p class="contato-email__status" role="status" aria-live="polite" data-contato-status></p>
+                    </form>
                 </div>
             </div>
         </section>
