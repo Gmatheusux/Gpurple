@@ -1222,8 +1222,8 @@ body.menu-aberto { overflow: hidden; }
 
 /* ----------------------------------
    Passagem de cor entre seções
-   A home faz um arco: branco (Abertura e Projetos), roxo claro, roxo cada vez mais escuro até Processo,
-   roxo mais claro de novo e, no fim, roxo claro e branco (Contato, Dúvidas e rodapé).
+   Nos cases a cor passa de uma seção para a outra com as regras abaixo. A home usa o painel roxo (mais abaixo),
+   com os mesmos tons: roxo médio, cada vez mais escuro até Processo e mais claro de novo na Equipe.
    - Seção clara antes de uma escura: o fundo vai do branco ao lilás na metade de baixo.
    - Seção escura depois de uma clara: começa com uma faixa longa do lilás até o seu tom, passando pelos roxos médios;
      o conteúdo desce a altura da faixa para o texto nunca ficar sobre o meio-tom.
@@ -1303,6 +1303,39 @@ body.menu-aberto { overflow: hidden; }
 .tom-2 + * { --passa-de: var(--tom-2); }
 .tom-3 + * { --passa-de: var(--tom-3); }
 .tom-4 + * { --passa-de: var(--tom-4); }
+
+/* ----------------------------------
+   Painel roxo da home
+   As seções escuras ficam num painel arredondado com uma margem do claro em volta: a troca de cor
+   é a borda do painel, sem faixa de passagem. O fundo é um degradê só, do painel inteiro, que desce
+   do roxo médio ao mais escuro (Processo) e sobe de novo na Equipe; um grão fino evita os degraus.
+   ---------------------------------- */
+.painel-roxo {
+    position: relative;
+    isolation: isolate;
+    width: calc(100% - 2 * var(--painel-margem));
+    margin-inline: var(--painel-margem);
+    border-radius: var(--painel-raio);
+    overflow: hidden;
+    background: linear-gradient(to bottom, var(--tom-1) 0%, var(--tom-2) 38%, var(--tom-3) 66%, var(--tom-3) 74%, var(--tom-4) 100%);
+    background: linear-gradient(in oklch to bottom, var(--tom-1) 0%, var(--tom-2) 38%, var(--tom-3) 66%, var(--tom-3) 74%, var(--tom-4) 100%);
+}
+.painel-roxo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .12;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+}
+:root { --painel-margem: clamp(.5rem, 1.6vw, 1.5rem); --painel-raio: clamp(1.5rem, 3vw, 2.75rem); }
+/* Dentro do painel as seções não têm fundo próprio: o degradê é do painel */
+.painel-roxo > .fundo-escuro { background: none; }
+/* O claro em volta do painel (cantos e margens) */
+#app { background-color: var(--color-surface-light); }
+.painel-roxo + .secao { margin-top: 0; }
 
 /* Projetos no claro: o banner escuro se destaca do fundo */
 #projetos .vitrine { box-shadow: 0 30px 60px -36px rgba(21, 18, 31, 0.45); }
