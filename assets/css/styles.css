@@ -220,21 +220,8 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
     .contato-email__status { padding-inline: 16px; }
 }
 
-/* Respeita quem pediu menos movimento no sistema */
-@media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-/* Mesmo assim, a imagem da abertura entra com um esmaecer curto, sem deslocamento */
-@media (prefers-reduced-motion: reduce) {
-    .hero-obra { animation: hero-esmaece .6s ease-out both !important; }
-    .hero-obra__janela:hover { transform: none; }
-}
-@keyframes hero-esmaece { from { opacity: 0; } }
+/* As animações aparecem para todos os visitantes, mesmo com "efeitos de animação" desligado no sistema.
+   Todas são curtas ou discretas, e a troca automática do carrossel tem botão de pausa. */
 
 /* ----------------------------------
    Componentes do site (tipografia: Montserrat nos títulos)
@@ -805,12 +792,11 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 
 .hero__texto { display: flex; flex-direction: column; gap: 1.5rem; max-width: 34rem; container-type: inline-size; }
 
-/* Seta de rolagem: discreta, desce e volta devagar; parada para quem pediu menos movimento */
+/* Seta de rolagem: discreta, desce e volta devagar */
 .hero__rolar { position: absolute; left: 50%; bottom: 1.75rem; transform: translateX(-50%); display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 1px solid rgba(21, 18, 31, .14); color: rgba(21, 18, 31, .5); transition: color .2s, border-color .2s; }
 .hero__rolar:hover, .hero__rolar:focus-visible { color: var(--texto-destaque); border-color: rgba(91, 48, 214, .4); }
 .hero__rolar svg { width: 1.125rem; height: 1.125rem; animation: hero-rolar 2.2s ease-in-out infinite; }
 @keyframes hero-rolar { 0%, 100% { transform: translateY(-3px); opacity: .55; } 50% { transform: translateY(4px); opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .hero__rolar svg { animation: none; } }
 
 .hero__titulo {
     font-family: Montserrat, sans-serif;
