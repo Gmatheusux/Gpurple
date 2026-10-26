@@ -244,8 +244,7 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .eyebrow {
     font-size: 0.8125rem;            /* 13px: mínimo legível para etiquetas */
     font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: 0.01em;
     color: var(--texto-destaque);
 }
 .eyebrow--light { color: var(--texto-destaque); }
@@ -298,7 +297,7 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .trilha-aprova::before { content: ""; width: 8px; height: 5px; border-left: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg) translateY(-1px); }
 .trilha-intro { display: flex; flex-direction: column; gap: 0.625rem; }
 .trilha-recebe { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.875rem; color: #fff; }
-.trilha-recebe span { display: block; margin-bottom: 0.2rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-accent); }
+.trilha-recebe span { display: block; margin-bottom: 0.2rem; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01em; color: var(--color-brand-accent); }
 /* Cartões lado a lado: número, título e texto, e "Você recebe" ocupam a mesma linha da grade em todos.
    A sobra de espaço fica antes de "Você recebe", como em "O problema" */
 @media (min-width: 641px) {
@@ -398,10 +397,9 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .sinal-anuncio__foto { width: 1.875rem; height: 1.875rem; border-radius: 0.375rem; background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
 .sinal-texto { padding: 1.5rem 1.75rem 1.875rem; display: flex; flex-direction: column; gap: 0.625rem; }
 .sinal-momento {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: 0.01em;
     color: var(--color-brand-accent);
 }
 
@@ -425,7 +423,7 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
     border: 1px solid rgba(var(--color-brand-accent-rgb), 0.3);
     background: rgba(var(--color-brand-accent-rgb), 0.05);
 }
-.sinais-fecho p { max-width: 44rem; font-size: 1.0625rem; line-height: 1.6; color: var(--texto-corpo); }
+.sinais-fecho p { max-width: 44rem; font-size: 1rem; line-height: 1.6; color: var(--texto-corpo); }
 .sinais-fecho strong { color: #fff; font-weight: 600; }
 @media (max-width: 860px) { .sinais-fecho { flex-direction: column; align-items: flex-start; padding: 1.5rem; } }
 
@@ -756,10 +754,9 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
     .site-menu__aside { border-left: 1px solid rgba(255, 255, 255, 0.1); padding-left: 3rem; }
 }
 .site-menu__label {
-    font-size: 0.8125rem;
+    font-size: 0.9375rem;            /* mesma etiqueta de seção (.rotulo) */
     font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: 0.01em;
     color: var(--texto-destaque);
 }
 .site-menu__case { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -804,8 +801,7 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 }
 @media (min-width: 1024px) { .hero__titulo { font-size: 16cqi; } }
 .hero__destaque { color: var(--texto-destaque); }
-.hero__sub { color: var(--texto-corpo); font-size: 1.0625rem; line-height: 1.6; }
-@media (min-width: 768px) { .hero__sub { font-size: 1.1875rem; } }
+.hero__sub { color: var(--texto-corpo); font-size: 1.125rem; line-height: 1.6; }
 
 /* Respiro maior antes dos botões para o "Iniciar um projeto" não competir com o texto */
 .hero__acoes { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.5rem; margin-top: 1.25rem; }
@@ -951,13 +947,13 @@ body.menu-aberto { overflow: hidden; }
 .caso-rotulo { font-size: .9375rem; font-weight: 600; letter-spacing: 0.01em; color: var(--texto-destaque); }  /* mesma etiqueta da home */
 .caso-secao--claro .caso-rotulo { color: var(--texto-destaque); }
 .caso-titulo { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2.25rem, 5.2vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance; }
-.caso-lead { font-size: 1.1875rem; line-height: 1.6; color: var(--texto-corpo); max-width: 40rem; }
+.caso-lead { font-size: 1.125rem; line-height: 1.6; color: var(--texto-corpo); max-width: 40rem; }
 .caso-lead--menor { font-size: 1.125rem; }
 .caso-intro { display: flex; flex-direction: column; gap: 1.25rem; }
 .caso-intro--larga { max-width: 48rem; }
 .caso-subtitulo { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.375rem; line-height: 1.25; margin-bottom: 1.25rem; }
 .caso-corpo { display: flex; flex-direction: column; gap: 1.125rem; }
-.caso-corpo p, .caso-corpo-texto { font-size: 1.0625rem; line-height: 1.7; color: var(--texto-corpo); }
+.caso-corpo p, .caso-corpo-texto { font-size: 1rem; line-height: 1.7; color: var(--texto-corpo); }
 
 .caso-duas { display: grid; gap: 3rem; }
 @media (min-width: 900px) { .caso-duas { grid-template-columns: 1fr 1fr; gap: 5rem; } }
@@ -1023,7 +1019,7 @@ body.menu-aberto { overflow: hidden; }
 .caso-concorrentes { display: flex; flex-direction: column; gap: .875rem; list-style: none; margin: 0 0 1.5rem; padding: 0; }
 .caso-concorrentes li { font-size: 1rem; line-height: 1.6; color: var(--texto-corpo); padding-left: 1rem; border-left: 2px solid #d9d4e6; }
 .caso-concorrentes strong { color: var(--color-text-ink); }
-.caso-destaque { padding: 1.375rem 1.5rem; border-radius: 1.25rem; background: var(--color-text-ink); color: #fff; font-size: 1.0625rem; line-height: 1.6; }
+.caso-destaque { padding: 1.375rem 1.5rem; border-radius: 1.25rem; background: var(--color-text-ink); color: #fff; font-size: 1rem; line-height: 1.6; }
 
 /* Matriz de proposta de valor: perfil do cliente (círculo) x mapa de valor (quadrado) */
 .caso-matriz { display: flex; flex-direction: column; gap: 1rem; }
@@ -1098,7 +1094,7 @@ body.menu-aberto { overflow: hidden; }
 .caso-jornadas__aba:hover { border-color: #5b30d6; }
 .caso-jornadas__aba[aria-selected="true"] { background: var(--color-text-ink); border-color: var(--color-text-ink); color: #fff; }
 .caso-jornadas__aba:focus-visible { outline: 2px solid #5b30d6; outline-offset: 2px; }
-.caso-jornada__resumo { margin-bottom: 1.75rem; font-size: 1.0625rem; color: var(--texto-corpo); }
+.caso-jornada__resumo { margin-bottom: 1.75rem; font-size: 1rem; color: var(--texto-corpo); }
 .caso-etapas { display: grid; gap: 3rem 2rem; list-style: none; margin: 0; padding: 0; }
 @media (min-width: 900px) { .caso-etapas { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .caso-etapa { display: flex; flex-direction: column; gap: 1.25rem; }
@@ -1207,7 +1203,7 @@ body.menu-aberto { overflow: hidden; }
 .pv-dor__lado h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.125rem; color: #15121f; }
 .pv-dor__lado p { font-size: 1rem; line-height: 1.5; color: var(--texto-corpo); }
 .pv-dor__lado--alivio { background: #ede7fb; border-color: #d6c8f5; }
-.pv-dor__lado--alivio p { color: #15121f; font-size: 1.0625rem; }
+.pv-dor__lado--alivio p { color: #15121f; font-size: 1rem; }
 .pv-dor__seta { display: grid; place-items: center; font-size: 1.5rem; font-weight: 700; color: var(--texto-destaque); }
 @media (max-width: 899px) { .pv-dor__seta { transform: rotate(90deg); } }
 .pv-alivio__icone { flex: none; display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #5b30d6; color: #fff; font-weight: 700; }
@@ -1219,7 +1215,7 @@ body.menu-aberto { overflow: hidden; }
 .pv-matriz .caso-matriz__lado { padding: 1.75rem; }
 .pv-matriz .caso-matriz__lado h3 { font-size: 1.25rem; margin-bottom: 1rem; }
 .pv-matriz .caso-matriz__lado ul { gap: .75rem; }
-.pv-matriz .caso-matriz__lado li { font-size: 1.0625rem; color: rgba(255,255,255,.92); }
+.pv-matriz .caso-matriz__lado li { font-size: 1rem; color: rgba(255,255,255,.92); }
 .pv-matriz .caso-matriz__topo span:last-child { color: rgba(255,255,255,.75); font-size: 1rem; }
 .pv-matriz .caso-matriz__lado { background: linear-gradient(160deg, rgba(232,207,160,.16), rgba(232,207,160,.06)); border: 1.5px solid rgba(232,207,160,.6); box-shadow: 0 12px 32px rgba(0,0,0,.35); }
 .pv-matriz .caso-matriz__lado--valor { background: linear-gradient(160deg, rgba(167,139,250,.26), rgba(124,58,237,.12)); border-color: rgba(196,181,253,.7); }
