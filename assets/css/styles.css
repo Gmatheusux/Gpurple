@@ -776,7 +776,7 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 /* ----------------------------------
    Abertura: proposta à esquerda, trabalho real à direita
    Fundo claro para fugir do "roxo sobre preto com brilho" de site gerado. A loja do Orquidário aparece numa janela
-   de navegador, com pinos numerados que remetem às notas de projeto da legenda. Só a imagem entra com movimento.
+   de navegador, com pinos numerados que abrem as notas de projeto. Só a imagem entra com movimento.
    ---------------------------------- */
 /* A abertura ocupa a tela inteira. O espaço de cima é o do cabeçalho fixo e o de baixo, o da seta,
    então o conteúdo fica no centro do que sobra */
@@ -788,7 +788,7 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 
 /* A demonstração ganha a coluna maior: é ela que mostra o produto */
 .hero__inner { display: grid; gap: 3rem; }
-@media (min-width: 1024px) { .hero__inner { grid-template-columns: 2fr 3fr; gap: 5rem; align-items: center; } }
+@media (min-width: 1024px) { .hero__inner { grid-template-columns: minmax(0, 5fr) minmax(0, 8fr); gap: 4rem; align-items: center; } }
 
 .hero__texto { display: flex; flex-direction: column; gap: 1.5rem; max-width: 34rem; container-type: inline-size; }
 
@@ -833,17 +833,18 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 .hero__btn--linha { padding-left: 0; padding-right: 0; color: var(--color-text-ink); text-decoration: underline; text-decoration-color: rgba(21, 18, 31, .3); text-underline-offset: 6px; }
 .hero__btn--linha:hover { color: var(--texto-destaque); text-decoration-color: currentColor; }
 
-.hero-obra { display: flex; flex-direction: column; gap: 1.25rem; margin: 0; animation: hero-sobe .9s cubic-bezier(.2, .7, .2, 1) both .15s; }
+.hero-obra { margin: 0; animation: hero-sobe .9s cubic-bezier(.2, .7, .2, 1) both .15s; }
+/* Sem overflow: hidden para as notas poderem sair da janela; os cantos ficam na barra e na imagem */
 .hero-obra__janela {
     display: block;
     border-radius: .875rem;
-    overflow: hidden;
     background: #fff;
     border: 1px solid rgba(21, 18, 31, .12);
     box-shadow: 0 30px 60px -36px rgba(21, 18, 31, .35);
     transition: transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s;
 }
 .hero-obra__janela:hover { transform: translateY(-4px); box-shadow: 0 40px 70px -36px rgba(21, 18, 31, .45); }
+.hero-obra__janela .hero-obra__barra { border-radius: calc(.875rem - 1px) calc(.875rem - 1px) 0 0; }
 /* Barra de janela (abertura, Contato e case do Orquidário): o mesmo roxo, as bolinhas de um navegador de verdade
    e o mesmo título nas três */
 :is(.hero-obra__barra, .contato-email__chrome) {
@@ -863,29 +864,68 @@ body.menu-aberto .site-header { background: var(--color-surface-dark); }
 :is(.hero-obra__barra, .contato-email__chrome) i:nth-of-type(3) { background: #28c840; }
 :is(.hero-obra__barra, .contato-email__chrome) span { margin-left: .5rem; }
 .hero-obra__tela { position: relative; display: block; }
+.hero-obra__abrir { display: block; border-radius: 0 0 calc(.875rem - 1px) calc(.875rem - 1px); overflow: hidden; }
 .hero-obra__tela img { display: block; width: 100%; height: auto; }
 
-/* Pinos e notas: o mesmo número liga o ponto da tela à explicação */
-.hero-obra__pino,
-.hero-obra__notas li > span {
+/* Pontos: o número fica na tela e a nota abre ao passar o mouse, com o teclado ou com um toque */
+.hero-obra__ponto { position: absolute; z-index: 1; width: 0; height: 0; }
+.hero-obra__ponto.is-aberto, .hero-obra__ponto:has(:focus-visible) { z-index: 2; }
+@media (hover: hover) { .hero-obra__ponto:hover { z-index: 2; } }
+.hero-obra__pino {
+    position: absolute;
+    left: 0;
+    top: 0;
     display: grid;
     place-items: center;
-    flex: none;
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     background: #5b30d6;
     color: #fff;
-    font: 600 .8125rem/1 Montserrat, sans-serif;
+    font: 600 .875rem/1 Montserrat, sans-serif;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, .8);
+    cursor: pointer;
+    transition: background-color .2s, transform .2s;
 }
-.hero-obra__pino { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 0 0 4px rgba(255, 255, 255, .75); }
+/* Área de toque de 44px sem aumentar o círculo */
+.hero-obra__pino::before { content: ''; position: absolute; inset: -.375rem; border-radius: 50%; }
+/* Anel que pulsa devagar: mostra que o ponto abre alguma coisa */
+.hero-obra__pino::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #5b30d6; animation: hero-pino 2.4s ease-out infinite; pointer-events: none; }
+.hero-obra__ponto:nth-of-type(2) .hero-obra__pino::after { animation-delay: 1.2s; }
+@keyframes hero-pino { 0% { transform: scale(1); opacity: .7; } 70%, 100% { transform: scale(1.9); opacity: 0; } }
+.hero-obra__pino:focus-visible { outline: 3px solid var(--color-text-ink); outline-offset: 4px; }
+.hero-obra__ponto.is-aberto .hero-obra__pino { background: var(--color-text-ink); transform: translate(-50%, -50%) scale(1.08); }
+@media (hover: hover) { .hero-obra__ponto:hover .hero-obra__pino { background: var(--color-text-ink); transform: translate(-50%, -50%) scale(1.08); } }
 
-.hero-obra__legenda { display: flex; flex-direction: column; gap: .875rem; }
-.hero-obra__notas { display: grid; gap: .875rem; }
-@media (min-width: 640px) { .hero-obra__notas { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
-.hero-obra__notas li { display: flex; gap: .75rem; color: var(--texto-corpo); font-size: .9375rem; line-height: 1.55; }
-.hero-obra__link { align-self: flex-start; color: var(--color-text-ink); font-weight: 600; font-size: .9375rem; }
-.hero-obra__link:hover { color: var(--texto-destaque); }
+.hero-obra__nota {
+    position: absolute;
+    left: -1.25rem;
+    width: max-content;
+    max-width: min(17rem, 72vw);
+    padding: .75rem 1rem;
+    border-radius: .75rem;
+    background: var(--color-text-ink);
+    color: #fff;
+    font-size: .9375rem;
+    line-height: 1.5;
+    box-shadow: 0 18px 40px -18px rgba(21, 18, 31, .55);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+    pointer-events: none;
+}
+/* Ponto perto da borda direita: a nota cresce para a esquerda */
+.hero-obra__ponto--esquerda .hero-obra__nota { left: auto; right: -1.25rem; }
+.hero-obra__ponto--abaixo .hero-obra__nota { top: 1.625rem; transform: translateY(-6px); }
+.hero-obra__ponto--acima .hero-obra__nota { bottom: 1.625rem; transform: translateY(6px); }
+/* No celular a imagem é baixa: a nota 1 abre para cima para não cobrir o ponto 2 */
+@media (max-width: 639px) { .hero-obra__ponto--abaixo .hero-obra__nota { top: auto; bottom: 1.625rem; transform: translateY(6px); } }
+.hero-obra__ponto.is-aberto .hero-obra__nota,
+.hero-obra__ponto:has(:focus-visible) .hero-obra__nota { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; pointer-events: auto; }
+@media (hover: hover) { .hero-obra__ponto:hover .hero-obra__nota { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; pointer-events: auto; } }
+@media (min-width: 1024px) { .hero-obra__nota { font-size: 1rem; max-width: 19rem; } }
+.hero-obra__ponto.is-calado .hero-obra__nota { opacity: 0; visibility: hidden; }
 
 @keyframes hero-sobe { from { opacity: 0; transform: translateY(16px); } }
 
