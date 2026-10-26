@@ -1306,7 +1306,7 @@ body.menu-aberto { overflow: hidden; }
 
 /* ----------------------------------
    Painel roxo da home
-   As seções escuras ficam num painel arredondado com uma margem do claro em volta: a troca de cor
+   As seções escuras ficam num painel da largura toda com os cantos arredondados: a troca de cor
    é a borda do painel, sem faixa de passagem. O fundo é um degradê só, do painel inteiro, que desce
    do roxo médio ao mais escuro (Processo) e sobe de novo na Equipe; um grão fino evita os degraus.
    ---------------------------------- */
@@ -1330,7 +1330,7 @@ body.menu-aberto { overflow: hidden; }
     pointer-events: none;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
 }
-:root { --painel-margem: clamp(.5rem, 1.6vw, 1.5rem); --painel-raio: clamp(1.5rem, 3vw, 2.75rem); }
+:root { --painel-margem: 0px; --painel-raio: clamp(1.75rem, 3.5vw, 3.5rem); }
 /* Dentro do painel as seções não têm fundo próprio: o degradê é do painel */
 .painel-roxo > .fundo-escuro { background: none; }
 /* O claro em volta do painel (cantos e margens) */
