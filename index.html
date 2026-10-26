@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="assets/css/tailwind.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="bg-gpurple-dark text-white font-sans antialiased overflow-x-hidden">
+<body class="bg-gpurple-dark texto-titulo font-sans antialiased overflow-x-hidden">
 
     <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-gpurple-accent focus:text-gpurple-ink focus:px-4 focus:py-2 focus:rounded-full">Pular para o conteúdo</a>
 
@@ -32,14 +32,14 @@
          Em telas largas todas as seções ficam visíveis na barra; nas menores, o botão "Menu" abre o mapa completo do site. -->
     <header class="site-header site-header--claro" data-header>
         <div class="site-header__inner">
-            <a href="#" aria-label="GPurple Studio, voltar ao início" class="flex items-center gap-0.5 font-bold text-xl md:text-2xl tracking-tighter text-white">
+            <a href="#" aria-label="GPurple Studio, voltar ao início" class="flex items-center gap-0.5 font-bold text-xl md:text-2xl tracking-tighter texto-titulo">
                 <span class="font-heading text-gpurple-primary text-3xl md:text-4xl font-bold leading-none">G</span>
                 <span class="lowercase site-header__logo-texto">purple<span class="text-gpurple-volt">.</span></span>
             </a>
 
             <nav aria-label="Atalhos" class="site-header__links">
-                <a href="#servicos" class="nav-link" data-secoes="problema servicos">Serviços</a>
                 <a href="#projetos" class="nav-link">Projetos</a>
+                <a href="#servicos" class="nav-link" data-secoes="problema servicos">Serviços</a>
                 <a href="#processo" class="nav-link">Processo</a>
                 <a href="#estudio" class="nav-link">Equipe</a>
                 <a href="#contato" class="nav-link">Contato</a>
@@ -61,8 +61,8 @@
         <div class="site-menu__inner">
             <nav aria-label="Seções do site">
                 <ul class="site-menu__list">
-                    <li><a href="#servicos" class="site-menu__link" data-secoes="problema servicos"><span class="site-menu__title">Serviços</span><span class="site-menu__desc">O que fazemos e o problema que cada serviço resolve</span></a></li>
                     <li><a href="#projetos" class="site-menu__link"><span class="site-menu__title">Projetos</span><span class="site-menu__desc">Os cases que já entregamos</span></a></li>
+                    <li><a href="#servicos" class="site-menu__link" data-secoes="problema servicos"><span class="site-menu__title">Serviços</span><span class="site-menu__desc">O que fazemos e o problema que cada serviço resolve</span></a></li>
                     <li><a href="#processo" class="site-menu__link"><span class="site-menu__title">Processo</span><span class="site-menu__desc">Como trabalhamos, em 4 etapas</span></a></li>
                     <li><a href="#estudio" class="site-menu__link"><span class="site-menu__title">Equipe</span><span class="site-menu__desc">Quem faz o seu projeto</span></a></li>
                     <li><a href="#contato" class="site-menu__link"><span class="site-menu__title">Contato</span><span class="site-menu__desc">Conte sobre o seu projeto por e-mail</span></a></li>
@@ -74,12 +74,12 @@
                 <a href="projetos/orquidario-cantareira.html" class="site-menu__case">
                     <span class="site-menu__label">Projeto em destaque</span>
                     <img src="assets/img/projetos/orquidario-mockup.png" alt="" loading="lazy" class="site-menu__img">
-                    <span class="text-white font-semibold">Orquidário Cantareira</span>
-                    <span class="text-gpurple-body">Identidade e loja criadas do zero. Ver o case →</span>
+                    <span class="texto-titulo font-semibold">Orquidário Cantareira</span>
+                    <span class="texto-corpo">Identidade e loja criadas do zero. Ver o case →</span>
                 </a>
                 <div class="flex flex-col gap-3">
                     <span class="site-menu__label">Contato</span>
-                    <a href="mailto:gmbarros@gpurpledesign.com.br" class="text-white underline decoration-gpurple-accent underline-offset-4 break-all">gmbarros@gpurpledesign.com.br</a>
+                    <a href="mailto:gmbarros@gpurpledesign.com.br" class="texto-titulo underline decoration-gpurple-accent underline-offset-4 break-all">gmbarros@gpurpledesign.com.br</a>
                     <a href="#contato" class="btn-primary self-start px-6 py-3.5 text-base mt-2">Pedir análise</a>
                 </div>
             </aside>
@@ -124,186 +124,14 @@
             </div>
 
             <!-- Indica que a página continua: seta discreta no centro, embaixo -->
-            <a href="#problema" class="hero__rolar" aria-label="Rolar para a próxima seção">
+            <a href="#projetos" class="hero__rolar" aria-label="Rolar para a próxima seção">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></svg>
             </a>
         </section>
 
-        <!-- 2. O problema: três cartões, um por motivo de desistência. Cada um tem a mini tela, o que acontece,
-             como o cliente reconhece no próprio site e o que fazemos. As partes dos cartões ficam alinhadas entre si
-             (subgrid). Fecha com o convite para a análise. -->
-        <section id="problema" class="fundo-escuro tom-1 relative w-full py-24 md:py-32">
-            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
-                <div class="flex flex-col gap-5 max-w-3xl">
-                    <p class="eyebrow">Por que as visitas não viram clientes</p>
-                    <h2 class="section-title">Talvez o seu problema não seja falta de visitas.</h2>
-                    <p class="section-sub">Muita gente entra no site, olha e vai embora sem chamar você. Quase sempre é por um destes três motivos, e todos têm solução.</p>
-                </div>
-
-                <ol class="sinais-grid">
-                    <li class="sinal-card">
-                        <div class="sinal-tela" aria-hidden="true">
-                            <div class="sinal-janela">
-                                <div class="sinal-chrome"><i></i><i></i><i></i></div>
-                                <div class="sinal-pagina">
-                                    <span class="sinal-banner">Bem-vindo à nossa loja</span><span class="sinal-linha" style="width:70%"></span><span class="sinal-linha" style="width:45%"></span>
-                                </div>
-                            </div>
-                            <span class="sinal-anuncio" style="top:1rem;left:1rem"><span class="sinal-anuncio__foto"></span><span><small>Anúncio</small>Tênis azul · R$ 299</span></span>
-                            <span class="sinal-etiqueta sinal-etiqueta--erro" style="bottom:1.375rem;right:1.125rem">Cadê o tênis?</span>
-                        </div>
-                        <div class="sinal-texto">
-                            <p class="sinal-momento">Assim que seu cliente chega</p>
-                            <div class="sinal-intro">
-                                <h3 class="font-heading font-semibold text-[1.375rem] text-white">Seu cliente não encontra o que veio buscar</h3>
-                                <p class="text-gpurple-body leading-relaxed">Seu cliente viu um anúncio, um post ou um resultado no Google e clicou. Se a página que abre não mostra logo aquilo, ele volta e procura outra empresa.</p>
-                            </div>
-                            <div class="sinal-bloco">
-                                <p class="sinal-rotulo">Sinais de que ele se perde</p>
-                                <ul class="sinal-sinais"><li>Você investe em anúncios, mas os contatos não aumentam.</li><li>Seu cliente clica no anúncio, cai na página inicial e precisa procurar sozinho o que viu.</li></ul>
-                            </div>
-                            <p class="sinal-solucao"><span class="sinal-rotulo">Como guiamos seu cliente</span>Páginas que mostram de cara o que seu cliente procurava e o próximo passo. <a href="#servicos" class="sinal-link">Ver Design e experiência <span aria-hidden="true">→</span></a></p>
-                        </div>
-                    </li>
-                    <li class="sinal-card">
-                        <div class="sinal-tela" aria-hidden="true">
-                            <div class="sinal-janela">
-                                <div class="sinal-chrome"><i></i><i></i><i></i></div>
-                                <div class="sinal-pagina sinal-pagina--carregando">
-                                    <span class="sinal-progresso"><span></span></span><span class="sinal-linha" style="width:50%;margin:0 auto"></span>
-                                </div>
-                            </div>
-                            <span class="sinal-etiqueta sinal-etiqueta--erro" style="bottom:1.375rem;right:1.125rem">Ainda carregando…</span>
-                        </div>
-                        <div class="sinal-texto">
-                            <p class="sinal-momento">Enquanto o site abre</p>
-                            <div class="sinal-intro">
-                                <h3 class="font-heading font-semibold text-[1.375rem] text-white">O site demora e seu cliente desiste</h3>
-                                <p class="text-gpurple-body leading-relaxed">Seu cliente não espera uma página carregar, ainda mais no celular. Um site lento passa a impressão de descuido antes de qualquer palavra ser lida.</p>
-                            </div>
-                            <div class="sinal-bloco">
-                                <p class="sinal-rotulo">Sinais de que ele cansa de esperar</p>
-                                <ul class="sinal-sinais"><li>Você abre o próprio site no celular e fica olhando para a tela branca.</li><li>As imagens aparecem aos pedaços ou o texto pula enquanto a página carrega.</li></ul>
-                            </div>
-                            <p class="sinal-solucao"><span class="sinal-rotulo">Como deixamos rápido</span>Um site leve, que abre no celular sem deixar seu cliente esperando. <a href="#servicos" class="sinal-link">Ver Desenvolvimento e performance <span aria-hidden="true">→</span></a></p>
-                        </div>
-                    </li>
-                    <li class="sinal-card">
-                        <div class="sinal-tela" aria-hidden="true">
-                            <div class="sinal-janela">
-                                <div class="sinal-chrome"><i></i><i></i><i></i></div>
-                                <div class="sinal-pagina">
-                                    <span class="sinal-linha" style="width:40%"></span><span class="sinal-campo"></span><span class="sinal-campo sinal-campo--erro"></span><span class="sinal-botao"></span>
-                                </div>
-                            </div>
-                            <svg class="sinal-cursor" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2l16 10-7 1.5L9.5 21z"/></svg>
-                            <span class="sinal-etiqueta sinal-etiqueta--erro" style="top:1.25rem;right:1.125rem">Campo inválido</span>
-                        </div>
-                        <div class="sinal-texto">
-                            <p class="sinal-momento">Na hora de pedir ou comprar</p>
-                            <div class="sinal-intro">
-                                <h3 class="font-heading font-semibold text-[1.375rem] text-white">Seu cliente trava no último passo</h3>
-                                <p class="text-gpurple-body leading-relaxed">Seu cliente já decidiu, mas não acha o botão ou o formulário pede dados demais. Ele desiste a um clique da compra, e você nem fica sabendo.</p>
-                            </div>
-                            <div class="sinal-bloco">
-                                <p class="sinal-rotulo">Sinais de que ele desiste no fim</p>
-                                <ul class="sinal-sinais"><li>Clientes comentam que tentaram falar com você pelo site e não conseguiram.</li><li>Você não sabe quantos clientes começam um pedido e param no meio.</li></ul>
-                            </div>
-                            <p class="sinal-solucao"><span class="sinal-rotulo">Como facilitamos o contato</span>Um caminho curto até o contato ou a compra, medindo onde eles param. <a href="#servicos" class="sinal-link">Ver Lançamento e evolução <span aria-hidden="true">→</span></a></p>
-                        </div>
-                    </li>
-                </ol>
-
-                <div class="sinais-fecho">
-                    <p><strong>Não sabe qual é o seu caso?</strong> Gravamos um vídeo curto navegando no seu site e mostramos onde seus clientes desistem.</p>
-                    <a href="#contato" class="btn-primary px-6 py-3.5 text-base shrink-0">Pedir análise</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Serviços: mosaico, cada serviço diz qual problema de "O problema" ele resolve -->
-        <section id="servicos" class="fundo-escuro tom-2 relative w-full py-24 md:py-32">
-            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
-                <div class="flex flex-col gap-5 max-w-3xl">
-                    <p class="rotulo">Nossa expertise</p>
-                    <h2 class="section-title">Quem desenha o seu site também programa.</h2>
-                    <p class="section-sub">Do primeiro rascunho ao site no ar, é a mesma dupla.</p>
-                </div>
-
-                <div class="mosaico">
-                    <article class="mosaico-bloco mosaico-bloco--largo">
-                        <div class="sinal-tela mosaico-tela" aria-hidden="true">
-                            <div class="sinal-janela">
-                                <div class="sinal-chrome"><i></i><i></i><i></i></div>
-                                <div class="mosaico-produto">
-                                    <span class="mosaico-produto__foto"></span>
-                                    <span class="mosaico-produto__info"><strong>Tênis azul</strong><span>R$ 299</span><span class="mosaico-produto__botao">Comprar</span></span>
-                                </div>
-                            </div>
-                            <span class="sinal-anuncio" style="top:1rem;left:1rem"><span class="sinal-anuncio__foto"></span><span><small>Anúncio</small>Tênis azul · R$ 299</span></span>
-                            <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:1.125rem;right:1.125rem">Achou na hora</span>
-                        </div>
-                        <div class="mosaico-texto">
-                            <p class="mosaico-resolve">Resolve: não encontra o que veio buscar</p>
-                            <h3 class="font-heading font-semibold text-2xl text-white">Design e experiência</h3>
-                            <p class="text-gpurple-body leading-relaxed">Telas com a cara da sua marca, em que o visitante entende em segundos o que você oferece.</p>
-                            <ul class="mosaico-etiquetas"><li>Visual da sua marca</li><li>Textos que explicam o que você vende</li></ul>
-                        </div>
-                    </article>
-
-                    <article class="mosaico-bloco mosaico-bloco--estreito">
-                        <div class="sinal-tela mosaico-tela" aria-hidden="true">
-                            <div class="sinal-janela">
-                                <div class="sinal-chrome"><i></i><i></i><i></i></div>
-                                <div class="sinal-pagina">
-                                    <span class="mosaico-carregado"></span><span class="sinal-banner sinal-banner--pronto">Tênis azul · R$ 299</span><span class="sinal-linha" style="width:70%"></span>
-                                </div>
-                            </div>
-                            <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:1rem;right:1rem">Abriu em 1 segundo</span>
-                        </div>
-                        <div class="mosaico-texto">
-                            <p class="mosaico-resolve">Resolve: o site demora e seu cliente desiste</p>
-                            <h3 class="font-heading font-semibold text-2xl text-white">Desenvolvimento e performance</h3>
-                            <p class="text-gpurple-body leading-relaxed">Sites rápidos e acessíveis, em código próprio, WordPress, Webflow ou Shopify.</p>
-                            <ul class="mosaico-etiquetas"><li>Abre rápido no celular</li><li>Aparece no Google</li></ul>
-                        </div>
-                    </article>
-
-                    <article class="mosaico-bloco mosaico-bloco--largo mosaico-bloco--invertido">
-                        <div class="sinal-tela mosaico-tela" aria-hidden="true">
-                            <div class="sinal-janela">
-                                <div class="sinal-chrome"><i></i><i></i><i></i></div>
-                                <div class="sinal-pagina mosaico-form">
-                                    <span class="mosaico-form__campo">Ana Souza</span><span class="mosaico-form__campo">ana@email.com</span><span class="mosaico-form__botao">Enviar pedido</span>
-                                </div>
-                            </div>
-                            <span class="sinal-anuncio" style="top:1rem;left:1rem"><span class="mosaico-aviso__icone">✓</span><span><small>Novo contato na sua planilha</small>Ana Souza · Tênis azul</span></span>
-                            <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:1.125rem;right:1.125rem">+12 contatos este mês</span>
-                        </div>
-                        <div class="mosaico-texto">
-                            <p class="mosaico-resolve">Resolve: trava no último passo</p>
-                            <h3 class="font-heading font-semibold text-2xl text-white">Lançamento e evolução</h3>
-                            <p class="text-gpurple-body leading-relaxed">Acompanhamos quantas visitas viram contato, mandamos cada contato direto para a sua planilha ou CRM e seguimos melhorando o que traz resultado.</p>
-                            <ul class="mosaico-etiquetas"><li>Contatos organizados</li><li>Melhorias todo mês</li></ul>
-                        </div>
-                    </article>
-
-                    <article class="mosaico-convite">
-                        <h3 class="font-heading font-bold text-[1.75rem] leading-tight">Sem intermediários.</h3>
-                        <p>Você fala direto com quem desenha e com quem programa.</p>
-                        <ul class="mosaico-dupla">
-                            <li><span class="mosaico-avatar" aria-hidden="true">GB</span><span><strong>Gabriel Barros</strong>UX, arquitetura e segurança</span></li>
-                            <li><span class="mosaico-avatar" aria-hidden="true">GZ</span><span><strong>Gabriel Zoppello</strong>UI e conversão</span></li>
-                        </ul>
-                        <a href="#contato" class="mosaico-botao">Falar com a gente <span aria-hidden="true">→</span></a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Projetos: carrossel com o projeto em destaque e os demais em miniaturas.
+        <!-- 2. Projetos: carrossel com o projeto em destaque e os demais em miniaturas.
              Para adicionar um case, duplique uma faixa de .projetos-grid (veja o README). -->
-        <section id="projetos" class="fundo-escuro tom-3 relative w-full py-24 md:py-32">
+        <section id="projetos" class="fundo-claro secao relative w-full">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-12">
                 <div class="flex flex-col gap-5 max-w-2xl">
                     <p class="rotulo">Projetos</p>
@@ -384,236 +212,412 @@
             </div>
         </section>
 
-        <!-- 5. Processo: trilha de cartões, cada etapa mostra o que o cliente recebe -->
-        <section id="processo" class="fundo-escuro tom-4 relative w-full py-24 md:py-32">
-            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-16">
-                <div class="flex flex-col gap-5 max-w-2xl">
-                    <h2 class="section-title">Você aprova cada etapa antes da próxima.</h2>
-                    <p class="section-sub">Você sabe o que acontece em cada etapa e o que recebe ao fim dela.</p>
+        <!-- Painel roxo: O problema, Serviços, Processo e Equipe ficam num painel arredondado sobre a página clara.
+             A passagem de cor é a borda do painel; por dentro os tons descem até Processo e sobem na Equipe. -->
+        <div class="painel-roxo">
+            <!-- 3. O problema: três cartões, um por motivo de desistência. Cada um tem a mini tela, o que acontece,
+                 como o cliente reconhece no próprio site e o que fazemos. As partes dos cartões ficam alinhadas entre si
+                 (subgrid). Fecha com o convite para a análise. -->
+            <section id="problema" class="fundo-escuro tom-1 secao relative w-full">
+                <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
+                    <div class="flex flex-col gap-5 max-w-3xl">
+                        <p class="rotulo">O problema</p>
+                        <h2 class="section-title">Talvez o seu problema não seja falta de visitas.</h2>
+                        <p class="section-sub">Muita gente entra no site, olha e vai embora sem chamar você. Quase sempre é por um destes três motivos, e todos têm solução.</p>
+                    </div>
+
+                    <ol class="sinais-grid">
+                        <li class="sinal-card">
+                            <div class="sinal-tela" aria-hidden="true">
+                                <div class="sinal-janela">
+                                    <div class="sinal-chrome"><i></i><i></i><i></i></div>
+                                    <div class="sinal-pagina">
+                                        <span class="sinal-banner">Bem-vindo à nossa loja</span><span class="sinal-linha" style="width:70%"></span><span class="sinal-linha" style="width:45%"></span>
+                                    </div>
+                                </div>
+                                <span class="sinal-anuncio" style="top:1rem;left:1rem"><span class="sinal-anuncio__foto"></span><span><small>Anúncio</small>Tênis azul · R$ 299</span></span>
+                                <span class="sinal-etiqueta sinal-etiqueta--erro" style="bottom:1.375rem;right:1.125rem">Cadê o tênis?</span>
+                            </div>
+                            <div class="sinal-texto">
+                                <p class="sinal-momento">Assim que seu cliente chega</p>
+                                <div class="sinal-intro">
+                                    <h3 class="font-heading font-semibold text-[1.375rem] texto-titulo">Seu cliente não encontra o que veio buscar</h3>
+                                    <p class="texto-corpo leading-relaxed">Seu cliente viu um anúncio, um post ou um resultado no Google e clicou. Se a página que abre não mostra logo aquilo, ele volta e procura outra empresa.</p>
+                                </div>
+                                <div class="sinal-bloco">
+                                    <p class="sinal-rotulo">Sinais de que ele se perde</p>
+                                    <ul class="sinal-sinais"><li>Você investe em anúncios, mas os contatos não aumentam.</li><li>Seu cliente clica no anúncio, cai na página inicial e precisa procurar sozinho o que viu.</li></ul>
+                                </div>
+                                <p class="sinal-solucao"><span class="sinal-rotulo">Como guiamos seu cliente</span>Páginas que mostram de cara o que seu cliente procurava e o próximo passo. <a href="#servicos" class="sinal-link">Ver Design e experiência <span aria-hidden="true">→</span></a></p>
+                            </div>
+                        </li>
+                        <li class="sinal-card">
+                            <div class="sinal-tela" aria-hidden="true">
+                                <div class="sinal-janela">
+                                    <div class="sinal-chrome"><i></i><i></i><i></i></div>
+                                    <div class="sinal-pagina sinal-pagina--carregando">
+                                        <span class="sinal-progresso"><span></span></span><span class="sinal-linha" style="width:50%;margin:0 auto"></span>
+                                    </div>
+                                </div>
+                                <span class="sinal-etiqueta sinal-etiqueta--erro" style="bottom:1.375rem;right:1.125rem">Ainda carregando…</span>
+                            </div>
+                            <div class="sinal-texto">
+                                <p class="sinal-momento">Enquanto o site abre</p>
+                                <div class="sinal-intro">
+                                    <h3 class="font-heading font-semibold text-[1.375rem] texto-titulo">O site demora e seu cliente desiste</h3>
+                                    <p class="texto-corpo leading-relaxed">Seu cliente não espera uma página carregar, ainda mais no celular. Um site lento passa a impressão de descuido antes de qualquer palavra ser lida.</p>
+                                </div>
+                                <div class="sinal-bloco">
+                                    <p class="sinal-rotulo">Sinais de que ele cansa de esperar</p>
+                                    <ul class="sinal-sinais"><li>Você abre o próprio site no celular e fica olhando para a tela branca.</li><li>As imagens aparecem aos pedaços ou o texto pula enquanto a página carrega.</li></ul>
+                                </div>
+                                <p class="sinal-solucao"><span class="sinal-rotulo">Como deixamos rápido</span>Um site leve, que abre no celular sem deixar seu cliente esperando. <a href="#servicos" class="sinal-link">Ver Desenvolvimento e performance <span aria-hidden="true">→</span></a></p>
+                            </div>
+                        </li>
+                        <li class="sinal-card">
+                            <div class="sinal-tela" aria-hidden="true">
+                                <div class="sinal-janela">
+                                    <div class="sinal-chrome"><i></i><i></i><i></i></div>
+                                    <div class="sinal-pagina">
+                                        <span class="sinal-linha" style="width:40%"></span><span class="sinal-campo"></span><span class="sinal-campo sinal-campo--erro"></span><span class="sinal-botao"></span>
+                                    </div>
+                                </div>
+                                <svg class="sinal-cursor" viewBox="0 0 24 24" fill="currentColor"><path d="M4 2l16 10-7 1.5L9.5 21z"/></svg>
+                                <span class="sinal-etiqueta sinal-etiqueta--erro" style="top:1.25rem;right:1.125rem">Campo inválido</span>
+                            </div>
+                            <div class="sinal-texto">
+                                <p class="sinal-momento">Na hora de pedir ou comprar</p>
+                                <div class="sinal-intro">
+                                    <h3 class="font-heading font-semibold text-[1.375rem] texto-titulo">Seu cliente trava no último passo</h3>
+                                    <p class="texto-corpo leading-relaxed">Seu cliente já decidiu, mas não acha o botão ou o formulário pede dados demais. Ele desiste a um clique da compra, e você nem fica sabendo.</p>
+                                </div>
+                                <div class="sinal-bloco">
+                                    <p class="sinal-rotulo">Sinais de que ele desiste no fim</p>
+                                    <ul class="sinal-sinais"><li>Clientes comentam que tentaram falar com você pelo site e não conseguiram.</li><li>Você não sabe quantos clientes começam um pedido e param no meio.</li></ul>
+                                </div>
+                                <p class="sinal-solucao"><span class="sinal-rotulo">Como facilitamos o contato</span>Um caminho curto até o contato ou a compra, medindo onde eles param. <a href="#servicos" class="sinal-link">Ver Lançamento e evolução <span aria-hidden="true">→</span></a></p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <div class="sinais-fecho">
+                        <p><strong>Não sabe qual é o seu caso?</strong> Gravamos um vídeo curto navegando no seu site e mostramos onde seus clientes desistem.</p>
+                        <a href="#contato" class="btn-primary px-6 py-3.5 text-base shrink-0">Pedir análise</a>
+                    </div>
                 </div>
+            </section>
 
-                <ol class="trilha">
-                    <li class="trilha-etapa">
-                        <div class="sinal-tela trilha-tela" aria-hidden="true">
-                            <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina trilha-video"><span class="sinal-linha" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:80%"></span><span class="sinal-linha" style="width:50%"></span><span class="trilha-play"></span></div></div>
-                            <span class="sinal-etiqueta" style="bottom:0.75rem;right:0.75rem">Vídeo da análise</span>
-                        </div>
-                        <div class="trilha-texto">
-                            <p class="trilha-topo"><span class="trilha-num">01</span></p>
-                            <div class="trilha-intro">
-                                <h3 class="font-heading font-semibold text-xl text-white">Análise do seu site</h3>
-                                <p class="text-gpurple-body leading-relaxed">Gravamos um vídeo curto, em cima do seu site, com o que mais trava os resultados hoje e como resolveríamos.</p>
-                            </div>
-                            <p class="trilha-recebe"><span>Você recebe</span>O vídeo com a análise</p>
-                        </div>
-                    </li>
-                    <li class="trilha-etapa">
-                        <div class="sinal-tela trilha-tela" aria-hidden="true">
-                            <div class="trilha-doc"><span class="trilha-doc-titulo"></span><span class="trilha-doc-linha">Escopo<i></i></span><span class="trilha-doc-linha">Prazo<i></i></span><span class="trilha-doc-linha">Investimento<i></i></span></div>
-                            <span class="sinal-etiqueta" style="bottom:0.75rem;right:0.75rem">Proposta fechada</span>
-                        </div>
-                        <div class="trilha-texto">
-                            <p class="trilha-topo"><span class="trilha-num">02</span><span class="trilha-aprova">Você aprova</span></p>
-                            <div class="trilha-intro">
-                                <h3 class="font-heading font-semibold text-xl text-white">Estratégia e proposta</h3>
-                                <p class="text-gpurple-body leading-relaxed">Definimos a estrutura das páginas, a jornada do visitante e a mensagem principal.</p>
-                            </div>
-                            <p class="trilha-recebe"><span>Fica combinado</span>Escopo, prazo e investimento fechados</p>
-                        </div>
-                    </li>
-                    <li class="trilha-etapa">
-                        <div class="sinal-tela trilha-tela" aria-hidden="true">
-                            <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina"><span class="mosaico-titulo"></span><span class="sinal-linha" style="width:85%"></span><span class="mosaico-cta"></span><span class="sinal-linha" style="width:60%"></span></div></div>
-                            <span class="trilha-pino" style="left:62%;top:4.6rem">1</span><span class="trilha-pino" style="left:40%;top:5.7rem">2</span>
-                            <span class="trilha-balao">"Pode ser maior?"</span>
-                        </div>
-                        <div class="trilha-texto">
-                            <p class="trilha-topo"><span class="trilha-num">03</span><span class="trilha-aprova">Você aprova</span></p>
-                            <div class="trilha-intro">
-                                <h3 class="font-heading font-semibold text-xl text-white">Design</h3>
-                                <p class="text-gpurple-body leading-relaxed">O projeto ganha forma visual. Você comenta e aprova as telas antes de qualquer linha de código.</p>
-                            </div>
-                            <p class="trilha-recebe"><span>Você avalia</span>As telas para comentar</p>
-                        </div>
-                    </li>
-                    <li class="trilha-etapa">
-                        <div class="sinal-tela trilha-tela" aria-hidden="true">
-                            <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina"><span class="mosaico-titulo" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:70%"></span><span class="mosaico-cta"></span></div></div>
-                            <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:0.75rem;right:0.75rem">No ar</span>
-                        </div>
-                        <div class="trilha-texto">
-                            <p class="trilha-topo"><span class="trilha-num">04</span></p>
-                            <div class="trilha-intro">
-                                <h3 class="font-heading font-semibold text-xl text-white">Desenvolvimento e lançamento</h3>
-                                <p class="text-gpurple-body leading-relaxed">Construímos, testamos no celular e no computador e colocamos no ar.</p>
-                            </div>
-                            <p class="trilha-recebe"><span>Resultado final</span>O site no ar e, se quiser, o plano mensal de melhorias</p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </section>
+            <!-- 4. Serviços: mosaico, cada serviço diz qual problema de "O problema" ele resolve -->
+            <section id="servicos" class="fundo-escuro tom-2 secao relative w-full">
+                <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
+                    <div class="flex flex-col gap-5 max-w-3xl">
+                        <p class="rotulo">Serviços</p>
+                        <h2 class="section-title">Quem desenha o seu site também programa.</h2>
+                        <p class="section-sub">Do primeiro rascunho ao site no ar, é a mesma dupla.</p>
+                    </div>
 
-        <!-- 6. Equipe: manifesto à esquerda, as duas pessoas em linhas à direita -->
-        <section id="estudio" class="fundo-escuro tom-5 relative w-full py-24 md:py-32">
-            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-[4.5rem] items-center">
-                <div class="flex flex-col gap-5">
-                    <h2 class="section-title estudio-manifesto">Você fala direto com <em>quem faz.</em></h2>
-                    <p class="section-sub">Somos um estúdio de duas pessoas. Antes de desenhar, entendemos o que os seus clientes procuram, e cada projeto passa pelas nossas mãos do começo ao fim.</p>
+                    <div class="mosaico">
+                        <article class="mosaico-bloco mosaico-bloco--largo">
+                            <div class="sinal-tela mosaico-tela" aria-hidden="true">
+                                <div class="sinal-janela">
+                                    <div class="sinal-chrome"><i></i><i></i><i></i></div>
+                                    <div class="mosaico-produto">
+                                        <span class="mosaico-produto__foto"></span>
+                                        <span class="mosaico-produto__info"><strong>Tênis azul</strong><span>R$ 299</span><span class="mosaico-produto__botao">Comprar</span></span>
+                                    </div>
+                                </div>
+                                <span class="sinal-anuncio" style="top:1rem;left:1rem"><span class="sinal-anuncio__foto"></span><span><small>Anúncio</small>Tênis azul · R$ 299</span></span>
+                                <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:1.125rem;right:1.125rem">Achou na hora</span>
+                            </div>
+                            <div class="mosaico-texto">
+                                <p class="mosaico-resolve">Resolve: não encontra o que veio buscar</p>
+                                <h3 class="font-heading font-semibold text-2xl texto-titulo">Design e experiência</h3>
+                                <p class="texto-corpo leading-relaxed">Telas com a cara da sua marca, em que o visitante entende em segundos o que você oferece.</p>
+                                <ul class="mosaico-etiquetas"><li>Visual da sua marca</li><li>Textos que explicam o que você vende</li></ul>
+                            </div>
+                        </article>
+
+                        <article class="mosaico-bloco mosaico-bloco--estreito">
+                            <div class="sinal-tela mosaico-tela" aria-hidden="true">
+                                <div class="sinal-janela">
+                                    <div class="sinal-chrome"><i></i><i></i><i></i></div>
+                                    <div class="sinal-pagina">
+                                        <span class="mosaico-carregado"></span><span class="sinal-banner sinal-banner--pronto">Tênis azul · R$ 299</span><span class="sinal-linha" style="width:70%"></span>
+                                    </div>
+                                </div>
+                                <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:1rem;right:1rem">Abriu em 1 segundo</span>
+                            </div>
+                            <div class="mosaico-texto">
+                                <p class="mosaico-resolve">Resolve: o site demora e seu cliente desiste</p>
+                                <h3 class="font-heading font-semibold text-2xl texto-titulo">Desenvolvimento e performance</h3>
+                                <p class="texto-corpo leading-relaxed">Sites rápidos e acessíveis, em código próprio, WordPress, Webflow ou Shopify.</p>
+                                <ul class="mosaico-etiquetas"><li>Abre rápido no celular</li><li>Aparece no Google</li></ul>
+                            </div>
+                        </article>
+
+                        <article class="mosaico-bloco mosaico-bloco--largo mosaico-bloco--invertido">
+                            <div class="sinal-tela mosaico-tela" aria-hidden="true">
+                                <div class="sinal-janela">
+                                    <div class="sinal-chrome"><i></i><i></i><i></i></div>
+                                    <div class="sinal-pagina mosaico-form">
+                                        <span class="mosaico-form__campo">Ana Souza</span><span class="mosaico-form__campo">ana@email.com</span><span class="mosaico-form__botao">Enviar pedido</span>
+                                    </div>
+                                </div>
+                                <span class="sinal-anuncio" style="top:1rem;left:1rem"><span class="mosaico-aviso__icone">✓</span><span><small>Novo contato na sua planilha</small>Ana Souza · Tênis azul</span></span>
+                                <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:1.125rem;right:1.125rem">+12 contatos este mês</span>
+                            </div>
+                            <div class="mosaico-texto">
+                                <p class="mosaico-resolve">Resolve: trava no último passo</p>
+                                <h3 class="font-heading font-semibold text-2xl texto-titulo">Lançamento e evolução</h3>
+                                <p class="texto-corpo leading-relaxed">Acompanhamos quantas visitas viram contato, mandamos cada contato direto para a sua planilha ou CRM e seguimos melhorando o que traz resultado.</p>
+                                <ul class="mosaico-etiquetas"><li>Contatos organizados</li><li>Melhorias todo mês</li></ul>
+                            </div>
+                        </article>
+
+                        <article class="mosaico-convite">
+                            <h3 class="font-heading font-bold text-[1.75rem] leading-tight">Sem intermediários.</h3>
+                            <p>Você fala direto com quem desenha e com quem programa.</p>
+                            <ul class="mosaico-dupla">
+                                <li><span class="mosaico-avatar" aria-hidden="true">GB</span><span><strong>Gabriel Barros</strong>UX, arquitetura e segurança</span></li>
+                                <li><span class="mosaico-avatar" aria-hidden="true">GZ</span><span><strong>Gabriel Zoppello</strong>UI e conversão</span></li>
+                            </ul>
+                            <a href="#contato" class="mosaico-botao">Falar com a gente <span aria-hidden="true">→</span></a>
+                        </article>
+                    </div>
                 </div>
+            </section>
 
-                <ul class="estudio-pessoas">
-                    <li class="estudio-pessoa">
-                        <img src="assets/img/equipe/gabriel-barros.jpg" alt="Foto de Gabriel Barros" width="400" height="400" class="estudio-foto" loading="lazy">
-                        <div class="flex flex-col gap-2">
-                            <h3 class="font-heading font-semibold text-xl text-white">Gabriel Barros</h3>
-                            <p class="text-gpurple-soft text-sm font-semibold">UX, arquitetura e segurança</p>
-                            <p class="text-gpurple-body leading-relaxed">Cuida de como o site funciona para quem usa e por dentro: a experiência de uso, a estrutura e a segurança.</p>
-                            <a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-white text-sm font-semibold hover:text-gpurple-accent transition-colors">
-                                <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-                                LinkedIn<span class="sr-only"> de Gabriel Barros (abre em nova aba)</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="estudio-pessoa">
-                        <img src="assets/img/equipe/gabriel-zoppello.jpg" alt="Foto de Gabriel Zoppello" width="400" height="400" class="estudio-foto" loading="lazy">
-                        <div class="flex flex-col gap-2">
-                            <h3 class="font-heading font-semibold text-xl text-white">Gabriel Zoppello</h3>
-                            <p class="text-gpurple-soft text-sm font-semibold">UI e conversão</p>
-                            <p class="text-gpurple-body leading-relaxed">Cuida do que o visitante vê e de para onde ele vai: a interface de cada tela e os detalhes que fazem a visita virar contato.</p>
-                            <a href="https://www.linkedin.com/in/gabrielzoppello/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-white text-sm font-semibold hover:text-gpurple-accent transition-colors">
-                                <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-                                LinkedIn<span class="sr-only"> de Gabriel Zoppello (abre em nova aba)</span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
+            <!-- 5. Processo: trilha de cartões, cada etapa mostra o que o cliente recebe -->
+            <section id="processo" class="fundo-escuro tom-3 secao relative w-full">
+                <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-16">
+                    <div class="flex flex-col gap-5 max-w-2xl">
+                        <p class="rotulo">Processo</p>
+                        <h2 class="section-title">Você aprova cada etapa antes da próxima.</h2>
+                        <p class="section-sub">Você sabe o que acontece em cada etapa e o que recebe ao fim dela.</p>
+                    </div>
+
+                    <ol class="trilha">
+                        <li class="trilha-etapa">
+                            <div class="sinal-tela trilha-tela" aria-hidden="true">
+                                <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina trilha-video"><span class="sinal-linha" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:80%"></span><span class="sinal-linha" style="width:50%"></span><span class="trilha-play"></span></div></div>
+                                <span class="sinal-etiqueta" style="bottom:0.75rem;right:0.75rem">Vídeo da análise</span>
+                            </div>
+                            <div class="trilha-texto">
+                                <p class="trilha-topo"><span class="trilha-num">01</span></p>
+                                <div class="trilha-intro">
+                                    <h3 class="font-heading font-semibold text-xl texto-titulo">Análise do seu site</h3>
+                                    <p class="texto-corpo leading-relaxed">Gravamos um vídeo curto, em cima do seu site, com o que mais trava os resultados hoje e como resolveríamos.</p>
+                                </div>
+                                <p class="trilha-recebe"><span>Você recebe</span>O vídeo com a análise</p>
+                            </div>
+                        </li>
+                        <li class="trilha-etapa">
+                            <div class="sinal-tela trilha-tela" aria-hidden="true">
+                                <div class="trilha-doc"><span class="trilha-doc-titulo"></span><span class="trilha-doc-linha">Escopo<i></i></span><span class="trilha-doc-linha">Prazo<i></i></span><span class="trilha-doc-linha">Investimento<i></i></span></div>
+                                <span class="sinal-etiqueta" style="bottom:0.75rem;right:0.75rem">Proposta fechada</span>
+                            </div>
+                            <div class="trilha-texto">
+                                <p class="trilha-topo"><span class="trilha-num">02</span><span class="trilha-aprova">Você aprova</span></p>
+                                <div class="trilha-intro">
+                                    <h3 class="font-heading font-semibold text-xl texto-titulo">Estratégia e proposta</h3>
+                                    <p class="texto-corpo leading-relaxed">Definimos a estrutura das páginas, a jornada do visitante e a mensagem principal.</p>
+                                </div>
+                                <p class="trilha-recebe"><span>Fica combinado</span>Escopo, prazo e investimento fechados</p>
+                            </div>
+                        </li>
+                        <li class="trilha-etapa">
+                            <div class="sinal-tela trilha-tela" aria-hidden="true">
+                                <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina"><span class="mosaico-titulo"></span><span class="sinal-linha" style="width:85%"></span><span class="mosaico-cta"></span><span class="sinal-linha" style="width:60%"></span></div></div>
+                                <span class="trilha-pino" style="left:62%;top:4.6rem">1</span><span class="trilha-pino" style="left:40%;top:5.7rem">2</span>
+                                <span class="trilha-balao">"Pode ser maior?"</span>
+                            </div>
+                            <div class="trilha-texto">
+                                <p class="trilha-topo"><span class="trilha-num">03</span><span class="trilha-aprova">Você aprova</span></p>
+                                <div class="trilha-intro">
+                                    <h3 class="font-heading font-semibold text-xl texto-titulo">Design</h3>
+                                    <p class="texto-corpo leading-relaxed">O projeto ganha forma visual. Você comenta e aprova as telas antes de qualquer linha de código.</p>
+                                </div>
+                                <p class="trilha-recebe"><span>Você avalia</span>As telas para comentar</p>
+                            </div>
+                        </li>
+                        <li class="trilha-etapa">
+                            <div class="sinal-tela trilha-tela" aria-hidden="true">
+                                <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina"><span class="mosaico-titulo" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:70%"></span><span class="mosaico-cta"></span></div></div>
+                                <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:0.75rem;right:0.75rem">No ar</span>
+                            </div>
+                            <div class="trilha-texto">
+                                <p class="trilha-topo"><span class="trilha-num">04</span></p>
+                                <div class="trilha-intro">
+                                    <h3 class="font-heading font-semibold text-xl texto-titulo">Desenvolvimento e lançamento</h3>
+                                    <p class="texto-corpo leading-relaxed">Construímos, testamos no celular e no computador e colocamos no ar.</p>
+                                </div>
+                                <p class="trilha-recebe"><span>Resultado final</span>O site no ar e, se quiser, o plano mensal de melhorias</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- 6. Equipe: manifesto à esquerda, as duas pessoas em linhas à direita -->
+            <section id="estudio" class="fundo-escuro tom-4 secao relative w-full">
+                <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-[4.5rem] items-center">
+                    <div class="flex flex-col gap-5">
+                        <p class="rotulo">Equipe</p>
+                        <h2 class="section-title estudio-manifesto">Você fala direto com <em>quem faz.</em></h2>
+                        <p class="section-sub">Somos um estúdio de duas pessoas. Antes de desenhar, entendemos o que os seus clientes procuram, e cada projeto passa pelas nossas mãos do começo ao fim.</p>
+                    </div>
+
+                    <ul class="estudio-pessoas">
+                        <li class="estudio-pessoa">
+                            <img src="assets/img/equipe/gabriel-barros.jpg" alt="Foto de Gabriel Barros" width="400" height="400" class="estudio-foto" loading="lazy">
+                            <div class="flex flex-col gap-2">
+                                <h3 class="font-heading font-semibold text-xl texto-titulo">Gabriel Barros</h3>
+                                <p class="texto-apoio text-sm font-semibold">UX, arquitetura e segurança</p>
+                                <p class="texto-corpo leading-relaxed">Cuida de como o site funciona para quem usa e por dentro: a experiência de uso, a estrutura e a segurança.</p>
+                                <a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 texto-titulo text-sm font-semibold link-destaque transition-colors">
+                                    <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                                    LinkedIn<span class="sr-only"> de Gabriel Barros (abre em nova aba)</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="estudio-pessoa">
+                            <img src="assets/img/equipe/gabriel-zoppello.jpg" alt="Foto de Gabriel Zoppello" width="400" height="400" class="estudio-foto" loading="lazy">
+                            <div class="flex flex-col gap-2">
+                                <h3 class="font-heading font-semibold text-xl texto-titulo">Gabriel Zoppello</h3>
+                                <p class="texto-apoio text-sm font-semibold">UI e conversão</p>
+                                <p class="texto-corpo leading-relaxed">Cuida do que o visitante vê e de para onde ele vai: a interface de cada tela e os detalhes que fazem a visita virar contato.</p>
+                                <a href="https://www.linkedin.com/in/gabrielzoppello/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 texto-titulo text-sm font-semibold link-destaque transition-colors">
+                                    <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                                    LinkedIn<span class="sr-only"> de Gabriel Zoppello (abre em nova aba)</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
 
         <!-- 7. Contato -->
-        <section id="contato" class="contato fundo-claro relative w-full py-24 md:py-32 bg-gpurple-light text-gpurple-ink">
+        <section id="contato" class="contato fundo-claro secao relative w-full">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 relative z-10">
                 <div class="contato-grid">
                     <div class="flex flex-col gap-6">
-                        <p class="rotulo rotulo--claro">Contato</p>
-                        <h2 class="font-heading font-bold text-4xl md:text-6xl tracking-[-0.025em] leading-[1.05] text-gpurple-ink">
-                            Vamos conversar sobre <span class="text-[#5b30d6]">o seu projeto?</span>
+                        <p class="rotulo">Contato</p>
+                        <h2 class="section-title">
+                            Vamos conversar sobre <span class="texto-destaque">o seu projeto?</span>
                         </h2>
                         <ol class="contato-passos">
                             <li><span class="contato-num" aria-hidden="true">1</span><div><strong>Você conta</strong><span>O endereço do site e o que mais incomoda você nele hoje.</span></div></li>
                             <li><span class="contato-num" aria-hidden="true">2</span><div><strong>Analisamos</strong><span>Você recebe um vídeo curto com os pontos que mais pesam.</span></div></li>
                             <li><span class="contato-num" aria-hidden="true">3</span><div><strong>Você decide</strong><span>Se fizer sentido, marcamos uma conversa e montamos a proposta.</span></div></li>
                         </ol>
-                        <p class="text-[#4a4560] text-sm">A primeira conversa e a análise do seu site atual não têm custo. Ainda não tem site? Conte sobre o seu negócio e começamos pela estratégia. Estamos no Rio de Janeiro e atendemos online todo o Brasil e o exterior.</p>
+                        <p class="texto-corpo text-sm">A primeira conversa e a análise do seu site atual não têm custo. Ainda não tem site? Conte sobre o seu negócio e começamos pela estratégia. Estamos no Rio de Janeiro e atendemos online todo o Brasil e o exterior.</p>
                     </div>
 
-                    <!-- Formulário: envia pelo Formspree sem sair da página. Se o action voltar a ser PREENCHER,
-                         o envio abre o e-mail da pessoa com os mesmos campos preenchidos. -->
-                    <div class="contato-form-caixa">
-                        <form class="contato-form" action="https://formspree.io/f/xwlllbak" method="POST" data-contato-form>
-                            <input type="hidden" name="_subject" value="Novo projeto pelo site">
-                            <p class="contato-form__isca" aria-hidden="true"><label>Não preencha<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
-                            <div class="contato-form__campo">
-                                <label for="contato-nome">Seu nome</label>
-                                <input id="contato-nome" name="nome" type="text" autocomplete="name" required>
-                            </div>
-                            <div class="contato-form__campo">
-                                <label for="contato-email">Seu e-mail</label>
-                                <input id="contato-email" name="email" type="email" autocomplete="email" required>
-                            </div>
-                            <div class="contato-form__campo">
-                                <label for="contato-site">Site <span>(se tiver)</span></label>
-                                <input id="contato-site" name="site" type="text" inputmode="url" autocomplete="url" placeholder="seusite.com.br">
-                            </div>
-                            <div class="contato-form__campo">
-                                <label for="contato-mensagem">O que você gostaria de melhorar ou criar?</label>
-                                <textarea id="contato-mensagem" name="mensagem" rows="4" required></textarea>
-                            </div>
-                            <button type="submit" class="contato-form__enviar">Enviar mensagem</button>
-                            <p class="contato-form__status" role="status" aria-live="polite" data-contato-status></p>
-                        </form>
-                        <p class="contato-form__alternativa">Prefere e-mail? Escreva para <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Novo%20projeto">gmbarros@gpurpledesign.com.br</a></p>
-                    </div>
+                    <!-- Contato em forma de e-mail: a mensagem aparece como um e-mail em branco, e as lacunas são campos de verdade.
+                         Envia pelo Formspree sem sair da página; se o action virar PREENCHER, abre o e-mail da pessoa preenchido. -->
+                    <form class="contato-email" action="https://formspree.io/f/xwlllbak" method="POST" aria-label="Mensagem para a GPurple" data-contato-form>
+                        <input type="hidden" name="_subject" value="Novo projeto pelo site">
+                        <p class="contato-email__isca" aria-hidden="true"><label>Não preencha<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+                        <div class="contato-email__chrome" aria-hidden="true"><i></i><i></i><i></i><span>Nova mensagem</span></div>
+                        <div class="contato-email__linha"><span>Para</span><strong>gmbarros@gpurpledesign.com.br</strong></div>
+                        <div class="contato-email__linha"><span>Assunto</span><strong>Novo projeto</strong></div>
+                        <div class="contato-email__corpo">
+                            <p>Olá, GPurple!</p>
+                            <p class="contato-email__campo"><label for="contato-nome">Meu nome é</label><input id="contato-nome" name="nome" type="text" autocomplete="name" required></p>
+                            <p class="contato-email__campo"><label for="contato-email">Meu e-mail:</label><input id="contato-email" name="email" type="email" autocomplete="email" required></p>
+                            <p class="contato-email__campo"><label for="contato-site">Site (se tiver):</label><input id="contato-site" name="site" type="text" inputmode="url" autocomplete="url"></p>
+                            <p class="contato-email__campo contato-email__campo--texto"><label for="contato-mensagem">O que eu gostaria de melhorar:</label><textarea id="contato-mensagem" name="mensagem" rows="3" required></textarea></p>
+                        </div>
+                        <div class="contato-email__acoes">
+                            <button type="submit" class="btn-primary inline-flex items-center gap-2.5 px-6 py-3.5 text-base">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                                Enviar mensagem
+                            </button>
+                            <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Novo%20projeto&amp;body=Ol%C3%A1%2C%20GPurple!%0A%0AMeu%20nome%20%C3%A9%20%0ASite%20(se%20tiver)%3A%20%0AO%20que%20eu%20gostaria%20de%20melhorar%3A%20%0A">ou escreva do seu e-mail</a>
+                        </div>
+                        <p class="contato-email__status" role="status" aria-live="polite" data-contato-status></p>
+                    </form>
                 </div>
             </div>
         </section>
 
         <!-- 8. Perguntas frequentes -->
-        <section id="faq" class="fundo-claro relative w-full py-24 md:py-32 bg-gpurple-light">
+        <section id="faq" class="fundo-claro secao relative w-full">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20">
                 <div class="flex flex-col gap-5">
                     <p class="rotulo">Dúvidas frequentes</p>
                     <h2 class="section-title">Antes de conversar.</h2>
                     <p class="section-sub">O que costumam perguntar antes do primeiro contato.</p>
                     <div class="faq-pergunte">
-                        <p class="font-heading font-semibold text-white">Não achou sua pergunta?</p>
-                        <p class="text-gpurple-body">Mande por e-mail e respondemos direto.</p>
-                        <a href="mailto:gmbarros@gpurpledesign.com.br?subject=D%C3%BAvida%20sobre%20um%20projeto" class="font-semibold text-gpurple-accent hover:text-gpurple-accent-hover break-all transition-colors">gmbarros@gpurpledesign.com.br</a>
+                        <p class="font-heading font-semibold texto-titulo">Não achou sua pergunta?</p>
+                        <p class="texto-corpo">Mande por e-mail e respondemos direto.</p>
+                        <a href="mailto:gmbarros@gpurpledesign.com.br?subject=D%C3%BAvida%20sobre%20um%20projeto" class="font-semibold link-destaque break-all transition-colors">gmbarros@gpurpledesign.com.br</a>
                     </div>
                 </div>
 
                 <div class="flex flex-col divide-y divide-white/10 border-y border-white/10">
                     <details class="group py-6" open>
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl texto-titulo">
                             Como funciona a primeira análise?
                             <span aria-hidden="true" class="faq-icon">+</span>
                         </summary>
-                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Gravamos um vídeo curto em cima do seu site, mostrando o que mais impede uma visita de virar contato e como resolveríamos cada um. A análise não tem custo, e você pode usar essas ideias com a gente ou com quem preferir.</p>
+                        <p class="mt-4 texto-corpo text-base leading-relaxed max-w-2xl">Gravamos um vídeo curto em cima do seu site, mostrando o que mais impede uma visita de virar contato e como resolveríamos cada um. A análise não tem custo, e você pode usar essas ideias com a gente ou com quem preferir.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl texto-titulo">
                             Quanto custa um projeto?
                             <span aria-hidden="true" class="faq-icon">+</span>
                         </summary>
-                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Cada projeto é montado para o que o seu negócio precisa, por isso não temos tabela de preços. Primeiro definimos o escopo com você; com ele, apresentamos uma proposta com prazo e investimento fechados, sem cobrança por hora.</p>
+                        <p class="mt-4 texto-corpo text-base leading-relaxed max-w-2xl">Cada projeto é montado para o que o seu negócio precisa, por isso não temos tabela de preços. Primeiro definimos o escopo com você; com ele, apresentamos uma proposta com prazo e investimento fechados, sem cobrança por hora.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl texto-titulo">
                             Quanto tempo leva?
                             <span aria-hidden="true" class="faq-icon">+</span>
                         </summary>
-                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Também depende do escopo. O prazo vem na proposta, com datas para cada etapa, e você acompanha o andamento e aprova as telas antes de começarmos o desenvolvimento.</p>
+                        <p class="mt-4 texto-corpo text-base leading-relaxed max-w-2xl">Também depende do escopo. O prazo vem na proposta, com datas para cada etapa, e você acompanha o andamento e aprova as telas antes de começarmos o desenvolvimento.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl texto-titulo">
                             Vocês atendem fora do Rio de Janeiro?
                             <span aria-hidden="true" class="faq-icon">+</span>
                         </summary>
-                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Sim. Estamos no Rio de Janeiro e todo o trabalho acontece online, então atendemos clientes de qualquer lugar do Brasil e do exterior.</p>
+                        <p class="mt-4 texto-corpo text-base leading-relaxed max-w-2xl">Sim. Estamos no Rio de Janeiro e todo o trabalho acontece online, então atendemos clientes de qualquer lugar do Brasil e do exterior.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl texto-titulo">
                             Vocês trabalham com WordPress, Webflow ou Shopify?
                             <span aria-hidden="true" class="faq-icon">+</span>
                         </summary>
-                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Sim, e também com código próprio, React, Next.js e Framer. Escolhemos a ferramenta pelo que o seu negócio precisa, inclusive pensando em quem vai atualizar o site depois.</p>
+                        <p class="mt-4 texto-corpo text-base leading-relaxed max-w-2xl">Sim, e também com código próprio, React, Next.js e Framer. Escolhemos a ferramenta pelo que o seu negócio precisa, inclusive pensando em quem vai atualizar o site depois.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl texto-titulo">
                             Preciso ter logo e identidade visual prontos?
                             <span aria-hidden="true" class="faq-icon">+</span>
                         </summary>
-                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Não. Podemos partir da identidade que você já tem ou criar a marca junto com o site, como fizemos do zero no Orquidário Cantareira.</p>
+                        <p class="mt-4 texto-corpo text-base leading-relaxed max-w-2xl">Não. Podemos partir da identidade que você já tem ou criar a marca junto com o site, como fizemos do zero no Orquidário Cantareira.</p>
                     </details>
                     <details class="group py-6">
-                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl texto-titulo">
                             E depois que o site vai ao ar?
                             <span aria-hidden="true" class="faq-icon">+</span>
                         </summary>
-                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Você pode seguir com um plano mensal de manutenção: segurança, backups, velocidade e pequenas melhorias com base no que os números mostram.</p>
+                        <p class="mt-4 texto-corpo text-base leading-relaxed max-w-2xl">Você pode seguir com um plano mensal de manutenção: segurança, backups, velocidade e pequenas melhorias com base no que os números mostram.</p>
                     </details>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 9. Rodapé -->
-    <footer id="rodape" class="fundo-claro relative w-full pb-10">
+    <!-- 9. Rodapé: bloco roxo com os cantos de cima arredondados, como o painel roxo, fechando a página -->
+    <footer id="rodape" class="fundo-escuro relative w-full pb-10">
         <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 relative z-10">
             <div class="rodape">
                 <div class="rodape__marca">
-                    <a href="#" aria-label="Voltar ao início" class="flex items-center gap-0.5 font-bold text-xl tracking-tighter text-white">
+                    <a href="#" aria-label="Voltar ao início" class="flex items-center gap-0.5 font-bold text-xl tracking-tighter texto-titulo">
                         <span class="font-heading text-gpurple-primary text-2xl font-bold leading-none">G</span>
                         <span class="lowercase site-header__logo-texto">purple<span class="text-gpurple-volt">.</span></span>
                     </a>
@@ -622,8 +626,8 @@
                 <nav aria-label="Seções do site no rodapé">
                     <h3 class="rodape__titulo">Navegue</h3>
                     <ul>
-                        <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#processo">Processo</a></li>
                         <li><a href="#estudio">Equipe</a></li>
                         <li><a href="#contato">Contato</a></li>

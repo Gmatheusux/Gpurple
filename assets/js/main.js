@@ -160,10 +160,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         const status = form.querySelector('[data-contato-status]');
         const botao = form.querySelector('button[type="submit"]');
+        const rotuloBotao = botao.innerHTML;
         const email = 'gmbarros@gpurpledesign.com.br';
 
         const abrirEmail = (dados) => {
-            const corpo = `Olá, GPurple!\n\nNome: ${dados.get('nome')}\nSite: ${dados.get('site') || '(ainda não tenho)'}\n\n${dados.get('mensagem')}\n`;
+            const corpo = `Olá, GPurple!\n\nMeu nome é ${dados.get('nome')}\nSite: ${dados.get('site') || '(ainda não tenho)'}\nO que eu gostaria de melhorar: ${dados.get('mensagem')}\n`;
             window.location.href = `mailto:${email}?subject=${encodeURIComponent('Novo projeto')}&body=${encodeURIComponent(corpo)}`;
         };
 
@@ -176,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             botao.disabled = true;
             botao.textContent = 'Enviando…';
-            status.classList.remove('is-erro');
             status.textContent = '';
             try {
                 const resposta = await fetch(form.action, { method: 'POST', body: dados, headers: { Accept: 'application/json' } });
@@ -189,10 +189,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 form.replaceWith(sucesso);
                 sucesso.focus();
             } catch {
-                status.classList.add('is-erro');
                 status.textContent = `Não conseguimos enviar agora. Tente de novo ou escreva para ${email}.`;
                 botao.disabled = false;
-                botao.textContent = 'Enviar mensagem';
+                botao.innerHTML = rotuloBotao;
             }
         });
     }

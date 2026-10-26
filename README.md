@@ -95,16 +95,27 @@ Cada seção do `index.html` começa com um comentário numerado (`<!-- 4. Proje
 | --- | --- | --- | --- |
 | – | – | Header | Barra de ponta a ponta com atalhos para as seções e botão **Menu**, que abre um mapa em tela cheia com uma linha explicando cada seção. |
 | 1 | `#hero` | Abertura | Fundo claro. À esquerda, o título, o subtítulo e os botões; à direita, a loja do Orquidário numa janela de navegador, com dois pinos numerados que explicam decisões do projeto. Só a imagem entra com movimento. |
-| 2 | `#problema` | O problema | Três cartões, um por motivo de desistência: mini tela, o que acontece, "Como saber se é o seu caso" e "O que fazemos" (com link para o serviço). Fecha com o convite para a análise. |
-| 3 | `#servicos` | Serviços | Mosaico; cada serviço diz qual problema de cima ele resolve. |
-| 4 | `#projetos` | Projetos | Carrossel: o projeto em destaque fica grande (nome, cliente, descrição e "Ver o case completo") e os outros aparecem em miniaturas embaixo. Troca sozinho a cada 7 s, para com o mouse ou o foco em cima e tem o botão "Pausar a troca automática". |
+| 2 | `#projetos` | Projetos | Fundo claro, logo depois da abertura, para o trabalho aparecer cedo e o banner escuro se destacar. Carrossel: o projeto em destaque fica grande (nome, cliente, descrição e "Ver o case completo") e os outros aparecem em miniaturas embaixo. Troca sozinho a cada 7 s, para com o mouse ou o foco em cima e tem o botão "Pausar a troca automática". |
+| 3 | `#problema` | O problema | Três cartões, um por motivo de desistência: mini tela, o que acontece, "Como saber se é o seu caso" e "O que fazemos" (com link para o serviço). Fecha com o convite para a análise. |
+| 4 | `#servicos` | Serviços | Mosaico; cada serviço diz qual problema de cima ele resolve. |
 | 5 | `#processo` | Processo | Trilha de cartões, cada etapa mostra o que o cliente recebe. |
 | 6 | `#estudio` | Equipe | Manifesto à esquerda, Gabriel Barros e Gabriel Zoppello em linhas à direita. |
-| 7 | `#contato` | Contato | Formulário (nome, e-mail, site se tiver e mensagem) enviado pelo Formspree sem sair da página, com o e-mail como alternativa. O endereço do formulário (`https://formspree.io/f/xwlllbak`) fica no `action` do `<form data-contato-form>`; as mensagens chegam no e-mail cadastrado no Formspree. Se o `action` virar `PREENCHER`, o envio abre o e-mail da pessoa com os campos preenchidos. |
+| 7 | `#contato` | Contato | Um e-mail simulado ("Nova mensagem", Para, Assunto e o texto "Olá, GPurple! Meu nome é…") em que as lacunas são os campos do formulário: nome, e-mail, site se tiver e o que a pessoa quer melhorar. O envio vai pelo Formspree sem sair da página, com o link "ou escreva do seu e-mail" como alternativa. O endereço do formulário (`https://formspree.io/f/xwlllbak`) fica no `action` do `<form data-contato-form>`; as mensagens chegam no e-mail cadastrado no Formspree. Se o `action` virar `PREENCHER`, o envio abre o e-mail da pessoa com os campos preenchidos. |
 | 8 | `#faq` | Dúvidas frequentes | Acordeão com a primeira resposta aberta. |
 | 9 | `#rodape` | Rodapé | Marca, links das seções, e-mail e LinkedIn. |
 
-Os fundos contam uma história de cor: a Abertura é clara, O problema desce para o quase preto e as seções seguintes clareiam em tons de roxo (`tom-1` a `tom-5`: O problema, Serviços, Projetos, Processo, Equipe) até voltar ao claro em Contato, Dúvidas frequentes e rodapé. Cada seção leva a classe do seu tom (`fundo-claro`, ou `fundo-escuro` com um `tom-N`; nos cases, `caso-secao--claro`, `--escuro` ou `--medio`). A passagem é automática: entre claro e escuro a seção que entra começa com uma faixa em degradê (`--faixa-passagem`), e entre dois escuros o degradê corre pela seção inteira. Uma seção nova só precisa da classe do tom.
+Os fundos: a Abertura e Projetos são claros. O problema, Serviços, Processo e Equipe ficam dentro do **painel roxo** (`.painel-roxo`), um bloco da largura da página com os cantos arredondados, de modo que a troca de cor é a borda do painel e não há faixa de passagem. Por dentro, o painel tem um degradê só, com um grão fino para não formar degraus: começa no roxo médio (`--tom-1`), desce até o mais escuro em Processo (`--tom-3`) e clareia de novo na Equipe (`--tom-4`). Depois do painel, Contato e Dúvidas frequentes voltam ao claro, e o rodapé fecha a página num bloco roxo com os cantos de cima arredondados. Cada seção leva a classe `secao` (espaço de cima e de baixo, `--respiro`) e a do seu fundo (`fundo-claro`, ou `fundo-escuro` com um `tom-N` dentro do painel). Nos cases, a cor passa de uma seção para outra (`caso-secao--claro`, `--escuro` ou `--medio`) por uma faixa em degradê automática (`--faixa-passagem`).
+
+**Cores do texto.** São quatro papéis, cada um com um valor para fundo escuro e outro para fundo claro, definidos no começo do `styles.css`. Todos passam o contraste AA sobre qualquer fundo da sua família, inclusive os degradês:
+
+| Papel | Classe | No escuro | No claro |
+| --- | --- | --- | --- |
+| Título e texto forte | `.texto-titulo` | `#ffffff` | `#15121f` |
+| Texto de leitura | `.texto-corpo` | `#cdc6e4` | `#4a4560` |
+| Legendas e rótulos pequenos | `.texto-apoio` | `#b3a9d6` | `#5b5670` |
+| Frase-chave, rótulo de seção e links | `.texto-destaque` | `#e8cfa0` (Champanhe) | `#5b30d6` |
+
+O escuro é o padrão; seções e cartões claros (`.fundo-claro`, `.caso-secao--claro`, o e-mail do Contato, as miniaturas do carrossel etc.) trocam os valores sozinhos. Não use cor solta no texto (`text-white`, `text-[#...]`): use a classe do papel ou `var(--texto-*)` no CSS.
 
 No menu, o atalho Serviços leva para Serviços e fica marcado também em O problema (atributo `data-secoes`).
 
@@ -221,11 +232,11 @@ Segue o Manual de Identidade Visual, com um ajuste aprovado em 16/10/2026: o **V
 | `--color-brand-volt` | `#D9F956` Volt Lime | Só o ponto final do logo (`gpurple.`). |
 | `--color-surface-dark` / `--color-surface-card` | `#0B0A14` / `#141124` | Fundos das seções, alternados. |
 | `--color-surface-light` | `#F4F2F8` | Seções claras (abertura, Projetos e Contato). |
-| `--color-text-secondary` | `#B4BCCB` | Texto de leitura sobre fundo escuro. |
+| `--texto-*` | ver "Cores do texto" | Texto de títulos, leitura, apoio e destaque, em fundo claro e escuro. |
 
 - **Títulos** em Montserrat 600/700 (classe `section-title`), texto em Inter 16 px ou mais. Nada abaixo de 12 px. A Montserrat substituiu a Poppins em 19/10/2026, porque a Poppins é uma das fontes mais repetidas em sites gerados por IA.
 - **Uma frase-chave por tela** em Champanhe, no máximo.
-- **Rótulo acima do título** (`.rotulo`): só onde ajuda a se localizar (Nossa expertise, Projetos, Perguntas frequentes, Contato), sem caixa alta e sem cor de marca. Cartões usam superfície sólida, sem gradiente nem sombra roxa. Referência: o documento "o que evitar para não parecer site feito por IA", no projeto.
+- **Etiqueta acima do título** (`.rotulo`): toda seção da home tem uma, com o mesmo nome que aparece no menu (Projetos, O problema, Serviços, Processo, Equipe, Contato, Dúvidas frequentes). Mesma tipografia em todas, sem caixa alta, na cor de destaque (`--texto-destaque`). Cartões usam superfície sólida, sem gradiente nem sombra roxa. Referência: o documento "o que evitar para não parecer site feito por IA", no projeto.
 - **Brilho e animação**: nada de brilho, glow ou manchas desfocadas. Movimento só para guiar o olhar (a imagem da abertura entra uma vez) ou mostrar mudança de estado.
 - **Abertura** (19/10/2026): o G em órbita saiu, porque roxo com brilho sobre fundo preto é o retrato de site gerado por IA. A abertura tem fundo claro e mostra trabalho real (o Orquidário). Sobre o fundo claro, o botão principal fica em tinta escura e a frase-chave em roxo escuro `#5b30d6`, já que o Champanhe perde contraste. O manual da marca ainda cita o G 3D como visual da abertura e os botões em Volt Lime, e precisa ser atualizado.
 - No Tailwind, as cores da marca são variáveis CSS: use `bg-gpurple-accent`, mas não `bg-gpurple-accent/10` (o modificador de opacidade não funciona com variáveis). Para transparência, use um valor `rgba(...)` entre colchetes.
