@@ -251,9 +251,9 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 }
 .eyebrow--light { color: var(--texto-destaque); }
 
-/* Rótulo discreto: só onde ajuda a se localizar (sem caixa alta, sem cor de marca) */
-.rotulo { font-size: 0.9375rem; font-weight: 500; color: var(--texto-corpo); }
-.rotulo--claro { color: var(--texto-corpo); }
+/* Etiqueta da seção: toda seção da home tem uma, acima do título, com o mesmo nome do menu.
+   Mesma tipografia em todas; a cor vem do papel "destaque" (Champanhe no escuro, roxo no claro). */
+.rotulo { font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.01em; color: var(--texto-destaque); }
 
 .section-title {
     font-family: 'Montserrat', sans-serif;
@@ -618,7 +618,6 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 }
 
 /* Estúdio: manifesto e as duas pessoas em linhas */
-.estudio-manifesto { font-size: clamp(2rem, 4.4vw, 3.5rem); }
 .estudio-manifesto em { font-style: normal; color: var(--color-brand-accent); }
 .estudio-pessoas { display: flex; flex-direction: column; border-top: 1px solid rgba(255, 255, 255, 0.1); list-style: none; margin: 0; padding: 0; }
 .estudio-pessoa { display: grid; grid-template-columns: 72px 1fr; gap: 1.25rem; padding-block: 1.625rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
@@ -1344,7 +1343,7 @@ body.menu-aberto { overflow: hidden; }
 #faq.fundo-claro { padding-top: 0; }
 #faq.fundo-claro > div { border-top: 1px solid #d9d4e6; padding-top: var(--respiro); }
 #faq.fundo-claro { color: var(--color-text-ink); }
-#faq.fundo-claro .section-sub, #faq.fundo-claro .rotulo, #faq.fundo-claro details p, #faq.fundo-claro .faq-pergunte p:not(:first-child) { color: var(--texto-corpo); }
+#faq.fundo-claro .section-sub, #faq.fundo-claro details p, #faq.fundo-claro .faq-pergunte p:not(:first-child) { color: var(--texto-corpo); }
 #faq.fundo-claro summary, #faq.fundo-claro .faq-pergunte p:first-child { color: var(--color-text-ink); }
 #faq.fundo-claro .divide-y > * + *, #faq.fundo-claro .border-y { border-color: #d9d4e6; }
 #faq.fundo-claro .faq-icon { border-color: rgba(91, 48, 214, 0.45); color: var(--texto-destaque); }
