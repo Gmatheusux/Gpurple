@@ -120,6 +120,11 @@
                     </figcaption>
                 </figure>
             </div>
+
+            <!-- Indica que a página continua: seta discreta no centro, embaixo -->
+            <a href="#problema" class="hero__rolar" aria-label="Rolar para a próxima seção">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></svg>
+            </a>
         </section>
 
         <div id="conteudo"></div>
@@ -154,10 +159,10 @@
                                 <p class="text-gpurple-body leading-relaxed">Seu cliente viu um anúncio, um post ou um resultado no Google e clicou. Se a página que abre não mostra logo aquilo, ele volta e procura outra empresa.</p>
                             </div>
                             <div class="sinal-bloco">
-                                <p class="sinal-rotulo">Como saber se é o seu caso</p>
+                                <p class="sinal-rotulo">Sinais de que ele se perde</p>
                                 <ul class="sinal-sinais"><li>Você investe em anúncios, mas os contatos não aumentam.</li><li>Seu cliente clica no anúncio, cai na página inicial e precisa procurar sozinho o que viu.</li></ul>
                             </div>
-                            <p class="sinal-solucao"><span class="sinal-rotulo">O que fazemos</span>Páginas que mostram de cara o que seu cliente procurava e o próximo passo. <a href="#servicos" class="sinal-link">Ver Design e experiência <span aria-hidden="true">→</span></a></p>
+                            <p class="sinal-solucao"><span class="sinal-rotulo">Como guiamos seu cliente</span>Páginas que mostram de cara o que seu cliente procurava e o próximo passo. <a href="#servicos" class="sinal-link">Ver Design e experiência <span aria-hidden="true">→</span></a></p>
                         </div>
                     </li>
                     <li class="sinal-card">
@@ -177,10 +182,10 @@
                                 <p class="text-gpurple-body leading-relaxed">Seu cliente não espera uma página carregar, ainda mais no celular. Um site lento passa a impressão de descuido antes de qualquer palavra ser lida.</p>
                             </div>
                             <div class="sinal-bloco">
-                                <p class="sinal-rotulo">Como saber se é o seu caso</p>
+                                <p class="sinal-rotulo">Sinais de que ele cansa de esperar</p>
                                 <ul class="sinal-sinais"><li>Você abre o próprio site no celular e fica olhando para a tela branca.</li><li>As imagens aparecem aos pedaços ou o texto pula enquanto a página carrega.</li></ul>
                             </div>
-                            <p class="sinal-solucao"><span class="sinal-rotulo">O que fazemos</span>Um site leve, que abre no celular sem deixar seu cliente esperando. <a href="#servicos" class="sinal-link">Ver Desenvolvimento e performance <span aria-hidden="true">→</span></a></p>
+                            <p class="sinal-solucao"><span class="sinal-rotulo">Como deixamos rápido</span>Um site leve, que abre no celular sem deixar seu cliente esperando. <a href="#servicos" class="sinal-link">Ver Desenvolvimento e performance <span aria-hidden="true">→</span></a></p>
                         </div>
                     </li>
                     <li class="sinal-card">
@@ -201,10 +206,10 @@
                                 <p class="text-gpurple-body leading-relaxed">Seu cliente já decidiu, mas não acha o botão ou o formulário pede dados demais. Ele desiste a um clique da compra, e você nem fica sabendo.</p>
                             </div>
                             <div class="sinal-bloco">
-                                <p class="sinal-rotulo">Como saber se é o seu caso</p>
+                                <p class="sinal-rotulo">Sinais de que ele desiste no fim</p>
                                 <ul class="sinal-sinais"><li>Clientes comentam que tentaram falar com você pelo site e não conseguiram.</li><li>Você não sabe quantos clientes começam um pedido e param no meio.</li></ul>
                             </div>
-                            <p class="sinal-solucao"><span class="sinal-rotulo">O que fazemos</span>Um caminho curto até o contato ou a compra, medindo onde eles param. <a href="#servicos" class="sinal-link">Ver Lançamento e evolução <span aria-hidden="true">→</span></a></p>
+                            <p class="sinal-solucao"><span class="sinal-rotulo">Como facilitamos o contato</span>Um caminho curto até o contato ou a compra, medindo onde eles param. <a href="#servicos" class="sinal-link">Ver Lançamento e evolução <span aria-hidden="true">→</span></a></p>
                         </div>
                     </li>
                 </ol>
@@ -220,6 +225,7 @@
         <section id="servicos" class="relative w-full py-24 md:py-32 bg-gpurple-card">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
                 <div class="flex flex-col gap-5 max-w-3xl">
+                    <p class="rotulo">Nossa expertise</p>
                     <h2 class="section-title">Design, tecnologia e estratégia no mesmo time.</h2>
                     <p class="section-sub">Cuidamos do projeto de ponta a ponta, da primeira tela ao último detalhe de código.</p>
                 </div>
@@ -323,6 +329,19 @@
                                 <img src="./assets/img/projetos/orquidario-mockup.png" alt="Página inicial da loja do Orquidário Cantareira" loading="lazy">
                             </div>
                         </a>
+                        <a href="projetos/allp-fit.html" id="projeto-allp" role="tabpanel" aria-labelledby="aba-allp" class="project-feature vitrine vitrine--app group" data-slide hidden>
+                            <img src="./assets/img/projetos/allp-fit/fundo.svg" alt="" class="vitrine-fundo" loading="lazy">
+                            <div class="vitrine-texto">
+                                <h3 class="vitrine-nome">Treino em casa e na academia, num app só</h3>
+                                <p class="vitrine-cliente">Allp Fit Academia, app Allp Fit Home</p>
+                                <p class="vitrine-descricao">Pesquisa, proposta de valor e arquitetura de um superapp fitness para caber na rotina.</p>
+                                <ul class="vitrine-tags" aria-label="O que fizemos"><li>Pesquisa com usuários</li><li>Proposta de valor</li><li>Arquitetura de informação</li><li>UX design</li></ul>
+                                <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
+                            </div>
+                            <div class="vitrine-mockup vitrine-mockup--app">
+                                <div class="aparelho"><img src="./assets/img/projetos/allp-fit/abertura-app.jpg" alt="Tela de abertura do app Allp Fit Home, com os botões Cadastro e Já sou cliente" width="360" height="728" loading="lazy"></div>
+                            </div>
+                        </a>
                         <a href="materiais/templates-email.html" id="projeto-emails" role="tabpanel" aria-labelledby="aba-emails" class="project-feature vitrine vitrine--emails group" data-slide hidden>
                             <div class="vitrine-texto">
                                 <h3 class="vitrine-nome">E-mails que abrem bem em qualquer lugar</h3>
@@ -341,6 +360,11 @@
                         <button type="button" role="tab" id="aba-orquidario" aria-controls="projeto-orquidario" aria-selected="true" class="carrossel-miniatura" data-aba>
                             <img src="./assets/img/projetos/orquidario-mockup.png" alt="" loading="lazy">
                             <span><strong>Da estufa para o digital</strong>Orquidário Cantareira · identidade e loja virtual</span>
+                            <i class="carrossel-tempo" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" role="tab" id="aba-allp" aria-controls="projeto-allp" aria-selected="false" tabindex="-1" class="carrossel-miniatura" data-aba>
+                            <img src="./assets/img/projetos/allp-fit/abertura-app.jpg" alt="" loading="lazy" class="carrossel-miniatura__retrato">
+                            <span><strong>Treino em casa e na academia, num app só</strong>Allp Fit Academia · UX de app</span>
                             <i class="carrossel-tempo" aria-hidden="true"></i>
                         </button>
                         <button type="button" role="tab" id="aba-emails" aria-controls="projeto-emails" aria-selected="false" tabindex="-1" class="carrossel-miniatura" data-aba>
@@ -387,7 +411,7 @@
                                 <h3 class="font-heading font-semibold text-xl text-white">Estratégia e proposta</h3>
                                 <p class="text-gpurple-body leading-relaxed">Definimos a estrutura das páginas, a jornada do visitante e a mensagem principal.</p>
                             </div>
-                            <p class="trilha-recebe"><span>Você recebe</span>Escopo, prazo e investimento fechados</p>
+                            <p class="trilha-recebe"><span>Fica combinado</span>Escopo, prazo e investimento fechados</p>
                         </div>
                     </li>
                     <li class="trilha-etapa">
@@ -402,7 +426,7 @@
                                 <h3 class="font-heading font-semibold text-xl text-white">Design</h3>
                                 <p class="text-gpurple-body leading-relaxed">O projeto ganha forma visual. Você comenta e aprova as telas antes de qualquer linha de código.</p>
                             </div>
-                            <p class="trilha-recebe"><span>Você recebe</span>As telas para comentar</p>
+                            <p class="trilha-recebe"><span>Você avalia</span>As telas para comentar</p>
                         </div>
                     </li>
                     <li class="trilha-etapa">
@@ -416,7 +440,7 @@
                                 <h3 class="font-heading font-semibold text-xl text-white">Desenvolvimento e lançamento</h3>
                                 <p class="text-gpurple-body leading-relaxed">Construímos, testamos no celular e no computador e colocamos no ar.</p>
                             </div>
-                            <p class="trilha-recebe"><span>Você recebe</span>O site no ar e, se quiser, o plano mensal de melhorias</p>
+                            <p class="trilha-recebe"><span>Resultado final</span>O site no ar e, se quiser, o plano mensal de melhorias</p>
                         </div>
                     </li>
                 </ol>
