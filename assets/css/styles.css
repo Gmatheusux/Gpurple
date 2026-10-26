@@ -1310,15 +1310,15 @@ body.menu-aberto { overflow: hidden; }
 /* ----------------------------------
    Painel roxo da home
    A home alterna: duas seções no claro, duas num painel roxo. São dois painéis (O problema e Serviços;
-   Contato e Dúvidas), da largura toda com os cantos arredondados: a troca de cor é a borda do painel,
+   Contato e Dúvidas), cartões arredondados só um pouco mais largos que a coluna de conteúdo: a troca de cor é a borda do painel,
    sem faixa de passagem. O fundo de cada painel é um degradê só, que desce do roxo médio ao mais
    escuro; um grão fino evita os degraus. Processo, Equipe e o rodapé ficam no claro.
    ---------------------------------- */
 .painel-roxo {
     position: relative;
     isolation: isolate;
-    width: calc(100% - 2 * var(--painel-margem));
-    margin-inline: var(--painel-margem);
+    width: min(100% - 2 * var(--painel-margem), var(--coluna) + 2 * var(--painel-folga));
+    margin-inline: auto;
     border-radius: var(--painel-raio);
     overflow: hidden;
     background: linear-gradient(to bottom, var(--tom-1) 0%, var(--tom-2) 55%, var(--tom-3) 100%);
@@ -1334,7 +1334,12 @@ body.menu-aberto { overflow: hidden; }
     pointer-events: none;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
 }
-:root { --painel-margem: 0px; --painel-raio: clamp(1.75rem, 3.5vw, 3.5rem); }
+:root {
+    --coluna: 1200px;                               /* mesma largura da coluna de conteúdo */
+    --painel-folga: clamp(0rem, 3vw, 2.5rem);       /* quanto o painel passa da coluna de cada lado */
+    --painel-margem: clamp(0.75rem, 2.5vw, 2rem);   /* claro mínimo entre o painel e a borda da tela */
+    --painel-raio: clamp(1.5rem, 3vw, 2.75rem);
+}
 /* Dentro do painel as seções não têm fundo próprio: o degradê é do painel */
 .painel-roxo > .fundo-escuro { background: none; }
 /* O claro em volta do painel (cantos e margens) */
@@ -1371,10 +1376,12 @@ body:not(.menu-aberto) :is(.site-header--claro, .caso-header):not(.is-solid) .bt
     html { font-size: 112.5%; }
     .max-w-\[1200px\], .site-header__inner, .caso-container { max-width: 1520px; }
     .site-menu__inner { max-width: 1456px; }
+    :root { --coluna: 1520px; }
     .hero { min-height: min(100svh, 60rem); }
 }
 @media (min-width: 3000px) {
     html { font-size: 125%; }
     .max-w-\[1200px\], .site-header__inner, .caso-container { max-width: 1760px; }
     .site-menu__inner { max-width: 1696px; }
+    :root { --coluna: 1760px; }
 }
