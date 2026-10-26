@@ -11,6 +11,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ----------------------------------------------------
+    // Pontos da abertura: no mouse a nota abre sozinha (CSS);
+    // no toque e no teclado, o botão abre e fecha
+    // ----------------------------------------------------
+    const pontos = [...document.querySelectorAll('[data-ponto]')];
+
+    if (pontos.length) {
+        const setAberto = (ponto, aberto) => {
+            ponto.classList.toggle('is-aberto', aberto);
+            ponto.querySelector('button').setAttribute('aria-expanded', String(aberto));
+        };
+        const fecharTodos = (exceto) => pontos.forEach((p) => { if (p !== exceto) setAberto(p, false); });
+
+        pontos.forEach((ponto) => {
+            // Tocar na própria nota também fecha
+            ponto.querySelector('[role="tooltip"]').addEventListener('click', () => setAberto(ponto, false));
+            ponto.querySelector('button').addEventListener('click', () => {
+                const aberto = !ponto.classList.contains('is-aberto');
+                fecharTodos(ponto);
+                setAberto(ponto, aberto);
+            });
+        });
+
+        // Toque fora fecha a nota; se o toque foi na imagem, só fecha, sem abrir o case
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('[data-ponto]') || !pontos.some((p) => p.classList.contains('is-aberto'))) return;
+            if (e.target.closest('.hero-obra__abrir')) e.preventDefault();
+            fecharTodos();
+        });
+
+        // Esc esconde também a nota aberta pelo mouse ou pelo foco, até o ponteiro ou o foco saírem do ponto
+        document.addEventListener('keydown', (e) => {
+            if (e.key !== 'Escape') return;
+            fecharTodos();
+            pontos.forEach((p) => p.classList.add('is-calado'));
+        });
+        pontos.forEach((ponto) => {
+            ponto.addEventListener('pointerleave', () => ponto.classList.remove('is-calado'));
+            ponto.addEventListener('focusout', () => ponto.classList.remove('is-calado'));
+        });
+    }
+
+    // ----------------------------------------------------
     // Menu em tela cheia
     // ----------------------------------------------------
     const toggle = document.querySelector('[data-menu-toggle]');

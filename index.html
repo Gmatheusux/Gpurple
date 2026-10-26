@@ -90,7 +90,7 @@
 
         <!-- 1. Abertura
              Fundo claro, texto à esquerda com a proposta e o botão principal; à direita, trabalho real (a loja do Orquidário)
-             com dois pinos numerados que remetem às notas de projeto da legenda. Sem brilho nem órbita: o trabalho é o visual. -->
+             com dois pinos numerados que abrem as notas de projeto. Sem brilho nem órbita: o trabalho é o visual. -->
         <div id="conteudo"></div>
 
         <section id="hero" class="hero fundo-claro relative w-full overflow-hidden">
@@ -105,21 +105,23 @@
                 </div>
 
                 <figure class="hero-obra">
-                    <a href="projetos/orquidario-cantareira.html" class="hero-obra__janela">
+                    <div class="hero-obra__janela">
                         <span class="hero-obra__barra" aria-hidden="true"><i></i><i></i><i></i><span>Orquidário Cantareira · loja virtual</span></span>
                         <span class="hero-obra__tela">
-                            <img src="assets/img/projetos/orquidario-mockup.png" alt="Página inicial da loja do Orquidário Cantareira, desenhada pela GPurple" width="1024" height="506" fetchpriority="high">
-                            <span class="hero-obra__pino" style="left:74%;top:36%" aria-hidden="true">1</span>
-                            <span class="hero-obra__pino" style="left:11%;top:82%" aria-hidden="true">2</span>
+                            <a href="projetos/orquidario-cantareira.html" class="hero-obra__abrir">
+                                <img src="assets/img/projetos/orquidario-mockup.png" alt="Página inicial da loja do Orquidário Cantareira, desenhada pela GPurple. Ver o projeto" width="1024" height="506" fetchpriority="high">
+                            </a>
+                            <!-- Cada ponto abre a sua nota: passando o mouse, com o teclado ou tocando no celular e no tablet -->
+                            <span class="hero-obra__ponto hero-obra__ponto--esquerda hero-obra__ponto--abaixo" style="left:74%;top:36%" data-ponto>
+                                <button type="button" class="hero-obra__pino" aria-label="Detalhe 1" aria-expanded="false" aria-describedby="nota-hero-1">1</button>
+                                <span id="nota-hero-1" role="tooltip" class="hero-obra__nota">Foto grande da planta, porque o colecionador quer ver cada detalhe antes de comprar.</span>
+                            </span>
+                            <span class="hero-obra__ponto hero-obra__ponto--acima" style="left:11%;top:82%" data-ponto>
+                                <button type="button" class="hero-obra__pino" aria-label="Detalhe 2" aria-expanded="false" aria-describedby="nota-hero-2">2</button>
+                                <span id="nota-hero-2" role="tooltip" class="hero-obra__nota">Um caminho só na primeira tela: explorar a coleção.</span>
+                            </span>
                         </span>
-                    </a>
-                    <figcaption class="hero-obra__legenda">
-                        <ol class="hero-obra__notas">
-                            <li><span aria-hidden="true">1</span>Foto grande da planta, porque o colecionador quer ver cada detalhe antes de comprar.</li>
-                            <li><span aria-hidden="true">2</span>Um caminho só na primeira tela: explorar a coleção.</li>
-                        </ol>
-                        <a href="projetos/orquidario-cantareira.html" class="hero-obra__link">Identidade e loja virtual, em andamento <span aria-hidden="true">→</span></a>
-                    </figcaption>
+                    </div>
                 </figure>
             </div>
 
