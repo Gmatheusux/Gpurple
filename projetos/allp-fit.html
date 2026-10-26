@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allp Fit Home | Case de UX da GPurple Studio</title>
+    <meta name="description" content="Pesquisa, proposta de valor e arquitetura de informação do Allp Fit Home, um superapp fitness para treinar em casa e na academia.">
+    <meta name="theme-color" content="#0B0A14">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://gmatheusux.github.io/Gpurple/projetos/allp-fit.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:title" content="Allp Fit Home | GPurple Studio">
+    <meta property="og:description" content="Da pesquisa aos wireframes: como planejamos um superapp fitness para treinar em casa e na academia.">
+    <meta property="og:image" content="https://gmatheusux.github.io/Gpurple/assets/img/projetos/allp-fit/og.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/tailwind.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-gpurple-dark text-white font-sans antialiased overflow-x-hidden">
+
+    <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-gpurple-accent focus:text-gpurple-ink focus:px-4 focus:py-2 focus:rounded-full">Pular para o conteúdo</a>
+
+    <!-- Header: a mesma barra da home, com volta para os projetos -->
+    <header class="site-header caso-header" data-header>
+        <div class="site-header__inner">
+            <a href="../index.html#projetos" class="caso-voltar">
+                <svg aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Todos os projetos
+            </a>
+            <a href="../index.html#contato" class="btn-primary px-5 py-2.5 text-sm">Falar com a gente</a>
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- 1. Abertura: resultado, ficha completa e prova -->
+        <section class="caso-secao caso-secao--claro caso-abertura">
+            <div class="caso-container">
+                <div class="caso-abertura__grade">
+                    <div class="caso-abertura__texto">
+                        <p class="caso-rotulo">Allp Fit Academia · app Allp Fit Home</p>
+                        <h1 class="caso-titulo">Um superapp fitness para treinar em casa e na academia.</h1>
+                        <p class="caso-lead">Através da desk research e competitive audit, entendemos o que faz o usuário desistir de treinar. Planejamos o app a partir dessas necessidades, com uma arquitetura simples e direta para saúde e bem-estar.</p>
+                    </div>
+                    <dl class="caso-ficha">
+                        <div><dt>Cliente</dt><dd>VM Pereira Design</dd></div>
+                        <div><dt>Entregas</dt><dd>Pesquisa, proposta de valor, arquitetura, fluxos e telas</dd></div>
+                        <div><dt>Na loja</dt><dd><a class="pv-link" href="https://play.google.com/store/search?q=Allp%20Fit%20Home&amp;c=apps" target="_blank" rel="noopener">Ver na Google Play ↗</a></dd></div>
+                    </dl>
+                </div>
+
+                <div class="caso-palco" role="img" aria-label="Três telas do Allp Fit Home em celulares">
+                    <img class="caso-palco__fundo" src="../assets/img/projetos/allp-fit/fundo.svg" alt="" width="1600" height="900">
+                    <div class="caso-palco__aparelhos">
+                        <div class="aparelho aparelho--lado"><img src="../assets/img/projetos/allp-fit/alta-treino.jpg" alt="" width="480" height="971"></div>
+                        <div class="aparelho aparelho--centro"><img src="../assets/img/projetos/allp-fit/alta-home.jpg" alt="" width="480" height="963"></div>
+                        <div class="aparelho aparelho--lado"><img src="../assets/img/projetos/allp-fit/alta-estatisticas.jpg" alt="" width="480" height="971"></div>
+                    </div>
+                </div>
+
+                <ul class="caso-numeros" aria-label="Resultados na Google Play">
+                    <li><strong>+100 mil</strong><span>downloads na Google Play</span></li>
+                    <li><strong>4,7 ★</strong><span>de nota, em 3 mil avaliações</span></li>
+                    <li><strong>R$ 0,99</strong><span>por mês no plano de entrada</span></li>
+                    <li><strong>4 meses</strong><span>da primeira entrevista à entrega</span></li>
+                </ul>
+                <p class="caso-fonte">Downloads e nota: <a class="pv-link" href="https://play.google.com/store/search?q=Allp%20Fit%20Home&amp;c=apps" target="_blank" rel="noopener">página do app na Google Play</a>, consultada em 25/05/2026.</p>
+            </div>
+        </section>
+
+        <!-- 2. O app: a jornada principal logo na segunda rolagem -->
+        <section class="caso-secao caso-secao--escuro">
+            <div class="caso-container">
+                <div class="caso-intro caso-intro--larga">
+                    <p class="caso-rotulo">O app</p>
+                    <h2 class="section-title">Do primeiro toque ao treino feito.</h2>
+                    <p class="section-sub">O usuário escolhe o plano, responde três perguntas e já recebe um treino feito para ele.</p>
+                </div>
+                <div class="pv-faixa">
+                    <figure class="pv-faixa__item"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/abertura-app.jpg" alt="Tela Abertura do app" width="360" height="728" loading="lazy"></div><figcaption>1. Abertura</figcaption></figure>
+                    <figure class="pv-faixa__item"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-planos.jpg" alt="Tela Plano do app" width="480" height="971" loading="lazy"></div><figcaption>2. Plano</figcaption></figure>
+                    <figure class="pv-faixa__item"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-avaliacao-objetivo.jpg" alt="Tela Avaliação do app" width="480" height="971" loading="lazy"></div><figcaption>3. Avaliação</figcaption></figure>
+                    <figure class="pv-faixa__item"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-home.jpg" alt="Tela Home do app" width="480" height="963" loading="lazy"></div><figcaption>4. Home</figcaption></figure>
+                    <figure class="pv-faixa__item"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-treino.jpg" alt="Tela Treino feito do app" width="480" height="971" loading="lazy"></div><figcaption>5. Treino feito</figcaption></figure>
+                    <figure class="pv-faixa__item"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-estatisticas.jpg" alt="Tela Progresso do app" width="480" height="971" loading="lazy"></div><figcaption>6. Progresso</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. O problema: desafio, metas do CEO e os números da pesquisa -->
+        <section class="caso-secao caso-secao--medio">
+            <div class="caso-container">
+                <div class="caso-duas">
+                    <div class="caso-intro">
+                        <p class="caso-rotulo">O problema</p>
+                        <h2 class="section-title">Quem começa a treinar em casa desiste em semanas.</h2>
+                        <p class="section-sub">A Allp Fit queria conhecer melhor o seu público e criar um app híbrido, que atendesse tanto quem treina em casa quanto quem treina na academia.</p>
+                    </div>
+                    <ul class="pv-metas">
+                        <li><strong>Preço acessível</strong><span>Um plano que cabe no bolso de quem nunca pagou academia.</span></li>
+                        <li><strong>Marketplace</strong><span>Os pontos de cada treino viram descontos em produtos e serviços dentro do app.</span></li>
+                        <li><strong>Pronto para crescer</strong><span>Estrutura que recebe outros serviços do grupo sem refazer a navegação.</span></li>
+                        <li><strong>Fácil de aprender</strong><span>Pouca informação por tela e curva de aprendizado curta.</span></li>
+                    </ul>
+                </div>
+                <div class="pv-pesquisa">
+                    <h3 class="pv-pesquisa__titulo">Nossas pesquisas encontraram</h3>
+                    <ul class="pv-graficos" aria-label="Resultados da pesquisa quantitativa">
+                        <li><span class="pv-pizza" style="--v:75" aria-hidden="true"><b>75%</b></span><p><strong>75% de quem já treina</strong> trocaria o app que usa hoje por uma plataforma digital acessível.</p></li>
+                        <li><span class="pv-pizza" style="--v:46.4" aria-hidden="true"><b>46%</b></span><p><strong>46% de quem não treina</strong> tentaria começar a treinar em casa.</p></li>
+                        <li><span class="pv-pizza" style="--v:60.7" aria-hidden="true"><b>61%</b></span><p><strong>61% de quem treina</strong> faz isso por saúde e qualidade de vida, antes da estética.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. As dores do usuário: cada dor ao lado do alívio que o app entrega -->
+        <section class="caso-secao caso-secao--claro">
+            <div class="caso-container">
+                <div class="caso-intro caso-intro--larga">
+                    <p class="caso-rotulo">As dores do usuário</p>
+                    <h2 class="section-title">O usuário desiste por falta de tempo, dinheiro e companhia.</h2>
+                    <p class="caso-lead caso-lead--menor">Cada dor que encontramos virou um alívio dentro do app.</p>
+                </div>
+                <div class="pv-dores__topo" aria-hidden="true"><span>O que o usuário sente</span><span></span><span>O alívio que o app entrega</span></div>
+                <ol class="pv-dores">
+                    <li class="pv-dor">
+                        <div class="pv-dor__lado">
+                            <span class="pv-pizza pv-pizza--clara" style="--v:50"><b>50%</b></span>
+                            <div><h3>Falta de tempo</h3><p>é a dor de 50% dos entrevistados.</p></div>
+                        </div>
+                        <span class="pv-dor__seta" aria-hidden="true">→</span>
+                        <div class="pv-dor__lado pv-dor__lado--alivio">
+                            <span class="pv-alivio__icone" aria-hidden="true">✓</span>
+                            <p>Treinos curtos e horários flexíveis, que cabem em qualquer rotina.</p>
+                        </div>
+                    </li>
+                    <li class="pv-dor">
+                        <div class="pv-dor__lado">
+                            <span class="pv-pizza pv-pizza--clara" style="--v:25"><b>25%</b></span>
+                            <div><h3>O preço pesa</h3><p>para 25% dos entrevistados.</p></div>
+                        </div>
+                        <span class="pv-dor__seta" aria-hidden="true">→</span>
+                        <div class="pv-dor__lado pv-dor__lado--alivio">
+                            <span class="pv-alivio__icone" aria-hidden="true">✓</span>
+                            <p>Cadastro simplificado e direto ao ponto, que mostra os custos desde o início.</p>
+                        </div>
+                    </li>
+                    <li class="pv-dor">
+                        <div class="pv-dor__lado">
+                            <span class="pv-pizza pv-pizza--clara" style="--v:45"><b>45%</b></span>
+                            <div><h3>Treinar sozinho desanima</h3><p>e leva à desistência. Dor citada por 45% dos entrevistados.</p></div>
+                        </div>
+                        <span class="pv-dor__seta" aria-hidden="true">→</span>
+                        <div class="pv-dor__lado pv-dor__lado--alivio">
+                            <span class="pv-alivio__icone" aria-hidden="true">✓</span>
+                            <p>Metas que se ajustam ao histórico, pontos por treino e convite para treinar com amigos.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 5. A proposta de valor: só a matriz -->
+        <section class="caso-secao caso-secao--escuro">
+            <div class="caso-container">
+                <div class="caso-intro caso-intro--larga">
+                    <p class="caso-rotulo">A proposta de valor</p>
+                    <h2 class="section-title">O que o app promete ao usuário.</h2>
+                    <p class="section-sub">Cada dor encontrada na pesquisa ganhou uma resposta no app.</p>
+                </div>
+
+                <div class="caso-matriz pv-matriz">
+                    <div class="caso-matriz__topo" aria-hidden="true">
+                        <div><span class="caso-forma caso-forma--circulo"></span><strong>Perfil do usuário</strong><span>O que o usuário sente</span></div>
+                        <div><span class="caso-forma caso-forma--quadrado"></span><strong>Mapa de valor</strong><span>O que o app entrega</span></div>
+                    </div>
+                    <div class="caso-matriz__linha">
+                        <div class="caso-matriz__lado"><h3>Tarefas</h3><ul><li>Escolher um plano que caiba no bolso</li><li>Ver o progresso a cada treino</li></ul></div>
+                        <span class="caso-matriz__encaixe" aria-hidden="true"></span>
+                        <div class="caso-matriz__lado caso-matriz__lado--valor"><h3>Produtos e serviços</h3><ul><li>Planos com preço acessível</li><li>Mais de 100 programas de treino</li></ul></div>
+                    </div>
+                    <div class="caso-matriz__linha">
+                        <div class="caso-matriz__lado"><h3>Dores</h3><ul><li>Falta de dinheiro para cuidar da saúde</li><li>Falta de motivação para treinar sozinho</li></ul></div>
+                        <span class="caso-matriz__encaixe" aria-hidden="true"></span>
+                        <div class="caso-matriz__lado caso-matriz__lado--valor"><h3>Aliviadores de dor</h3><ul><li>Treinos em casa para quem está começando</li><li>Desafios para chegar ao objetivo</li></ul></div>
+                    </div>
+                    <div class="caso-matriz__linha">
+                        <div class="caso-matriz__lado"><h3>Ganhos</h3><ul><li>Treinar onde e quando quiser</li><li>Qualidade com preço acessível</li></ul></div>
+                        <span class="caso-matriz__encaixe" aria-hidden="true"></span>
+                        <div class="caso-matriz__lado caso-matriz__lado--valor"><h3>Criadores de ganho</h3><ul><li>Pontos por treino, trocados por descontos</li><li>Metas que se ajustam ao histórico</li></ul></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Do rascunho à tela: as 4 jornadas visíveis, sem abas -->
+        <section class="caso-secao caso-secao--medio">
+            <div class="caso-container">
+                <div class="caso-intro caso-intro--larga">
+                    <p class="caso-rotulo">Do rascunho à tela</p>
+                    <h2 class="section-title">Wireframes.</h2>
+                    <p class="section-sub">Cada jornada foi testada em wireframes de baixa fidelidade e aprovada antes de seguir para o protótipo final.</p>
+                </div>
+                <div class="pv-jornadas">
+                    <div class="pv-jornada">
+                        <div class="pv-jornada__texto"><h3>Entrada e cadastro</h3><p>Do primeiro toque à conta criada.</p></div>
+                        <ol class="pv-jornada__passos">
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>1</span>Abertura</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-entrada.jpg" alt="Abertura em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-entrada.jpg" alt="Abertura em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>2</span>Login</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-login.jpg" alt="Login em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-login.jpg" alt="Login em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>3</span>Cadastro</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-cadastro.jpg" alt="Cadastro em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-cadastro.jpg" alt="Cadastro em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                        </ol>
+                    </div>
+                    <div class="pv-jornada">
+                        <div class="pv-jornada__texto"><h3>Plano e pagamento</h3><p>Da escolha do plano à assinatura ativa.</p></div>
+                        <ol class="pv-jornada__passos">
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>1</span>Plano</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-planos.jpg" alt="Plano em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-planos.jpg" alt="Plano em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>2</span>Pagamento</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-pagamento.jpg" alt="Pagamento em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-pagamento.jpg" alt="Pagamento em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>3</span>Confirmação</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-confirmacao.jpg" alt="Confirmação em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-confirmacao.jpg" alt="Confirmação em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                        </ol>
+                    </div>
+                    <div class="pv-jornada">
+                        <div class="pv-jornada__texto"><h3>Avaliação</h3><p>Uma pergunta por tela, com um toque.</p></div>
+                        <ol class="pv-jornada__passos">
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>1</span>Corpo</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-avaliacao-dados.jpg" alt="Corpo em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-avaliacao-dados.jpg" alt="Corpo em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>2</span>Objetivo</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-avaliacao-objetivo.jpg" alt="Objetivo em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-avaliacao-objetivo.jpg" alt="Objetivo em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>3</span>Nível</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-avaliacao-nivel.jpg" alt="Nível em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-avaliacao-nivel.jpg" alt="Nível em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                        </ol>
+                    </div>
+                    <div class="pv-jornada">
+                        <div class="pv-jornada__texto"><h3>Dia a dia</h3><p>O ciclo que traz o usuário de volta.</p></div>
+                        <ol class="pv-jornada__passos">
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>1</span>Home</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-home.jpg" alt="Home em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-home.jpg" alt="Home em alta fidelidade" width="480" height="963" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>2</span>Treino feito</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-treino.jpg" alt="Treino feito em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-treino.jpg" alt="Treino feito em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                            <li class="pv-passo"><p class="pv-passo__nome"><span>3</span>Progresso</p><div class="pv-passo__par"><figure class="pv-tela pv-tela--baixa"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/baixa-estatisticas.jpg" alt="Progresso em baixa fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Baixa</figcaption></figure><figure class="pv-tela"><div class="aparelho"><img src="../assets/img/projetos/allp-fit/alta-estatisticas.jpg" alt="Progresso em alta fidelidade" width="480" height="971" loading="lazy"></div><figcaption>Alta</figcaption></figure></div></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Entrega: passagem para o time de produção, considerações e aprendizados -->
+        <section class="caso-secao caso-secao--claro pv-fecho">
+            <div class="caso-container caso-duas">
+                <div class="caso-intro">
+                    <p class="caso-rotulo">Nossas considerações</p>
+                    <h2 class="section-title">Projeto entregue ao time de produção.</h2>
+                    <p class="caso-lead caso-lead--menor">Com a pesquisa, a arquitetura e os protótipos aprovados, o projeto foi passado para o time responsável pelo desenvolvimento e pela publicação do app.</p>
+                </div>
+                <div class="caso-aprendizados">
+                    <div><h3>Dividir para não assustar</h3><p>Separar a avaliação em uma pergunta por tela tirou o atrito de quem está começando e deixou os dados mais limpos para o negócio.</p></div>
+                    <div><h3>Documentar para continuar</h3><p>Uma entrega bem documentada deixou o time de produção seguir sem perder as decisões de design.</p></div>
+                    <div><h3>O que faríamos a mais</h3><p>Com mais tempo, testaríamos contraste e legibilidade com pessoas mais velhas, em situações reais de uso.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Cuide da sua empresa: CTA e próximo case -->
+        <section class="caso-secao caso-secao--escuro">
+            <div class="caso-container">
+                <div class="caso-intro caso-intro--larga">
+                    <p class="caso-rotulo">Cuide da sua empresa</p>
+                    <h2 class="section-title">Seu produto também precisa fazer sentido para quem usa?</h2>
+                    <p class="section-sub">Conte sobre o seu app, site ou loja. Começamos pelo negócio e pelo seu cliente.</p>
+                    <a href="../index.html#contato" class="btn-primary self-start px-8 py-4 text-base">Pedir análise</a>
+                </div>
+                <a href="orquidario-cantareira.html" class="pv-proximo">
+                    <img src="../assets/img/projetos/orquidario-mockup.png" alt="" loading="lazy">
+                    <span><small>Próximo projeto</small><strong>Orquidário Cantareira</strong>Identidade e loja virtual criadas do zero →</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (() => {
+            const header = document.querySelector('[data-header]');
+            const update = () => header.classList.toggle('is-solid', window.scrollY > 24);
+            update();
+            window.addEventListener('scroll', update, { passive: true });
+        })();
+    </script>
+</body>
+</html>
