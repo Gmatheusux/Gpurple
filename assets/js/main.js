@@ -71,16 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ----------------------------------------------------
     // Projetos: carrossel. Troca de projeto sozinho a cada 7 s; para quando o mouse ou o foco
-    // está nele e não roda para quem pediu menos movimento. As miniaturas funcionam como abas.
+    // está nele, quando a pessoa aperta "Pausar" e não roda para quem pediu menos movimento.
+    // As miniaturas funcionam como abas.
     // ----------------------------------------------------
     const carrossel = document.querySelector('[data-carrossel]');
     if (carrossel) {
         const abas = [...carrossel.querySelectorAll('[data-aba]')];
         const slides = abas.map((aba) => document.getElementById(aba.getAttribute('aria-controls')));
+        const botaoPausa = carrossel.querySelector('[data-carrossel-pausa]');
         const tempo = 7000;
         const reduzMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         let atual = 0;
         let timer = null;
+        let parado = false;
 
         const mostrar = (i, { foco = false } = {}) => {
             atual = (i + abas.length) % abas.length;
@@ -100,13 +103,25 @@ document.addEventListener('DOMContentLoaded', () => {
             // Reinicia a barra de tempo da miniatura ativa
             carrossel.classList.remove('is-rodando');
             void carrossel.offsetWidth;
-            if (reduzMovimento || abas.length < 2) return;
+            if (reduzMovimento || parado || abas.length < 2) return;
             carrossel.classList.add('is-rodando');
             if (!carrossel.classList.contains('is-pausado')) timer = setTimeout(proximo, tempo);
         };
         const proximo = () => mostrar(atual + 1);
 
         carrossel.style.setProperty('--carrossel-tempo', tempo + 'ms');
+
+        // Botão de pausa: para a troca automática até a pessoa retomar (no celular não há mouse para pausar)
+        if (botaoPausa && !reduzMovimento && abas.length > 1) {
+            botaoPausa.hidden = false;
+            botaoPausa.addEventListener('click', () => {
+                parado = !parado;
+                botaoPausa.setAttribute('aria-pressed', String(parado));
+                botaoPausa.textContent = parado ? 'Retomar a troca automática' : 'Pausar a troca automática';
+                if (parado) clearTimeout(timer);
+                reiniciar();
+            });
+        }
         abas.forEach((aba, n) => {
             aba.addEventListener('click', () => mostrar(n));
             aba.addEventListener('keydown', (e) => {
