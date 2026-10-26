@@ -40,7 +40,7 @@ Projeto original criado por [Dex](https://github.com/GZR-dex/Gpurple). Esta cóp
 | Nome no site | Apelido | Papel |
 | --- | --- | --- |
 | Gabriel Barros | Gabe | UX, arquitetura e segurança ([LinkedIn](https://www.linkedin.com/in/gabrielmbarros/)) |
-| Gabriel Zopello | Dex | UI e conversão |
+| Gabriel Zoppello | Dex | UI e conversão |
 
 Na seção **Estúdio** aparecem o nome completo e o apelido. No resto do site, só o apelido.
 
@@ -97,14 +97,16 @@ Cada seção do `index.html` começa com um comentário numerado (`<!-- 4. Proje
 | 1 | `#hero` | Abertura | Fundo claro. À esquerda, o título, o subtítulo e os botões; à direita, a loja do Orquidário numa janela de navegador, com dois pinos numerados que explicam decisões do projeto. Só a imagem entra com movimento. |
 | 2 | `#problema` | O problema | Três cartões, um por motivo de desistência: mini tela, o que acontece, "Como saber se é o seu caso" e "O que fazemos" (com link para o serviço). Fecha com o convite para a análise. |
 | 3 | `#servicos` | Serviços | Mosaico; cada serviço diz qual problema de cima ele resolve. |
-| 4 | `#projetos` | Projetos | Carrossel: o projeto em destaque fica grande (nome, cliente, descrição e "Ver o case completo") e os outros aparecem em miniaturas embaixo. Troca sozinho a cada 7 s e para com o mouse ou o foco em cima. |
+| 4 | `#projetos` | Projetos | Carrossel: o projeto em destaque fica grande (nome, cliente, descrição e "Ver o case completo") e os outros aparecem em miniaturas embaixo. Troca sozinho a cada 7 s, para com o mouse ou o foco em cima e tem o botão "Pausar a troca automática". |
 | 5 | `#processo` | Processo | Trilha de cartões, cada etapa mostra o que o cliente recebe. |
-| 6 | `#estudio` | Equipe | Manifesto à esquerda, Gabriel Barros e Gabriel Zopello em linhas à direita. |
-| 7 | `#contato` | Contato | Modelo do e-mail visível antes do clique; o botão abre o e-mail com o mesmo texto. |
-| 8 | `#faq` | Perguntas frequentes | Acordeão com a primeira resposta aberta. |
+| 6 | `#estudio` | Equipe | Manifesto à esquerda, Gabriel Barros e Gabriel Zoppello em linhas à direita. |
+| 7 | `#contato` | Contato | Formulário (nome, e-mail, site se tiver e mensagem) enviado pelo Formspree sem sair da página, com o e-mail como alternativa. O endereço do formulário (`https://formspree.io/f/xwlllbak`) fica no `action` do `<form data-contato-form>`; as mensagens chegam no e-mail cadastrado no Formspree. Se o `action` virar `PREENCHER`, o envio abre o e-mail da pessoa com os campos preenchidos. |
+| 8 | `#faq` | Dúvidas frequentes | Acordeão com a primeira resposta aberta. |
 | 9 | `#rodape` | Rodapé | Marca, links das seções, e-mail e LinkedIn. |
 
-Os fundos seguem um ciclo de três tons: claro, escuro e roxo médio (Abertura, O problema, Serviços; Projetos, Processo, Equipe; Contato, Perguntas frequentes, rodapé). No menu, o atalho Serviços cobre O problema e Serviços (atributo `data-secoes`).
+Os fundos contam uma história de cor: a Abertura é clara, O problema desce para o quase preto e as seções seguintes clareiam em tons de roxo (`tom-1` a `tom-5`: O problema, Serviços, Projetos, Processo, Equipe) até voltar ao claro em Contato, Dúvidas frequentes e rodapé. Cada seção leva a classe do seu tom (`fundo-claro`, ou `fundo-escuro` com um `tom-N`; nos cases, `caso-secao--claro`, `--escuro` ou `--medio`). A passagem é automática: entre claro e escuro a seção que entra começa com uma faixa em degradê (`--faixa-passagem`), e entre dois escuros o degradê corre pela seção inteira. Uma seção nova só precisa da classe do tom.
+
+No menu, o atalho Serviços leva para Serviços e fica marcado também em O problema (atributo `data-secoes`).
 
 ## Projetos: como documentar e adicionar cases
 
@@ -139,12 +141,12 @@ Para cada projeto, tenha em mãos:
 | --- | --- |
 | `<head>` | `<title>`, `meta description` e as tags `og:` (título, descrição e imagem de compartilhamento, com a URL completa do site). |
 | Header | Volta para "Todos os projetos", logo e botão "Falar com a gente". Não precisa mudar. |
-| Hero do projeto | Eyebrow com o nome do cliente, título curto (a ideia do projeto), uma frase de resumo e a ficha com **Status**, **Escopo** e **Segmento**. A capa entra como fundo. |
+| Abertura (fundo claro) | Rótulo com o nome do cliente, título curto (a ideia do projeto), uma frase de resumo e a ficha com **Status**, **Escopo** e **Segmento**. Embaixo, o mockup numa janela de navegador. |
 | Desafio e abordagem | "O desafio" em dois parágrafos; "A abordagem" com três passos numerados. |
-| Galeria | Mockup grande no topo e duas imagens lado a lado (logo e direção de arte). |
-| CTA final | Pergunta de fechamento e botão "Pedir análise". Pode manter o texto. |
+| Galeria | Logo e direção de arte lado a lado. |
+| CTA final | Pergunta de fechamento, botão "Pedir análise" e o cartão "Próximo projeto". |
 
-Se o projeto tiver resultado real, acrescente uma seção entre a abordagem e a galeria, no mesmo padrão das outras (`<section class="w-full py-24 bg-gpurple-dark ...">`).
+Se o projeto tiver resultado real, acrescente uma seção entre a abordagem e a galeria, no mesmo padrão das outras (`<section class="caso-secao caso-secao--claro">` com um `.caso-container` dentro).
 
 ### Passo a passo para um case novo
 
@@ -152,7 +154,7 @@ Se o projeto tiver resultado real, acrescente uma seção entre a abordagem e a 
 2. Coloque as imagens em `assets/img/projetos/` com o nome do cliente na frente: `cliente-capa.jpg`, `cliente-logo.jpg`, `cliente-mockup.png`. Exporte em JPG ou WebP com até ~300 KB (PNG só para o mockup com transparência). Um case com muitas telas pode ganhar uma pasta própria, como `assets/img/projetos/allp-fit/` (telas `baixa-*` e `alta-*` exportadas do Figma, `fundo.svg` da abertura e `og.jpg`).
 3. Troque textos, imagens, `<title>`, `description` e tags `og:` da nova página. Dentro de `projetos/`, os caminhos começam com `../` (`../assets/img/projetos/...`).
 4. No `index.html`, seção `#projetos`:
-   - Dentro de `.carrossel-palco`, duplique uma vitrine (`<a class="project-feature vitrine" data-slide>`), troque o `id`, o `href`, as imagens, o nome, o cliente e a descrição, e deixe `hidden`. Imagem em pé usa `vitrine-mockup--retrato`.
+   - Dentro de `.carrossel-palco`, duplique um slide (`<div class="carrossel-slide" role="tabpanel" data-slide>` com a vitrine `<a class="project-feature vitrine">` dentro), troque o `id` e o `aria-labelledby` do slide e o `href`, as imagens, o nome, o cliente e a descrição da vitrine, e deixe o slide `hidden`. Imagem em pé usa `vitrine-mockup--retrato`.
    - Dentro de `.carrossel-miniaturas`, duplique uma miniatura (`<button role="tab" data-aba>`), troque o `id`, o `aria-controls` (o `id` da vitrine) e os textos. A ordem das miniaturas é a ordem do carrossel; a primeira começa selecionada.
    - Na página principal os caminhos começam com `./` (`./assets/img/projetos/...`).
 5. Se usou classes do Tailwind que ainda não existiam no site, rode `npm run build`.
@@ -167,14 +169,6 @@ Se o projeto tiver resultado real, acrescente uma seção entre a abordagem e a 
 - [ ] Imagens leves (até ~300 KB) e com `loading="lazy"` na página principal.
 - [ ] Links "Ver o case completo" e "Todos os projetos" funcionam.
 - [ ] Tags `og:` apontam para `https://gmatheusux.github.io/Gpurple/...` (ou para o domínio próprio, quando houver).
-
-### Ajustes conhecidos da página de case
-
-A página do Orquidário ainda tem detalhes do site original que podem ser acertados quando a documentação dos projetos for retomada:
-
-- O header é a cápsula antiga, diferente da barra nova da home.
-- A galeria usa fundo `bg-zinc-950` e o CTA final tem um brilho desfocado (`blur-[120px]`), fora do guia visual (sem manchas desfocadas nas seções).
-- O brilho do CTA usa `bg-gpurple-primary/10`, que não funciona com as cores da marca (veja a nota no [Guia visual](#guia-visual)).
 
 ## Rodar localmente
 

@@ -38,7 +38,7 @@
             </a>
 
             <nav aria-label="Atalhos" class="site-header__links">
-                <a href="#problema" class="nav-link" data-secoes="problema servicos">Serviços</a>
+                <a href="#servicos" class="nav-link" data-secoes="problema servicos">Serviços</a>
                 <a href="#projetos" class="nav-link">Projetos</a>
                 <a href="#processo" class="nav-link">Processo</a>
                 <a href="#estudio" class="nav-link">Equipe</a>
@@ -61,12 +61,12 @@
         <div class="site-menu__inner">
             <nav aria-label="Seções do site">
                 <ul class="site-menu__list">
-                    <li><a href="#problema" class="site-menu__link" data-secoes="problema servicos"><span class="site-menu__title">Serviços</span><span class="site-menu__desc">Por que as visitas não viram clientes e como resolvemos</span></a></li>
+                    <li><a href="#servicos" class="site-menu__link" data-secoes="problema servicos"><span class="site-menu__title">Serviços</span><span class="site-menu__desc">O que fazemos e o problema que cada serviço resolve</span></a></li>
                     <li><a href="#projetos" class="site-menu__link"><span class="site-menu__title">Projetos</span><span class="site-menu__desc">Os cases que já entregamos</span></a></li>
                     <li><a href="#processo" class="site-menu__link"><span class="site-menu__title">Processo</span><span class="site-menu__desc">Como trabalhamos, em 4 etapas</span></a></li>
                     <li><a href="#estudio" class="site-menu__link"><span class="site-menu__title">Equipe</span><span class="site-menu__desc">Quem faz o seu projeto</span></a></li>
                     <li><a href="#contato" class="site-menu__link"><span class="site-menu__title">Contato</span><span class="site-menu__desc">Conte sobre o seu projeto por e-mail</span></a></li>
-                    <li><a href="#faq" class="site-menu__link"><span class="site-menu__title">Perguntas frequentes</span><span class="site-menu__desc">Preço, prazo e tecnologia</span></a></li>
+                    <li><a href="#faq" class="site-menu__link"><span class="site-menu__title">Dúvidas frequentes</span><span class="site-menu__desc">Preço, prazo e tecnologia</span></a></li>
                 </ul>
             </nav>
 
@@ -91,7 +91,9 @@
         <!-- 1. Abertura
              Fundo claro, texto à esquerda com a proposta e o botão principal; à direita, trabalho real (a loja do Orquidário)
              com dois pinos numerados que remetem às notas de projeto da legenda. Sem brilho nem órbita: o trabalho é o visual. -->
-        <section id="hero" class="hero relative w-full overflow-hidden">
+        <div id="conteudo"></div>
+
+        <section id="hero" class="hero fundo-claro relative w-full overflow-hidden">
             <div class="hero__inner w-full max-w-[1200px] mx-auto px-4 md:px-8">
                 <div class="hero__texto">
                     <h1 class="hero__titulo">Seu negócio é bom. Seu site <span class="hero__destaque">precisa provar isso.</span></h1>
@@ -127,17 +129,15 @@
             </a>
         </section>
 
-        <div id="conteudo"></div>
-
         <!-- 2. O problema: três cartões, um por motivo de desistência. Cada um tem a mini tela, o que acontece,
              como o cliente reconhece no próprio site e o que fazemos. As partes dos cartões ficam alinhadas entre si
              (subgrid). Fecha com o convite para a análise. -->
-        <section id="problema" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
+        <section id="problema" class="fundo-escuro tom-1 relative w-full py-24 md:py-32">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
                 <div class="flex flex-col gap-5 max-w-3xl">
                     <p class="eyebrow">Por que as visitas não viram clientes</p>
                     <h2 class="section-title">Talvez o seu problema não seja falta de visitas.</h2>
-                    <p class="section-sub">Muita gente entra no site, olha e vai embora sem realizar nenhuma interação. Quase sempre é por um destes três motivos, e todos têm solução.</p>
+                    <p class="section-sub">Muita gente entra no site, olha e vai embora sem chamar você. Quase sempre é por um destes três motivos, e todos têm solução.</p>
                 </div>
 
                 <ol class="sinais-grid">
@@ -222,7 +222,7 @@
         </section>
 
         <!-- 3. Serviços: mosaico, cada serviço diz qual problema de "O problema" ele resolve -->
-        <section id="servicos" class="relative w-full py-24 md:py-32 bg-gpurple-card">
+        <section id="servicos" class="fundo-escuro tom-2 relative w-full py-24 md:py-32">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-14">
                 <div class="flex flex-col gap-5 max-w-3xl">
                     <p class="rotulo">Nossa expertise</p>
@@ -293,7 +293,7 @@
                         <p>Você fala direto com quem desenha e com quem programa.</p>
                         <ul class="mosaico-dupla">
                             <li><span class="mosaico-avatar" aria-hidden="true">GB</span><span><strong>Gabriel Barros</strong>UX, arquitetura e segurança</span></li>
-                            <li><span class="mosaico-avatar" aria-hidden="true">GZ</span><span><strong>Gabriel Zopello</strong>UI e conversão</span></li>
+                            <li><span class="mosaico-avatar" aria-hidden="true">GZ</span><span><strong>Gabriel Zoppello</strong>UI e conversão</span></li>
                         </ul>
                         <a href="#contato" class="mosaico-botao">Falar com a gente <span aria-hidden="true">→</span></a>
                     </article>
@@ -303,12 +303,12 @@
 
         <!-- 4. Projetos: carrossel com o projeto em destaque e os demais em miniaturas.
              Para adicionar um case, duplique uma faixa de .projetos-grid (veja o README). -->
-        <section id="projetos" class="relative w-full py-24 md:py-32 bg-gpurple-light text-gpurple-ink">
+        <section id="projetos" class="fundo-escuro tom-3 relative w-full py-24 md:py-32">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-12">
                 <div class="flex flex-col gap-5 max-w-2xl">
-                    <p class="rotulo rotulo--claro">Projetos</p>
-                    <h2 class="section-title text-gpurple-ink">Nossos projetos.</h2>
-                    <p class="text-[#4a4560] text-lg leading-relaxed">Todo projeto começa pelo negócio, não pelo layout.</p>
+                    <p class="rotulo">Projetos</p>
+                    <h2 class="section-title">Nossos projetos.</h2>
+                    <p class="section-sub">Todo projeto começa pelo negócio, não pelo layout.</p>
                 </div>
 
                 <!-- Carrossel: o projeto em destaque fica grande; os outros aparecem como miniaturas embaixo
@@ -316,44 +316,50 @@
                      Para incluir um projeto, copie uma vitrine e uma miniatura e troque o id. -->
                 <div class="carrossel" data-carrossel>
                     <div class="carrossel-palco">
-                        <a href="projetos/orquidario-cantareira.html" id="projeto-orquidario" role="tabpanel" aria-labelledby="aba-orquidario" class="project-feature vitrine group" data-slide>
-                            <img src="./assets/img/projetos/orquidario-capa.jpg" alt="" class="vitrine-fundo" loading="lazy">
-                            <div class="vitrine-texto">
-                                <h3 class="vitrine-nome">Da estufa para o digital</h3>
-                                <p class="vitrine-cliente">Orquidário Cantareira</p>
-                                <p class="vitrine-descricao">Identidade visual e loja virtual criadas do zero para um orquidário tradicional, pensadas para colecionadores que querem ver cada detalhe da planta antes de comprar.</p>
-                                <ul class="vitrine-tags" aria-label="O que fizemos"><li>Identidade visual</li><li>UX design</li><li>UI design</li><li>Copywriting</li><li>E-commerce</li></ul>
-                                <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
-                            </div>
-                            <div class="vitrine-mockup">
-                                <img src="./assets/img/projetos/orquidario-mockup.png" alt="Página inicial da loja do Orquidário Cantareira" loading="lazy">
-                            </div>
-                        </a>
-                        <a href="projetos/allp-fit.html" id="projeto-allp" role="tabpanel" aria-labelledby="aba-allp" class="project-feature vitrine vitrine--app group" data-slide hidden>
-                            <img src="./assets/img/projetos/allp-fit/fundo.svg" alt="" class="vitrine-fundo" loading="lazy">
-                            <div class="vitrine-texto">
-                                <h3 class="vitrine-nome">Treino em casa e na academia, num app só</h3>
-                                <p class="vitrine-cliente">Allp Fit Academia, app Allp Fit Home</p>
-                                <p class="vitrine-descricao">Pesquisa, proposta de valor e arquitetura de um superapp fitness para caber na rotina.</p>
-                                <ul class="vitrine-tags" aria-label="O que fizemos"><li>Pesquisa com usuários</li><li>Proposta de valor</li><li>Arquitetura de informação</li><li>UX design</li></ul>
-                                <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
-                            </div>
-                            <div class="vitrine-mockup vitrine-mockup--app">
-                                <div class="aparelho"><img src="./assets/img/projetos/allp-fit/abertura-app.jpg" alt="Tela de abertura do app Allp Fit Home, com os botões Cadastro e Já sou cliente" width="360" height="728" loading="lazy"></div>
-                            </div>
-                        </a>
-                        <a href="materiais/templates-email.html" id="projeto-emails" role="tabpanel" aria-labelledby="aba-emails" class="project-feature vitrine vitrine--emails group" data-slide hidden>
-                            <div class="vitrine-texto">
-                                <h3 class="vitrine-nome">E-mails que abrem bem em qualquer lugar</h3>
-                                <p class="vitrine-cliente">GPurple Lab, projeto autoral</p>
-                                <p class="vitrine-descricao">Templates de e-mail testados no Gmail, no Outlook e no Apple Mail, no computador e no celular, para a mensagem chegar do jeito que foi desenhada.</p>
-                                <ul class="vitrine-tags" aria-label="O que fizemos"><li>UI design</li><li>HTML para e-mail</li><li>Design responsivo</li><li>Testes de compatibilidade</li></ul>
-                                <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
-                            </div>
-                            <div class="vitrine-mockup vitrine-mockup--retrato">
-                                <img src="./assets/img/projetos/templates-email.png" alt="Templates de e-mail da GPurple" loading="lazy">
-                            </div>
-                        </a>
+                        <div id="projeto-orquidario" role="tabpanel" aria-labelledby="aba-orquidario" class="carrossel-slide" data-slide>
+                            <a href="projetos/orquidario-cantareira.html" class="project-feature vitrine group">
+                                <img src="./assets/img/projetos/orquidario-capa.jpg" alt="" class="vitrine-fundo" loading="lazy">
+                                <div class="vitrine-texto">
+                                    <h3 class="vitrine-nome">Da estufa para o digital</h3>
+                                    <p class="vitrine-cliente">Orquidário Cantareira</p>
+                                    <p class="vitrine-descricao">Identidade visual e loja virtual criadas do zero para um orquidário tradicional, pensadas para colecionadores que querem ver cada detalhe da planta antes de comprar.</p>
+                                    <ul class="vitrine-tags" aria-label="O que fizemos"><li>Identidade visual</li><li>UX design</li><li>UI design</li><li>Copywriting</li><li>E-commerce</li></ul>
+                                    <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
+                                </div>
+                                <div class="vitrine-mockup">
+                                    <img src="./assets/img/projetos/orquidario-mockup.png" alt="Página inicial da loja do Orquidário Cantareira" loading="lazy">
+                                </div>
+                            </a>
+                        </div>
+                        <div id="projeto-allp" role="tabpanel" aria-labelledby="aba-allp" class="carrossel-slide" data-slide hidden>
+                            <a href="projetos/allp-fit.html" class="project-feature vitrine vitrine--app group">
+                                <img src="./assets/img/projetos/allp-fit/fundo.svg" alt="" class="vitrine-fundo" loading="lazy">
+                                <div class="vitrine-texto">
+                                    <h3 class="vitrine-nome">Treino em casa e na academia, num app só</h3>
+                                    <p class="vitrine-cliente">Allp Fit Academia, app Allp Fit Home</p>
+                                    <p class="vitrine-descricao">Pesquisa, proposta de valor e arquitetura de um superapp fitness para caber na rotina.</p>
+                                    <ul class="vitrine-tags" aria-label="O que fizemos"><li>Pesquisa com usuários</li><li>Proposta de valor</li><li>Arquitetura de informação</li><li>UX design</li></ul>
+                                    <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
+                                </div>
+                                <div class="vitrine-mockup vitrine-mockup--app">
+                                    <div class="aparelho"><img src="./assets/img/projetos/allp-fit/abertura-app.jpg" alt="Tela de abertura do app Allp Fit Home, com os botões Cadastro e Já sou cliente" width="360" height="728" loading="lazy"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div id="projeto-emails" role="tabpanel" aria-labelledby="aba-emails" class="carrossel-slide" data-slide hidden>
+                            <a href="materiais/templates-email.html" class="project-feature vitrine vitrine--emails group">
+                                <div class="vitrine-texto">
+                                    <h3 class="vitrine-nome">E-mails que abrem bem em qualquer lugar</h3>
+                                    <p class="vitrine-cliente">GPurple Lab, projeto autoral</p>
+                                    <p class="vitrine-descricao">Templates de e-mail testados no Gmail, no Outlook e no Apple Mail, no computador e no celular, para a mensagem chegar do jeito que foi desenhada.</p>
+                                    <ul class="vitrine-tags" aria-label="O que fizemos"><li>UI design</li><li>HTML para e-mail</li><li>Design responsivo</li><li>Testes de compatibilidade</li></ul>
+                                    <span class="vitrine-botao">Ver o case completo <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span></span>
+                                </div>
+                                <div class="vitrine-mockup vitrine-mockup--retrato">
+                                    <img src="./assets/img/projetos/templates-email.png" alt="Templates de e-mail da GPurple" loading="lazy">
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="carrossel-miniaturas" role="tablist" aria-label="Escolha um projeto">
@@ -373,12 +379,13 @@
                             <i class="carrossel-tempo" aria-hidden="true"></i>
                         </button>
                     </div>
+                    <button type="button" class="carrossel-pausa" aria-pressed="false" data-carrossel-pausa hidden>Pausar a troca automática</button>
                 </div>
             </div>
         </section>
 
         <!-- 5. Processo: trilha de cartões, cada etapa mostra o que o cliente recebe -->
-        <section id="processo" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
+        <section id="processo" class="fundo-escuro tom-4 relative w-full py-24 md:py-32">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-16">
                 <div class="flex flex-col gap-5 max-w-2xl">
                     <h2 class="section-title">Você aprova cada etapa antes da próxima.</h2>
@@ -448,11 +455,11 @@
         </section>
 
         <!-- 6. Equipe: manifesto à esquerda, as duas pessoas em linhas à direita -->
-        <section id="estudio" class="relative w-full py-24 md:py-32 bg-gpurple-card">
+        <section id="estudio" class="fundo-escuro tom-5 relative w-full py-24 md:py-32">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-[4.5rem] items-center">
                 <div class="flex flex-col gap-5">
                     <h2 class="section-title estudio-manifesto">Você fala direto com <em>quem faz.</em></h2>
-                    <p class="section-sub">Somos um estúdio pequeno e focado na resolução das dores de nossos parceiros. Ouvimos o que os seus clientes precisam e transformamos isso em valor para o seu negócio.</p>
+                    <p class="section-sub">Somos um estúdio de duas pessoas. Antes de desenhar, entendemos o que os seus clientes procuram, e cada projeto passa pelas nossas mãos do começo ao fim.</p>
                 </div>
 
                 <ul class="estudio-pessoas">
@@ -468,13 +475,16 @@
                             </a>
                         </div>
                     </li>
-                    <!-- TODO: trocar o monograma pela foto do Dex (assets/img/equipe/) -->
                     <li class="estudio-pessoa">
-                        <span aria-hidden="true" class="estudio-foto estudio-foto--monograma">D</span>
+                        <img src="assets/img/equipe/gabriel-zoppello.jpg" alt="Foto de Gabriel Zoppello" width="400" height="400" class="estudio-foto" loading="lazy">
                         <div class="flex flex-col gap-2">
-                            <h3 class="font-heading font-semibold text-xl text-white">Gabriel Zopello</h3>
+                            <h3 class="font-heading font-semibold text-xl text-white">Gabriel Zoppello</h3>
                             <p class="text-gpurple-soft text-sm font-semibold">UI e conversão</p>
                             <p class="text-gpurple-body leading-relaxed">Cuida do que o visitante vê e de para onde ele vai: a interface de cada tela e os detalhes que fazem a visita virar contato.</p>
+                            <a href="https://www.linkedin.com/in/gabrielzoppello/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-white text-sm font-semibold hover:text-gpurple-accent transition-colors">
+                                <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                                LinkedIn<span class="sr-only"> de Gabriel Zoppello (abre em nova aba)</span>
+                            </a>
                         </div>
                     </li>
                 </ul>
@@ -482,7 +492,7 @@
         </section>
 
         <!-- 7. Contato -->
-        <section id="contato" class="contato relative w-full py-24 md:py-32 bg-gpurple-light text-gpurple-ink">
+        <section id="contato" class="contato fundo-claro relative w-full py-24 md:py-32 bg-gpurple-light text-gpurple-ink">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 relative z-10">
                 <div class="contato-grid">
                     <div class="flex flex-col gap-6">
@@ -495,36 +505,45 @@
                             <li><span class="contato-num" aria-hidden="true">2</span><div><strong>Analisamos</strong><span>Você recebe um vídeo curto com os pontos que mais pesam.</span></div></li>
                             <li><span class="contato-num" aria-hidden="true">3</span><div><strong>Você decide</strong><span>Se fizer sentido, marcamos uma conversa e montamos a proposta.</span></div></li>
                         </ol>
-                        <p class="text-[#4a4560] text-sm">A primeira conversa e a análise do seu site atual não têm custo.</p>
+                        <p class="text-[#4a4560] text-sm">A primeira conversa e a análise do seu site atual não têm custo. Ainda não tem site? Conte sobre o seu negócio e começamos pela estratégia. Estamos no Rio de Janeiro e atendemos online todo o Brasil e o exterior.</p>
                     </div>
 
-                    <!-- Modelo da mensagem visível antes do clique: o botão abre o e-mail com o mesmo texto -->
-                    <div class="contato-email" role="group" aria-label="Modelo da mensagem">
-                        <div class="contato-email__chrome" aria-hidden="true"><i></i><i></i><i></i><span>Nova mensagem</span></div>
-                        <div class="contato-email__linha"><span>Para</span><strong>gmbarros@gpurpledesign.com.br</strong></div>
-                        <div class="contato-email__linha"><span>Assunto</span><strong>Novo projeto</strong></div>
-                        <div class="contato-email__corpo">
-                            <p>Olá, GPurple!</p>
-                            <p class="contato-email__campo">Site:<span aria-hidden="true"></span></p>
-                            <p class="contato-email__campo">O que eu gostaria de melhorar:<span aria-hidden="true"></span></p>
-                        </div>
-                        <div class="contato-email__acoes">
-                            <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Novo%20projeto&body=Ol%C3%A1%2C%20GPurple!%0A%0ASite%3A%20%0AO%20que%20eu%20gostaria%20de%20melhorar%3A%20%0A" class="btn-primary inline-flex items-center gap-2.5 px-6 py-3.5 text-base">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-[18px] h-[18px]" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
-                                Abrir no meu e-mail
-                            </a>
-                            <span>ou copie o endereço acima</span>
-                        </div>
+                    <!-- Formulário: envia pelo Formspree sem sair da página. Se o action voltar a ser PREENCHER,
+                         o envio abre o e-mail da pessoa com os mesmos campos preenchidos. -->
+                    <div class="contato-form-caixa">
+                        <form class="contato-form" action="https://formspree.io/f/xwlllbak" method="POST" data-contato-form>
+                            <input type="hidden" name="_subject" value="Novo projeto pelo site">
+                            <p class="contato-form__isca" aria-hidden="true"><label>Não preencha<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+                            <div class="contato-form__campo">
+                                <label for="contato-nome">Seu nome</label>
+                                <input id="contato-nome" name="nome" type="text" autocomplete="name" required>
+                            </div>
+                            <div class="contato-form__campo">
+                                <label for="contato-email">Seu e-mail</label>
+                                <input id="contato-email" name="email" type="email" autocomplete="email" required>
+                            </div>
+                            <div class="contato-form__campo">
+                                <label for="contato-site">Site <span>(se tiver)</span></label>
+                                <input id="contato-site" name="site" type="text" inputmode="url" autocomplete="url" placeholder="seusite.com.br">
+                            </div>
+                            <div class="contato-form__campo">
+                                <label for="contato-mensagem">O que você gostaria de melhorar ou criar?</label>
+                                <textarea id="contato-mensagem" name="mensagem" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="contato-form__enviar">Enviar mensagem</button>
+                            <p class="contato-form__status" role="status" aria-live="polite" data-contato-status></p>
+                        </form>
+                        <p class="contato-form__alternativa">Prefere e-mail? Escreva para <a href="mailto:gmbarros@gpurpledesign.com.br?subject=Novo%20projeto">gmbarros@gpurpledesign.com.br</a></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 8. Perguntas frequentes -->
-        <section id="faq" class="relative w-full py-24 md:py-32 bg-gpurple-dark">
+        <section id="faq" class="fundo-claro relative w-full py-24 md:py-32 bg-gpurple-light">
             <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-12 lg:gap-20">
                 <div class="flex flex-col gap-5">
-                    <p class="rotulo">Perguntas frequentes</p>
+                    <p class="rotulo">Dúvidas frequentes</p>
                     <h2 class="section-title">Antes de conversar.</h2>
                     <p class="section-sub">O que costumam perguntar antes do primeiro contato.</p>
                     <div class="faq-pergunte">
@@ -547,14 +566,21 @@
                             Quanto custa um projeto?
                             <span aria-hidden="true" class="faq-icon">+</span>
                         </summary>
-                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Depende do escopo. Por isso a análise vem antes: com ela, apresentamos uma proposta com escopo, prazo e investimento fechados, sem cobrança por hora.</p>
+                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Cada projeto é montado para o que o seu negócio precisa, por isso não temos tabela de preços. Primeiro definimos o escopo com você; com ele, apresentamos uma proposta com prazo e investimento fechados, sem cobrança por hora.</p>
                     </details>
                     <details class="group py-6">
                         <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
                             Quanto tempo leva?
                             <span aria-hidden="true" class="faq-icon">+</span>
                         </summary>
-                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">O prazo é definido na proposta, com datas para cada etapa. Você acompanha o andamento e aprova as telas antes de começarmos o desenvolvimento.</p>
+                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Também depende do escopo. O prazo vem na proposta, com datas para cada etapa, e você acompanha o andamento e aprova as telas antes de começarmos o desenvolvimento.</p>
+                    </details>
+                    <details class="group py-6">
+                        <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
+                            Vocês atendem fora do Rio de Janeiro?
+                            <span aria-hidden="true" class="faq-icon">+</span>
+                        </summary>
+                        <p class="mt-4 text-gpurple-body text-base leading-relaxed max-w-2xl">Sim. Estamos no Rio de Janeiro e todo o trabalho acontece online, então atendemos clientes de qualquer lugar do Brasil e do exterior.</p>
                     </details>
                     <details class="group py-6">
                         <summary class="flex items-center justify-between gap-6 cursor-pointer font-heading font-semibold text-lg md:text-xl text-white">
@@ -583,7 +609,7 @@
     </main>
 
     <!-- 9. Rodapé -->
-    <footer id="rodape" class="relative w-full pb-10 bg-gpurple-card">
+    <footer id="rodape" class="fundo-claro relative w-full pb-10">
         <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 relative z-10">
             <div class="rodape">
                 <div class="rodape__marca">
@@ -591,24 +617,25 @@
                         <span class="font-heading text-gpurple-primary text-2xl font-bold leading-none">G</span>
                         <span class="lowercase site-header__logo-texto">purple<span class="text-gpurple-volt">.</span></span>
                     </a>
-                    <p>Estúdio de design e desenvolvimento. Sites, lojas e landing pages que trazem clientes.</p>
+                    <p>Estúdio de design e desenvolvimento no Rio de Janeiro, com atendimento online para todo o Brasil e o exterior. Sites, lojas e landing pages que trazem clientes.</p>
                 </div>
                 <nav aria-label="Seções do site no rodapé">
                     <h3 class="rodape__titulo">Navegue</h3>
                     <ul>
-                        <li><a href="#problema">Serviços</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#projetos">Projetos</a></li>
                         <li><a href="#processo">Processo</a></li>
                         <li><a href="#estudio">Equipe</a></li>
                         <li><a href="#contato">Contato</a></li>
-                        <li><a href="#faq">Perguntas frequentes</a></li>
+                        <li><a href="#faq">Dúvidas frequentes</a></li>
                     </ul>
                 </nav>
                 <div>
                     <h3 class="rodape__titulo">Contato</h3>
                     <ul>
                         <li><a href="mailto:gmbarros@gpurpledesign.com.br">gmbarros@gpurpledesign.com.br</a></li>
-                        <li><a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener">LinkedIn do Gabe<span class="sr-only"> (abre em nova aba)</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener">LinkedIn do Gabriel Barros<span class="sr-only"> (abre em nova aba)</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/gabrielzoppello/" target="_blank" rel="noopener">LinkedIn do Gabriel Zoppello<span class="sr-only"> (abre em nova aba)</span></a></li>
                     </ul>
                 </div>
             </div>
