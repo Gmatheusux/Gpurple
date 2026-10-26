@@ -212,8 +212,9 @@
             </div>
         </section>
 
-        <!-- Painel roxo: O problema, Serviços, Processo e Equipe ficam num painel arredondado sobre a página clara.
-             A passagem de cor é a borda do painel; por dentro os tons descem até Processo e sobem na Equipe. -->
+        <!-- Painel roxo: O problema e Serviços ficam num painel arredondado sobre a página clara.
+             A passagem de cor é a borda do painel; por dentro o roxo escurece de O problema até o fim de Serviços.
+             Processo e Equipe ficam no claro, para o roxo não tomar metade da página. -->
         <div class="painel-roxo">
             <!-- 3. O problema: três cartões, um por motivo de desistência. Cada um tem a mini tela, o que acontece,
                  como o cliente reconhece no próprio site e o que fazemos. As partes dos cartões ficam alinhadas entre si
@@ -386,117 +387,116 @@
                     </div>
                 </div>
             </section>
-
-            <!-- 5. Processo: trilha de cartões, cada etapa mostra o que o cliente recebe -->
-            <section id="processo" class="fundo-escuro tom-3 secao relative w-full">
-                <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-16">
-                    <div class="flex flex-col gap-5 max-w-2xl">
-                        <p class="rotulo">Processo</p>
-                        <h2 class="section-title">Você aprova cada etapa antes da próxima.</h2>
-                        <p class="section-sub">Você sabe o que acontece em cada etapa e o que recebe ao fim dela.</p>
-                    </div>
-
-                    <ol class="trilha">
-                        <li class="trilha-etapa">
-                            <div class="sinal-tela trilha-tela" aria-hidden="true">
-                                <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina trilha-video"><span class="sinal-linha" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:80%"></span><span class="sinal-linha" style="width:50%"></span><span class="trilha-play"></span></div></div>
-                                <span class="sinal-etiqueta" style="bottom:0.75rem;right:0.75rem">Vídeo da análise</span>
-                            </div>
-                            <div class="trilha-texto">
-                                <p class="trilha-topo"><span class="trilha-num">01</span></p>
-                                <div class="trilha-intro">
-                                    <h3 class="font-heading font-semibold text-xl texto-titulo">Análise do seu site</h3>
-                                    <p class="texto-corpo leading-relaxed">Gravamos um vídeo curto, em cima do seu site, com o que mais trava os resultados hoje e como resolveríamos.</p>
-                                </div>
-                                <p class="trilha-recebe"><span>Você recebe</span>O vídeo com a análise</p>
-                            </div>
-                        </li>
-                        <li class="trilha-etapa">
-                            <div class="sinal-tela trilha-tela" aria-hidden="true">
-                                <div class="trilha-doc"><span class="trilha-doc-titulo"></span><span class="trilha-doc-linha">Escopo<i></i></span><span class="trilha-doc-linha">Prazo<i></i></span><span class="trilha-doc-linha">Investimento<i></i></span></div>
-                                <span class="sinal-etiqueta" style="bottom:0.75rem;right:0.75rem">Proposta fechada</span>
-                            </div>
-                            <div class="trilha-texto">
-                                <p class="trilha-topo"><span class="trilha-num">02</span><span class="trilha-aprova">Você aprova</span></p>
-                                <div class="trilha-intro">
-                                    <h3 class="font-heading font-semibold text-xl texto-titulo">Estratégia e proposta</h3>
-                                    <p class="texto-corpo leading-relaxed">Definimos a estrutura das páginas, a jornada do visitante e a mensagem principal.</p>
-                                </div>
-                                <p class="trilha-recebe"><span>Fica combinado</span>Escopo, prazo e investimento fechados</p>
-                            </div>
-                        </li>
-                        <li class="trilha-etapa">
-                            <div class="sinal-tela trilha-tela" aria-hidden="true">
-                                <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina"><span class="mosaico-titulo"></span><span class="sinal-linha" style="width:85%"></span><span class="mosaico-cta"></span><span class="sinal-linha" style="width:60%"></span></div></div>
-                                <span class="trilha-pino" style="left:62%;top:4.6rem">1</span><span class="trilha-pino" style="left:40%;top:5.7rem">2</span>
-                                <span class="trilha-balao">"Pode ser maior?"</span>
-                            </div>
-                            <div class="trilha-texto">
-                                <p class="trilha-topo"><span class="trilha-num">03</span><span class="trilha-aprova">Você aprova</span></p>
-                                <div class="trilha-intro">
-                                    <h3 class="font-heading font-semibold text-xl texto-titulo">Design</h3>
-                                    <p class="texto-corpo leading-relaxed">O projeto ganha forma visual. Você comenta e aprova as telas antes de qualquer linha de código.</p>
-                                </div>
-                                <p class="trilha-recebe"><span>Você avalia</span>As telas para comentar</p>
-                            </div>
-                        </li>
-                        <li class="trilha-etapa">
-                            <div class="sinal-tela trilha-tela" aria-hidden="true">
-                                <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina"><span class="mosaico-titulo" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:70%"></span><span class="mosaico-cta"></span></div></div>
-                                <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:0.75rem;right:0.75rem">No ar</span>
-                            </div>
-                            <div class="trilha-texto">
-                                <p class="trilha-topo"><span class="trilha-num">04</span></p>
-                                <div class="trilha-intro">
-                                    <h3 class="font-heading font-semibold text-xl texto-titulo">Desenvolvimento e lançamento</h3>
-                                    <p class="texto-corpo leading-relaxed">Construímos, testamos no celular e no computador e colocamos no ar.</p>
-                                </div>
-                                <p class="trilha-recebe"><span>Resultado final</span>O site no ar e, se quiser, o plano mensal de melhorias</p>
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-            </section>
-
-            <!-- 6. Equipe: manifesto à esquerda, as duas pessoas em linhas à direita -->
-            <section id="estudio" class="fundo-escuro tom-4 secao relative w-full">
-                <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-[4.5rem] items-center">
-                    <div class="flex flex-col gap-5">
-                        <p class="rotulo">Equipe</p>
-                        <h2 class="section-title estudio-manifesto">Você fala direto com <em>quem faz.</em></h2>
-                        <p class="section-sub">Somos um estúdio de duas pessoas. Antes de desenhar, entendemos o que os seus clientes procuram, e cada projeto passa pelas nossas mãos do começo ao fim.</p>
-                    </div>
-
-                    <ul class="estudio-pessoas">
-                        <li class="estudio-pessoa">
-                            <img src="assets/img/equipe/gabriel-barros.jpg" alt="Foto de Gabriel Barros" width="400" height="400" class="estudio-foto" loading="lazy">
-                            <div class="flex flex-col gap-2">
-                                <h3 class="font-heading font-semibold text-xl texto-titulo">Gabriel Barros</h3>
-                                <p class="texto-apoio text-sm font-semibold">UX, arquitetura e segurança</p>
-                                <p class="texto-corpo leading-relaxed">Cuida de como o site funciona para quem usa e por dentro: a experiência de uso, a estrutura e a segurança.</p>
-                                <a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 texto-titulo text-sm font-semibold link-destaque transition-colors">
-                                    <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-                                    LinkedIn<span class="sr-only"> de Gabriel Barros (abre em nova aba)</span>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="estudio-pessoa">
-                            <img src="assets/img/equipe/gabriel-zoppello.jpg" alt="Foto de Gabriel Zoppello" width="400" height="400" class="estudio-foto" loading="lazy">
-                            <div class="flex flex-col gap-2">
-                                <h3 class="font-heading font-semibold text-xl texto-titulo">Gabriel Zoppello</h3>
-                                <p class="texto-apoio text-sm font-semibold">UI e conversão</p>
-                                <p class="texto-corpo leading-relaxed">Cuida do que o visitante vê e de para onde ele vai: a interface de cada tela e os detalhes que fazem a visita virar contato.</p>
-                                <a href="https://www.linkedin.com/in/gabrielzoppello/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 texto-titulo text-sm font-semibold link-destaque transition-colors">
-                                    <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-                                    LinkedIn<span class="sr-only"> de Gabriel Zoppello (abre em nova aba)</span>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
         </div>
+
+        <!-- 5. Processo: trilha de cartões, cada etapa mostra o que o cliente recebe -->
+        <section id="processo" class="fundo-claro secao relative w-full">
+            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 flex flex-col gap-16">
+                <div class="flex flex-col gap-5 max-w-2xl">
+                    <p class="rotulo">Processo</p>
+                    <h2 class="section-title">Você aprova cada etapa antes da próxima.</h2>
+                    <p class="section-sub">Você sabe o que acontece em cada etapa e o que recebe ao fim dela.</p>
+                </div>
+
+                <ol class="trilha">
+                    <li class="trilha-etapa">
+                        <div class="sinal-tela trilha-tela" aria-hidden="true">
+                            <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina trilha-video"><span class="sinal-linha" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:80%"></span><span class="sinal-linha" style="width:50%"></span><span class="trilha-play"></span></div></div>
+                            <span class="sinal-etiqueta" style="bottom:0.75rem;right:0.75rem">Vídeo da análise</span>
+                        </div>
+                        <div class="trilha-texto">
+                            <p class="trilha-topo"><span class="trilha-num">01</span></p>
+                            <div class="trilha-intro">
+                                <h3 class="font-heading font-semibold text-xl texto-titulo">Análise do seu site</h3>
+                                <p class="texto-corpo leading-relaxed">Gravamos um vídeo curto, em cima do seu site, com o que mais trava os resultados hoje e como resolveríamos.</p>
+                            </div>
+                            <p class="trilha-recebe"><span>Você recebe</span>O vídeo com a análise</p>
+                        </div>
+                    </li>
+                    <li class="trilha-etapa">
+                        <div class="sinal-tela trilha-tela" aria-hidden="true">
+                            <div class="trilha-doc"><span class="trilha-doc-titulo"></span><span class="trilha-doc-linha">Escopo<i></i></span><span class="trilha-doc-linha">Prazo<i></i></span><span class="trilha-doc-linha">Investimento<i></i></span></div>
+                            <span class="sinal-etiqueta" style="bottom:0.75rem;right:0.75rem">Proposta fechada</span>
+                        </div>
+                        <div class="trilha-texto">
+                            <p class="trilha-topo"><span class="trilha-num">02</span><span class="trilha-aprova">Você aprova</span></p>
+                            <div class="trilha-intro">
+                                <h3 class="font-heading font-semibold text-xl texto-titulo">Estratégia e proposta</h3>
+                                <p class="texto-corpo leading-relaxed">Definimos a estrutura das páginas, a jornada do visitante e a mensagem principal.</p>
+                            </div>
+                            <p class="trilha-recebe"><span>Fica combinado</span>Escopo, prazo e investimento fechados</p>
+                        </div>
+                    </li>
+                    <li class="trilha-etapa">
+                        <div class="sinal-tela trilha-tela" aria-hidden="true">
+                            <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina"><span class="mosaico-titulo"></span><span class="sinal-linha" style="width:85%"></span><span class="mosaico-cta"></span><span class="sinal-linha" style="width:60%"></span></div></div>
+                            <span class="trilha-pino" style="left:62%;top:4.6rem">1</span><span class="trilha-pino" style="left:40%;top:5.7rem">2</span>
+                            <span class="trilha-balao">"Pode ser maior?"</span>
+                        </div>
+                        <div class="trilha-texto">
+                            <p class="trilha-topo"><span class="trilha-num">03</span><span class="trilha-aprova">Você aprova</span></p>
+                            <div class="trilha-intro">
+                                <h3 class="font-heading font-semibold text-xl texto-titulo">Design</h3>
+                                <p class="texto-corpo leading-relaxed">O projeto ganha forma visual. Você comenta e aprova as telas antes de qualquer linha de código.</p>
+                            </div>
+                            <p class="trilha-recebe"><span>Você avalia</span>As telas para comentar</p>
+                        </div>
+                    </li>
+                    <li class="trilha-etapa">
+                        <div class="sinal-tela trilha-tela" aria-hidden="true">
+                            <div class="sinal-janela"><div class="sinal-chrome"><i></i><i></i><i></i></div><div class="sinal-pagina"><span class="mosaico-titulo" style="width:60%"></span><span class="sinal-linha"></span><span class="sinal-linha" style="width:70%"></span><span class="mosaico-cta"></span></div></div>
+                            <span class="sinal-etiqueta sinal-etiqueta--ok" style="bottom:0.75rem;right:0.75rem">No ar</span>
+                        </div>
+                        <div class="trilha-texto">
+                            <p class="trilha-topo"><span class="trilha-num">04</span></p>
+                            <div class="trilha-intro">
+                                <h3 class="font-heading font-semibold text-xl texto-titulo">Desenvolvimento e lançamento</h3>
+                                <p class="texto-corpo leading-relaxed">Construímos, testamos no celular e no computador e colocamos no ar.</p>
+                            </div>
+                            <p class="trilha-recebe"><span>Resultado final</span>O site no ar e, se quiser, o plano mensal de melhorias</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 6. Equipe: manifesto à esquerda, as duas pessoas em linhas à direita -->
+        <section id="estudio" class="fundo-claro secao relative w-full">
+            <div class="w-full max-w-[1200px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-[4.5rem] items-center">
+                <div class="flex flex-col gap-5">
+                    <p class="rotulo">Equipe</p>
+                    <h2 class="section-title estudio-manifesto">Você fala direto com <em>quem faz.</em></h2>
+                    <p class="section-sub">Somos um estúdio de duas pessoas. Antes de desenhar, entendemos o que os seus clientes procuram, e cada projeto passa pelas nossas mãos do começo ao fim.</p>
+                </div>
+
+                <ul class="estudio-pessoas">
+                    <li class="estudio-pessoa">
+                        <img src="assets/img/equipe/gabriel-barros.jpg" alt="Foto de Gabriel Barros" width="400" height="400" class="estudio-foto" loading="lazy">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="font-heading font-semibold text-xl texto-titulo">Gabriel Barros</h3>
+                            <p class="texto-apoio text-sm font-semibold">UX, arquitetura e segurança</p>
+                            <p class="texto-corpo leading-relaxed">Cuida de como o site funciona para quem usa e por dentro: a experiência de uso, a estrutura e a segurança.</p>
+                            <a href="https://www.linkedin.com/in/gabrielmbarros/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 texto-titulo text-sm font-semibold link-destaque transition-colors">
+                                <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                                LinkedIn<span class="sr-only"> de Gabriel Barros (abre em nova aba)</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="estudio-pessoa">
+                        <img src="assets/img/equipe/gabriel-zoppello.jpg" alt="Foto de Gabriel Zoppello" width="400" height="400" class="estudio-foto" loading="lazy">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="font-heading font-semibold text-xl texto-titulo">Gabriel Zoppello</h3>
+                            <p class="texto-apoio text-sm font-semibold">UI e conversão</p>
+                            <p class="texto-corpo leading-relaxed">Cuida do que o visitante vê e de para onde ele vai: a interface de cada tela e os detalhes que fazem a visita virar contato.</p>
+                            <a href="https://www.linkedin.com/in/gabrielzoppello/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 texto-titulo text-sm font-semibold link-destaque transition-colors">
+                                <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                                LinkedIn<span class="sr-only"> de Gabriel Zoppello (abre em nova aba)</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
         <!-- 7. Contato -->
         <section id="contato" class="contato fundo-claro secao relative w-full">

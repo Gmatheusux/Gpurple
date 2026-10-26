@@ -29,7 +29,7 @@
    ---------------------------------- */
 :root,
 .fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio,
-.vitrine, .caso-destaque, .site-menu {
+.vitrine, .caso-destaque, .site-menu, .trilha-etapa {
     --texto-titulo: #ffffff;
     --texto-corpo: #cdc6e4;     /* 8,4:1 no roxo mais claro (#2e2558) */
     --texto-apoio: #b3a9d6;     /* 6,3:1 no roxo mais claro */
@@ -1240,8 +1240,8 @@ body.menu-aberto { overflow: hidden; }
     --lilas: #ddd3f4;
     --tom-1: #2a2150;   /* O problema: roxo médio, logo depois do lilás */
     --tom-2: #1a1536;   /* Serviços */
-    --tom-3: #0e0b1c;   /* Processo: o mais escuro */
-    --tom-4: #2e2558;   /* Equipe: roxo mais claro antes de voltar ao branco */
+    --tom-3: #0e0b1c;   /* O mais escuro: fim do painel roxo e do rodapé */
+    --tom-4: #2e2558;   /* Roxo mais claro (fora de uso na home desde que Processo e Equipe foram para o claro) */
 }
 /* Claro antes de escuro: desce do branco ao lilás */
 :is(.fundo-claro, .caso-secao--claro):has(+ :is(.fundo-escuro, .fundo-medio, .caso-secao--escuro, .caso-secao--medio)) {
@@ -1309,9 +1309,10 @@ body.menu-aberto { overflow: hidden; }
 
 /* ----------------------------------
    Painel roxo da home
-   As seções escuras ficam num painel da largura toda com os cantos arredondados: a troca de cor
+   O problema e Serviços ficam num painel da largura toda com os cantos arredondados: a troca de cor
    é a borda do painel, sem faixa de passagem. O fundo é um degradê só, do painel inteiro, que desce
-   do roxo médio ao mais escuro (Processo) e sobe de novo na Equipe; um grão fino evita os degraus.
+   do roxo médio ao mais escuro no fim de Serviços; um grão fino evita os degraus.
+   Processo e Equipe ficam no claro, para o roxo não tomar metade da página.
    ---------------------------------- */
 .painel-roxo {
     position: relative;
@@ -1320,8 +1321,8 @@ body.menu-aberto { overflow: hidden; }
     margin-inline: var(--painel-margem);
     border-radius: var(--painel-raio);
     overflow: hidden;
-    background: linear-gradient(to bottom, var(--tom-1) 0%, var(--tom-2) 38%, var(--tom-3) 66%, var(--tom-3) 74%, var(--tom-4) 100%);
-    background: linear-gradient(in oklch to bottom, var(--tom-1) 0%, var(--tom-2) 38%, var(--tom-3) 66%, var(--tom-3) 74%, var(--tom-4) 100%);
+    background: linear-gradient(to bottom, var(--tom-1) 0%, var(--tom-2) 55%, var(--tom-3) 100%);
+    background: linear-gradient(in oklch to bottom, var(--tom-1) 0%, var(--tom-2) 55%, var(--tom-3) 100%);
 }
 .painel-roxo::before, #rodape::before {
     content: "";
@@ -1339,6 +1340,11 @@ body.menu-aberto { overflow: hidden; }
 /* O claro em volta do painel (cantos e margens) */
 #app { background-color: var(--color-surface-light); }
 .painel-roxo + .secao { margin-top: 0; }
+
+/* Processo e Equipe no claro. Os cartões da trilha continuam escuros e ganham a mesma sombra do banner */
+#processo .trilha-etapa { border-color: transparent; box-shadow: 0 30px 60px -36px rgba(21, 18, 31, 0.45); }
+#estudio.fundo-claro .estudio-manifesto em { color: var(--texto-destaque); }
+#estudio.fundo-claro :is(.estudio-pessoas, .estudio-pessoa) { border-color: #d9d4e6; }
 
 /* Projetos no claro: o banner escuro se destaca do fundo */
 #projetos .vitrine { box-shadow: 0 30px 60px -36px rgba(21, 18, 31, 0.45); }
