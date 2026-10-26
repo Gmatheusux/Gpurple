@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (toggle && menu) {
         const label = toggle.querySelector('[data-menu-label]');
         // Enquanto o menu está aberto, o resto da página fica fora do alcance do teclado e do leitor de tela
-        const background = [document.getElementById('app'), document.getElementById('rodape'), document.querySelector('[data-header-cta]')].filter(Boolean);
+        const background = [document.querySelector('a[href="#conteudo"]'), document.getElementById('app'), document.getElementById('rodape'), document.querySelector('[data-header-cta]')].filter(Boolean);
 
         const setOpen = (open, { restoreFocus = true } = {}) => {
             toggle.setAttribute('aria-expanded', String(open));
