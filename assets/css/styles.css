@@ -36,7 +36,7 @@
     --texto-destaque: #e8cfa0;  /* 9,1:1 */
 }
 .fundo-claro, .hero, .caso-secao--claro,
-.contato-email, .contato-form__sucesso, .carrossel-miniatura, .faq-pergunte,
+.contato-email, .contato-form__sucesso, .carrossel-miniatura,
 .caso-ficha, .caso-dados li, .caso-persona, .pv-dor__lado, .pv-depoimento, .pv-fecho .pv-proximo,
 .sinal-tela, .mosaico-tela, .mosaico-convite, .trilha-tela,
 body:not(.menu-aberto) :is(.site-header--claro, .caso-header):not(.is-solid) {
@@ -172,9 +172,9 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .contato-passos span:not(.contato-num) { color: var(--texto-corpo); font-size: 0.9375rem; line-height: 1.55; }
 .contato-num { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(var(--color-brand-accent-rgb), 0.5); color: var(--color-brand-accent); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.8125rem; }
 /* Contato em fundo claro: textos em tinta escura e o modelo do e-mail em branco para se destacar */
-.contato .contato-passos strong { color: var(--color-text-ink); }
-.contato .contato-passos span:not(.contato-num) { color: var(--texto-corpo); }
-.contato .contato-num { border-color: rgba(91, 48, 214, 0.4); color: var(--texto-destaque); }
+.contato.fundo-claro .contato-passos strong { color: var(--color-text-ink); }
+.contato.fundo-claro .contato-passos span:not(.contato-num) { color: var(--texto-corpo); }
+.contato.fundo-claro .contato-num { border-color: rgba(91, 48, 214, 0.4); color: var(--texto-destaque); }
 .rodape { padding-top: 4.5rem; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; }
 .rodape ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.625rem; }
 .rodape li a { color: var(--texto-corpo); font-size: 0.9375rem; transition: color .2s; }
@@ -1309,10 +1309,10 @@ body.menu-aberto { overflow: hidden; }
 
 /* ----------------------------------
    Painel roxo da home
-   O problema e Serviços ficam num painel da largura toda com os cantos arredondados: a troca de cor
-   é a borda do painel, sem faixa de passagem. O fundo é um degradê só, do painel inteiro, que desce
-   do roxo médio ao mais escuro no fim de Serviços; um grão fino evita os degraus.
-   Processo e Equipe ficam no claro, para o roxo não tomar metade da página.
+   A home alterna: duas seções no claro, duas num painel roxo. São dois painéis (O problema e Serviços;
+   Contato e Dúvidas), da largura toda com os cantos arredondados: a troca de cor é a borda do painel,
+   sem faixa de passagem. O fundo de cada painel é um degradê só, que desce do roxo médio ao mais
+   escuro; um grão fino evita os degraus. Processo, Equipe e o rodapé ficam no claro.
    ---------------------------------- */
 .painel-roxo {
     position: relative;
@@ -1324,7 +1324,7 @@ body.menu-aberto { overflow: hidden; }
     background: linear-gradient(to bottom, var(--tom-1) 0%, var(--tom-2) 55%, var(--tom-3) 100%);
     background: linear-gradient(in oklch to bottom, var(--tom-1) 0%, var(--tom-2) 55%, var(--tom-3) 100%);
 }
-.painel-roxo::before, #rodape::before {
+.painel-roxo::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -1340,6 +1340,9 @@ body.menu-aberto { overflow: hidden; }
 /* O claro em volta do painel (cantos e margens) */
 #app { background-color: var(--color-surface-light); }
 .painel-roxo + .secao { margin-top: 0; }
+/* Dúvidas logo abaixo do Contato, no mesmo painel: separadas por uma linha */
+.painel-roxo #faq { padding-top: 0; }
+.painel-roxo #faq > div { border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: var(--respiro); }
 
 /* Processo e Equipe no claro. Os cartões da trilha continuam escuros e ganham a mesma sombra do banner */
 #processo .trilha-etapa { border-color: transparent; box-shadow: 0 30px 60px -36px rgba(21, 18, 31, 0.45); }
@@ -1349,32 +1352,11 @@ body.menu-aberto { overflow: hidden; }
 /* Projetos no claro: o banner escuro se destaca do fundo */
 #projetos .vitrine { box-shadow: 0 30px 60px -36px rgba(21, 18, 31, 0.45); }
 
-/* Dúvidas no claro, separadas do Contato (também claro) por uma linha */
-#faq.fundo-claro { padding-top: 0; }
-#faq.fundo-claro > div { border-top: 1px solid #d9d4e6; padding-top: var(--respiro); }
-#faq.fundo-claro { color: var(--color-text-ink); }
-#faq.fundo-claro .section-sub, #faq.fundo-claro details p, #faq.fundo-claro .faq-pergunte p:not(:first-child) { color: var(--texto-corpo); }
-#faq.fundo-claro summary, #faq.fundo-claro .faq-pergunte p:first-child { color: var(--color-text-ink); }
-#faq.fundo-claro .divide-y > * + *, #faq.fundo-claro .border-y { border-color: #d9d4e6; }
-#faq.fundo-claro .faq-icon { border-color: rgba(91, 48, 214, 0.45); color: var(--texto-destaque); }
-#faq.fundo-claro details[open] .faq-icon { background: #5b30d6; color: #fff; }
-#faq.fundo-claro .faq-pergunte { background: #fff; border-color: #e4e0ee; }
-#faq.fundo-claro .faq-pergunte a { color: var(--texto-destaque); }
-#faq.fundo-claro .faq-pergunte a:hover { color: var(--color-text-ink); }
-
-/* Rodapé: um bloco roxo próprio, com os cantos de cima arredondados como o painel roxo.
-   O claro da página aparece nos cantos (fundo do body). */
+/* Rodapé no claro, fora dos painéis roxos */
 body:has(> #rodape) { background-color: var(--color-surface-light); }
-#rodape {
-    isolation: isolate;
-    overflow: hidden;
-    margin-top: 0;
-    border-radius: var(--painel-raio) var(--painel-raio) 0 0;
-    background: linear-gradient(to bottom, var(--tom-1), var(--tom-3));
-    background: linear-gradient(in oklch to bottom, var(--tom-1), var(--tom-3));
-}
+#rodape { margin-top: 0; }
 #rodape .rodape { border-top: 0; padding-top: var(--respiro); }
-#rodape .rodape li a:hover, #rodape .rodape__barra a:hover { color: var(--texto-destaque); }
+#rodape .rodape__barra { border-top-color: #d9d4e6; }
 
 /* Botão do topo enquanto a barra está sobre o fundo claro: tinta escura, porque o Champanhe some no claro */
 body:not(.menu-aberto) :is(.site-header--claro, .caso-header):not(.is-solid) .btn-primary { background: var(--color-text-ink); color: #fff; }
