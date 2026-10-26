@@ -580,7 +580,7 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
     .carrossel-miniatura img { width: 5.5rem; height: 4.25rem; }
 }
 
-/* Estúdio: manifesto e as duas pessoas em linhas */
+/* Estúdio: manifesto e os sócios em linhas */
 .estudio-manifesto em { font-style: normal; color: var(--color-brand-accent); }
 .estudio-pessoas { display: flex; flex-direction: column; border-top: 1px solid rgba(255, 255, 255, 0.1); list-style: none; margin: 0; padding: 0; }
 .estudio-pessoa { display: grid; grid-template-columns: 72px 1fr; gap: 1.25rem; padding-block: 1.625rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
