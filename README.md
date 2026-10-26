@@ -100,7 +100,7 @@ Cada seção do `index.html` começa com um comentário numerado (`<!-- 4. Proje
 | 4 | `#projetos` | Projetos | Carrossel: o projeto em destaque fica grande (nome, cliente, descrição e "Ver o case completo") e os outros aparecem em miniaturas embaixo. Troca sozinho a cada 7 s, para com o mouse ou o foco em cima e tem o botão "Pausar a troca automática". |
 | 5 | `#processo` | Processo | Trilha de cartões, cada etapa mostra o que o cliente recebe. |
 | 6 | `#estudio` | Equipe | Manifesto à esquerda, Gabriel Barros e Gabriel Zoppello em linhas à direita. |
-| 7 | `#contato` | Contato | Formulário (nome, e-mail, site se tiver e mensagem) enviado pelo Formspree sem sair da página, com o e-mail como alternativa. O endereço do formulário fica no `action` do `<form data-contato-form>`; enquanto estiver `PREENCHER`, o envio abre o e-mail da pessoa com os campos preenchidos. |
+| 7 | `#contato` | Contato | Formulário (nome, e-mail, site se tiver e mensagem) enviado pelo Formspree sem sair da página, com o e-mail como alternativa. O endereço do formulário (`https://formspree.io/f/xwlllbak`) fica no `action` do `<form data-contato-form>`; as mensagens chegam no e-mail cadastrado no Formspree. Se o `action` virar `PREENCHER`, o envio abre o e-mail da pessoa com os campos preenchidos. |
 | 8 | `#faq` | Dúvidas frequentes | Acordeão com a primeira resposta aberta. |
 | 9 | `#rodape` | Rodapé | Marca, links das seções, e-mail e LinkedIn. |
 
