@@ -157,12 +157,26 @@ summary:focus-visible {
 :is(.fundo-claro, .caso-secao--claro, .painel-claro) :focus-visible,
 body:not(.menu-aberto) .site-header--claro:not(.is-solid) :focus-visible { outline-color: #5b30d6; }
 
+/* FAQ: no celular as perguntas vêm antes do "Não achou sua pergunta?"; no computador ele fica embaixo do título, à esquerda */
+.faq-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+.faq-grid > .faq-pergunte { margin-top: 0; }
+@media (min-width: 1024px) {
+    .faq-grid { grid-template-columns: 5fr 7fr; grid-template-rows: auto 1fr; column-gap: 5rem; row-gap: 2rem; }
+    .faq-intro { grid-column: 1; grid-row: 1; }
+    .faq-lista { grid-column: 2; grid-row: 1 / span 2; align-self: start; }
+    .faq-grid > .faq-pergunte { grid-column: 1; grid-row: 2; }
+}
+
+/* Títulos de cartão (h3): entrelinha de título, igual em todas as páginas */
+h3.font-heading,
+:is(.caso-matriz__lado, .caso-decisoes, .caso-aprendizados, .pv-jornada__texto, .pv-dor__lado) h3 { line-height: 1.3; }
+
 /* FAQ: esconde o marcador padrão e gira o ícone ao abrir */
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
 .faq-icon { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(var(--color-brand-accent-rgb), 0.5); color: var(--color-brand-accent); font-family: 'Inter', sans-serif; font-size: 1.125rem; line-height: 1; transition: transform .25s, background-color .25s, color .25s; }
 details[open] .faq-icon { transform: rotate(45deg); background: var(--color-brand-accent); color: var(--color-text-ink); }
-.faq-pergunte { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; padding: 1.375rem; border-radius: 1.25rem; background: #18142b; border: 1px solid rgba(255, 255, 255, 0.12); }
+.faq-pergunte { align-self: start; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; padding: 1.375rem; border-radius: 1.25rem; background: #18142b; border: 1px solid rgba(255, 255, 255, 0.12); }
 
 /* Contato: modelo do e-mail visível e rodapé completo */
 .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -202,7 +216,7 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .contato-email__corpo { padding: 20px 22px 8px; font-size: 0.9375rem; line-height: 1.7; }
 .contato-email__campo { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; margin-top: 8px; color: var(--texto-apoio); }
 .contato-email__campo label { flex: none; }
-.contato-email__campo :is(input, textarea) { flex: 1 1 10rem; min-width: 0; padding: 2px 2px 3px; border: 0; border-bottom: 1.5px dashed #c9c2da; border-radius: 0; background: transparent; color: var(--color-text-ink); font: inherit; font-weight: 500; transition: border-color .2s, background-color .2s; }
+.contato-email__campo :is(input, textarea) { flex: 1 1 10rem; min-width: 0; padding: 2px 2px 3px; border: 0; border-bottom: 1.5px dashed #948bb0;  /* 3,2:1 no branco: a linha mostra onde escrever (WCAG 1.4.11) */ border-radius: 0; background: transparent; color: var(--color-text-ink); font: inherit; font-weight: 500; transition: border-color .2s, background-color .2s; }
 .contato-email__campo--texto textarea { flex-basis: 100%; margin-top: 4px; resize: vertical; min-height: 4.5rem; line-height: 1.6; background-image: repeating-linear-gradient(transparent 0 calc(1.6em - 1.5px), #e4e0ee calc(1.6em - 1.5px) 1.6em); border-bottom-style: dashed; }
 .contato-email__campo :is(input, textarea):focus { outline: none; border-bottom: 2px solid #5b30d6; background-color: rgba(91, 48, 214, 0.05); }
 .contato-email__campo :is(input, textarea):user-invalid { border-bottom-color: #be123c; }
@@ -284,7 +298,7 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .trilha-aprova::before { content: ""; width: 8px; height: 5px; border-left: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg) translateY(-1px); }
 .trilha-intro { display: flex; flex-direction: column; gap: 0.625rem; }
 .trilha-recebe { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.875rem; color: #fff; }
-.trilha-recebe span { display: block; margin-bottom: 0.2rem; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-accent); }
+.trilha-recebe span { display: block; margin-bottom: 0.2rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-accent); }
 /* Cartões lado a lado: número, título e texto, e "Você recebe" ocupam a mesma linha da grade em todos.
    A sobra de espaço fica antes de "Você recebe", como em "O problema" */
 @media (min-width: 641px) {
@@ -513,7 +527,7 @@ details[open] .faq-icon { transform: rotate(45deg); background: var(--color-bran
 .vitrine::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12, 14, 18, 0.96) 0%, rgba(12, 14, 18, 0.88) 42%, rgba(12, 14, 18, 0.25) 100%); }
 .vitrine--emails::before { background: radial-gradient(circle at 80% 30%, rgba(124, 77, 255, 0.28), transparent 60%); }
 .vitrine-texto { display: flex; flex-direction: column; justify-content: center; gap: clamp(1.375rem, 1rem + 0.8vw, 1.75rem); padding: clamp(3.5rem, 2rem + 2.5vw, 4.5rem) clamp(3.25rem, 1.5rem + 2.5vw, 4.25rem); }
-.vitrine-nome { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2.25rem, 1.5rem + 2.4vw, 3.25rem); line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance; }
+.vitrine-nome { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.75rem, 0.75rem + 3.2vw, 3.25rem); line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance; }
 .vitrine-cliente { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.125rem; color: var(--color-brand-accent); }
 .vitrine-descricao { max-width: 30rem; color: var(--texto-corpo); font-size: 1.125rem; line-height: 1.65; }
 .vitrine-tags { display: flex; flex-wrap: wrap; gap: 0.625rem; max-width: 30rem; list-style: none; margin: 0.25rem 0 0; padding: 0; }
@@ -934,7 +948,7 @@ body.menu-aberto { overflow: hidden; }
 .caso-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; flex-direction: column; gap: 3.5rem; }
 @media (min-width: 768px) { .caso-container { padding: 0 2rem; } }
 
-.caso-rotulo { font-size: .9375rem; font-weight: 600; color: var(--texto-destaque); }
+.caso-rotulo { font-size: .9375rem; font-weight: 600; letter-spacing: 0.01em; color: var(--texto-destaque); }  /* mesma etiqueta da home */
 .caso-secao--claro .caso-rotulo { color: var(--texto-destaque); }
 .caso-titulo { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2.25rem, 5.2vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance; }
 .caso-lead { font-size: 1.1875rem; line-height: 1.6; color: var(--texto-corpo); max-width: 40rem; }
@@ -975,7 +989,7 @@ body.menu-aberto { overflow: hidden; }
 .caso-numeros li { display: flex; flex-direction: column; gap: .25rem; padding-top: 1rem; border-top: 2px solid rgba(255, 255, 255, .22); }
 .caso-numeros strong { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.75rem, 3.4vw, 2.5rem); letter-spacing: -0.02em; line-height: 1.1; }
 .caso-numeros span { font-size: .9375rem; color: var(--texto-corpo); line-height: 1.45; }
-.caso-fonte { margin-top: -2.25rem; font-size: .8125rem; color: var(--texto-apoio); }
+.caso-fonte { margin-top: -2.25rem; max-width: 70ch; font-size: .8125rem; color: var(--texto-apoio); }
 
 /* Cartões numerados (visão de negócio e proposta de valor) */
 .caso-cartoes { display: grid; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
